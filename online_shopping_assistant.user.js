@@ -79,6 +79,8 @@
 // @license     MIT
 // @run-at      document-idle
 // @antifeature referral-link
+// @downloadURL https://static.staticj.top/script/update/github_only_ecommerce.user.js
+// @updateURL   https://static.staticj.top/script/update/github_only_ecommerce.user.js
 // @grant       GM_registerMenuCommand
 // @grant       GM_openInTab
 // @grant       GM.openInTab
