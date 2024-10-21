@@ -70,7 +70,7 @@
 // @description:ug    ئاممىباب مال تالونلىرىدىكى تالوندىكى تالونلارنى ئاپتوماتىك ئىزدەشكە ياردەم بېرىدۇ, سىز ئېھتىياجلىق مەھسۇلاتلاردىكى ئەڭ ياخشى سودىلارنى تېپىشىڭىزغا ياردەم بېرىدۇ.ھازىر قوللايدۇ: AliExpress, alazade, ebay, ئامازون ۋە تېخىمۇ كۆپ.
 // @description:vi    Tự động tìm kiếm phiếu giảm giá trên các nền tảng mua sắm phổ biến để giúp bạn tìm thấy các giao dịch tốt nhất về các sản phẩm bạn cần, mà không bội chi.Hiện tại hỗ trợ: Aliexpress, Lazada, eBay, Amazon, v.v.
 // @namespace   Thaddeus_ecommerce_NameScope
-// @version     1.0.2
+// @version     1.0.3
 // @author      Thaddeus310
 // @icon        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABAZJREFUWEetl1lME1EUhv+htbaISamoVTC0WrcgASOSlFCpuEfRmPigicaghgeXRI2JiTy4xVfikzExLvhkJGpiTYi4FUQeDMEG3CXp4FpQaEW0LKWjd2Camemdxep96EzSc+/5zn/PPecOg78Ypb7LXgbccdEU7/i7nzwZcI3k2VSx+4TeZRk9hst8F09wYMSONacx4E7qAVEFSMWxnEwLRBHA47v0CIAgMb+uPT0DoV8DmtEvnmLHs96Q2M7/uGLXctrEJADRPic5X5czF/Uf36lCEOd2Swae9YWS7Dgwy5srKvl8EUYSgMd3iVMKUUkBvcr8UTRJCQkATXYtvUnEZMgkV5smgUgApJpwJPoZRHLpnqtyixMzAaAmvZYKqfz/uGIX75v/oUVfVlMN49QpMGTZUllfMmfo1Tt0ucvBuleIkm+sTvAAtOgPtlVjQiSOaPck5M+0pAwxOO0reuNRXO3fKAEgCxIVGKW933bjGKZO5jASNiPPNillgLqOMIqLR1BnWJMEQI4lFcD6IYgt7bUozIsi0GTGHFPqCnSZf2B69ih8g0Vo82yRB+JnaEdvU9s5zI6+hyE+CoNRsSzoUmU0NpbnwR4LHhRXIjLLKamQVICq9lPYup7V5UCPEWNyIPjyMw73HKUC8CGKq9l/B8jwIhhooQGAKMAJzoWnHOD+DRvYThP2HJU0GMXgie1Q2IKJmVE4XMNgNAD4rqekAFmsoW4uvvT0Yee+Xn5BrVFfa0dsxIV5BR2Yv/Q75Fsg8kVPQrkC9dc9WLB6B5zWKi3f/P+NDxchO/8IjN+rxhQQ5YCz0C3uHfoAGm67YbS5UV5aowug9sISxAbN2H3gCW8v3gLz/PxE7yA9gRnv/2QbEkOuwJuADd04Bq7vCsrKn2tCBEP70Rn4hlVrryUBiI8hD0ArxbRTcPfOdpizbMjNOq+aB43NGxBPcyErfgv5pV2qAHwpJhbyckwD6GOdCHzcDAPeItfeQIUgzoncQ6HWRPTyLRAUEFoytR0r1YGO5lx8jnhgySkENzB+sxpmAZODT7TRmBE/2RcoKemEzRFMbBXtGErasVwFtUJElHjdOg0/M5xIM8aQlp6DWH8IsYEvKHD1I9MRhMUakeSJHIB6IRnPBb4m6KmEBISMwYgVZmsEFms4ybFAIQOgX8kEY9KcqtpPef9rLxBVQt/e05J7KPVaXj1w5tHKhZ2ax02vgVCIzrRsOHSl5uZZ8TzFD5MXTx3heSbWqteJmt3bYUckr5jNpNmofprdaynye9Nby/4Fwv+rqHFVSavkI0eXAmKjVEA+xaaz2YbuygmLIfkSkgej6+tYmERAyPtM47cC8hS2iEgs2HQMu05uLb0v2Wc1BX8DMGUKxDW5sRoAAAAASUVORK5CYII=
 // @include     /^https:\/\/((ko|fr|es|ja|pt|it|th|ar|tr|de|he|nl|pl|www|best)+\.)?aliexpress\.(ru|us|com)\/*/
@@ -577,9 +577,10 @@
 	const isDev = false, isDebug = false;
 	const currentHost = window.location.host;
 	const currentUrl = window.location.href;
-	(navigator.language.indexOf("-") != -1 ? navigator.language.split("-")[0] : navigator.language).toLocaleLowerCase();
+	const lang = (navigator.language.indexOf("-") != -1 ? navigator.language.split("-")[0] : navigator.language).toLocaleLowerCase();
 	const storageKeys = {};
 	const ScriptConst = {
+	  "lang": lang,
 	  "language": language,
 	  "isDev": isDev,
 	  "isDebug": isDebug,
@@ -588,7 +589,7 @@
 	  "storageKeys": storageKeys
 	};
 
-	var __async$4 = (__this, __arguments, generator) => {
+	var __async$5 = (__this, __arguments, generator) => {
 	  return new Promise((resolve, reject) => {
 	    var fulfilled = (value) => {
 	      try {
@@ -728,6 +729,8 @@
 	    let regex = new RegExp("/item/([^/]*?)." + suffix);
 	    if (/lazada/.test(url)) {
 	      regex = new RegExp("-i(\\d+)-");
+	    } else if (/ebay/.test(url)) {
+	      regex = new RegExp("/itm/(\\d+)");
 	    }
 	    const match = url.match(regex);
 	    return match ? match[1] : null;
@@ -770,8 +773,8 @@
 	    return container.contains(element);
 	  },
 	  mustGetElement: function(handler) {
-	    return __async$4(this, null, function* () {
-	      const getElements = (handler2) => __async$4(this, null, function* () {
+	    return __async$5(this, null, function* () {
+	      const getElements = (handler2) => __async$5(this, null, function* () {
 	        const promiseArray = [];
 	        const handlers = handler2.split("@");
 	        for (let i = 0; i < handlers.length; i++) {
@@ -1717,7 +1720,7 @@
 	  }
 	};
 
-	var __async$3 = (__this, __arguments, generator) => {
+	var __async$4 = (__this, __arguments, generator) => {
 	  return new Promise((resolve, reject) => {
 	    var fulfilled = (value) => {
 	      try {
@@ -1778,7 +1781,7 @@
 	    });
 	  },
 	  detail: function() {
-	    return __async$3(this, null, function* () {
+	    return __async$4(this, null, function* () {
 	      const visitUrl = window.location.href;
 	      const validate = [/\/item\/[^\/]*?\.html\?/, /\/item\/[^\/]*?\.html$/].map((reg) => reg.test(visitUrl)).some((rs) => rs == true);
 	      if (!validate)
@@ -1807,7 +1810,7 @@
 	    });
 	  },
 	  detailAnalyze: function(json, language, currency) {
-	    return __async$3(this, null, function* () {
+	    return __async$4(this, null, function* () {
 	      this.checkDomInsertRs = false;
 	      try {
 	        if (!json)
@@ -1899,7 +1902,7 @@
 	    }
 	  },
 	  trade: function() {
-	    return __async$3(this, null, function* () {
+	    return __async$4(this, null, function* () {
 	      const visitUrl = window.location.href;
 	      const validate = [
 	        /\/trade\/confirm\.html/,
@@ -1919,7 +1922,7 @@
 	    });
 	  },
 	  tradeAnalyze: function(json, language) {
-	    return __async$3(this, null, function* () {
+	    return __async$4(this, null, function* () {
 	      if (!json || !json.handler || !json.css || !json.templateId) {
 	        return;
 	      }
@@ -1959,7 +1962,7 @@
 	    }, 2500);
 	  },
 	  start: function() {
-	    return __async$3(this, null, function* () {
+	    return __async$4(this, null, function* () {
 	      if (this.isRun()) {
 	        this.detail();
 	        this.trade();
@@ -1969,31 +1972,10 @@
 	  }
 	};
 
-	var __async$2 = (__this, __arguments, generator) => {
-	  return new Promise((resolve, reject) => {
-	    var fulfilled = (value) => {
-	      try {
-	        step(generator.next(value));
-	      } catch (e) {
-	        reject(e);
-	      }
-	    };
-	    var rejected = (value) => {
-	      try {
-	        step(generator.throw(value));
-	      } catch (e) {
-	        reject(e);
-	      }
-	    };
-	    var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
-	    step((generator = generator.apply(__this, __arguments)).next());
-	  });
-	};
-	const AliexpressSearch = {
+	const ItemSearchBaseObj = {
 	  visitUrl: window.location.href,
-	  baseUrl: "https://oversea.mimixiaoke.com",
-	  loopIsComplete: true,
 	  searchAttribute: "loop-task-i9v---search",
+	  baseUrl: "https://oversea.mimixiaoke.com",
 	  cacheRequestMap: {},
 	  requestAndSaveSate: function(method, url, param) {
 	    return new Promise((resolve, reject) => {
@@ -2042,7 +2024,7 @@
 	      });
 	    });
 	  },
-	  pickupGoodsItem: function(confString) {
+	  pickupGoodsItem: function(platform, confString) {
 	    const visitHref = window.location.href;
 	    const selectorElementList = new Array();
 	    let confFilter = confString;
@@ -2050,33 +2032,41 @@
 	      confFilter = confFilter.replace(/\\\\/g, "\\");
 	    } catch (e) {
 	    }
-	    const confJson = JSON.parse(confFilter);
-	    for (let key in confJson) {
-	      if (!confJson.hasOwnProperty(key)) {
+	    const confJson = JSON.parse(confFilter)[platform];
+	    for (let i = 0; i < confJson.length; i++) {
+	      const itemJson = confJson[i];
+	      if (!itemJson.hasOwnProperty("elements") || !itemJson.hasOwnProperty("matches")) {
 	        continue;
 	      }
-	      for (let i = 0; i < confJson[key].length; i++) {
-	        const itemJson = confJson[key][i];
-	        if (!itemJson.hasOwnProperty("elements") || !itemJson.hasOwnProperty("matches")) {
-	          continue;
-	        }
-	        const { elements, matches } = itemJson;
-	        const isMatch = matches.map((reg) => new RegExp(reg, "i").test(visitHref)).some((res) => res);
-	        if (isMatch) {
-	          for (let j = 0; j < elements.length; j++) {
-	            selectorElementList.push({
-	              "element": elements[j]["element"],
-	              "findA": elements[j]["findA"],
-	              "page": elements[j]["page"]
-	            });
-	          }
+	      const { elements, matches } = itemJson;
+	      const isMatch = matches.map((reg) => new RegExp(reg, "i").test(visitHref)).some((res) => res);
+	      if (isMatch) {
+	        for (let j = 0; j < elements.length; j++) {
+	          selectorElementList.push({
+	            "element": elements[j]["element"],
+	            "findA": elements[j]["findA"],
+	            "page": elements[j]["page"]
+	          });
 	        }
 	      }
 	    }
 	    return selectorElementList;
 	  },
-	  isInbusinessPage: function() {
-	    return /inbusiness\.aliexpress\.com\/web\/search-products/.test(this.visitUrl);
+	  getGoodsLinkByElement: function(element, findTag) {
+	    let searchElement = null;
+	    if (findTag == "this") {
+	      searchElement = element;
+	    } else if (/^child@/.test(findTag)) {
+	      searchElement = element.querySelector(findTag.replace(/^child@/, ""));
+	    }
+	    return searchElement;
+	  },
+	  isElementDisplayed: function(element) {
+	    if (element.offsetParent !== null) {
+	      return true;
+	    }
+	    const style = window.getComputedStyle(element);
+	    return style.display !== "none";
 	  },
 	  getGoodsIdByUrl: function(href) {
 	    if (!href)
@@ -2096,42 +2086,58 @@
 	      groups[groupIndex].push(array[i]);
 	    }
 	    return groups;
+	  }
+	};
+
+	var __async$3 = (__this, __arguments, generator) => {
+	  return new Promise((resolve, reject) => {
+	    var fulfilled = (value) => {
+	      try {
+	        step(generator.next(value));
+	      } catch (e) {
+	        reject(e);
+	      }
+	    };
+	    var rejected = (value) => {
+	      try {
+	        step(generator.throw(value));
+	      } catch (e) {
+	        reject(e);
+	      }
+	    };
+	    var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
+	    step((generator = generator.apply(__this, __arguments)).next());
+	  });
+	};
+	const AliexpressSearch = {
+	  loopIsComplete: true,
+	  currentPlatform: "aliexpress",
+	  isInbusinessPage: function() {
+	    return /inbusiness\.aliexpress\.com\/web\/search-products/.test(ItemSearchBaseObj.visitUrl);
 	  },
-	  isElementDisplayed: function(element) {
-	    if (element.offsetParent !== null) {
-	      return true;
-	    }
-	    const style = window.getComputedStyle(element);
-	    return style.display !== "none";
-	  },
-	  getGoodsLinkByElement: function(element, findTag) {
-	    let searchElement = null;
-	    if (findTag == "this") {
-	      searchElement = element;
-	    } else if (/^child@/.test(findTag)) {
-	      searchElement = element.querySelector(findTag.replace(/^child@/, ""));
-	    }
-	    return searchElement;
+	  isItemLink: function(url) {
+	    return /aliexpress/.test(url) && /\/item\/[^\/]*?\.html/.test(url);
 	  },
 	  pickUpWholesale: function(selectors, language, currency) {
-	    return __async$2(this, null, function* () {
+	    return __async$3(this, null, function* () {
 	      const items = [];
 	      try {
 	        selectors.forEach((elementObj) => {
 	          if (elementObj.element) {
-	            const elements = document.querySelectorAll(elementObj.element + ":not([" + this.searchAttribute + "='true'])");
+	            const elements = document.querySelectorAll(elementObj.element + ":not([" + ItemSearchBaseObj.searchAttribute + "='true'])");
+	            logger("info", "search coupon elements======>", elements.length);
 	            const findA = elementObj.findA;
 	            elements.forEach((element) => {
-	              if (element && this.isElementDisplayed(element) && !element.getAttribute(this.searchAttribute)) {
-	                const goodsLink = this.getGoodsLinkByElement(element, findA);
+	              if (element && ItemSearchBaseObj.isElementDisplayed(element) && !element.getAttribute(ItemSearchBaseObj.searchAttribute)) {
+	                const goodsLink = ItemSearchBaseObj.getGoodsLinkByElement(element, findA);
 	                let id = null;
-	                if (/\/item\/[^\/]*?\.html/.test(goodsLink)) {
-	                  id = this.getGoodsIdByUrl(goodsLink.getAttribute("href"));
+	                if (this.isItemLink(goodsLink)) {
+	                  id = ItemSearchBaseObj.getGoodsIdByUrl(goodsLink.getAttribute("href"));
 	                }
 	                if (id) {
 	                  items.push({
 	                    "id": id,
-	                    "platform": "aliexpress",
+	                    "platform": this.currentPlatform,
 	                    "handler": element,
 	                    "findA": findA,
 	                    "from": "wholesale"
@@ -2149,7 +2155,7 @@
 	    });
 	  },
 	  pickUpInbusiness: function(language, currency) {
-	    return __async$2(this, null, function* () {
+	    return __async$3(this, null, function* () {
 	      const validate = this.isInbusinessPage();
 	      if (!validate)
 	        return;
@@ -2162,12 +2168,12 @@
 	          if (containerElement && containerElement.tagName === "DIV") {
 	            const childNodes = containerElement.childNodes;
 	            childNodes.forEach((child) => {
-	              if (child.tagName === "A" && this.isElementDisplayed(child) && !child.getAttribute(this.searchAttribute)) {
-	                const id = this.getGoodsIdByUrl(child.getAttribute("href"));
+	              if (child.tagName === "A" && ItemSearchBaseObj.isElementDisplayed(child) && !child.getAttribute(ItemSearchBaseObj.searchAttribute)) {
+	                const id = ItemSearchBaseObj.getGoodsIdByUrl(child.getAttribute("href"));
 	                if (id) {
 	                  array.push({
 	                    "id": id,
-	                    "platform": "aliexpress",
+	                    "platform": this.currentPlatform,
 	                    "handler": child,
 	                    "from": "inbusiness"
 	                  });
@@ -2182,7 +2188,7 @@
 	    });
 	  },
 	  search: function(array, language, currency) {
-	    const groups = this.calcRequestGroup(array);
+	    const groups = ItemSearchBaseObj.calcRequestGroup(array);
 	    const len = groups.length;
 	    return new Promise((resolve, reject) => {
 	      if (len <= 0) {
@@ -2208,7 +2214,7 @@
 	        let reqId = "";
 	        const platform = group[0].platform;
 	        for (var i = 0; i < group.length; i++) {
-	          if (group[i].handler.getAttribute(this.searchAttribute)) {
+	          if (group[i].handler.getAttribute(ItemSearchBaseObj.searchAttribute)) {
 	            continue;
 	          }
 	          reqId += group[i].id + ",";
@@ -2217,11 +2223,11 @@
 	          reqId = reqId.slice(0, -1);
 	        }
 	        logger("info", "request start >>>>>>>>>>>>>", group);
-	        const searchUrl = this.baseUrl + "/api/coupon/exist?platform=" + platform + "&ids=" + reqId + "&lang=" + language + "&no=10&v=1.0.1&currency=" + currency;
+	        const searchUrl = ItemSearchBaseObj.baseUrl + "/api/coupon/exist?platform=" + platform + "&ids=" + reqId + "&lang=" + language + "&no=10&v=1.0.1&currency=" + currency;
 	        logger("info", "request searchUrl >>>>>>>>>>>>>:", searchUrl);
-	        this.requestAndSaveSate("GET", searchUrl, null).then((data) => {
+	        ItemSearchBaseObj.requestAndSaveSate("GET", searchUrl, null).then((data) => {
 	          logger("info", "request finish >>>>>>>>>>>>>");
-	          delete this.cacheRequestMap[data.requestKey];
+	          delete ItemSearchBaseObj.cacheRequestMap[data.requestKey];
 	          if (data.code != "success" || !data.result) {
 	            resolve("exception");
 	            return;
@@ -2240,12 +2246,12 @@
 	              } catch (e) {
 	              }
 	            }
-	            const elementA = this.getGoodsLinkByElement(handler, findA);
-	            const currentId = elementA ? this.getGoodsIdByUrl(elementA.getAttribute("href")) : "";
+	            const elementA = ItemSearchBaseObj.getGoodsLinkByElement(handler, findA);
+	            const currentId = elementA ? ItemSearchBaseObj.getGoodsIdByUrl(elementA.getAttribute("href")) : "";
 	            if (currentId != key) {
 	              group.forEach((gItem) => {
 	                const ele = gItem.handler;
-	                ele.removeAttribute(this.searchAttribute);
+	                ele.removeAttribute(ItemSearchBaseObj.searchAttribute);
 	                const tipElement = ele.querySelector("div[name^='ali-gogo-coupon-']");
 	                if (tipElement) {
 	                  tipElement.remove();
@@ -2255,8 +2261,8 @@
 	              isBroken = true;
 	              break;
 	            } else {
-	              if (!handler.getAttribute(this.searchAttribute)) {
-	                handler.setAttribute(this.searchAttribute, "true");
+	              if (!handler.getAttribute(ItemSearchBaseObj.searchAttribute)) {
+	                handler.setAttribute(ItemSearchBaseObj.searchAttribute, "true");
 	                if (tip) {
 	                  handler.style.position = "relative";
 	                  handler.insertAdjacentHTML("beforeend", tip);
@@ -2286,7 +2292,7 @@
 	    }
 	    elements.forEach((elementA) => {
 	      const href = elementA.getAttribute("href");
-	      if (/\/item\/[^\/]*?\.html/.test(href)) {
+	      if (this.isItemLink(href)) {
 	        if (elementA.getAttribute(clickTipAttribute)) {
 	          return;
 	        }
@@ -2297,13 +2303,13 @@
 	          const tagName = target.tagName.toUpperCase();
 	          if (tagName == "A") {
 	            const href2 = target.getAttribute("href");
-	            if (!/\/item\/[^\/]*?\.html/.test(href2)) {
+	            if (!this.isItemLink(href2)) {
 	              isPreventDefault = false;
 	            }
 	          }
 	          if (isPreventDefault) {
 	            Array.from(target.classList).forEach((className) => {
-	              const iscontains = ["icon", "--btn--"].map((name) => className.indexOf(name) != -1).some((result) => result);
+	              const iscontains = ["icon", "-btn-"].map((name) => className.indexOf(name) != -1).some((result) => result);
 	              if (iscontains) {
 	                isPreventDefault = false;
 	              }
@@ -2326,18 +2332,18 @@
 	    return run;
 	  },
 	  start: function() {
-	    return __async$2(this, null, function* () {
+	    return __async$3(this, null, function* () {
 	      if (!this.isRun())
 	        return;
 	      let removeTagIsComplete = true;
 	      const language = Aliexpress.getLang();
 	      const currency = yield Aliexpress.getCurrency();
-	      const confString = yield this.requestConf();
+	      const confString = yield ItemSearchBaseObj.requestConf();
 	      if (!confString) {
 	        return;
 	      }
-	      const selectors = this.pickupGoodsItem(confString);
-	      setInterval(() => __async$2(this, null, function* () {
+	      const selectors = ItemSearchBaseObj.pickupGoodsItem(this.currentPlatform, confString);
+	      setInterval(() => __async$3(this, null, function* () {
 	        if (removeTagIsComplete && this.loopIsComplete) {
 	          this.loopIsComplete = false;
 	          yield this.pickUpInbusiness(language, currency);
@@ -2350,11 +2356,11 @@
 	        setInterval(() => {
 	          if (oldUrl != window.location.href && removeTagIsComplete) {
 	            removeTagIsComplete = false;
-	            Object.keys(this.cacheRequestMap).forEach((key) => {
-	              this.cacheRequestMap[key].abort();
+	            Object.keys(ItemSearchBaseObj.cacheRequestMap).forEach((key) => {
+	              ItemSearchBaseObj.cacheRequestMap[key].abort();
 	            });
-	            this.cacheRequestMap = {};
-	            document.querySelectorAll("*[" + this.searchAttribute + "='true']").forEach((element) => {
+	            ItemSearchBaseObj.cacheRequestMap = {};
+	            document.querySelectorAll("*[" + ItemSearchBaseObj.searchAttribute + "='true']").forEach((element) => {
 	              const tipElement = element.querySelector("*[name^='ali-gogo-coupon-']");
 	              if (tipElement) {
 	                tipElement.remove();
@@ -2376,8 +2382,8 @@
 	              if (mutation.type === "attributes" && mutation.attributeName === "href") {
 	                if (removeTagIsComplete) {
 	                  removeTagIsComplete = false;
-	                  document.querySelectorAll("*[" + this.searchAttribute + "='true']").forEach((element) => {
-	                    element.removeAttribute(this.searchAttribute);
+	                  document.querySelectorAll("*[" + ItemSearchBaseObj.searchAttribute + "='true']").forEach((element) => {
+	                    element.removeAttribute(ItemSearchBaseObj.searchAttribute);
 	                    const tipElement = element.querySelector("*[name^='ali-gogo-coupon-']");
 	                    if (tipElement) {
 	                      tipElement.remove();
@@ -2395,20 +2401,20 @@
 	  }
 	};
 
-	var __async$1 = (__this, __arguments, generator) => {
+	var __async$2 = (__this, __arguments, generator) => {
 	  return new Promise((resolve, reject) => {
 	    var fulfilled = (value) => {
 	      try {
 	        step(generator.next(value));
-	      } catch (e2) {
-	        reject(e2);
+	      } catch (e) {
+	        reject(e);
 	      }
 	    };
 	    var rejected = (value) => {
 	      try {
 	        step(generator.throw(value));
-	      } catch (e2) {
-	        reject(e2);
+	      } catch (e) {
+	        reject(e);
 	      }
 	    };
 	    var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
@@ -2433,12 +2439,11 @@
 	      const topLevelDomainMatch = hostname.match(/ebay\.(\w{2,3})$/);
 	      return topLevelDomainMatch ? topLevelDomainMatch[1] : null;
 	    } catch (error) {
-	      logger("error", "getMarketplace", e);
 	    }
 	    return null;
 	  },
 	  detail: function() {
-	    return __async$1(this, null, function* () {
+	    return __async$2(this, null, function* () {
 	      const validate = this.isDetail();
 	      if (!validate)
 	        return;
@@ -2467,7 +2472,7 @@
 	    });
 	  },
 	  detailAnalyze: function(json, marketplace) {
-	    return __async$1(this, null, function* () {
+	    return __async$2(this, null, function* () {
 	      let couponResult = null;
 	      let qrcodeResult = null;
 	      if (!!json.data && !!json.data.css && !!json.data.html && !!json.data.handler) {
@@ -2548,8 +2553,220 @@
 	    }
 	  },
 	  start: function() {
-	    return __async$1(this, null, function* () {
+	    return __async$2(this, null, function* () {
 	      this.detail();
+	    });
+	  }
+	};
+
+	var __async$1 = (__this, __arguments, generator) => {
+	  return new Promise((resolve, reject) => {
+	    var fulfilled = (value) => {
+	      try {
+	        step(generator.next(value));
+	      } catch (e) {
+	        reject(e);
+	      }
+	    };
+	    var rejected = (value) => {
+	      try {
+	        step(generator.throw(value));
+	      } catch (e) {
+	        reject(e);
+	      }
+	    };
+	    var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
+	    step((generator = generator.apply(__this, __arguments)).next());
+	  });
+	};
+	const EbaySearch = {
+	  loopIsComplete: true,
+	  currentPlatform: "ebay",
+	  isRun: function() {
+	    let run = false;
+	    if (window.location.host.indexOf("ebay.") != -1) {
+	      run = !/\/(item|trade|checkout|rxo)\//.test(window.location.pathname);
+	    }
+	    return run;
+	  },
+	  isItemLink: function(url) {
+	    return /ebay/.test(url) && /\/itm\/[^\/]*?/.test(url);
+	  },
+	  pickUpItems: function(selectors, marketplace) {
+	    return __async$1(this, null, function* () {
+	      const items = [];
+	      try {
+	        selectors.forEach((elementObj) => {
+	          if (elementObj.element) {
+	            const elements = document.querySelectorAll(elementObj.element + ":not([" + ItemSearchBaseObj.searchAttribute + "='true'])");
+	            logger("info", "search coupon elements======>", elements);
+	            const findA = elementObj.findA;
+	            elements.forEach((element) => {
+	              if (element && ItemSearchBaseObj.isElementDisplayed(element) && !element.getAttribute(ItemSearchBaseObj.searchAttribute)) {
+	                const goodsLink = ItemSearchBaseObj.getGoodsLinkByElement(element, findA);
+	                let id = null;
+	                if (this.isItemLink(goodsLink)) {
+	                  id = ItemSearchBaseObj.getGoodsIdByUrl(goodsLink.getAttribute("href"));
+	                }
+	                if (id) {
+	                  items.push({
+	                    "id": id,
+	                    "platform": this.currentPlatform,
+	                    "handler": element,
+	                    "findA": findA,
+	                    "from": "search"
+	                  });
+	                }
+	              }
+	            });
+	          }
+	        });
+	        if (items.length > 0) {
+	          yield this.search(items, marketplace);
+	        }
+	      } catch (e) {
+	      }
+	    });
+	  },
+	  search: function(array, marketplace) {
+	    return __async$1(this, null, function* () {
+	      const groups = ItemSearchBaseObj.calcRequestGroup(array);
+	      const len = groups.length;
+	      return new Promise((resolve, reject) => {
+	        if (len <= 0) {
+	          resolve("complete");
+	          return;
+	        }
+	        const promises = [];
+	        for (let i = 0; i < groups.length; i++) {
+	          promises.push(this.createItemHtml(groups[i], marketplace));
+	        }
+	        Promise.all(promises).then((data) => {
+	          resolve("complete");
+	        });
+	      });
+	    });
+	  },
+	  createItemHtml: function(group, marketplace) {
+	    return new Promise((resolve, reject) => {
+	      try {
+	        if (Array.isArray(group) && group.length === 0) {
+	          resolve("exception");
+	          return;
+	        }
+	        let reqId = "";
+	        const platform = group[0].platform;
+	        for (var i = 0; i < group.length; i++) {
+	          if (group[i].handler.getAttribute(ItemSearchBaseObj.searchAttribute)) {
+	            continue;
+	          }
+	          reqId += group[i].id + ",";
+	        }
+	        if (reqId.endsWith(",")) {
+	          reqId = reqId.slice(0, -1);
+	        }
+	        logger("info", "request start >>>>>>>>>>>>>", group);
+	        const searchUrl = ItemSearchBaseObj.baseUrl + "/api/coupon/exist?platform=" + platform + "&ids=" + reqId + "&marketplace=" + marketplace + "&no=10&v=1.0.1";
+	        logger("info", "request searchUrl >>>>>>>>>>>>>:", searchUrl);
+	        ItemSearchBaseObj.requestAndSaveSate("GET", searchUrl, null).then((data) => {
+	          logger("info", "request finish >>>>>>>>>>>>>", data);
+	          delete ItemSearchBaseObj.cacheRequestMap[data.requestKey];
+	          if (data.code != "success" || !data.result) {
+	            resolve("exception");
+	            return;
+	          }
+	          const json = JSON.parse(data.result);
+	          for (let key in json) {
+	            const { encryptLink, tip } = json[key];
+	            const { handler, findA } = group.find((obj) => obj.id === key);
+	            let decryptUrl = null;
+	            if (encryptLink) {
+	              try {
+	                const decryptLink = atob(encryptLink);
+	                decryptUrl = decryptLink.split("").reverse().join("");
+	              } catch (e) {
+	              }
+	            }
+	            const elementA = ItemSearchBaseObj.getGoodsLinkByElement(handler, findA);
+	            if (!handler.getAttribute(ItemSearchBaseObj.searchAttribute)) {
+	              handler.setAttribute(ItemSearchBaseObj.searchAttribute, "true");
+	              if (tip) {
+	                handler.style.position = "relative";
+	                handler.insertAdjacentHTML("beforeend", tip);
+	                logger("info", "exist coupon >>>>>>>>>>>>>", key);
+	              }
+	              if (decryptUrl) {
+	                this.relativeJ(handler, decryptUrl);
+	                logger("info", "good job >>>>>>>>>>>>>", key);
+	              }
+	            }
+	          }
+	          resolve("complete");
+	        });
+	      } catch (e) {
+	        resolve("exception");
+	      }
+	    });
+	  },
+	  relativeJ: function(handler, decryptUrl) {
+	    const clickTipAttribute = "tip-vjd1jd89fcv-i";
+	    let elements = null;
+	    if (handler.tagName == "A") {
+	      elements = [handler];
+	    } else {
+	      elements = handler.querySelectorAll("a");
+	    }
+	    elements.forEach((elementA) => {
+	      const href = elementA.getAttribute("href");
+	      if (this.isItemLink(href)) {
+	        if (elementA.getAttribute(clickTipAttribute)) {
+	          return;
+	        }
+	        elementA.setAttribute(clickTipAttribute, "true");
+	        elementA.addEventListener("click", function(e) {
+	          let isPreventDefault = true;
+	          const target = e.target;
+	          const tagName = target.tagName.toUpperCase();
+	          if (tagName == "A") {
+	            const href2 = target.getAttribute("href");
+	            if (!this.isItemLink(href2)) {
+	              isPreventDefault = false;
+	            }
+	          }
+	          if (isPreventDefault) {
+	            Array.from(target.classList).forEach((className) => {
+	              const iscontains = ["btn", "icon"].map((name) => className.indexOf(name) != -1).some((result) => result);
+	              if (iscontains) {
+	                isPreventDefault = false;
+	              }
+	            });
+	          }
+	          if (isPreventDefault) {
+	            e.preventDefault();
+	            e.stopPropagation();
+	            Tools.openInTab(decryptUrl);
+	          }
+	        });
+	      }
+	    });
+	  },
+	  start: function() {
+	    return __async$1(this, null, function* () {
+	      if (!this.isRun())
+	        return;
+	      const marketplace = Ebay.getMarketplace(window.location.href);
+	      const confString = yield ItemSearchBaseObj.requestConf();
+	      if (!confString) {
+	        return;
+	      }
+	      const selectors = ItemSearchBaseObj.pickupGoodsItem(this.currentPlatform, confString);
+	      setInterval(() => __async$1(this, null, function* () {
+	        if (this.loopIsComplete) {
+	          this.loopIsComplete = false;
+	          yield this.pickUpItems(selectors, marketplace);
+	          this.loopIsComplete = true;
+	        }
+	      }), 1700);
 	    });
 	  }
 	};
@@ -2684,7 +2901,10 @@
 	    Aliexpress,
 	    AliexpressSearch
 	  },
-	  Ebay,
+	  Ebay: {
+	    Ebay,
+	    EbaySearch
+	  },
 	  Lazada
 	};
 
@@ -2695,8 +2915,9 @@
 	    EcommerceModules.GoodsHistroy.start("aliexpress");
 	  },
 	  ebay: function() {
+	    EcommerceModules.Ebay.Ebay.start();
+	    EcommerceModules.Ebay.EbaySearch.start();
 	    EcommerceModules.GoodsHistroy.start("ebay");
-	    EcommerceModules.Ebay.start();
 	  },
 	  lazada: function() {
 	    EcommerceModules.GoodsHistroy.start("lazada");
