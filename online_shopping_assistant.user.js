@@ -70,11 +70,11 @@
 // @description:ug    ئاممىباب مال تالونلىرىدىكى تالوندىكى تالونلارنى ئاپتوماتىك ئىزدەشكە ياردەم بېرىدۇ, سىز ئېھتىياجلىق مەھسۇلاتلاردىكى ئەڭ ياخشى سودىلارنى تېپىشىڭىزغا ياردەم بېرىدۇ.ھازىر قوللايدۇ: AliExpress, alazade, ebay, ئامازون ۋە تېخىمۇ كۆپ.
 // @description:vi    Tự động tìm kiếm phiếu giảm giá trên các nền tảng mua sắm phổ biến để giúp bạn tìm thấy các giao dịch tốt nhất về các sản phẩm bạn cần, mà không bội chi.Hiện tại hỗ trợ: Aliexpress, Lazada, eBay, Amazon, v.v.
 // @namespace   Thaddeus_ecommerce_NameScope
-// @version     1.0.3
+// @version     1.0.4
 // @author      Thaddeus310
 // @icon        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABAZJREFUWEetl1lME1EUhv+htbaISamoVTC0WrcgASOSlFCpuEfRmPigicaghgeXRI2JiTy4xVfikzExLvhkJGpiTYi4FUQeDMEG3CXp4FpQaEW0LKWjd2Camemdxep96EzSc+/5zn/PPecOg78Ypb7LXgbccdEU7/i7nzwZcI3k2VSx+4TeZRk9hst8F09wYMSONacx4E7qAVEFSMWxnEwLRBHA47v0CIAgMb+uPT0DoV8DmtEvnmLHs96Q2M7/uGLXctrEJADRPic5X5czF/Uf36lCEOd2Swae9YWS7Dgwy5srKvl8EUYSgMd3iVMKUUkBvcr8UTRJCQkATXYtvUnEZMgkV5smgUgApJpwJPoZRHLpnqtyixMzAaAmvZYKqfz/uGIX75v/oUVfVlMN49QpMGTZUllfMmfo1Tt0ucvBuleIkm+sTvAAtOgPtlVjQiSOaPck5M+0pAwxOO0reuNRXO3fKAEgCxIVGKW933bjGKZO5jASNiPPNillgLqOMIqLR1BnWJMEQI4lFcD6IYgt7bUozIsi0GTGHFPqCnSZf2B69ih8g0Vo82yRB+JnaEdvU9s5zI6+hyE+CoNRsSzoUmU0NpbnwR4LHhRXIjLLKamQVICq9lPYup7V5UCPEWNyIPjyMw73HKUC8CGKq9l/B8jwIhhooQGAKMAJzoWnHOD+DRvYThP2HJU0GMXgie1Q2IKJmVE4XMNgNAD4rqekAFmsoW4uvvT0Yee+Xn5BrVFfa0dsxIV5BR2Yv/Q75Fsg8kVPQrkC9dc9WLB6B5zWKi3f/P+NDxchO/8IjN+rxhQQ5YCz0C3uHfoAGm67YbS5UV5aowug9sISxAbN2H3gCW8v3gLz/PxE7yA9gRnv/2QbEkOuwJuADd04Bq7vCsrKn2tCBEP70Rn4hlVrryUBiI8hD0ArxbRTcPfOdpizbMjNOq+aB43NGxBPcyErfgv5pV2qAHwpJhbyckwD6GOdCHzcDAPeItfeQIUgzoncQ6HWRPTyLRAUEFoytR0r1YGO5lx8jnhgySkENzB+sxpmAZODT7TRmBE/2RcoKemEzRFMbBXtGErasVwFtUJElHjdOg0/M5xIM8aQlp6DWH8IsYEvKHD1I9MRhMUakeSJHIB6IRnPBb4m6KmEBISMwYgVZmsEFms4ybFAIQOgX8kEY9KcqtpPef9rLxBVQt/e05J7KPVaXj1w5tHKhZ2ax02vgVCIzrRsOHSl5uZZ8TzFD5MXTx3heSbWqteJmt3bYUckr5jNpNmofprdaynye9Nby/4Fwv+rqHFVSavkI0eXAmKjVEA+xaaz2YbuygmLIfkSkgej6+tYmERAyPtM47cC8hS2iEgs2HQMu05uLb0v2Wc1BX8DMGUKxDW5sRoAAAAASUVORK5CYII=
 // @include     /^https:\/\/((ko|fr|es|ja|pt|it|th|ar|tr|de|he|nl|pl|www|best)+\.)?aliexpress\.(ru|us|com)\/*/
-// @include     /^https:\/\/www\.lazada.(com|sg|th|id|vn|my|ph)*/
+// @include     /^https:\/\/(www\.)?lazada\.(co\.id|vn|com\.my|co\.th|sg|com\.ph)/.*/
 // @include     *://www.ebay.*/*
 // @license     MIT
 // @run-at      document-idle
@@ -422,7 +422,7 @@
   const lang = (navigator.language.indexOf("-") != -1 ? navigator.language.split("-")[0] : navigator.language).toLocaleLowerCase();
   const eLanguage = (_b = ecommerceLanguage[lang]) != null ? _b : ecommerceLanguage["en"];
 
-  var __async$5 = (__this, __arguments, generator) => {
+  var __async$6 = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -443,12 +443,8 @@
     });
   };
   const logger = (level = "log", ...messages) => {
-    if (level.toLowerCase() === "info") {
-      console.info(...messages);
-    } else if (level.toLowerCase() === "error") {
-      console.error(...messages);
-    } else {
-      console.log(...messages);
+    {
+      return;
     }
   };
   const Tools = {
@@ -563,7 +559,7 @@
       }
       let regex = new RegExp("/item/([^/]*?)." + suffix);
       if (/lazada/.test(url)) {
-        regex = new RegExp("-i(\\d+)-");
+        regex = new RegExp("-i(\\d+)(?:-s(\\d+))?\\.html");
       } else if (/ebay/.test(url)) {
         regex = new RegExp("/itm/(\\d+)");
       }
@@ -608,8 +604,8 @@
       return container.contains(element);
     },
     mustGetElement: function(handler) {
-      return __async$5(this, null, function* () {
-        const getElements = (handler2) => __async$5(this, null, function* () {
+      return __async$6(this, null, function* () {
+        const getElements = (handler2) => __async$6(this, null, function* () {
           const promiseArray = [];
           const handlers = handler2.split("@");
           for (let i = 0; i < handlers.length; i++) {
@@ -916,7 +912,6 @@
         storageObj[platform] = newArr;
         GM_setValue(this.storageKeys.goodsHistory, storageObj);
       } catch (e) {
-        logger("error", "historyGood push item has exception" + e);
       }
     },
     get: function(platform, num = -1) {
@@ -1552,12 +1547,11 @@
         }
         this.removeAnchor();
       } catch (e) {
-        logger("error", "history is exception:" + e);
       }
     }
   };
 
-  var __async$4 = (__this, __arguments, generator) => {
+  var __async$5 = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -1618,7 +1612,7 @@
       });
     },
     detail: function() {
-      return __async$4(this, null, function* () {
+      return __async$5(this, null, function* () {
         const visitUrl = window.location.href;
         const validate = [/\/item\/[^\/]*?\.html\?/, /\/item\/[^\/]*?\.html$/].map((reg) => reg.test(visitUrl)).some((rs) => rs == true);
         if (!validate)
@@ -1627,11 +1621,9 @@
         const currency = yield this.getCurrency();
         const id = Tools.getParamterBySuffix(visitUrl, "html");
         const url = this.baseUrl + "/api/coupon/query?ids=" + id + "&qu=&p=aliexpress&no=10&v=1.0.1&lang=" + language + "&mul=false&currency=" + currency;
-        logger("info", "detail request url=", url);
         const data = yield Tools.crossRequest("GET", url, null);
         if (data.code == "success" && !!data.result) {
           const json = JSON.parse(data.result);
-          logger("info", "detail request json=", json);
           yield this.detailAnalyze(json, language, currency);
         }
         if (!/aliexpress\.ru/.test(window.location.host)) {
@@ -1649,7 +1641,7 @@
       });
     },
     detailAnalyze: function(json, language, currency) {
-      return __async$4(this, null, function* () {
+      return __async$5(this, null, function* () {
         this.checkDomInsertRs = false;
         try {
           if (!json)
@@ -1703,7 +1695,6 @@
             }
           });
         } catch (error) {
-          logger("error", "detailAnalyze: ", error);
         } finally {
           this.checkDomInsertRs = true;
         }
@@ -1742,7 +1733,7 @@
       }
     },
     trade: function() {
-      return __async$4(this, null, function* () {
+      return __async$5(this, null, function* () {
         const visitUrl = window.location.href;
         const validate = [
           /\/trade\/confirm\.html/,
@@ -1755,8 +1746,6 @@
         const ids = Tools.getParamterBySearch(window.location.search, "objectId") || Tools.getParamterBySearch(window.location.search, "availableProductShopcartIds") || Tools.getParamterBySearch(window.location.search, "itemId");
         const confirmUrl = this.baseUrl + "/api/coupon/query?ids=" + ids + "&qu=&p=aliexpress&no=10&v=1.0.1&lang=" + language + "&mul=true&currency=" + currency;
         const res = yield Tools.crossRequest("GET", confirmUrl, null);
-        logger("info", "trade rq=", confirmUrl);
-        logger("info", "trade res=", res);
         if (res.code == "success" && !!res.result) {
           const json = JSON.parse(res.result);
           yield this.tradeAnalyze(json, language);
@@ -1764,14 +1753,13 @@
       });
     },
     tradeAnalyze: function(json, language) {
-      return __async$4(this, null, function* () {
+      return __async$5(this, null, function* () {
         if (!json || !json.handler || !json.css || !json.templateId) {
           return;
         }
         const { handler, css, html, templateId, distinguish } = json;
         GM_addStyle(css);
         let element = yield Tools.mustGetElement(handler);
-        logger("info", "insert：element", element);
         Tools.loopTask(() => {
           if (!element) {
             return;
@@ -1805,7 +1793,7 @@
       }, 2500);
     },
     start: function() {
-      return __async$4(this, null, function* () {
+      return __async$5(this, null, function* () {
         if (this.isRun()) {
           this.detail();
           this.trade();
@@ -1904,6 +1892,24 @@
       }
       return searchElement;
     },
+    getGoodsPriceByElement: function(element, tag) {
+      const goodsPrice = element.querySelector(tag);
+      let price = goodsPrice == null ? "" : goodsPrice.innerText;
+      if (price) {
+        price = price.replace(/\s/g, "");
+      }
+      return price;
+    },
+    getGoodsPrice: function(content) {
+      content = content.replace(/[,]/g, "");
+      const amount = content.match(/(?:₱|\$|฿|₫|Rp|RM|￥)\n?\d+(?:(?:\.\d{1,3})*)?/);
+      let price = amount ? amount[0] : "";
+      if (price && price.indexOf("Rp") != -1) {
+        price = price.replace(/\./g, "");
+      }
+      price = price.replace(/\n/g, "");
+      return price;
+    },
     isElementDisplayed: function(element) {
       if (element.offsetParent !== null) {
         return true;
@@ -1932,7 +1938,7 @@
     }
   };
 
-  var __async$3 = (__this, __arguments, generator) => {
+  var __async$4 = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -1962,7 +1968,7 @@
       return /aliexpress/.test(url) && /\/item\/[^\/]*?\.html/.test(url);
     },
     pickUpWholesale: function(selectors, language, currency) {
-      return __async$3(this, null, function* () {
+      return __async$4(this, null, function* () {
         const items = [];
         try {
           selectors.forEach((elementObj) => {
@@ -1994,12 +2000,11 @@
             yield this.search(items, language, currency);
           }
         } catch (e) {
-          logger("error", "pickUpWholesale: ", e);
         }
       });
     },
     pickUpInbusiness: function(language, currency) {
-      return __async$3(this, null, function* () {
+      return __async$4(this, null, function* () {
         const validate = this.isInbusinessPage();
         if (!validate)
           return;
@@ -2028,7 +2033,6 @@
             yield this.search(array, language, currency);
           }
         } catch (e) {
-          logger("error", "pickUpInbusiness: ", e);
         }
       });
     },
@@ -2123,7 +2127,6 @@
             resolve(isBroken ? "broken" : "complete");
           });
         } catch (e) {
-          logger("error", "createItemHtml: ", e);
           resolve("exception");
         }
       });
@@ -2178,20 +2181,18 @@
       return run;
     },
     start: function() {
-      return __async$3(this, null, function* () {
+      return __async$4(this, null, function* () {
         if (!this.isRun())
           return;
         let removeTagIsComplete = true;
         const language = Aliexpress.getLang();
         const currency = yield Aliexpress.getCurrency();
         const confString = yield ItemSearchBaseObj.requestConf();
-        logger("info", "conf ======>", confString);
         if (!confString) {
           return;
         }
         const selectors = ItemSearchBaseObj.pickupGoodsItem(this.currentPlatform, confString);
-        logger("info", "search coupon selectors======>", selectors);
-        setInterval(() => __async$3(this, null, function* () {
+        setInterval(() => __async$4(this, null, function* () {
           if (removeTagIsComplete && this.loopIsComplete) {
             this.loopIsComplete = false;
             yield this.pickUpInbusiness(language, currency);
@@ -2223,7 +2224,6 @@
             promises.push(Tools.waitForElementByInterval(selector.element, document.body, true, 50, 3e3));
           });
           const observerElement = yield Promise.race(promises);
-          logger("info", "observerElement", observerElement);
           if (observerElement) {
             const observer = new MutationObserver((mutationsList) => {
               if (mutationsList.length == 1) {
@@ -2240,7 +2240,6 @@
                     });
                     removeTagIsComplete = true;
                   }
-                  logger("info", "cutpage", "lodding complete~");
                 }
               }
             });
@@ -2251,7 +2250,7 @@
     }
   };
 
-  var __async$2 = (__this, __arguments, generator) => {
+  var __async$3 = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -2289,12 +2288,11 @@
         const topLevelDomainMatch = hostname.match(/ebay\.(\w{2,3})$/);
         return topLevelDomainMatch ? topLevelDomainMatch[1] : null;
       } catch (error) {
-        logger("error", "getMarketplace", error);
       }
       return null;
     },
     detail: function() {
-      return __async$2(this, null, function* () {
+      return __async$3(this, null, function* () {
         const validate = this.isDetail();
         if (!validate)
           return;
@@ -2315,24 +2313,21 @@
         }
         const marketplace = this.getMarketplace(visitUrl);
         const url = this.baseUrl + "/api/coupon/query?ids=" + id + "&qu=&p=ebay&no=10&v=1.0.1&marketplace=" + marketplace + "&mul=false";
-        logger("info", "detail request url=", url);
         const data = yield Tools.crossRequest("GET", url, null);
         if (data.code == "success" && !!data.result) {
           const json = JSON.parse(data.result);
-          logger("info", "detail request json=", json);
           yield this.detailAnalyze(json, marketplace);
         }
       });
     },
     detailAnalyze: function(json, marketplace) {
-      return __async$2(this, null, function* () {
+      return __async$3(this, null, function* () {
         let couponResult = null;
         let qrcodeResult = null;
         if (!!json.data && !!json.data.css && !!json.data.html && !!json.data.handler) {
           const { handler, css, html, templateId, distinguish } = json.data;
           GM_addStyle(css);
           const element = yield Tools.mustGetElement(handler);
-          logger("info", "coupon insert：element", element);
           if (element) {
             couponResult = { "element": element, "html": html, "templateId": templateId, "distinguish": distinguish };
           }
@@ -2356,7 +2351,6 @@
               }
             }
           }
-          logger("info", "qrcocd insert：element", element);
           if (element && qrcodeData) {
             qrcodeResult = { "element": element, "html": html, "iden": iden, "qrcodeData": qrcodeData, "distinguish": distinguish };
           }
@@ -2408,13 +2402,13 @@
       }
     },
     start: function() {
-      return __async$2(this, null, function* () {
+      return __async$3(this, null, function* () {
         this.detail();
       });
     }
   };
 
-  var __async$1 = (__this, __arguments, generator) => {
+  var __async$2 = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -2448,7 +2442,7 @@
       return /ebay/.test(url) && /\/itm\/[^\/]*?/.test(url);
     },
     pickUpItems: function(selectors, marketplace) {
-      return __async$1(this, null, function* () {
+      return __async$2(this, null, function* () {
         const items = [];
         try {
           selectors.forEach((elementObj) => {
@@ -2459,6 +2453,11 @@
               elements.forEach((element) => {
                 if (element && ItemSearchBaseObj.isElementDisplayed(element) && !element.getAttribute(ItemSearchBaseObj.searchAttribute)) {
                   const goodsLink = ItemSearchBaseObj.getGoodsLinkByElement(element, findA);
+                  const priceQuery = [
+                    "*[class*='detail'] >*[class*='price']",
+                    "*[class*='merch-price'] >span"
+                  ].join(",");
+                  const price = ItemSearchBaseObj.getGoodsPriceByElement(element, priceQuery);
                   let id = null;
                   if (this.isItemLink(goodsLink)) {
                     id = ItemSearchBaseObj.getGoodsIdByUrl(goodsLink.getAttribute("href"));
@@ -2466,6 +2465,7 @@
                   if (id) {
                     items.push({
                       "id": id,
+                      "price": price,
                       "platform": this.currentPlatform,
                       "handler": element,
                       "findA": findA,
@@ -2476,16 +2476,16 @@
               });
             }
           });
+          logger("info", items);
           if (items.length > 0) {
             yield this.search(items, marketplace);
           }
         } catch (e) {
-          logger("error", "pickUpItems: ", e);
         }
       });
     },
     search: function(array, marketplace) {
-      return __async$1(this, null, function* () {
+      return __async$2(this, null, function* () {
         const groups = ItemSearchBaseObj.calcRequestGroup(array);
         const len = groups.length;
         return new Promise((resolve, reject) => {
@@ -2516,7 +2516,7 @@
             if (group[i].handler.getAttribute(ItemSearchBaseObj.searchAttribute)) {
               continue;
             }
-            reqId += group[i].id + ",";
+            reqId += group[i].id + ":" + group[i].price + ",";
           }
           if (reqId.endsWith(",")) {
             reqId = reqId.slice(0, -1);
@@ -2560,7 +2560,6 @@
             resolve("complete");
           });
         } catch (e) {
-          logger("error", "createItemHtml: ", e);
           resolve("exception");
         }
       });
@@ -2608,18 +2607,16 @@
       });
     },
     start: function() {
-      return __async$1(this, null, function* () {
+      return __async$2(this, null, function* () {
         if (!this.isRun())
           return;
         const marketplace = Ebay.getMarketplace(window.location.href);
         const confString = yield ItemSearchBaseObj.requestConf();
-        logger("info", "conf ======>", confString);
         if (!confString) {
           return;
         }
         const selectors = ItemSearchBaseObj.pickupGoodsItem(this.currentPlatform, confString);
-        logger("info", "search coupon selectors======>", selectors);
-        setInterval(() => __async$1(this, null, function* () {
+        setInterval(() => __async$2(this, null, function* () {
           if (this.loopIsComplete) {
             this.loopIsComplete = false;
             yield this.pickUpItems(selectors, marketplace);
@@ -2630,7 +2627,7 @@
     }
   };
 
-  var __async = (__this, __arguments, generator) => {
+  var __async$1 = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -2663,8 +2660,11 @@
       }
       return null;
     },
+    isRun: function() {
+      return /.*\.lazada\..*\/products\/.*-i\d+.*\.html/.test(this.visitUrl);
+    },
     detailMyMscanAnalyze: function(result) {
-      return __async(this, null, function* () {
+      return __async$1(this, null, function* () {
         const { id, iden, marketplace, platform, mount, html, cmd } = result;
         if (!mount || !html) {
           return;
@@ -2700,12 +2700,9 @@
         }
       });
     },
-    detailMy: function() {
-      return __async(this, null, function* () {
-        if (!this.isMy()) {
-          return;
-        }
-        const marketplace = "my", platform = "lazada";
+    detail: function() {
+      return __async$1(this, null, function* () {
+        const marketplace = this.getMarketplace(window.location.href), platform = "lazada";
         const ids = Tools.getParamterBySuffix(this.visitUrl);
         if (!ids) {
           return;
@@ -2744,12 +2741,201 @@
         }
       });
     },
-    isMy: function() {
-      return /https:\/\/www\.lazada\.com\.my\/products\/[a-zA-Z0-9\-]+-i\d+-s\d+\.html.*/.test(this.visitUrl);
+    start: function() {
+      return __async$1(this, null, function* () {
+        if (this.isRun()) {
+          this.detail();
+        }
+      });
+    }
+  };
+
+  var __async = (__this, __arguments, generator) => {
+    return new Promise((resolve, reject) => {
+      var fulfilled = (value) => {
+        try {
+          step(generator.next(value));
+        } catch (e) {
+          reject(e);
+        }
+      };
+      var rejected = (value) => {
+        try {
+          step(generator.throw(value));
+        } catch (e) {
+          reject(e);
+        }
+      };
+      var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
+      step((generator = generator.apply(__this, __arguments)).next());
+    });
+  };
+  const LazadaSearch = {
+    loopIsComplete: true,
+    currentPlatform: "lazada",
+    isRun: function() {
+      let run = false;
+      if (window.location.host.indexOf("lazada.") != -1) {
+        run = !this.isItemLink(window.location.href) && !/\/(\/shipping\\?)\//.test(window.location.pathname);
+      }
+      return run;
+    },
+    isItemLink: function(url) {
+      return /.*\.lazada\..*\/products\/.*-i\d+.*\.html/.test(url);
+    },
+    pickUpItems: function(selectors, marketplace) {
+      return __async(this, null, function* () {
+        const items = [];
+        try {
+          selectors.forEach((elementObj) => {
+            if (elementObj.element) {
+              const elements = document.querySelectorAll(elementObj.element + ":not([" + ItemSearchBaseObj.searchAttribute + "='true'])");
+              logger("info", "search coupon elements======>", elements);
+              const findA = elementObj.findA;
+              elements.forEach((element) => {
+                if (element && ItemSearchBaseObj.isElementDisplayed(element) && !element.getAttribute(ItemSearchBaseObj.searchAttribute)) {
+                  const goodsLink = ItemSearchBaseObj.getGoodsLinkByElement(element, findA);
+                  const price = ItemSearchBaseObj.getGoodsPrice(element.innerText);
+                  let id = null;
+                  if (this.isItemLink(goodsLink)) {
+                    id = ItemSearchBaseObj.getGoodsIdByUrl(goodsLink.getAttribute("href"));
+                  }
+                  if (id) {
+                    items.push({
+                      "id": id,
+                      "price": price,
+                      "platform": this.currentPlatform,
+                      "handler": element,
+                      "findA": findA,
+                      "from": "search"
+                    });
+                  }
+                }
+              });
+            }
+          });
+          logger("info", items);
+          if (items.length > 0) {
+            yield this.search(items, marketplace);
+          }
+        } catch (e) {
+        }
+      });
+    },
+    search: function(array, marketplace) {
+      return __async(this, null, function* () {
+        const groups = ItemSearchBaseObj.calcRequestGroup(array);
+        const len = groups.length;
+        return new Promise((resolve, reject) => {
+          if (len <= 0) {
+            resolve("complete");
+            return;
+          }
+          const promises = [];
+          for (let i = 0; i < groups.length; i++) {
+            promises.push(this.createItemHtml(groups[i], marketplace));
+          }
+          Promise.all(promises).then((data) => {
+            resolve("complete");
+          });
+        });
+      });
+    },
+    createItemHtml: function(group, marketplace) {
+      return new Promise((resolve, reject) => {
+        try {
+          if (Array.isArray(group) && group.length === 0) {
+            resolve("exception");
+            return;
+          }
+          let reqId = "";
+          const platform = group[0].platform;
+          for (var i = 0; i < group.length; i++) {
+            if (group[i].handler.getAttribute(ItemSearchBaseObj.searchAttribute)) {
+              continue;
+            }
+            reqId += group[i].id + ":" + group[i].price + ",";
+          }
+          if (reqId.endsWith(",")) {
+            reqId = reqId.slice(0, -1);
+          }
+          logger("info", "request start >>>>>>>>>>>>>", group);
+          const searchUrl = ItemSearchBaseObj.baseUrl + "/api/coupon/exist?platform=" + platform + "&ids=" + reqId + "&marketplace=" + marketplace + "&no=10&v=1.0.1";
+          logger("info", "request searchUrl >>>>>>>>>>>>>:", searchUrl);
+          ItemSearchBaseObj.requestAndSaveSate("GET", searchUrl, null).then((data) => {
+            logger("info", "request finish >>>>>>>>>>>>>", data);
+            delete ItemSearchBaseObj.cacheRequestMap[data.requestKey];
+            if (data.code != "success" || !data.result) {
+              resolve("exception");
+              return;
+            }
+            const json = JSON.parse(data.result);
+            for (let key in json) {
+              const { encryptLink, tip } = json[key];
+              const { handler, findA } = group.find((obj) => obj.id === key);
+              let decryptUrl = null;
+              if (encryptLink) {
+                try {
+                  const decryptLink = atob(encryptLink);
+                  decryptUrl = decryptLink.split("").reverse().join("");
+                } catch (e) {
+                }
+              }
+              const elementA = ItemSearchBaseObj.getGoodsLinkByElement(handler, findA);
+              if (!handler.getAttribute(ItemSearchBaseObj.searchAttribute)) {
+                handler.setAttribute(ItemSearchBaseObj.searchAttribute, "true");
+                if (tip) {
+                  handler.style.position = "relative";
+                  handler.insertAdjacentHTML("beforeend", tip);
+                  logger("info", "exist coupon >>>>>>>>>>>>>", key);
+                }
+                if (decryptUrl) {
+                  this.relativeJ(handler, decryptUrl);
+                  logger("info", "good job >>>>>>>>>>>>>", key);
+                }
+              }
+            }
+            resolve("complete");
+          });
+        } catch (e) {
+          resolve("exception");
+        }
+      });
+    },
+    relativeJ: function(handler, decryptUrl) {
+      let selectorA = null;
+      if (handler.tagName == "A") {
+        selectorA = [handler];
+      } else {
+        selectorA = handler.querySelectorAll("a");
+      }
+      selectorA.forEach((element_a) => {
+        if (this.isItemLink(element_a.getAttribute("href"))) {
+          element_a.addEventListener("click", function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            Tools.openInTab(decryptUrl);
+          });
+        }
+      });
     },
     start: function() {
       return __async(this, null, function* () {
-        this.detailMy();
+        if (!this.isRun())
+          return;
+        const marketplace = Lazada.getMarketplace(window.location.href);
+        const confString = yield ItemSearchBaseObj.requestConf();
+        if (!confString) {
+          return;
+        }
+        const selectors = ItemSearchBaseObj.pickupGoodsItem(this.currentPlatform, confString);
+        setInterval(() => __async(this, null, function* () {
+          if (this.loopIsComplete) {
+            this.loopIsComplete = false;
+            yield this.pickUpItems(selectors, marketplace);
+            this.loopIsComplete = true;
+          }
+        }), 1700);
       });
     }
   };
@@ -2764,7 +2950,10 @@
       Ebay,
       EbaySearch
     },
-    Lazada
+    Lazada: {
+      Lazada,
+      LazadaSearch
+    }
   };
 
   const Init = {
@@ -2779,11 +2968,11 @@
       EcommerceModules.GoodsHistroy.start("ebay");
     },
     lazada: function() {
+      EcommerceModules.Lazada.Lazada.start();
+      EcommerceModules.Lazada.LazadaSearch.start();
       EcommerceModules.GoodsHistroy.start("lazada");
-      EcommerceModules.Lazada.start();
     },
     unknown: function() {
-      logger("error", "Hoooo，This method was not found");
     },
     start: function() {
       Toast.initStyle();
