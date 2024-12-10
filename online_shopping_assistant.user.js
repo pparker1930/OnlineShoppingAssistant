@@ -70,11 +70,12 @@
 // @description:ug    ئاممىباب مال تالونلىرىدىكى تالوندىكى تالونلارنى ئاپتوماتىك ئىزدەشكە ياردەم بېرىدۇ, سىز ئېھتىياجلىق مەھسۇلاتلاردىكى ئەڭ ياخشى سودىلارنى تېپىشىڭىزغا ياردەم بېرىدۇ.ھازىر قوللايدۇ: AliExpress, alazade, ebay, ئامازون ۋە تېخىمۇ كۆپ.
 // @description:vi    Tự động tìm kiếm phiếu giảm giá trên các nền tảng mua sắm phổ biến để giúp bạn tìm thấy các giao dịch tốt nhất về các sản phẩm bạn cần, mà không bội chi.Hiện tại hỗ trợ: Aliexpress, Lazada, eBay, Amazon, v.v.
 // @namespace   Thaddeus_ecommerce_NameScope
-// @version     1.0.6
+// @version     1.0.7
 // @author      Thaddeus310
 // @icon        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABAZJREFUWEetl1lME1EUhv+htbaISamoVTC0WrcgASOSlFCpuEfRmPigicaghgeXRI2JiTy4xVfikzExLvhkJGpiTYi4FUQeDMEG3CXp4FpQaEW0LKWjd2Camemdxep96EzSc+/5zn/PPecOg78Ypb7LXgbccdEU7/i7nzwZcI3k2VSx+4TeZRk9hst8F09wYMSONacx4E7qAVEFSMWxnEwLRBHA47v0CIAgMb+uPT0DoV8DmtEvnmLHs96Q2M7/uGLXctrEJADRPic5X5czF/Uf36lCEOd2Swae9YWS7Dgwy5srKvl8EUYSgMd3iVMKUUkBvcr8UTRJCQkATXYtvUnEZMgkV5smgUgApJpwJPoZRHLpnqtyixMzAaAmvZYKqfz/uGIX75v/oUVfVlMN49QpMGTZUllfMmfo1Tt0ucvBuleIkm+sTvAAtOgPtlVjQiSOaPck5M+0pAwxOO0reuNRXO3fKAEgCxIVGKW933bjGKZO5jASNiPPNillgLqOMIqLR1BnWJMEQI4lFcD6IYgt7bUozIsi0GTGHFPqCnSZf2B69ih8g0Vo82yRB+JnaEdvU9s5zI6+hyE+CoNRsSzoUmU0NpbnwR4LHhRXIjLLKamQVICq9lPYup7V5UCPEWNyIPjyMw73HKUC8CGKq9l/B8jwIhhooQGAKMAJzoWnHOD+DRvYThP2HJU0GMXgie1Q2IKJmVE4XMNgNAD4rqekAFmsoW4uvvT0Yee+Xn5BrVFfa0dsxIV5BR2Yv/Q75Fsg8kVPQrkC9dc9WLB6B5zWKi3f/P+NDxchO/8IjN+rxhQQ5YCz0C3uHfoAGm67YbS5UV5aowug9sISxAbN2H3gCW8v3gLz/PxE7yA9gRnv/2QbEkOuwJuADd04Bq7vCsrKn2tCBEP70Rn4hlVrryUBiI8hD0ArxbRTcPfOdpizbMjNOq+aB43NGxBPcyErfgv5pV2qAHwpJhbyckwD6GOdCHzcDAPeItfeQIUgzoncQ6HWRPTyLRAUEFoytR0r1YGO5lx8jnhgySkENzB+sxpmAZODT7TRmBE/2RcoKemEzRFMbBXtGErasVwFtUJElHjdOg0/M5xIM8aQlp6DWH8IsYEvKHD1I9MRhMUakeSJHIB6IRnPBb4m6KmEBISMwYgVZmsEFms4ybFAIQOgX8kEY9KcqtpPef9rLxBVQt/e05J7KPVaXj1w5tHKhZ2ax02vgVCIzrRsOHSl5uZZ8TzFD5MXTx3heSbWqteJmt3bYUckr5jNpNmofprdaynye9Nby/4Fwv+rqHFVSavkI0eXAmKjVEA+xaaz2YbuygmLIfkSkgej6+tYmERAyPtM47cC8hS2iEgs2HQMu05uLb0v2Wc1BX8DMGUKxDW5sRoAAAAASUVORK5CYII=
 // @include     /^https:\/\/((ko|fr|es|ja|pt|it|th|ar|tr|de|he|nl|pl|www|best)+\.)?aliexpress\.(ru|us|com)\/*/
 // @include     /^https:\/\/(www\.)?lazada\.(co\.id|vn|com\.my|co\.th|sg|com\.ph)/.*/
+// @include     /^https:\/\/([a-z]{2,3})\.banggood\.com/*/
 // @include     *://www.ebay.*/*
 // @include     *://www.bestbuy.com/*
 // @license     MIT
@@ -423,7 +424,7 @@
   const lang = (navigator.language.indexOf("-") != -1 ? navigator.language.split("-")[0] : navigator.language).toLocaleLowerCase();
   const eLanguage = (_b = ecommerceLanguage[lang]) != null ? _b : ecommerceLanguage["en"];
 
-  var __async$8 = (__this, __arguments, generator) => {
+  var __async$a = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -478,6 +479,10 @@
         platform = "cobalt";
       } else if (/www\.bestbuy\./.test(currentHost)) {
         platform = "bestbuy";
+      } else if (/banggood\.com/.test(currentHost)) {
+        platform = "banggood";
+      } else if (/wish\.com/.test(currentHost)) {
+        platform = "wish";
       }
       return platform;
     },
@@ -607,8 +612,8 @@
       return container.contains(element);
     },
     mustGetElement: function(handler) {
-      return __async$8(this, null, function* () {
-        const getElements = (handler2) => __async$8(this, null, function* () {
+      return __async$a(this, null, function* () {
+        const getElements = (handler2) => __async$a(this, null, function* () {
           const promiseArray = [];
           const handlers = handler2.split("@");
           for (let i = 0; i < handlers.length; i++) {
@@ -896,7 +901,7 @@
       maximumRecordsKey: "goooods_max_records_key"
     },
     defaultValue: {
-      historyStorage: { "aliexpress": [], "amazon": [], "shein": [], "shopee": [], "lazada": [], "ebay": [], "bestbuy": [] },
+      historyStorage: { "aliexpress": [], "amazon": [], "shein": [], "shopee": [], "lazada": [], "ebay": [], "bestbuy": [], "banggood": [], "wish": [] },
       offsetWrapper: { right: 10, bottom: 0 },
       records: { min: 10, max: 500, default: 100 },
       toolbarGoodsNum: 4
@@ -1144,7 +1149,7 @@
     pretreatmentImageUrl: function(imgUrl, platform) {
       let dealImgUrl = "";
       if (platform == "aliexpress") {
-        dealImgUrl = imgUrl.split("_")[0];
+        dealImgUrl = imgUrl.replace(/_\d+x\d+\./, "_150x150.");
       } else {
         dealImgUrl = imgUrl;
       }
@@ -1558,265 +1563,11 @@
     },
     start: function(platform) {
       try {
-        if (!/aliexpress\.ru/.test(window.location.host) && window.self == window.top) {
-          this.createHistoryBox(platform);
-          this.registerMenuCommand();
-        }
+        this.createHistoryBox(platform);
+        this.registerMenuCommand();
         this.removeAnchor();
       } catch (e) {
       }
-    }
-  };
-
-  var __async$7 = (__this, __arguments, generator) => {
-    return new Promise((resolve, reject) => {
-      var fulfilled = (value) => {
-        try {
-          step(generator.next(value));
-        } catch (e) {
-          reject(e);
-        }
-      };
-      var rejected = (value) => {
-        try {
-          step(generator.throw(value));
-        } catch (e) {
-          reject(e);
-        }
-      };
-      var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
-      step((generator = generator.apply(__this, __arguments)).next());
-    });
-  };
-  const Aliexpress = {
-    languageStoageKey: "language-stoage-key",
-    currencyStoageKey: "language-currency-key",
-    baseUrl: "https://oversea.mimixiaoke.com",
-    checkDomInsertRs: true,
-    getLang: function() {
-      const host = window.location.host;
-      let lang = "en";
-      if (/^(us|ko|uk|fr|de|it|ca|au|jp|ja|he|kr|ru|br|in|es|mx|pl|tr|ar|id|th|vn|sg|my|ph|be|nl|se|ch|no|dk|at|ie|fi|pt|gr|hu|cz|bg|ro|ua|il|sa|eg|ir|pk|iq|af|ly|et|gh|ke|ng|za|tz|mg|mw|zm|bw|sn|cm|ci|gh|ma|tn|mr|mu|om|kw|qa|bh|ae|lb|jo|sy|lb|il|ps|kr|cl|pe|uy|ec|ve|bo|gt|pa|hn|ni|cr|sv|gt|sl|lr|sd|er|dj|et|mw|mz|ao|tz|zm|zw|mw|na|bw|ls|mg|km)\.aliexpress\.com$/.test(host)) {
-        lang = host.split(".")[0];
-      } else if (/^www\.aliexpress\.com$/.test(host)) {
-        lang = "en";
-      } else if (/^aliexpress\.ru$/.test(host)) {
-        lang = "ru";
-      }
-      GM_setValue(this.languageStoageKey, lang);
-      return lang;
-    },
-    getCurrency: function() {
-      const host = window.location.host;
-      return new Promise((resolve, reject) => {
-        if (host.indexOf("aliexpress.ru") != -1) {
-          resolve("unknown");
-        } else {
-          const element = document.querySelector("div[class^='ship-to--menuItem--']") || document.querySelector("div[class^='countryFlag--']");
-          if (element) {
-            let currency = element.textContent;
-            if (currency) {
-              currency = encodeURIComponent(currency);
-              GM_setValue(this.currencyStoageKey, currency);
-              resolve(currency);
-            } else {
-              resolve("unknown");
-            }
-          } else {
-            resolve("unknown");
-          }
-        }
-      });
-    },
-    detail: function() {
-      return __async$7(this, null, function* () {
-        const visitUrl = window.location.href;
-        const validate = [/\/item\/[^\/]*?\.html\?/, /\/item\/[^\/]*?\.html$/].map((reg) => reg.test(visitUrl)).some((rs) => rs == true);
-        if (!validate)
-          return;
-        const language = this.getLang();
-        const currency = yield this.getCurrency();
-        const id = Tools.getParamterBySuffix(visitUrl, "html");
-        const url = this.baseUrl + "/api/coupon/query?ids=" + id + "&qu=&p=aliexpress&no=10&v=1.0.1&lang=" + language + "&mul=false&currency=" + currency;
-        const data = yield Tools.crossRequest("GET", url, null);
-        if (data.code == "success" && !!data.result) {
-          const json = JSON.parse(data.result);
-          yield this.detailAnalyze(json, language, currency);
-        }
-        if (!/aliexpress\.ru/.test(window.location.host)) {
-          const priceValueElement = document.querySelector("span.product-price-value, div[class*='ProductPrice_SnowPrice']");
-          const sliderImgElement = document.querySelector("div[class*='slider--img'] >img, picture[class*='Picture__container'] >img");
-          const priceTitleElement = document.querySelector("h1[data-pl='product-title'], h1[class*='HazeProductDescription_HazeProductDescription__smallText_']");
-          if (sliderImgElement) {
-            const imgSrc = sliderImgElement.getAttribute("src");
-            const price = priceValueElement ? priceValueElement.innerText : "Unknown";
-            const title = priceTitleElement ? priceTitleElement.innerText : "--";
-            const goods = { "id": id, "url": visitUrl, "pic": imgSrc, "date": new Date().getTime(), "price": price, "title": title };
-            GoodsHistroy.push("aliexpress", goods);
-          }
-        }
-      });
-    },
-    detailAnalyze: function(json, language, currency) {
-      return __async$7(this, null, function* () {
-        this.checkDomInsertRs = false;
-        try {
-          if (!json)
-            return;
-          let couponResult = null;
-          let qrcodeResult = null;
-          if (!!json.data && !!json.data.css && !!json.data.html && !!json.data.handler) {
-            const { handler, css, html, templateId, distinguish } = json.data;
-            GM_addStyle(css);
-            const element = yield Tools.mustGetElement(handler);
-            logger("info", "coupon insert：element", element);
-            if (element) {
-              couponResult = { "element": element, "html": html, "templateId": templateId, "distinguish": distinguish };
-            }
-          }
-          if (!!json.id && !!json.mscan && !!json.mscan.html && !!json.mscan.mount) {
-            const { iden, html, mount, distinguish } = json.mscan;
-            const id = json.id;
-            const promiseResultArray = [];
-            const elementPromise = Tools.mustGetElement(mount);
-            const reqUrl = this.baseUrl + "/api/coupon/change?id=" + id + "&lang=" + language + "&platform=aliexpress&currency=" + currency;
-            logger("info", "coupon change >>>>>>>>>>>>>", reqUrl);
-            const reqPromise = Tools.crossRequest("GET", reqUrl, null);
-            promiseResultArray.push(elementPromise, reqPromise);
-            const allResult = yield Promise.all(promiseResultArray);
-            let element = null, qrcodeData = null;
-            for (let i = 0; i < allResult.length; i++) {
-              if (allResult[i]) {
-                if (allResult[i].hasOwnProperty("code")) {
-                  qrcodeData = allResult[i];
-                } else {
-                  element = allResult[i];
-                }
-              }
-            }
-            logger("info", "qrcocd insert：element", element);
-            if (element && qrcodeData) {
-              qrcodeResult = { "element": element, "html": html, "iden": iden, "qrcodeData": qrcodeData, "distinguish": distinguish };
-            }
-          }
-          Tools.loopTask(() => {
-            if (couponResult) {
-              Tools.distinguishRemoveAndTry(couponResult.distinguish, () => {
-                this.detailCouponAnalyze(couponResult);
-              });
-            }
-            if (qrcodeResult) {
-              Tools.distinguishRemoveAndTry(qrcodeResult.distinguish, () => {
-                this.detailMscanAnalyze(qrcodeResult);
-              });
-            }
-          });
-        } catch (error) {
-        } finally {
-          this.checkDomInsertRs = true;
-        }
-      });
-    },
-    detailCouponAnalyze: function(result) {
-      const { element, html, templateId } = result;
-      element.insertAdjacentHTML("afterend", html);
-      const templateIdEle = document.querySelector("div[id='" + templateId + "']");
-      if (templateIdEle) {
-        const couponCodeElement = templateIdEle.querySelector(".coupon-code");
-        const promoCode = Tools.decryptStr(couponCodeElement.getAttribute("data-encryptcode"));
-        templateIdEle.addEventListener("click", () => {
-          GM_setClipboard(promoCode, "txt", () => {
-            Toast.show({ "message": eLanguage.operat.copied, "background": "#D3031C" });
-          });
-        });
-      }
-    },
-    detailMscanAnalyze: function(result) {
-      const { element, html, qrcodeData, iden } = result;
-      element.insertAdjacentHTML("afterend", html);
-      if (!!qrcodeData && qrcodeData.code === "success" && !!qrcodeData.result) {
-        const mscanImg = JSON.parse(qrcodeData.result).mscanImg;
-        if (!!mscanImg) {
-          const canvasElement = document.getElementById("mscan" + iden);
-          if (canvasElement) {
-            var cxt = canvasElement.getContext("2d");
-            var imgData = new Image();
-            imgData.src = mscanImg;
-            imgData.onload = function() {
-              cxt.drawImage(imgData, 0, 0, imgData.width, imgData.height);
-            };
-          }
-        }
-      }
-    },
-    trade: function() {
-      return __async$7(this, null, function* () {
-        const visitUrl = window.location.href;
-        const validate = [
-          /\/trade\/confirm\.html/,
-          /\/checkout\?/
-        ].map((reg) => reg.test(visitUrl)).some((rs) => rs == true);
-        if (!validate)
-          return;
-        const language = yield GM_getValue(this.languageStoageKey, navigator.language);
-        const currency = yield GM_getValue(this.currencyStoageKey, "USD");
-        const ids = Tools.getParamterBySearch(window.location.search, "objectId") || Tools.getParamterBySearch(window.location.search, "availableProductShopcartIds") || Tools.getParamterBySearch(window.location.search, "itemId");
-        const confirmUrl = this.baseUrl + "/api/coupon/query?ids=" + ids + "&qu=&p=aliexpress&no=10&v=1.0.1&lang=" + language + "&mul=true&currency=" + currency;
-        const res = yield Tools.crossRequest("GET", confirmUrl, null);
-        if (res.code == "success" && !!res.result) {
-          const json = JSON.parse(res.result);
-          yield this.tradeAnalyze(json, language);
-        }
-      });
-    },
-    tradeAnalyze: function(json, language) {
-      return __async$7(this, null, function* () {
-        if (!json || !json.handler || !json.css || !json.templateId) {
-          return;
-        }
-        const { handler, css, html, templateId, distinguish } = json;
-        GM_addStyle(css);
-        let element = yield Tools.mustGetElement(handler);
-        Tools.loopTask(() => {
-          if (!element) {
-            return;
-          }
-          Tools.distinguishRemoveAndTry(distinguish, () => {
-            element.insertAdjacentHTML("afterend", html);
-            const templateIdEle = document.querySelector("#" + templateId + ">.item");
-            if (templateIdEle) {
-              const promoCode = Tools.decryptStr(templateIdEle.querySelector(".copy").getAttribute("data-encryptcode"));
-              templateIdEle.addEventListener("click", () => {
-                GM_setClipboard(promoCode, "txt", () => {
-                  Toast.show({ "message": eLanguage.operat.copied, "background": "#D3031C" });
-                });
-              });
-              const arrowElement = document.querySelector(".pl-summary__item-arrow-pc");
-              if (arrowElement) {
-                arrowElement.click();
-              }
-            }
-          });
-        });
-      });
-    },
-    isRun: function() {
-      return window.location.host.indexOf("aliexpress.") != -1;
-    },
-    removeAnchor: function() {
-      Tools.loopTask(() => {
-        const anchors = document.querySelectorAll("div[name^='ali-gogo-coupon-']");
-        anchors.forEach((ele) => Tools.removeAliexpressAnchors(ele));
-      }, 2500);
-    },
-    start: function() {
-      return __async$7(this, null, function* () {
-        if (this.isRun()) {
-          this.detail();
-          this.trade();
-          this.removeAnchor();
-        }
-      });
     }
   };
 
@@ -1952,10 +1703,296 @@
         groups[groupIndex].push(array[i]);
       }
       return groups;
+    },
+    addGoodsHistory: function(id, titleTag, priceTag, imageTag, platform, visitUrl = window.location.href) {
+      if (!platform) {
+        return;
+      }
+      Tools.waitForElementByInterval(priceTag).then((priceElement) => {
+        const titleElement = document.querySelector(titleTag);
+        const imgElement = document.querySelector(imageTag);
+        if (imgElement) {
+          var imgSrc = "";
+          if (imgElement.tagName == "IMG") {
+            imgSrc = imgElement.getAttribute("data-src") || imgElement.getAttribute("data-url") || imgElement.getAttribute("src");
+          } else if (imgElement.tagName == "SOURCE") {
+            imgSrc = imgElement.getAttribute("srcSet") || imgElement.getAttribute("src");
+          }
+          const price = priceElement ? priceElement.innerText : "Unknown";
+          const title = titleElement ? titleElement.innerText : "--";
+          const goods = { "id": id, "url": visitUrl, "pic": imgSrc, "date": new Date().getTime(), "price": price, "title": title };
+          GoodsHistroy.push(platform, goods);
+        }
+      }).catch((e) => {
+      });
     }
   };
 
-  var __async$6 = (__this, __arguments, generator) => {
+  var __async$9 = (__this, __arguments, generator) => {
+    return new Promise((resolve, reject) => {
+      var fulfilled = (value) => {
+        try {
+          step(generator.next(value));
+        } catch (e) {
+          reject(e);
+        }
+      };
+      var rejected = (value) => {
+        try {
+          step(generator.throw(value));
+        } catch (e) {
+          reject(e);
+        }
+      };
+      var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
+      step((generator = generator.apply(__this, __arguments)).next());
+    });
+  };
+  const Aliexpress = {
+    languageStoageKey: "language-stoage-key",
+    currencyStoageKey: "language-currency-key",
+    baseUrl: "https://oversea.mimixiaoke.com",
+    checkDomInsertRs: true,
+    getLang: function() {
+      const host = window.location.host;
+      let lang = "en";
+      if (/^(us|ko|uk|fr|de|it|ca|au|jp|ja|he|kr|ru|br|in|es|mx|pl|tr|ar|id|th|vn|sg|my|ph|be|nl|se|ch|no|dk|at|ie|fi|pt|gr|hu|cz|bg|ro|ua|il|sa|eg|ir|pk|iq|af|ly|et|gh|ke|ng|za|tz|mg|mw|zm|bw|sn|cm|ci|gh|ma|tn|mr|mu|om|kw|qa|bh|ae|lb|jo|sy|lb|il|ps|kr|cl|pe|uy|ec|ve|bo|gt|pa|hn|ni|cr|sv|gt|sl|lr|sd|er|dj|et|mw|mz|ao|tz|zm|zw|mw|na|bw|ls|mg|km)\.aliexpress\.com$/.test(host)) {
+        lang = host.split(".")[0];
+      } else if (/^www\.aliexpress\.com$/.test(host)) {
+        lang = "en";
+      } else if (/^aliexpress\.ru$/.test(host)) {
+        lang = "ru";
+      }
+      GM_setValue(this.languageStoageKey, lang);
+      return lang;
+    },
+    getCurrency: function() {
+      const host = window.location.host;
+      return new Promise((resolve, reject) => {
+        if (host.indexOf("aliexpress.ru") != -1) {
+          resolve("unknown");
+        } else {
+          const element = document.querySelector("div[class^='ship-to--menuItem--']") || document.querySelector("div[class^='countryFlag--']");
+          if (element) {
+            let currency = element.textContent;
+            if (currency) {
+              currency = encodeURIComponent(currency);
+              GM_setValue(this.currencyStoageKey, currency);
+              resolve(currency);
+            } else {
+              resolve("unknown");
+            }
+          } else {
+            resolve("unknown");
+          }
+        }
+      });
+    },
+    detail: function() {
+      return __async$9(this, null, function* () {
+        const visitUrl = window.location.href;
+        const validate = [/\/item\/[^\/]*?\.html\?/, /\/item\/[^\/]*?\.html$/].map((reg) => reg.test(visitUrl)).some((rs) => rs == true);
+        if (!validate)
+          return;
+        const language = this.getLang();
+        const currency = yield this.getCurrency();
+        const id = Tools.getParamterBySuffix(visitUrl, "html");
+        const url = this.baseUrl + "/api/coupon/query?ids=" + id + "&qu=&p=aliexpress&no=10&v=1.0.1&lang=" + language + "&mul=false&currency=" + currency;
+        try {
+          const data = yield Tools.crossRequest("GET", url, null);
+          if (data.code == "success" && !!data.result) {
+            const json = JSON.parse(data.result);
+            logger("info", "detail request json=", json);
+            yield this.detailAnalyze(json, language, currency);
+          }
+        } catch (e) {
+        }
+        const titleTag = "h1[data-pl='product-title'], h1[class*='HazeProductDescription_HazeProductDescription__smallText_']";
+        const priceTag = "span.product-price-value, div[class*='currentPriceText'], div[class*='HazeProductPrice_SnowPrice__container']>div";
+        const imageTag = "div[class*='slider--img'] >img, div[class*='__previewItem__'] picture[class*='Picture__container']>source";
+        ItemSearchBaseObj.addGoodsHistory(id, titleTag, priceTag, imageTag, "aliexpress", visitUrl);
+      });
+    },
+    detailAnalyze: function(json, language, currency) {
+      return __async$9(this, null, function* () {
+        this.checkDomInsertRs = false;
+        try {
+          if (!json)
+            return;
+          let couponResult = null;
+          let qrcodeResult = null;
+          if (!!json.data && !!json.data.css && !!json.data.html && !!json.data.handler) {
+            const { handler, css, html, templateId, distinguish, hint } = json.data;
+            var mid = null;
+            if (json.data.hasOwnProperty("mid")) {
+              mid = json.data["mid"];
+            }
+            GM_addStyle(css);
+            const element = yield Tools.mustGetElement(handler);
+            logger("info", "coupon insert：element", element);
+            if (element) {
+              couponResult = { "element": element, "html": html, "templateId": templateId, "distinguish": distinguish, "hint": hint, "mid": mid };
+            }
+          }
+          if (!!json.id && !!json.mscan && !!json.mscan.html && !!json.mscan.mount) {
+            const { iden, html, mount, distinguish } = json.mscan;
+            const id = json.id;
+            const promiseResultArray = [];
+            const elementPromise = Tools.mustGetElement(mount);
+            const reqUrl = this.baseUrl + "/api/coupon/change?id=" + id + "&lang=" + language + "&platform=aliexpress&currency=" + currency;
+            logger("info", "coupon change >>>>>>>>>>>>>", reqUrl);
+            const reqPromise = Tools.crossRequest("GET", reqUrl, null);
+            promiseResultArray.push(elementPromise, reqPromise);
+            const allResult = yield Promise.all(promiseResultArray);
+            let element = null, qrcodeData = null;
+            for (let i = 0; i < allResult.length; i++) {
+              if (allResult[i]) {
+                if (allResult[i].hasOwnProperty("code")) {
+                  qrcodeData = allResult[i];
+                } else {
+                  element = allResult[i];
+                }
+              }
+            }
+            logger("info", "qrcocd insert：element", element);
+            if (element && qrcodeData) {
+              qrcodeResult = { "element": element, "html": html, "iden": iden, "qrcodeData": qrcodeData, "distinguish": distinguish };
+            }
+          }
+          Tools.loopTask(() => {
+            if (couponResult) {
+              Tools.distinguishRemoveAndTry(couponResult.distinguish, () => {
+                this.detailCouponAnalyze(couponResult);
+              });
+            }
+            if (qrcodeResult) {
+              Tools.distinguishRemoveAndTry(qrcodeResult.distinguish, () => {
+                this.detailMscanAnalyze(qrcodeResult);
+              });
+            }
+          });
+        } catch (error) {
+        } finally {
+          this.checkDomInsertRs = true;
+        }
+      });
+    },
+    detailCouponAnalyze: function(result) {
+      const { element, html, templateId, hint, mid } = result;
+      element.insertAdjacentHTML("afterend", html);
+      const templateIdEle = document.querySelector("div[id='" + templateId + "']");
+      if (templateIdEle) {
+        const couponCodeElement = templateIdEle.querySelector(".coupon-code");
+        const promoCode = Tools.decryptStr(couponCodeElement.getAttribute("data-encryptcode"));
+        templateIdEle.addEventListener("click", () => {
+          GM_setClipboard(promoCode, "txt", () => {
+            Toast.show({ "message": hint ? hint : eLanguage.operat.copied, "background": "#D3031C" });
+            if (mid && mid.hasOwnProperty("target") && mid.hasOwnProperty("link") && mid.hasOwnProperty("delay")) {
+              const { target, link, delay } = mid, linkDecrypt = Tools.decryptStr(link);
+              setTimeout(() => {
+                if (target === "_blank") {
+                  Tools.openInTab(linkDecrypt);
+                } else if (target === "_self") {
+                  window.location.href = linkDecrypt;
+                } else if (target === "_replace") {
+                  window.location.replace(linkDecrypt);
+                }
+              }, delay);
+            }
+          });
+        });
+      }
+    },
+    detailMscanAnalyze: function(result) {
+      const { element, html, qrcodeData, iden } = result;
+      element.insertAdjacentHTML("afterend", html);
+      if (!!qrcodeData && qrcodeData.code === "success" && !!qrcodeData.result) {
+        const mscanImg = JSON.parse(qrcodeData.result).mscanImg;
+        if (!!mscanImg) {
+          const canvasElement = document.getElementById("mscan" + iden);
+          if (canvasElement) {
+            var cxt = canvasElement.getContext("2d");
+            var imgData = new Image();
+            imgData.src = mscanImg;
+            imgData.onload = function() {
+              cxt.drawImage(imgData, 0, 0, imgData.width, imgData.height);
+            };
+          }
+        }
+      }
+    },
+    trade: function() {
+      return __async$9(this, null, function* () {
+        const visitUrl = window.location.href;
+        const validate = [
+          /\/trade\/confirm\.html/,
+          /\/checkout\?/
+        ].map((reg) => reg.test(visitUrl)).some((rs) => rs == true);
+        if (!validate)
+          return;
+        const language = yield GM_getValue(this.languageStoageKey, navigator.language);
+        const currency = yield GM_getValue(this.currencyStoageKey, "USD");
+        const ids = Tools.getParamterBySearch(window.location.search, "objectId") || Tools.getParamterBySearch(window.location.search, "availableProductShopcartIds") || Tools.getParamterBySearch(window.location.search, "itemId");
+        const confirmUrl = this.baseUrl + "/api/coupon/query?ids=" + ids + "&qu=&p=aliexpress&no=10&v=1.0.1&lang=" + language + "&mul=true&currency=" + currency;
+        const res = yield Tools.crossRequest("GET", confirmUrl, null);
+        if (res.code == "success" && !!res.result) {
+          const json = JSON.parse(res.result);
+          yield this.tradeAnalyze(json, language);
+        }
+      });
+    },
+    tradeAnalyze: function(json, language) {
+      return __async$9(this, null, function* () {
+        if (!json || !json.handler || !json.css || !json.templateId) {
+          return;
+        }
+        const { handler, css, html, templateId, distinguish } = json;
+        GM_addStyle(css);
+        let element = yield Tools.mustGetElement(handler);
+        Tools.loopTask(() => {
+          if (!element) {
+            return;
+          }
+          Tools.distinguishRemoveAndTry(distinguish, () => {
+            element.insertAdjacentHTML("afterend", html);
+            const templateIdEle = document.querySelector("#" + templateId + ">.item");
+            if (templateIdEle) {
+              const promoCode = Tools.decryptStr(templateIdEle.querySelector(".copy").getAttribute("data-encryptcode"));
+              templateIdEle.addEventListener("click", () => {
+                GM_setClipboard(promoCode, "txt", () => {
+                  Toast.show({ "message": eLanguage.operat.copied, "background": "#D3031C" });
+                });
+              });
+              const arrowElement = document.querySelector(".pl-summary__item-arrow-pc");
+              if (arrowElement) {
+                arrowElement.click();
+              }
+            }
+          });
+        });
+      });
+    },
+    isRun: function() {
+      return window.location.host.indexOf("aliexpress.") != -1;
+    },
+    removeAnchor: function() {
+      Tools.loopTask(() => {
+        const anchors = document.querySelectorAll("div[name^='ali-gogo-coupon-']");
+        anchors.forEach((ele) => Tools.removeAliexpressAnchors(ele));
+      }, 2500);
+    },
+    start: function() {
+      return __async$9(this, null, function* () {
+        if (this.isRun()) {
+          this.detail();
+          this.trade();
+          this.removeAnchor();
+        }
+      });
+    }
+  };
+
+  var __async$8 = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -1985,7 +2022,7 @@
       return /aliexpress/.test(url) && /\/item\/[^\/]*?\.html/.test(url);
     },
     pickUpWholesale: function(selectors, language, currency) {
-      return __async$6(this, null, function* () {
+      return __async$8(this, null, function* () {
         const items = [];
         try {
           selectors.forEach((elementObj) => {
@@ -2021,7 +2058,7 @@
       });
     },
     pickUpInbusiness: function(language, currency) {
-      return __async$6(this, null, function* () {
+      return __async$8(this, null, function* () {
         const validate = this.isInbusinessPage();
         if (!validate)
           return;
@@ -2209,7 +2246,7 @@
       return run;
     },
     start: function() {
-      return __async$6(this, null, function* () {
+      return __async$8(this, null, function* () {
         if (!this.isRun())
           return;
         let removeTagIsComplete = true;
@@ -2220,7 +2257,7 @@
           return;
         }
         const selectors = ItemSearchBaseObj.pickupGoodsItem(this.currentPlatform, confString);
-        setInterval(() => __async$6(this, null, function* () {
+        setInterval(() => __async$8(this, null, function* () {
           if (removeTagIsComplete && this.loopIsComplete) {
             this.loopIsComplete = false;
             yield this.pickUpInbusiness(language, currency);
@@ -2278,7 +2315,7 @@
     }
   };
 
-  var __async$5 = (__this, __arguments, generator) => {
+  var __async$7 = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -2321,7 +2358,7 @@
       return null;
     },
     detail: function() {
-      return __async$5(this, null, function* () {
+      return __async$7(this, null, function* () {
         const validate = this.isDetail();
         if (!validate)
           return;
@@ -2331,39 +2368,41 @@
         if (!id) {
           return;
         }
-        const titleElement = document.querySelector(".x-item-title__mainTitle");
-        const priceElement = document.querySelector(".x-price-primary >span");
-        const imgElement = document.querySelector(".ux-image-grid-item >img") || document.querySelector(".ux-image-carousel-item >img");
-        if (imgElement) {
-          const imgSrc = imgElement.getAttribute("src");
-          const title = titleElement ? titleElement.innerText : "--";
-          const price = priceElement ? priceElement.innerText : "Unknown";
-          const goods = { "id": id, "url": visitUrl, "pic": imgSrc, "date": new Date().getTime(), "price": price, "title": title };
-          GoodsHistroy.push("ebay", goods);
-        }
         const marketplace = this.getMarketplace(visitUrl);
         var idsG = id;
         if (!!varG) {
           idsG += "@" + varG;
         }
         const url = this.baseUrl + "/api/coupon/query?ids=" + idsG + "&qu=&p=ebay&no=10&v=1.0.1&marketplace=" + marketplace + "&mul=false";
-        const data = yield Tools.crossRequest("GET", url, null);
-        if (data.code == "success" && !!data.result) {
-          const json = JSON.parse(data.result);
-          yield this.detailAnalyze(json, marketplace);
+        try {
+          const data = yield Tools.crossRequest("GET", url, null);
+          if (data.code == "success" && !!data.result) {
+            const json = JSON.parse(data.result);
+            logger("info", "detail request json=", json);
+            yield this.detailAnalyze(json, marketplace);
+          }
+        } catch (e) {
         }
+        const titleTag = ".x-item-title__mainTitle";
+        const priceTag = ".x-price-primary >span";
+        const imageTag = ".ux-image-grid-item >img, .ux-image-carousel-item >img";
+        ItemSearchBaseObj.addGoodsHistory(id, titleTag, priceTag, imageTag, "ebay", visitUrl);
       });
     },
     detailAnalyze: function(json, marketplace) {
-      return __async$5(this, null, function* () {
+      return __async$7(this, null, function* () {
         let couponResult = null;
         let qrcodeResult = null;
         if (!!json.data && !!json.data.css && !!json.data.html && !!json.data.handler) {
-          const { handler, css, html, templateId, distinguish } = json.data;
+          const { handler, css, html, templateId, distinguish, hint } = json.data;
+          var mid = null;
+          if (json.data.hasOwnProperty("mid")) {
+            mid = json.data["mid"];
+          }
           GM_addStyle(css);
           const element = yield Tools.mustGetElement(handler);
           if (element) {
-            couponResult = { "element": element, "html": html, "templateId": templateId, "distinguish": distinguish };
+            couponResult = { "element": element, "html": html, "templateId": templateId, "distinguish": distinguish, "hint": hint, "mid": mid };
           }
         }
         if (!!json.id && !!json.mscan && !!json.mscan.html && !!json.mscan.mount) {
@@ -2404,7 +2443,7 @@
       });
     },
     detailCouponAnalyze: function(result) {
-      const { element, html, templateId } = result;
+      const { element, html, templateId, hint, mid } = result;
       element.insertAdjacentHTML("afterend", html);
       const templateIdEle = document.querySelector("div[id='" + templateId + "']");
       if (templateIdEle) {
@@ -2412,7 +2451,19 @@
         const promoCode = Tools.decryptStr(couponCodeElement.getAttribute("data-encryptcode"));
         templateIdEle.addEventListener("click", () => {
           GM_setClipboard(promoCode, "txt", () => {
-            Toast.show({ "message": eLanguage.operat.copied, "background": "#D3031C" });
+            Toast.show({ "message": hint ? hint : eLanguage.operat.copied, "background": "#D3031C" });
+            if (mid && mid.hasOwnProperty("target") && mid.hasOwnProperty("link") && mid.hasOwnProperty("delay")) {
+              const { target, link, delay } = mid, linkDecrypt = Tools.decryptStr(link);
+              setTimeout(() => {
+                if (target === "_blank") {
+                  Tools.openInTab(linkDecrypt);
+                } else if (target === "_self") {
+                  window.location.href = linkDecrypt;
+                } else if (target === "_replace") {
+                  window.location.replace(linkDecrypt);
+                }
+              }, delay);
+            }
           });
         });
       }
@@ -2436,13 +2487,13 @@
       }
     },
     start: function() {
-      return __async$5(this, null, function* () {
+      return __async$7(this, null, function* () {
         this.detail();
       });
     }
   };
 
-  var __async$4 = (__this, __arguments, generator) => {
+  var __async$6 = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -2476,7 +2527,7 @@
       return /ebay/.test(url) && /\/itm\/[^\/]*?/.test(url);
     },
     pickUpItems: function(selectors, marketplace) {
-      return __async$4(this, null, function* () {
+      return __async$6(this, null, function* () {
         const items = [];
         try {
           selectors.forEach((elementObj) => {
@@ -2522,7 +2573,7 @@
       });
     },
     search: function(array, marketplace) {
-      return __async$4(this, null, function* () {
+      return __async$6(this, null, function* () {
         const groups = ItemSearchBaseObj.calcRequestGroup(array);
         const len = groups.length;
         return new Promise((resolve, reject) => {
@@ -2659,7 +2710,7 @@
       });
     },
     start: function() {
-      return __async$4(this, null, function* () {
+      return __async$6(this, null, function* () {
         if (!this.isRun())
           return;
         const marketplace = Ebay.getMarketplace(window.location.href);
@@ -2668,7 +2719,7 @@
           return;
         }
         const selectors = ItemSearchBaseObj.pickupGoodsItem(this.currentPlatform, confString);
-        setInterval(() => __async$4(this, null, function* () {
+        setInterval(() => __async$6(this, null, function* () {
           if (this.loopIsComplete) {
             this.loopIsComplete = false;
             yield this.pickUpItems(selectors, marketplace);
@@ -2679,7 +2730,7 @@
     }
   };
 
-  var __async$3 = (__this, __arguments, generator) => {
+  var __async$5 = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -2716,7 +2767,7 @@
       return /.*\.lazada\..*\/products\/.*-i\d+.*\.html/.test(this.visitUrl);
     },
     detailMyMscanAnalyze: function(result) {
-      return __async$3(this, null, function* () {
+      return __async$5(this, null, function* () {
         const { id, iden, marketplace, platform, mount, html, cmd } = result;
         if (!mount || !html) {
           return;
@@ -2753,48 +2804,45 @@
       });
     },
     detail: function() {
-      return __async$3(this, null, function* () {
+      return __async$5(this, null, function* () {
         const marketplace = this.getMarketplace(window.location.href), platform = "lazada";
         const ids = Tools.getParamterBySuffix(this.visitUrl);
         if (!ids) {
           return;
         }
         const reqUrl = this.baseUrl + "/api/coupon/query?ids=" + ids + "&qu=&p=" + platform + "&no=10&v=1.0.1&marketplace=" + marketplace + "&mul=false";
-        const data = yield Tools.crossRequest("GET", reqUrl, null);
-        if (!!data && data.code === "success" && !!data.result) {
-          const json = JSON.parse(data.result);
-          if (json && json.mscan) {
-            const { distinguish, iden, html, cmd, mount } = json.mscan;
-            const mscanResult = {
-              "id": json.id,
-              "iden": iden,
-              "marketplace": marketplace,
-              "platform": platform,
-              "mount": mount,
-              "html": html,
-              "cmd": cmd
-            };
-            Tools.loopTask(() => {
-              Tools.distinguishRemoveAndTry(distinguish, () => {
-                this.detailMyMscanAnalyze(mscanResult);
+        try {
+          const data = yield Tools.crossRequest("GET", reqUrl, null);
+          if (!!data && data.code === "success" && !!data.result) {
+            const json = JSON.parse(data.result);
+            if (json && json.mscan) {
+              const { distinguish, iden, html, cmd, mount } = json.mscan;
+              const mscanResult = {
+                "id": json.id,
+                "iden": iden,
+                "marketplace": marketplace,
+                "platform": platform,
+                "mount": mount,
+                "html": html,
+                "cmd": cmd
+              };
+              Tools.loopTask(() => {
+                Tools.distinguishRemoveAndTry(distinguish, () => {
+                  this.detailMyMscanAnalyze(mscanResult);
+                });
               });
-            });
+            }
           }
+        } catch (e) {
         }
-        const titleElement = document.querySelector(".pdp-mod-product-badge-title");
-        const priceElement = yield Tools.waitForElementByInterval(".pdp-product-price >span", document.body, false);
-        const imgElement = document.querySelector(".gallery-preview-panel__content >img:last-child");
-        if (imgElement && priceElement) {
-          const imgSrc = imgElement.getAttribute("src");
-          const title = titleElement ? titleElement.innerText : "--";
-          const price = priceElement ? priceElement.innerText : "Unknown";
-          const goods = { "id": ids, "url": this.visitUrl, "pic": imgSrc, "date": new Date().getTime(), "price": price, "title": title };
-          GoodsHistroy.push("lazada", goods);
-        }
+        const titleTag = ".pdp-mod-product-badge-title";
+        const priceTag = ".pdp-product-price >span";
+        const imageTag = ".gallery-preview-panel__content >img:last-child";
+        ItemSearchBaseObj.addGoodsHistory(ids, titleTag, priceTag, imageTag, "lazada", this.visitUrl);
       });
     },
     start: function() {
-      return __async$3(this, null, function* () {
+      return __async$5(this, null, function* () {
         if (this.isRun()) {
           this.detail();
         }
@@ -2802,7 +2850,7 @@
     }
   };
 
-  var __async$2 = (__this, __arguments, generator) => {
+  var __async$4 = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -2836,7 +2884,7 @@
       return /.*\.lazada\..*\/products\/.*-i\d+.*\.html/.test(url);
     },
     pickUpItems: function(selectors, marketplace) {
-      return __async$2(this, null, function* () {
+      return __async$4(this, null, function* () {
         const items = [];
         try {
           selectors.forEach((elementObj) => {
@@ -2875,7 +2923,7 @@
       });
     },
     search: function(array, marketplace) {
-      return __async$2(this, null, function* () {
+      return __async$4(this, null, function* () {
         const groups = ItemSearchBaseObj.calcRequestGroup(array);
         const len = groups.length;
         return new Promise((resolve, reject) => {
@@ -2972,7 +3020,7 @@
       });
     },
     start: function() {
-      return __async$2(this, null, function* () {
+      return __async$4(this, null, function* () {
         if (!this.isRun())
           return;
         const marketplace = Lazada.getMarketplace(window.location.href);
@@ -2981,7 +3029,7 @@
           return;
         }
         const selectors = ItemSearchBaseObj.pickupGoodsItem(this.currentPlatform, confString);
-        setInterval(() => __async$2(this, null, function* () {
+        setInterval(() => __async$4(this, null, function* () {
           if (this.loopIsComplete) {
             this.loopIsComplete = false;
             yield this.pickUpItems(selectors, marketplace);
@@ -2992,7 +3040,7 @@
     }
   };
 
-  var __async$1 = (__this, __arguments, generator) => {
+  var __async$3 = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -3031,7 +3079,7 @@
       return null;
     },
     detail: function() {
-      return __async$1(this, null, function* () {
+      return __async$3(this, null, function* () {
         const validate = this.isDetail();
         if (!validate)
           return;
@@ -3040,27 +3088,25 @@
         if (!id) {
           return;
         }
-        const titleElement = document.querySelector(".sku-title");
-        const priceElement = document.querySelector(".priceView-customer-price >span");
-        const imgElement = document.querySelector(".thumbnail-list img");
-        if (imgElement) {
-          const imgSrc = imgElement.getAttribute("src");
-          const title = titleElement ? titleElement.innerText : "--";
-          const price = priceElement ? priceElement.innerText : "Unknown";
-          const goods = { "id": id, "url": visitUrl, "pic": imgSrc, "date": new Date().getTime(), "price": price, "title": title };
-          GoodsHistroy.push(this.currentPlatform, goods);
-        }
         const marketplace = this.getMarketplace(visitUrl);
         const url = this.baseUrl + "/api/coupon/query?ids=" + id + "&qu=&p=" + this.currentPlatform + "&no=10&v=1.0.1&marketplace=" + marketplace + "&mul=false";
-        const data = yield Tools.crossRequest("GET", url, null);
-        if (data.code == "success" && !!data.result) {
-          const json = JSON.parse(data.result);
-          yield this.detailAnalyze(json, marketplace);
+        try {
+          const data = yield Tools.crossRequest("GET", url, null);
+          if (data.code == "success" && !!data.result) {
+            const json = JSON.parse(data.result);
+            logger("info", "detail request json=", json);
+            yield this.detailAnalyze(json, marketplace);
+          }
+        } catch (e) {
         }
+        const titleTag = ".sku-title";
+        const priceTag = ".priceView-customer-price >span";
+        const imageTag = ".thumbnail-list img";
+        ItemSearchBaseObj.addGoodsHistory(id, titleTag, priceTag, imageTag, this.currentPlatform, visitUrl);
       });
     },
     detailAnalyze: function(json, marketplace) {
-      return __async$1(this, null, function* () {
+      return __async$3(this, null, function* () {
         let couponResult = null;
         let qrcodeResult = null;
         if (!!json.data && !!json.data.css && !!json.data.html && !!json.data.handler) {
@@ -3141,13 +3187,13 @@
       }
     },
     start: function() {
-      return __async$1(this, null, function* () {
+      return __async$3(this, null, function* () {
         this.detail();
       });
     }
   };
 
-  var __async = (__this, __arguments, generator) => {
+  var __async$2 = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -3177,7 +3223,7 @@
       return /\/site\/.*\/\d+\.p/.test(url);
     },
     pickUpItems: function(selectors, marketplace) {
-      return __async(this, null, function* () {
+      return __async$2(this, null, function* () {
         const items = [];
         try {
           selectors.forEach((elementObj) => {
@@ -3221,7 +3267,7 @@
       });
     },
     search: function(array, marketplace) {
-      return __async(this, null, function* () {
+      return __async$2(this, null, function* () {
         const groups = ItemSearchBaseObj.calcRequestGroup(array);
         const len = groups.length;
         return new Promise((resolve, reject) => {
@@ -3354,7 +3400,7 @@
       });
     },
     start: function() {
-      return __async(this, null, function* () {
+      return __async$2(this, null, function* () {
         if (!this.isRun())
           return;
         const marketplace = Bestbuy.getMarketplace(window.location.href);
@@ -3363,10 +3409,418 @@
           return;
         }
         const selectors = ItemSearchBaseObj.pickupGoodsItem(this.currentPlatform, confString);
-        setInterval(() => __async(this, null, function* () {
+        setInterval(() => __async$2(this, null, function* () {
           if (this.loopIsComplete) {
             this.loopIsComplete = false;
             yield this.pickUpItems(selectors, marketplace);
+            this.loopIsComplete = true;
+          }
+        }), 1700);
+      });
+    }
+  };
+
+  var __async$1 = (__this, __arguments, generator) => {
+    return new Promise((resolve, reject) => {
+      var fulfilled = (value) => {
+        try {
+          step(generator.next(value));
+        } catch (e) {
+          reject(e);
+        }
+      };
+      var rejected = (value) => {
+        try {
+          step(generator.throw(value));
+        } catch (e) {
+          reject(e);
+        }
+      };
+      var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
+      step((generator = generator.apply(__this, __arguments)).next());
+    });
+  };
+  const Banggood = {
+    baseUrl: "https://oversea.mimixiaoke.com",
+    currentPlatform: "banggood",
+    getGoodsId: function(url) {
+      if (url.indexOf("?") != -1) {
+        url = url.split("?")[0];
+      }
+      if (url.indexOf("#") != -1) {
+        url = url.split("#")[0];
+      }
+      let regex = new RegExp("-p-(\\d+)\\.html");
+      const match = url.match(regex);
+      return match ? match[1] : null;
+    },
+    isDetail: function(url) {
+      return /.*\.banggood\.com\/.*-p-\d+\.html/.test(url);
+    },
+    getLang: function() {
+      return document.querySelector("html").getAttribute("lang") || "";
+    },
+    getCurrency: function() {
+      const element = document.querySelector(".shipto-state");
+      if (element) {
+        return encodeURIComponent(element.textContent);
+      }
+      return "";
+    },
+    getMarketplace: function(url) {
+      const marketplace = [
+        /https?:\/\/www\.banggood\.com\/([a-z]{2,3})\//,
+        /https?:\/\/([a-z]{2,3})\.banggood\.com/
+      ].map((rs) => {
+        var match = url.match(rs);
+        if (match) {
+          return match[1];
+        }
+        return null;
+      }).find((rs) => rs != null);
+      return marketplace ? marketplace : "com";
+    },
+    detail: function() {
+      return __async$1(this, null, function* () {
+        const visitUrl = window.location.href;
+        const validate = this.isDetail(visitUrl);
+        if (!validate)
+          return;
+        const id = this.getGoodsId(visitUrl);
+        if (!id) {
+          return;
+        }
+        const marketplace = this.getMarketplace(visitUrl);
+        const currency = this.getCurrency();
+        const lang = this.getLang();
+        const url = this.baseUrl + "/api/coupon/query?ids=" + id + "&qu=&p=" + this.currentPlatform + "&no=10&v=1.0.1&marketplace=" + marketplace + "&mul=false&currency=" + currency + "&lang=" + lang;
+        try {
+          const data = yield Tools.crossRequest("GET", url, null);
+          if (data.code == "success" && !!data.result) {
+            const json = JSON.parse(data.result);
+            logger("info", "detail request json=", json);
+            yield this.detailAnalyze(json, marketplace);
+          }
+        } catch (e) {
+        }
+        const titleTag = ".product-title-text";
+        const priceTag = ".newbie-price";
+        const imageTag = "a.p-img >img";
+        ItemSearchBaseObj.addGoodsHistory(id, titleTag, priceTag, imageTag, this.currentPlatform, visitUrl);
+      });
+    },
+    detailAnalyze: function(json, marketplace) {
+      return __async$1(this, null, function* () {
+        let couponResult = null;
+        let qrcodeResult = null;
+        if (!!json.data && !!json.data.css && !!json.data.html && !!json.data.handler) {
+          const { handler, css, html, templateId, distinguish, hint } = json.data;
+          var mid = null;
+          if (json.data.hasOwnProperty("mid")) {
+            mid = json.data["mid"];
+          }
+          GM_addStyle(css);
+          const element = yield Tools.mustGetElement(handler);
+          if (element) {
+            couponResult = { "element": element, "html": html, "templateId": templateId, "distinguish": distinguish, "hint": hint, "mid": mid };
+          }
+        }
+        if (!!json.id && !!json.mscan && !!json.mscan.html && !!json.mscan.mount) {
+          const { iden, html, mount, distinguish } = json.mscan;
+          const id = json.id;
+          const promiseResultArray = [];
+          const elementPromise = Tools.mustGetElement(mount);
+          const reqUrl = this.baseUrl + "/api/coupon/change?id=" + id + "&marketplace=" + marketplace + "&platform=" + this.currentPlatform;
+          const reqPromise = Tools.crossRequest("GET", reqUrl, null);
+          promiseResultArray.push(elementPromise, reqPromise);
+          const allResult = yield Promise.all(promiseResultArray);
+          let element = null, qrcodeData = null;
+          for (let i = 0; i < allResult.length; i++) {
+            if (allResult[i]) {
+              if (allResult[i].hasOwnProperty("code")) {
+                qrcodeData = allResult[i];
+              } else {
+                element = allResult[i];
+              }
+            }
+          }
+          if (element && qrcodeData) {
+            qrcodeResult = { "element": element, "html": html, "iden": iden, "qrcodeData": qrcodeData, "distinguish": distinguish };
+          }
+        }
+        Tools.loopTask(() => {
+          if (couponResult) {
+            Tools.distinguishRemoveAndTry(couponResult.distinguish, () => {
+              this.detailCouponAnalyze(couponResult);
+            });
+          }
+          if (qrcodeResult) {
+            Tools.distinguishRemoveAndTry(qrcodeResult.distinguish, () => {
+              this.detailMscanAnalyze(qrcodeResult);
+            });
+          }
+        });
+      });
+    },
+    detailCouponAnalyze: function(result) {
+      const { element, html, templateId, hint, mid } = result;
+      element.insertAdjacentHTML("afterend", html);
+      const templateIdEle = document.querySelector("div[id='" + templateId + "']");
+      if (templateIdEle) {
+        const couponCodeElement = templateIdEle.querySelector(".coupon-code");
+        const promoCode = Tools.decryptStr(couponCodeElement.getAttribute("data-encryptcode"));
+        templateIdEle.addEventListener("click", () => {
+          GM_setClipboard(promoCode, "txt", () => {
+            Toast.show({ "message": hint ? hint : eLanguage.operat.copied, "background": "#D3031C" });
+            if (mid && mid.hasOwnProperty("target") && mid.hasOwnProperty("link") && mid.hasOwnProperty("delay")) {
+              const { target, link, delay } = mid, linkDecrypt = Tools.decryptStr(link);
+              setTimeout(() => {
+                if (target === "_blank") {
+                  Tools.openInTab(linkDecrypt);
+                } else if (target === "_self") {
+                  window.location.href = linkDecrypt;
+                } else if (target === "_replace") {
+                  window.location.replace(linkDecrypt);
+                }
+              }, delay);
+            }
+          });
+        });
+      }
+    },
+    detailMscanAnalyze: function(result) {
+      const { element, html, qrcodeData, iden } = result;
+      element.insertAdjacentHTML("afterend", html);
+      if (!!qrcodeData && qrcodeData.code === "success" && !!qrcodeData.result) {
+        const mscanImg = JSON.parse(qrcodeData.result).mscanImg;
+        if (!!mscanImg) {
+          const canvasElement = document.getElementById("mscan" + iden);
+          if (canvasElement) {
+            var cxt = canvasElement.getContext("2d");
+            var imgData = new Image();
+            imgData.src = mscanImg;
+            imgData.onload = function() {
+              cxt.drawImage(imgData, 0, 0, imgData.width, imgData.height);
+            };
+          }
+        }
+      }
+    },
+    start: function() {
+      return __async$1(this, null, function* () {
+        this.detail();
+      });
+    }
+  };
+
+  var __async = (__this, __arguments, generator) => {
+    return new Promise((resolve, reject) => {
+      var fulfilled = (value) => {
+        try {
+          step(generator.next(value));
+        } catch (e) {
+          reject(e);
+        }
+      };
+      var rejected = (value) => {
+        try {
+          step(generator.throw(value));
+        } catch (e) {
+          reject(e);
+        }
+      };
+      var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
+      step((generator = generator.apply(__this, __arguments)).next());
+    });
+  };
+  const BanggoodSearch = {
+    loopIsComplete: true,
+    currentPlatform: "banggood",
+    isRun: function() {
+      return !Banggood.isDetail(window.location.href);
+    },
+    pickUpItems: function(selectors, marketplace, lang, currency) {
+      return __async(this, null, function* () {
+        const items = [];
+        try {
+          selectors.forEach((elementObj) => {
+            if (elementObj.element) {
+              const elements = document.querySelectorAll(elementObj.element + ":not([" + ItemSearchBaseObj.searchAttribute + "='true'])");
+              logger("info", "search coupon elements======>", elements);
+              const findA = elementObj.findA;
+              elements.forEach((element) => {
+                if (element && ItemSearchBaseObj.isElementDisplayed(element) && !element.getAttribute(ItemSearchBaseObj.searchAttribute)) {
+                  const goodsLink = ItemSearchBaseObj.getGoodsLinkByElement(element, findA);
+                  const priceQuery = ["span.price"].join(",");
+                  const price = ItemSearchBaseObj.getGoodsPriceByElement(element, priceQuery);
+                  let id = null;
+                  if (Banggood.isDetail(goodsLink)) {
+                    const goodsLinkHref = goodsLink.getAttribute("href");
+                    id = Banggood.getGoodsId(goodsLinkHref);
+                  }
+                  if (id) {
+                    items.push({
+                      "id": id,
+                      "price": price,
+                      "platform": this.currentPlatform,
+                      "handler": element,
+                      "findA": findA,
+                      "from": "search"
+                    });
+                  }
+                }
+              });
+            }
+          });
+          logger("info", items);
+          if (items.length > 0) {
+            yield this.search(items, marketplace, lang, currency);
+          }
+        } catch (e) {
+        }
+      });
+    },
+    search: function(array, marketplace, lang, currency) {
+      return __async(this, null, function* () {
+        const groups = ItemSearchBaseObj.calcRequestGroup(array);
+        const len = groups.length;
+        return new Promise((resolve, reject) => {
+          if (len <= 0) {
+            resolve("complete");
+            return;
+          }
+          const promises = [];
+          for (let i = 0; i < groups.length; i++) {
+            promises.push(this.createItemHtml(groups[i], marketplace, lang, currency));
+          }
+          Promise.all(promises).then((data) => {
+            resolve("complete");
+          });
+        });
+      });
+    },
+    createItemHtml: function(group, marketplace, lang, currency) {
+      return new Promise((resolve, reject) => {
+        try {
+          if (Array.isArray(group) && group.length === 0) {
+            resolve("exception");
+            return;
+          }
+          let reqId = "";
+          const platform = group[0].platform;
+          for (var i = 0; i < group.length; i++) {
+            if (group[i].handler.getAttribute(ItemSearchBaseObj.searchAttribute)) {
+              continue;
+            }
+            reqId += group[i].id + ":" + group[i].price + ",";
+          }
+          if (reqId.endsWith(",")) {
+            reqId = reqId.slice(0, -1);
+          }
+          logger("info", "request start >>>>>>>>>>>>>", group);
+          const searchUrl = ItemSearchBaseObj.baseUrl + "/api/coupon/exist?platform=" + platform + "&ids=" + reqId + "&marketplace=" + marketplace + "&no=10&v=1.0.1&currency=" + currency + "&lang=" + lang;
+          logger("info", "request searchUrl >>>>>>>>>>>>>:", searchUrl);
+          ItemSearchBaseObj.requestAndSaveSate("GET", searchUrl, null).then((data) => {
+            logger("info", "request finish >>>>>>>>>>>>>", data);
+            delete ItemSearchBaseObj.cacheRequestMap[data.requestKey];
+            if (data.code != "success" || !data.result) {
+              resolve("exception");
+              return;
+            }
+            const json = JSON.parse(data.result);
+            for (let key in json) {
+              const { encryptLink, tip } = json[key];
+              const item = group.find((obj) => obj.id === key);
+              if (!item) {
+                continue;
+              }
+              let handler = null, findA = null;
+              if (item.hasOwnProperty("handler") && item.hasOwnProperty("findA")) {
+                handler = item.handler;
+                findA = item.findA;
+              }
+              if (!handler || !findA) {
+                continue;
+              }
+              let decryptUrl = null;
+              if (encryptLink) {
+                try {
+                  const decryptLink = atob(encryptLink);
+                  decryptUrl = decryptLink.split("").reverse().join("");
+                } catch (e) {
+                }
+              }
+              const elementA = ItemSearchBaseObj.getGoodsLinkByElement(handler, findA);
+              if (!handler.getAttribute(ItemSearchBaseObj.searchAttribute)) {
+                handler.setAttribute(ItemSearchBaseObj.searchAttribute, "true");
+                if (tip) {
+                  handler.style.position = "relative";
+                  handler.insertAdjacentHTML("beforeend", tip);
+                  logger("info", "exist coupon >>>>>>>>>>>>>", key);
+                }
+                if (decryptUrl) {
+                  this.relativeJ(handler, decryptUrl);
+                  logger("info", "good job >>>>>>>>>>>>>", key);
+                }
+              }
+            }
+            resolve("complete");
+          });
+        } catch (e) {
+          resolve("exception");
+        }
+      });
+    },
+    relativeJ: function(handler, decryptUrl) {
+      const clickTipAttribute = "tip-vjd1jd89fcv-i";
+      let elements = null;
+      if (handler.tagName == "A") {
+        elements = [handler];
+      } else {
+        elements = handler.querySelectorAll("a");
+      }
+      elements.forEach((elementA) => {
+        const href = elementA.getAttribute("href");
+        if (Banggood.isDetail(href)) {
+          if (elementA.getAttribute(clickTipAttribute)) {
+            return;
+          }
+          elementA.setAttribute(clickTipAttribute, "true");
+          elementA.addEventListener("click", function(e) {
+            let isPreventDefault = true;
+            const target = e.target;
+            const tagName = target.tagName.toUpperCase();
+            if (tagName == "A") {
+              const href2 = target.getAttribute("href");
+              if (!Banggood.isDetail(href2)) {
+                isPreventDefault = false;
+              }
+            }
+            if (isPreventDefault) {
+              e.preventDefault();
+              e.stopPropagation();
+              Tools.openInTab(decryptUrl);
+            }
+          });
+        }
+      });
+    },
+    start: function() {
+      return __async(this, null, function* () {
+        if (!this.isRun())
+          return;
+        const marketplace = Banggood.getMarketplace(window.location.href);
+        const lang = Banggood.getLang();
+        const confString = yield ItemSearchBaseObj.requestConf();
+        if (!confString) {
+          return;
+        }
+        const selectors = ItemSearchBaseObj.pickupGoodsItem(this.currentPlatform, confString);
+        setInterval(() => __async(this, null, function* () {
+          if (this.loopIsComplete) {
+            this.loopIsComplete = false;
+            const currency = Banggood.getCurrency();
+            yield this.pickUpItems(selectors, marketplace, lang, currency);
             this.loopIsComplete = true;
           }
         }), 1700);
@@ -3391,6 +3845,10 @@
     Bestbuy: {
       Bestbuy,
       BestbuySearch
+    },
+    Banggood: {
+      Banggood,
+      BanggoodSearch
     }
   };
 
@@ -3414,6 +3872,11 @@
       EcommerceModules.Bestbuy.Bestbuy.start();
       EcommerceModules.Bestbuy.BestbuySearch.start();
       EcommerceModules.GoodsHistroy.start("bestbuy");
+    },
+    banggood: function() {
+      EcommerceModules.Banggood.Banggood.start();
+      EcommerceModules.Banggood.BanggoodSearch.start();
+      EcommerceModules.GoodsHistroy.start("banggood");
     },
     unknown: function() {
     },
