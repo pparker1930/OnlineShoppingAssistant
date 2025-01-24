@@ -1788,7 +1788,7 @@
         const language = this.getLang();
         const currency = yield this.getCurrency();
         const id = Tools.getParamterBySuffix(visitUrl, "html");
-        const url = this.baseUrl + "/api/coupon/query?ids=" + id + "&qu=&p=" + this.currentPlatform + "&no=10&v=1.0.1&lang=" + language + "&mul=false&currency=" + currency;
+        const url = this.baseUrl + "/api/coupon/query?ids=" + id + "&qu=&p=" + this.currentPlatform + "&no=101&v=1.0.1&lang=" + language + "&mul=false&currency=" + currency;
         try {
           const data = yield Tools.request("GET", url, null);
           if (data.code == "success" && !!data.result) {
@@ -1924,7 +1924,7 @@
         const language = yield GM_getValue(this.languageStoageKey, navigator.language);
         const currency = yield GM_getValue(this.currencyStoageKey, "USD");
         const ids = Tools.getParamterBySearch(window.location.search, "objectId") || Tools.getParamterBySearch(window.location.search, "availableProductShopcartIds") || Tools.getParamterBySearch(window.location.search, "itemId");
-        const confirmUrl = this.baseUrl + "/api/coupon/query?ids=" + ids + "&qu=&p=" + this.currentPlatform + "&no=10&v=1.0.1&lang=" + language + "&mul=true&currency=" + currency;
+        const confirmUrl = this.baseUrl + "/api/coupon/query?ids=" + ids + "&qu=&p=" + this.currentPlatform + "&no=101&v=1.0.1&lang=" + language + "&mul=true&currency=" + currency;
         const res = yield Tools.request("GET", confirmUrl, null);
         if (res.code == "success" && !!res.result) {
           const json = JSON.parse(res.result);
@@ -2119,7 +2119,7 @@
             reqId = reqId.slice(0, -1);
           }
           Logger.log("info", "request start >>>>>>>>>>>>>", group);
-          const searchUrl = ItemSearchBaseObj.baseUrl + "/api/coupon/exist?platform=" + platform + "&ids=" + reqId + "&lang=" + language + "&no=10&v=1.0.1&currency=" + currency;
+          const searchUrl = ItemSearchBaseObj.baseUrl + "/api/coupon/exist?platform=" + platform + "&ids=" + reqId + "&lang=" + language + "&no=101&v=1.0.1&currency=" + currency;
           Logger.log("info", "request searchUrl >>>>>>>>>>>>>:", searchUrl);
           ItemSearchBaseObj.requestAndSaveSate("GET", searchUrl, null).then((data) => {
             Logger.log("info", "request finish >>>>>>>>>>>>>");
@@ -2372,7 +2372,7 @@
         if (!!varG) {
           idsG += "@" + varG;
         }
-        const url = this.baseUrl + "/api/coupon/query?ids=" + idsG + "&qu=&p=" + this.currentPlatform + "&no=10&v=1.0.1&marketplace=" + marketplace + "&mul=false";
+        const url = this.baseUrl + "/api/coupon/query?ids=" + idsG + "&qu=&p=" + this.currentPlatform + "&no=101&v=1.0.1&marketplace=" + marketplace + "&mul=false";
         try {
           const data = yield Tools.request("GET", url, null);
           if (data.code == "success" && !!data.result) {
@@ -2613,7 +2613,7 @@
             reqId = reqId.slice(0, -1);
           }
           Logger.log("info", "request start >>>>>>>>>>>>>", group);
-          const searchUrl = ItemSearchBaseObj.baseUrl + "/api/coupon/exist?platform=" + platform + "&ids=" + reqId + "&marketplace=" + marketplace + "&no=10&v=1.0.1";
+          const searchUrl = ItemSearchBaseObj.baseUrl + "/api/coupon/exist?platform=" + platform + "&ids=" + reqId + "&marketplace=" + marketplace + "&no=101&v=1.0.1";
           Logger.log("info", "request searchUrl >>>>>>>>>>>>>:", searchUrl);
           ItemSearchBaseObj.requestAndSaveSate("GET", searchUrl, null).then((data) => {
             Logger.log("info", "request finish >>>>>>>>>>>>>", data);
@@ -2810,7 +2810,7 @@
         if (!ids) {
           return;
         }
-        const reqUrl = this.baseUrl + "/api/coupon/query?ids=" + ids + "&qu=&p=" + this.currentPlatform + "&no=10&v=1.0.1&marketplace=" + marketplace + "&mul=false";
+        const reqUrl = this.baseUrl + "/api/coupon/query?ids=" + ids + "&qu=&p=" + this.currentPlatform + "&no=101&v=1.0.1&marketplace=" + marketplace + "&mul=false";
         try {
           const data = yield Tools.request("GET", reqUrl, null);
           if (!!data && data.code === "success" && !!data.result) {
@@ -2960,7 +2960,7 @@
             reqId = reqId.slice(0, -1);
           }
           Logger.log("info", "request start >>>>>>>>>>>>>", group);
-          const searchUrl = ItemSearchBaseObj.baseUrl + "/api/coupon/exist?platform=" + platform + "&ids=" + reqId + "&marketplace=" + marketplace + "&no=10&v=1.0.1";
+          const searchUrl = ItemSearchBaseObj.baseUrl + "/api/coupon/exist?platform=" + platform + "&ids=" + reqId + "&marketplace=" + marketplace + "&no=101&v=1.0.1";
           Logger.log("info", "request searchUrl >>>>>>>>>>>>>:", searchUrl);
           ItemSearchBaseObj.requestAndSaveSate("GET", searchUrl, null).then((data) => {
             Logger.log("info", "request finish >>>>>>>>>>>>>", data);
@@ -3089,7 +3089,7 @@
           return;
         }
         const marketplace = this.getMarketplace(visitUrl);
-        const url = this.baseUrl + "/api/coupon/query?ids=" + id + "&qu=&p=" + this.currentPlatform + "&no=10&v=1.0.1&marketplace=" + marketplace + "&mul=false";
+        const url = this.baseUrl + "/api/coupon/query?ids=" + id + "&qu=&p=" + this.currentPlatform + "&no=101&v=1.0.1&marketplace=" + marketplace + "&mul=false";
         try {
           const data = yield Tools.request("GET", url, null);
           if (data.code == "success" && !!data.result) {
@@ -3304,7 +3304,7 @@
             reqId = reqId.slice(0, -1);
           }
           Logger.log("info", "request start >>>>>>>>>>>>>", group);
-          const searchUrl = ItemSearchBaseObj.baseUrl + "/api/coupon/exist?platform=" + platform + "&ids=" + reqId + "&marketplace=" + marketplace + "&no=10&v=1.0.1";
+          const searchUrl = ItemSearchBaseObj.baseUrl + "/api/coupon/exist?platform=" + platform + "&ids=" + reqId + "&marketplace=" + marketplace + "&no=101&v=1.0.1";
           Logger.log("info", "request searchUrl >>>>>>>>>>>>>:", searchUrl);
           ItemSearchBaseObj.requestAndSaveSate("GET", searchUrl, null).then((data) => {
             Logger.log("info", "request finish >>>>>>>>>>>>>", data);
@@ -3493,7 +3493,7 @@
         const marketplace = this.getMarketplace(visitUrl);
         const currency = this.getCurrency();
         const lang = this.getLang();
-        const url = this.baseUrl + "/api/coupon/query?ids=" + id + "&qu=&p=" + this.currentPlatform + "&no=10&v=1.0.1&marketplace=" + marketplace + "&mul=false&currency=" + currency + "&lang=" + lang;
+        const url = this.baseUrl + "/api/coupon/query?ids=" + id + "&qu=&p=" + this.currentPlatform + "&no=101&v=1.0.1&marketplace=" + marketplace + "&mul=false&currency=" + currency + "&lang=" + lang;
         try {
           const data = yield Tools.request("GET", url, null);
           if (data.code == "success" && !!data.result) {
@@ -3718,7 +3718,7 @@
             reqId = reqId.slice(0, -1);
           }
           Logger.log("info", "request start >>>>>>>>>>>>>", group);
-          const searchUrl = ItemSearchBaseObj.baseUrl + "/api/coupon/exist?platform=" + platform + "&ids=" + reqId + "&marketplace=" + marketplace + "&no=10&v=1.0.1&currency=" + currency + "&lang=" + lang;
+          const searchUrl = ItemSearchBaseObj.baseUrl + "/api/coupon/exist?platform=" + platform + "&ids=" + reqId + "&marketplace=" + marketplace + "&no=101&v=1.0.1&currency=" + currency + "&lang=" + lang;
           Logger.log("info", "request searchUrl >>>>>>>>>>>>>:", searchUrl);
           ItemSearchBaseObj.requestAndSaveSate("GET", searchUrl, null).then((data) => {
             Logger.log("info", "request finish >>>>>>>>>>>>>", data);
@@ -3979,7 +3979,7 @@
         }
         const params = {
           platform,
-          no: "10",
+          no: "101",
           version: "1.0.1",
           title: document.title,
           url: window.location.href,
