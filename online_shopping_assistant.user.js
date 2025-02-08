@@ -74,7 +74,7 @@
 // @description:ug     پاپۇلار سودا سېتىش پلاتفورمالىرىدا ئاپتوماتىك كۇپون ئىزدەش ئارقىلىق، پەقەت مۇھتاج بولغان مەھسۇلاتلارغا ئەڭ ياخشى پەقەتلەرنى تاپشۇرۇشقا ياردەم بېرىدۇ، ھىچ بىر ئاشىق پۇل چىقارماي. ھازىر كۆرسىتىلىدىغان: Aliexpress، Lazada، eBay، Amazon ۋە باشقا.
 // @description:vi     Tìm kiếm tự động mã giảm giá trên các nền tảng mua sắm phổ biến để giúp bạn tìm được những ưu đãi tốt nhất cho sản phẩm bạn cần, mà không phải chi tiêu quá mức. Hiện tại hỗ trợ: Aliexpress, Lazada, eBay, Amazon và nhiều hơn nữa.
 // @namespace   Thaddeus_ecommerce_NameScope
-// @version     1.0.8
+// @version     1.0.9
 // @author      Thaddeus310
 // @icon        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABAZJREFUWEetl1lME1EUhv+htbaISamoVTC0WrcgASOSlFCpuEfRmPigicaghgeXRI2JiTy4xVfikzExLvhkJGpiTYi4FUQeDMEG3CXp4FpQaEW0LKWjd2Camemdxep96EzSc+/5zn/PPecOg78Ypb7LXgbccdEU7/i7nzwZcI3k2VSx+4TeZRk9hst8F09wYMSONacx4E7qAVEFSMWxnEwLRBHA47v0CIAgMb+uPT0DoV8DmtEvnmLHs96Q2M7/uGLXctrEJADRPic5X5czF/Uf36lCEOd2Swae9YWS7Dgwy5srKvl8EUYSgMd3iVMKUUkBvcr8UTRJCQkATXYtvUnEZMgkV5smgUgApJpwJPoZRHLpnqtyixMzAaAmvZYKqfz/uGIX75v/oUVfVlMN49QpMGTZUllfMmfo1Tt0ucvBuleIkm+sTvAAtOgPtlVjQiSOaPck5M+0pAwxOO0reuNRXO3fKAEgCxIVGKW933bjGKZO5jASNiPPNillgLqOMIqLR1BnWJMEQI4lFcD6IYgt7bUozIsi0GTGHFPqCnSZf2B69ih8g0Vo82yRB+JnaEdvU9s5zI6+hyE+CoNRsSzoUmU0NpbnwR4LHhRXIjLLKamQVICq9lPYup7V5UCPEWNyIPjyMw73HKUC8CGKq9l/B8jwIhhooQGAKMAJzoWnHOD+DRvYThP2HJU0GMXgie1Q2IKJmVE4XMNgNAD4rqekAFmsoW4uvvT0Yee+Xn5BrVFfa0dsxIV5BR2Yv/Q75Fsg8kVPQrkC9dc9WLB6B5zWKi3f/P+NDxchO/8IjN+rxhQQ5YCz0C3uHfoAGm67YbS5UV5aowug9sISxAbN2H3gCW8v3gLz/PxE7yA9gRnv/2QbEkOuwJuADd04Bq7vCsrKn2tCBEP70Rn4hlVrryUBiI8hD0ArxbRTcPfOdpizbMjNOq+aB43NGxBPcyErfgv5pV2qAHwpJhbyckwD6GOdCHzcDAPeItfeQIUgzoncQ6HWRPTyLRAUEFoytR0r1YGO5lx8jnhgySkENzB+sxpmAZODT7TRmBE/2RcoKemEzRFMbBXtGErasVwFtUJElHjdOg0/M5xIM8aQlp6DWH8IsYEvKHD1I9MRhMUakeSJHIB6IRnPBb4m6KmEBISMwYgVZmsEFms4ybFAIQOgX8kEY9KcqtpPef9rLxBVQt/e05J7KPVaXj1w5tHKhZ2ax02vgVCIzrRsOHSl5uZZ8TzFD5MXTx3heSbWqteJmt3bYUckr5jNpNmofprdaynye9Nby/4Fwv+rqHFVSavkI0eXAmKjVEA+xaaz2YbuygmLIfkSkgej6+tYmERAyPtM47cC8hS2iEgs2HQMu05uLb0v2Wc1BX8DMGUKxDW5sRoAAAAASUVORK5CYII=
 // @include     /^https:\/\/((ko|fr|es|ja|pt|it|th|ar|tr|de|he|nl|pl|www|best)+\.)?aliexpress\.(ru|us|com)\/*/
@@ -4788,10 +4788,12 @@
           const tabPanes = modalBody.querySelectorAll(".tab-pane");
           tabs.forEach((element) => {
             element.addEventListener("click", function(e) {
+              e.preventDefault();
+              e.stopPropagation();
               tabs.forEach((tab) => tab.classList.remove("active"));
               e.target.classList.add("active");
               tabPanes.forEach((tab) => tab.classList.remove("fade-in", "active"));
-              const toggle = modalBody.querySelector(e.target.getAttribute("href"));
+              const toggle = modalBody.querySelector(e.target.getAttribute("data-href") || e.target.getAttribute("href"));
               toggle.classList.add("fade-in", "active");
             });
           });
