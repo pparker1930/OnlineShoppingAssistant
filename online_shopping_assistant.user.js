@@ -79,24 +79,34 @@
 // @icon        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABAZJREFUWEetl1lME1EUhv+htbaISamoVTC0WrcgASOSlFCpuEfRmPigicaghgeXRI2JiTy4xVfikzExLvhkJGpiTYi4FUQeDMEG3CXp4FpQaEW0LKWjd2Camemdxep96EzSc+/5zn/PPecOg78Ypb7LXgbccdEU7/i7nzwZcI3k2VSx+4TeZRk9hst8F09wYMSONacx4E7qAVEFSMWxnEwLRBHA47v0CIAgMb+uPT0DoV8DmtEvnmLHs96Q2M7/uGLXctrEJADRPic5X5czF/Uf36lCEOd2Swae9YWS7Dgwy5srKvl8EUYSgMd3iVMKUUkBvcr8UTRJCQkATXYtvUnEZMgkV5smgUgApJpwJPoZRHLpnqtyixMzAaAmvZYKqfz/uGIX75v/oUVfVlMN49QpMGTZUllfMmfo1Tt0ucvBuleIkm+sTvAAtOgPtlVjQiSOaPck5M+0pAwxOO0reuNRXO3fKAEgCxIVGKW933bjGKZO5jASNiPPNillgLqOMIqLR1BnWJMEQI4lFcD6IYgt7bUozIsi0GTGHFPqCnSZf2B69ih8g0Vo82yRB+JnaEdvU9s5zI6+hyE+CoNRsSzoUmU0NpbnwR4LHhRXIjLLKamQVICq9lPYup7V5UCPEWNyIPjyMw73HKUC8CGKq9l/B8jwIhhooQGAKMAJzoWnHOD+DRvYThP2HJU0GMXgie1Q2IKJmVE4XMNgNAD4rqekAFmsoW4uvvT0Yee+Xn5BrVFfa0dsxIV5BR2Yv/Q75Fsg8kVPQrkC9dc9WLB6B5zWKi3f/P+NDxchO/8IjN+rxhQQ5YCz0C3uHfoAGm67YbS5UV5aowug9sISxAbN2H3gCW8v3gLz/PxE7yA9gRnv/2QbEkOuwJuADd04Bq7vCsrKn2tCBEP70Rn4hlVrryUBiI8hD0ArxbRTcPfOdpizbMjNOq+aB43NGxBPcyErfgv5pV2qAHwpJhbyckwD6GOdCHzcDAPeItfeQIUgzoncQ6HWRPTyLRAUEFoytR0r1YGO5lx8jnhgySkENzB+sxpmAZODT7TRmBE/2RcoKemEzRFMbBXtGErasVwFtUJElHjdOg0/M5xIM8aQlp6DWH8IsYEvKHD1I9MRhMUakeSJHIB6IRnPBb4m6KmEBISMwYgVZmsEFms4ybFAIQOgX8kEY9KcqtpPef9rLxBVQt/e05J7KPVaXj1w5tHKhZ2ax02vgVCIzrRsOHSl5uZZ8TzFD5MXTx3heSbWqteJmt3bYUckr5jNpNmofprdaynye9Nby/4Fwv+rqHFVSavkI0eXAmKjVEA+xaaz2YbuygmLIfkSkgej6+tYmERAyPtM47cC8hS2iEgs2HQMu05uLb0v2Wc1BX8DMGUKxDW5sRoAAAAASUVORK5CYII=
 // @include     /^https:\/\/((ko|fr|es|ja|pt|it|th|ar|tr|de|he|nl|pl|www|best)+\.)?aliexpress\.(ru|us|com)\/*/
 // @include     /^https:\/\/(www\.)?lazada\.(co\.id|vn|com\.my|co\.th|sg|com\.ph)/.*/
+// @include     /^https:\/\/(.*\.)?shopee\..*/?.*/
 // @include     /^https:\/\/([a-z]{2,3})\.banggood\.com/*/
-// @include     *://*.ebay.*/*
-// @include     *://*.amazon.**
-// @include     *://*.bestbuy.**
-// @include     *://*.airbaltic.**
-// @include     *://*.edureka.**
-// @include     *://*.ranavat.**
-// @include     *://*.alibaba.**
-// @include     *://*.wish.**
-// @include     *://*.alibaba.**
-// @include     *://*.ticketmaster.**
-// @include     *://*.wilson.com/**
-// @include     *://*.wilsonsleather.com/**
-// @include     *://*.pictarine.**
-// @include     *://*.suiteness.**
-// @include     *://*.treatwell.**
-// @include     *://*.trip.**
-// @include     *://*.samsung.**
+// @include     /^https:\/\/(.*\.)?amazon\..*/?.*/
+// @include     /^https:\/\/(.*\.)?ebay\..*/?.*/
+// @include     /^https:\/\/(.*\.)?bestbuy\..*/?.*/
+// @include     /^https:\/\/(.*\.)?airbaltic\..*/?.*/
+// @include     /^https:\/\/(.*\.)?edureka\..*/?.*/
+// @include     /^https:\/\/(.*\.)?ranavat\..*/?.*/
+// @include     /^https:\/\/(.*\.)?alibaba\..*/?.*/
+// @include     /^https:\/\/(.*\.)?wish\..*/?.*/
+// @include     /^https:\/\/(.*\.)?ticketmaster\..*/?.*/
+// @include     /^https:\/\/(.*\.)?wilson\..*/?.*/
+// @include     /^https:\/\/(.*\.)?wilsonsleather\..*/?.*/
+// @include     /^https:\/\/(.*\.)?pictarine\..*/?.*/
+// @include     /^https:\/\/(.*\.)?suiteness\..*/?.*/
+// @include     /^https:\/\/(.*\.)?treatwell\..*/?.*/
+// @include     /^https:\/\/(.*\.)?trip\..*/?.*/
+// @include     /^https:\/\/(.*\.)?samsung\..*/?.*/
+// @include     /^https:\/\/(.*\.)?daraz\..*/?.*/
+// @include     /^https:\/\/(.*\.)?wildberries\..*/?.*/
+// @include     /^https:\/\/(.*\.)?whopee\..*/?.*/
+// @include     /^https:\/\/(.*\.)?walmart\..*/?.*/
+// @include     /^https:\/\/(.*\.)?temu\..*/?.*/
+// @include     /^https:\/\/(.*\.)?noon\..*/?.*/
+// @include     /^https:\/\/(.*\.)?ozon\..*/?.*/
+// @include     /^https:\/\/(.*\.)?allegro\..*/?.*/
+// @include     /^https:\/\/(.*\.)?rakuten\..*/?.*/
+// @include     /^https:\/\/(.*\.)?zalando\..*/?.*/
 // @include     *://www.jtm.pub/mid/merge**
 // @connect     tikdownloader.io
 // @connect     oversea.mimixiaoke.com
@@ -175,7 +185,16 @@
     "x": "x",
     "youtube": "youtube",
     "tiktok": "tiktok",
-    "cobalt": "cobalt"
+    "cobalt": "cobalt",
+    "temu": "temu",
+    "walmart": "walmart",
+    "wildberries": "wildberries",
+    "zalando": "zalando",
+    "noon": "noon",
+    "daraz": "daraz",
+    "ozon": "ozon",
+    "allegro": "allegro",
+    "rakuten": "rakuten"
   };
 
   var css_248z$4 = ".peter99032j-xyz-panel-wrapper{box-sizing:border-box;position:fixed;z-index:2147483646}.peter99032j-xyz-panel-wrapper svg.icon-svg path{fill:var(--color-modeal-header-icon)}.peter99032j-xyz-panel-wrapper svg.icon-svg:hover path{fill:var(--color-modeal-header-icon-hover)}.peter99032j-xyz-panel-wrapper>.peter99032j-xyz-panel-aside-main{background-color:#fff;border:1px solid #ebebeb;border-radius:5px;bottom:70px;box-shadow:2px 2px 5px #b6bdc5;display:none;height:400px;overflow-x:hidden;overflow-y:auto;position:absolute;right:0;width:400px}.peter99032j-xyz-panel-wrapper>.peter99032j-xyz-panel-aside-main>.panel-aside-main_____inner{display:flex;flex-direction:column;height:100%;width:100%}.peter99032j-xyz-panel-aside-main .panel-aside-main_____header{align-items:center;background-color:var(--color-modeal-header-background);border-bottom:1px solid #ebe6e6;box-sizing:border-box;display:flex;height:var(--size-height-modeal-header);justify-content:space-between;padding:0 var(--size-padding-horizontal-modeal-header)}.peter99032j-xyz-panel-aside-main .panel-aside-main_____header>.logo_____header{align-items:center;display:flex;justify-content:center}.peter99032j-xyz-panel-aside-main .panel-aside-main_____header>.logo_____header>svg{height:var(--size-height-modeal-icon);width:var(--size-height-modeal-icon)}.peter99032j-xyz-panel-aside-main .panel-aside-main_____header>.title_____header{flex:1;font-size:var(--size-font-modeal-header-title);font-weight:700;padding-left:10px}.peter99032j-xyz-panel-aside-main .panel-aside-main_____header .btns_____header{display:flex;flex-direction:row}.peter99032j-xyz-panel-aside-main .panel-aside-main_____header .btns_____header ._____close,.peter99032j-xyz-panel-aside-main .panel-aside-main_____header .btns_____header ._____setting{align-items:center;cursor:pointer;display:flex;justify-content:center;width:var(--size-height-modeal-operat-icon)}.peter99032j-xyz-panel-aside-main .panel-aside-main_____content{background-color:var(--color-modeal-content-background);flex:1;overflow:auto}.peter99032j-xyz-panel-aside-main .panel-aside-main_____item{margin:5px 0;padding:5px}.peter99032j-xyz-panel-aside-main .panel-aside-main_____item .item_____title{color:#b6b6b6;font-size:13px;font-weight:500;padding:5px 0;text-align:center}.peter99032j-xyz-panel-aside-main .panel-aside-main_____item .item_____container{display:flex;flex-flow:wrap;flex-direction:row;justify-content:flex-start}.peter99032j-xyz-panel-aside-main .histories-box-review_item{margin:5px 0;overflow:hidden;width:33.3333%}.peter99032j-xyz-panel-aside-main .histories-box-review_item>a{background-color:#fff!important;border:1px solid #ccc!important;border-radius:5px!important;box-sizing:initial!important;display:block!important;margin:0 auto!important;position:relative!important;width:110px!important}.peter99032j-xyz-panel-aside-main .histories-box-review_item>a>.review___shadow{border:2px solid red;border-radius:5px;bottom:0;display:none;left:0;position:absolute;right:0;text-align:center;top:0;z-index:99}.peter99032j-xyz-panel-aside-main .histories-box-review_item>a>.review___shadow .delete_____btn{background-color:red;border-radius:3px;color:#fff;font-size:13px;height:15px;line-height:10px;position:absolute;right:0;text-align:center;top:0;width:15px}.peter99032j-xyz-panel-aside-main .histories-box-review_item>a>.review___img{border-radius:5px 5px 0 0;height:110px;overflow:hidden;width:110px}.peter99032j-xyz-panel-aside-main .histories-box-review_item>a>.review___img>img{width:100%}.peter99032j-xyz-panel-aside-main .histories-box-review_item>a>.review___text{color:#000!important;font-size:13px!important;overflow:hidden!important;padding:5px!important;text-align:center!important;text-decoration:underline!important;text-overflow:ellipsis!important;white-space:nowrap!important}.peter99032j-xyz-panel-wrapper>.peter99032j-xyz-panel-aside-body{background-color:#fafafa;border-radius:5px;box-shadow:1px 1px 2px #b6bdc5;direction:ltr!important;display:flex;height:60px;overflow:hidden}.peter99032j-xyz-panel-wrapper>.peter99032j-xyz-panel-aside-body>div{align-items:center;display:flex;justify-content:center}.peter99032j-xyz-panel-aside-body .goods_____expand{cursor:pointer;width:20px!important}.peter99032j-xyz-panel-aside-body .goods_____expand svg{transition:transform .3s}.peter99032j-xyz-panel-aside-body .goods_____review{flex-direction:row;transition:all .5s ease-in-out;width:auto}.peter99032j-xyz-panel-aside-body .goods-review_____item{border-radius:4px;cursor:pointer;height:45px;line-height:45px;margin:0 5px;overflow:hidden;position:relative;width:45px}.peter99032j-xyz-panel-aside-body .goods-review_____item>a{display:block;height:100%;width:100%}.peter99032j-xyz-panel-aside-body .goods-review_____item>a>.review___shadow{background-color:#3d9ba433;bottom:0;display:none;left:0;position:absolute;right:0;text-align:center;top:0;z-index:99}.peter99032j-xyz-panel-aside-body .goods-review_____item>a>.review___shadow img{width:15px}.peter99032j-xyz-panel-aside-body .goods-review_____item img{width:100%}.peter99032j-xyz-panel-aside-body .history-box_____expand{cursor:pointer;flex-direction:column;margin:0 10px;text-align:center}.peter99032j-xyz-panel-aside-body .history-box_____expand svg{height:33px;width:33px}.peter99032j-xyz-panel-aside-body .history-box_____expand label{font-size:12px;font-weight:700}.peter99032j-xyz-panel-aside-body .wrapper_____drag-handle{box-shadow:0 3px 3px -2px #0003,0 3px 4px 0 #00000024,0 1px 8px 0 #0000001f;cursor:move;width:20px!important}";
@@ -289,6 +308,26 @@
         platform = PlatformConst.treatwell;
       } else if (/samsung\./.test(currentHost)) {
         platform = PlatformConst.samsung;
+      } else if (/temu\./.test(currentHost)) {
+        platform = PlatformConst.temu;
+      } else if (/walmart\./.test(currentHost)) {
+        platform = PlatformConst.walmart;
+      } else if (/shopee\./.test(currentHost)) {
+        platform = PlatformConst.shopee;
+      } else if (/wildberries\./.test(currentHost)) {
+        platform = PlatformConst.wildberries;
+      } else if (/zalando\./.test(currentHost)) {
+        platform = PlatformConst.zalando;
+      } else if (/noon\./.test(currentHost)) {
+        platform = PlatformConst.noon;
+      } else if (/daraz\./.test(currentHost)) {
+        platform = PlatformConst.daraz;
+      } else if (/ozon\./.test(currentHost)) {
+        platform = PlatformConst.ozon;
+      } else if (/allegro\./.test(currentHost)) {
+        platform = PlatformConst.allegro;
+      } else if (/rakuten\./.test(currentHost)) {
+        platform = PlatformConst.rakuten;
       }
       return platform;
     },
@@ -520,6 +559,16 @@
         console.error("Invalid URL:", error);
         return null;
       }
+    },
+    getCommonMarketplace: function(url = window.location.href) {
+      try {
+        const domainParts = new URL(url).hostname.split(".");
+        const countryCode = domainParts[domainParts.length - 1];
+        return countryCode;
+      } catch (error) {
+        console.log(error);
+      }
+      return null;
     }
   };
 
@@ -780,28 +829,59 @@
   };
   const LangueUtil = {
     updateDelay: 15 * 60 * 1e3,
-    languages: [
-      { code: "en", name: "English", dir: "ltr" },
-      { code: "es", name: "Español", dir: "ltr" },
-      { code: "ar", name: "العربية", dir: "rtl" },
-      { code: "fr", name: "Français", dir: "ltr" },
-      { code: "pt", name: "Português", dir: "ltr" },
-      { code: "ru", name: "Русский", dir: "ltr" },
-      { code: "ja", name: "日本語", dir: "ltr" },
-      { code: "de", name: "Deutsch", dir: "ltr" },
-      { code: "ko", name: "한국어", dir: "ltr" },
-      { code: "it", name: "Italiano", dir: "ltr" },
-      { code: "id", name: "Bahasa Indonesia", dir: "ltr" },
-      { code: "tr", name: "Türkçe", dir: "ltr" },
-      { code: "pl", name: "Polski", dir: "ltr" },
-      { code: "uk", name: "Українська", dir: "ltr" },
-      { code: "nl", name: "Nederlands", dir: "ltr" },
-      { code: "vi", name: "Tiếng Việt", dir: "ltr" },
-      { code: "ms", name: "Bahasa Melayu", dir: "ltr" },
-      { code: "th", name: "ไทย", dir: "ltr" },
-      { code: "mx", name: "Mexican Spanish", dir: "ltr" },
-      { code: "cl", name: "Chilean Spanish", dir: "ltr" }
-    ],
+    _locations: {
+      "en": { languageDefault: "Default" },
+      "es": { languageDefault: "Predeterminado" },
+      "ar": { languageDefault: "افتراضي" },
+      "fr": { languageDefault: "Par défaut" },
+      "pt": { languageDefault: "Padrão" },
+      "ru": { languageDefault: "По умолчанию" },
+      "ja": { languageDefault: "デフォルト" },
+      "de": { languageDefault: "Standard" },
+      "ko": { languageDefault: "기본" },
+      "it": { languageDefault: "Predefinito" },
+      "id": { languageDefault: "Default" },
+      "tr": { languageDefault: "Varsayılan" },
+      "pl": { languageDefault: "Domyślnie" },
+      "uk": { languageDefault: "Типово" },
+      "nl": { languageDefault: "Standaard" },
+      "vi": { languageDefault: "Mặc định" },
+      "ms": { languageDefault: "Lalai" },
+      "th": { languageDefault: "ค่าเริ่มต้น" },
+      "mx": { languageDefault: "Predeterminado" },
+      "cl": { languageDefault: "Predeterminado" }
+    },
+    getLanguages: function() {
+      var _a, _b;
+      const languages = [
+        { code: "en", name: "English", dir: "ltr" },
+        { code: "es", name: "Español", dir: "ltr" },
+        { code: "ar", name: "العربية", dir: "rtl" },
+        { code: "fr", name: "Français", dir: "ltr" },
+        { code: "pt", name: "Português", dir: "ltr" },
+        { code: "ru", name: "Русский", dir: "ltr" },
+        { code: "ja", name: "日本語", dir: "ltr" },
+        { code: "de", name: "Deutsch", dir: "ltr" },
+        { code: "ko", name: "한국어", dir: "ltr" },
+        { code: "it", name: "Italiano", dir: "ltr" },
+        { code: "id", name: "Bahasa Indonesia", dir: "ltr" },
+        { code: "tr", name: "Türkçe", dir: "ltr" },
+        { code: "pl", name: "Polski", dir: "ltr" },
+        { code: "uk", name: "Українська", dir: "ltr" },
+        { code: "nl", name: "Nederlands", dir: "ltr" },
+        { code: "vi", name: "Tiếng Việt", dir: "ltr" },
+        { code: "ms", name: "Bahasa Melayu", dir: "ltr" },
+        { code: "th", name: "ไทย", dir: "ltr" },
+        { code: "mx", name: "Mexican Spanish", dir: "ltr" },
+        { code: "cl", name: "Chilean Spanish", dir: "ltr" }
+      ];
+      const language = (_a = languages.find((lang) => lang.code === DefaultVaule.lang)) != null ? _a : languages[0];
+      const defaultLanguage = Object.assign({}, language);
+      defaultLanguage.code = "default";
+      defaultLanguage.name = (_b = this._locations[DefaultVaule.lang]["languageDefault"]) != null ? _b : "Default";
+      languages.unshift(defaultLanguage);
+      return languages;
+    },
     defaultLangueObjects: {
       "extension.structure.setting_modal_title": "Settings",
       "extension.structure.setting_modal_langue_title": "Language",
@@ -825,19 +905,23 @@
       "extension.structure.auto_detect_alert_success": "Congratulations! The code has been applied automatically!"
     },
     langueObjects: null,
-    getLang: function() {
-      return StorageUtil.getValue(StorageKeys.langue.custom, DefaultVaule.lang);
+    getLang: function(isTransform = false) {
+      const lang = StorageUtil.getValue(StorageKeys.langue.custom, "default");
+      if (isTransform) {
+        return lang === "default" ? DefaultVaule.lang : lang;
+      }
+      return lang;
     },
     setLang: function(lang) {
       StorageUtil.setValue(StorageKeys.langue.custom, lang);
     },
     getSelectedLanguage: function(selectedLang) {
       if (!selectedLang) {
-        selectedLang = this.getLang();
+        selectedLang = this.getLang(true);
       }
-      let selectedLanguage = this.languages.find((lang) => lang.code === selectedLang);
+      let selectedLanguage = this.getLanguages().find((lang) => lang.code === selectedLang);
       if (!selectedLanguage) {
-        selectedLanguage = this.languages[0];
+        selectedLanguage = this.getLanguages()[0];
       }
       return selectedLanguage;
     },
@@ -852,20 +936,20 @@
     },
     initLangueDataMap: function(force = false) {
       return new Promise((resolve, reject) => {
+        const lang = this.getLang(true);
         const now = new Date().getTime();
-        const langueObjects = StorageUtil.getValue(StorageKeys.langue.objects, { "data": this.defaultLangueObjects, "time": now });
-        if (now - langueObjects.time >= this.updateDelay || now === langueObjects.time || force) {
+        const langueObjects = StorageUtil.getValue(StorageKeys.langue.objects, { "data": this.defaultLangueObjects, "time": now, "lang": "default" });
+        if (now - langueObjects.time >= this.updateDelay || now === langueObjects.time || langueObjects.lang != lang || force) {
           try {
-            const lang = this.getLang();
             const requestsBase = getRequestUrl()["getLangue"];
             Tools.request(requestsBase.method, requestsBase.url, { "lang": lang }, { "Content-Type": "application/json;charset=UTF-8" }, 5 * 1e3).then((serverLangueJson) => {
               if (serverLangueJson.code === "success") {
                 const serverLangueObjects = JSON.parse(serverLangueJson.result);
-                StorageUtil.setValue(StorageKeys.langue.objects, { "data": serverLangueObjects, "time": new Date().getTime() });
+                StorageUtil.setValue(StorageKeys.langue.objects, { "data": serverLangueObjects, "time": new Date().getTime(), "lang": lang });
                 this.langueObjects = serverLangueObjects;
-                Logger.log("info", "get server langue success=======>");
+                Logger.log("info", "get server langue success=======>", this.langueObjects);
               } else {
-                Logger.log("info", "get server langue error=======>");
+                Logger.log("info", "get server langue error=======>", this.langueObjects);
                 this.langueObjects = this.defaultLangueObjects;
               }
             }).catch((error) => {
@@ -1080,7 +1164,7 @@
     },
     languageSwitcher: function($content, selectedLanguage) {
       const languageOptions = $content.querySelector("#language-options");
-      LangueUtil.languages.forEach((lang) => {
+      LangueUtil.getLanguages().forEach((lang) => {
         const li = document.createElement("li");
         li.classList.add("switcher-item-li");
         li.textContent = lang.name;
@@ -2346,15 +2430,7 @@
       return [/https?:\/\/www\.ebay\.[a-z.]+\/itm\/\d+/].map((rs) => rs.test(visitUrl)).some((rs) => rs);
     },
     getMarketplace: function(url = window.location.href) {
-      try {
-        const urlObj = new URL(url);
-        const hostname = urlObj.hostname;
-        if (hostname) {
-          return hostname.split(".").slice(-1)[0];
-        }
-      } catch (error) {
-      }
-      return null;
+      return Tools.getCommonMarketplace(url);
     },
     detail: function() {
       return __async$e(this, null, function* () {
@@ -2754,14 +2830,7 @@
     visitUrl: window.location.href,
     currentPlatform: PlatformConst.lazada,
     getMarketplace: function(url = window.location.href) {
-      try {
-        const domainParts = new URL(url).hostname.split(".");
-        const countryCode = domainParts[domainParts.length - 1];
-        return countryCode;
-      } catch (error) {
-        console.log(error);
-      }
-      return null;
+      return Tools.getCommonMarketplace(url);
     },
     isRun: function() {
       return /.*\.lazada\..*\/products\/.*-i\d+.*\.html/.test(this.visitUrl);
@@ -3068,15 +3137,7 @@
       return [/www\.bestbuy\.com\/site\/.*\/\d+\.p/].map((rs) => rs.test(visitUrl)).some((rs) => rs);
     },
     getMarketplace: function(url = window.location.href) {
-      try {
-        const urlObj = new URL(url);
-        const hostname = urlObj.hostname;
-        if (hostname) {
-          return hostname.split(".").slice(-1)[0];
-        }
-      } catch (error) {
-      }
-      return null;
+      return Tools.getCommonMarketplace(url);
     },
     detail: function() {
       return __async$a(this, null, function* () {
@@ -3830,53 +3891,43 @@
 
   const Wish = {
     getMarketplace: function(url = window.location.href) {
-      try {
-        const domainParts = new URL(url).hostname.split(".");
-        const countryCode = domainParts[domainParts.length - 1];
-        return countryCode;
-      } catch (error) {
-        console.log(error);
-      }
-      return null;
+      return Tools.getCommonMarketplace(url);
     }
   };
 
   const Airbaltic = {
     getMarketplace: function(url = window.location.href) {
-      try {
-        const domainParts = new URL(url).hostname.split(".");
-        const countryCode = domainParts[domainParts.length - 1];
-        return countryCode;
-      } catch (error) {
-        console.log(error);
-      }
-      return null;
+      return Tools.getCommonMarketplace(url);
     }
   };
 
   const Edureka = {
     getMarketplace: function(url = window.location.href) {
-      try {
-        const domainParts = new URL(url).hostname.split(".");
-        const countryCode = domainParts[domainParts.length - 1];
-        return countryCode;
-      } catch (error) {
-        console.log(error);
-      }
-      return null;
+      return Tools.getCommonMarketplace(url);
     }
   };
 
   const Ranavat = {
     getMarketplace: function(url = window.location.href) {
-      try {
-        const domainParts = new URL(url).hostname.split(".");
-        const countryCode = domainParts[domainParts.length - 1];
-        return countryCode;
-      } catch (error) {
-        console.log(error);
-      }
-      return null;
+      return Tools.getCommonMarketplace(url);
+    }
+  };
+
+  const Temu = {
+    getMarketplace: function(url = window.location.href) {
+      return Tools.getCommonMarketplace(url);
+    }
+  };
+
+  const Amazon = {
+    getMarketplace: function(url = window.location.href) {
+      return Tools.getCommonMarketplace(url);
+    }
+  };
+
+  const Shopee = {
+    getMarketplace: function(url = window.location.href) {
+      return Tools.getCommonMarketplace(url);
     }
   };
 
@@ -3913,6 +3964,15 @@
     },
     Ranavat: {
       Ranavat
+    },
+    Amazon: {
+      Amazon
+    },
+    Temu: {
+      Temu
+    },
+    Shopee: {
+      Shopee
     }
   };
 
@@ -3943,38 +4003,63 @@
   const RequestUtil = {
     getDetectCouponParams: function() {
       return __async$6(this, null, function* () {
-        const { Aliexpress, Ebay, Lazada, Bestbuy, Banggood, Airbaltic, Edureka, Ranavat, Wish } = PlatformModules;
+        const {
+          Aliexpress,
+          Ebay,
+          Lazada,
+          Bestbuy,
+          Banggood,
+          Airbaltic,
+          Edureka,
+          Ranavat,
+          Wish,
+          Temu,
+          Amazon,
+          Shopee
+        } = PlatformModules;
         let platform = InspectUtil.getPlatform(), marketplace = "", currency = "";
-        const lang = StorageUtil.getValue(StorageKeys.langue.custom, DefaultVaule.lang);
+        let lang = StorageUtil.getValue(StorageKeys.langue.custom, "default");
+        if (lang === "default") {
+          lang = DefaultVaule.lang;
+        }
         switch (platform) {
-          case "aliexpress":
+          case PlatformConst.aliexpress:
             marketplace = Aliexpress.Aliexpress.getMarketplace();
             currency = yield Aliexpress.Aliexpress.getCurrency();
             break;
-          case "ebay":
+          case PlatformConst.ebay:
             marketplace = Ebay.Ebay.getMarketplace();
             break;
-          case "lazada":
+          case PlatformConst.lazada:
             marketplace = Lazada.Lazada.getMarketplace();
             break;
-          case "bestbuy":
+          case PlatformConst.bestbuy:
             marketplace = Bestbuy.Bestbuy.getMarketplace();
             break;
-          case "banggood":
+          case PlatformConst.banggood:
             marketplace = Banggood.Banggood.getMarketplace();
             currency = Banggood.Banggood.getCurrency();
             break;
-          case "airbaltic":
+          case PlatformConst.airbaltic:
             marketplace = Airbaltic.Airbaltic.getMarketplace();
             break;
-          case "edureka":
+          case PlatformConst.edureka:
             marketplace = Edureka.Edureka.getMarketplace();
             break;
-          case "ranavat":
+          case PlatformConst.ranavat:
             marketplace = Ranavat.Ranavat.getMarketplace();
             break;
-          case "wish":
+          case PlatformConst.wish:
             marketplace = Wish.Wish.getMarketplace();
+            break;
+          case PlatformConst.amazon:
+            marketplace = Amazon.Amazon.getMarketplace();
+            break;
+          case PlatformConst.temu:
+            marketplace = Temu.Temu.getMarketplace();
+            break;
+          case PlatformConst.shopee:
+            marketplace = Shopee.Shopee.getMarketplace();
             break;
         }
         const params = {
@@ -4892,7 +4977,6 @@
         if (!infoJson["show"]) {
           return;
         }
-        const modalTitle = InspectUtil.getModalTitle();
         const couponTotal = infoJson["coupon_total"];
         const modalPosition = infoJson["modal"];
         const iconJson = infoJson["icon"];
@@ -4901,6 +4985,7 @@
         const interfaceData = iconJson["interface"];
         const cggJson = infoJson["cgg"];
         const autoOpen = cggJson["auto_open"];
+        const modalTitle = cggJson["current_platform"];
         const selectedLanguage = LangueUtil.getSelectedLanguage();
         this.addStyle();
         const outerDIV = InspectUtil.generateOuterContainer(selectedLanguage.dir);
