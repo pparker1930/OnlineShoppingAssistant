@@ -74,40 +74,68 @@
 // @description:ug     پاپۇلار سودا سېتىش پلاتفورمالىرىدا ئاپتوماتىك كۇپون ئىزدەش ئارقىلىق، پەقەت مۇھتاج بولغان مەھسۇلاتلارغا ئەڭ ياخشى پەقەتلەرنى تاپشۇرۇشقا ياردەم بېرىدۇ، ھىچ بىر ئاشىق پۇل چىقارماي. ھازىر كۆرسىتىلىدىغان: Aliexpress، Lazada، eBay، Amazon ۋە باشقا.
 // @description:vi     Tìm kiếm tự động mã giảm giá trên các nền tảng mua sắm phổ biến để giúp bạn tìm được những ưu đãi tốt nhất cho sản phẩm bạn cần, mà không phải chi tiêu quá mức. Hiện tại hỗ trợ: Aliexpress, Lazada, eBay, Amazon và nhiều hơn nữa.
 // @namespace   Thaddeus_ecommerce_NameScope
-// @version     1.0.9
+// @version     1.0.10
 // @author      Thaddeus310
 // @icon        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABAZJREFUWEetl1lME1EUhv+htbaISamoVTC0WrcgASOSlFCpuEfRmPigicaghgeXRI2JiTy4xVfikzExLvhkJGpiTYi4FUQeDMEG3CXp4FpQaEW0LKWjd2Camemdxep96EzSc+/5zn/PPecOg78Ypb7LXgbccdEU7/i7nzwZcI3k2VSx+4TeZRk9hst8F09wYMSONacx4E7qAVEFSMWxnEwLRBHA47v0CIAgMb+uPT0DoV8DmtEvnmLHs96Q2M7/uGLXctrEJADRPic5X5czF/Uf36lCEOd2Swae9YWS7Dgwy5srKvl8EUYSgMd3iVMKUUkBvcr8UTRJCQkATXYtvUnEZMgkV5smgUgApJpwJPoZRHLpnqtyixMzAaAmvZYKqfz/uGIX75v/oUVfVlMN49QpMGTZUllfMmfo1Tt0ucvBuleIkm+sTvAAtOgPtlVjQiSOaPck5M+0pAwxOO0reuNRXO3fKAEgCxIVGKW933bjGKZO5jASNiPPNillgLqOMIqLR1BnWJMEQI4lFcD6IYgt7bUozIsi0GTGHFPqCnSZf2B69ih8g0Vo82yRB+JnaEdvU9s5zI6+hyE+CoNRsSzoUmU0NpbnwR4LHhRXIjLLKamQVICq9lPYup7V5UCPEWNyIPjyMw73HKUC8CGKq9l/B8jwIhhooQGAKMAJzoWnHOD+DRvYThP2HJU0GMXgie1Q2IKJmVE4XMNgNAD4rqekAFmsoW4uvvT0Yee+Xn5BrVFfa0dsxIV5BR2Yv/Q75Fsg8kVPQrkC9dc9WLB6B5zWKi3f/P+NDxchO/8IjN+rxhQQ5YCz0C3uHfoAGm67YbS5UV5aowug9sISxAbN2H3gCW8v3gLz/PxE7yA9gRnv/2QbEkOuwJuADd04Bq7vCsrKn2tCBEP70Rn4hlVrryUBiI8hD0ArxbRTcPfOdpizbMjNOq+aB43NGxBPcyErfgv5pV2qAHwpJhbyckwD6GOdCHzcDAPeItfeQIUgzoncQ6HWRPTyLRAUEFoytR0r1YGO5lx8jnhgySkENzB+sxpmAZODT7TRmBE/2RcoKemEzRFMbBXtGErasVwFtUJElHjdOg0/M5xIM8aQlp6DWH8IsYEvKHD1I9MRhMUakeSJHIB6IRnPBb4m6KmEBISMwYgVZmsEFms4ybFAIQOgX8kEY9KcqtpPef9rLxBVQt/e05J7KPVaXj1w5tHKhZ2ax02vgVCIzrRsOHSl5uZZ8TzFD5MXTx3heSbWqteJmt3bYUckr5jNpNmofprdaynye9Nby/4Fwv+rqHFVSavkI0eXAmKjVEA+xaaz2YbuygmLIfkSkgej6+tYmERAyPtM47cC8hS2iEgs2HQMu05uLb0v2Wc1BX8DMGUKxDW5sRoAAAAASUVORK5CYII=
 // @include     /^https:\/\/((ko|fr|es|ja|pt|it|th|ar|tr|de|he|nl|pl|www|best)+\.)?aliexpress\.(ru|us|com)\/*/
-// @include     /^https:\/\/(www\.)?lazada\.(co\.id|vn|com\.my|co\.th|sg|com\.ph)/.*/
-// @include     /^https:\/\/(.*\.)?shopee\..*/?.*/
-// @include     /^https:\/\/([a-z]{2,3})\.banggood\.com/*/
-// @include     /^https:\/\/(.*\.)?amazon\..*/?.*/
-// @include     /^https:\/\/(.*\.)?ebay\..*/?.*/
-// @include     /^https:\/\/(.*\.)?bestbuy\..*/?.*/
-// @include     /^https:\/\/(.*\.)?airbaltic\..*/?.*/
-// @include     /^https:\/\/(.*\.)?edureka\..*/?.*/
-// @include     /^https:\/\/(.*\.)?ranavat\..*/?.*/
-// @include     /^https:\/\/(.*\.)?alibaba\..*/?.*/
-// @include     /^https:\/\/(.*\.)?wish\..*/?.*/
-// @include     /^https:\/\/(.*\.)?ticketmaster\..*/?.*/
-// @include     /^https:\/\/(.*\.)?wilson\..*/?.*/
-// @include     /^https:\/\/(.*\.)?wilsonsleather\..*/?.*/
-// @include     /^https:\/\/(.*\.)?pictarine\..*/?.*/
-// @include     /^https:\/\/(.*\.)?suiteness\..*/?.*/
-// @include     /^https:\/\/(.*\.)?treatwell\..*/?.*/
-// @include     /^https:\/\/(.*\.)?trip\..*/?.*/
-// @include     /^https:\/\/(.*\.)?samsung\..*/?.*/
-// @include     /^https:\/\/(.*\.)?daraz\..*/?.*/
-// @include     /^https:\/\/(.*\.)?wildberries\..*/?.*/
-// @include     /^https:\/\/(.*\.)?whopee\..*/?.*/
-// @include     /^https:\/\/(.*\.)?walmart\..*/?.*/
-// @include     /^https:\/\/(.*\.)?temu\..*/?.*/
-// @include     /^https:\/\/(.*\.)?noon\..*/?.*/
-// @include     /^https:\/\/(.*\.)?ozon\..*/?.*/
-// @include     /^https:\/\/(.*\.)?allegro\..*/?.*/
-// @include     /^https:\/\/(.*\.)?rakuten\..*/?.*/
-// @include     /^https:\/\/(.*\.)?zalando\..*/?.*/
+// @include     /^https:\/\/([\w-]+\.)?lazada\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?shopee\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?banggood\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?amazon\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?ebay\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?bestbuy\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?airbaltic\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?edureka\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?ranavat\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?alibaba\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?wish\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?ticketmaster\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?wilson\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?wilsonsleather\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?pictarine\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?suiteness\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?treatwell\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?trip\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?samsung\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?daraz\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?wildberries\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?shopee\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?walmart\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?temu\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?noon\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?ozon\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?allegro\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?rakuten\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?zalando\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?shein\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?expedia\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?booking\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?agoda\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?hotels\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?tripadvisor\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?skyscanner\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?target\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?etsy\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?nike\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?adidas\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?meesho\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?abritel\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?bookabach\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?fewo-direkt\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?stayz\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?mercadolibre\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?magazineluiza\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?wildberries\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?zalando\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?daraz\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?advertiser\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?namshi\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?sivvi\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?vrbo\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?wotif\.[\w.-]+([/?#].*)?$/
 // @include     *://www.jtm.pub/mid/merge**
+// @exclude     *://www.lazada.com/*
+// @exclude     *://shopee.com/*
 // @connect     tikdownloader.io
 // @connect     oversea.mimixiaoke.com
 // @license     MIT
@@ -162,39 +190,63 @@
     "currentUrl": window.location.href
   };
   const PlatformConst = {
-    "aliexpress": "aliexpress",
-    "amazon": "amazon",
-    "shopee": "shopee",
-    "lazada": "lazada",
-    "ebay": "ebay",
-    "bestbuy": "bestbuy",
-    "banggood": "banggood",
-    "wish": "wish",
-    "airbaltic": "airbaltic",
-    "edureka": "edureka",
-    "ranavat": "ranavat",
-    "alibaba": "alibaba",
-    "ticketmaster": "ticketmaster",
-    "wilson": "wilson",
-    "wilsonsleather": "wilsonsleather",
-    "pictarine": "pictarine",
-    "suiteness": "suiteness",
-    "trip": "trip",
-    "treatwell": "treatwell",
-    "samsung": "samsung",
-    "x": "x",
-    "youtube": "youtube",
-    "tiktok": "tiktok",
-    "cobalt": "cobalt",
-    "temu": "temu",
-    "walmart": "walmart",
-    "wildberries": "wildberries",
-    "zalando": "zalando",
-    "noon": "noon",
-    "daraz": "daraz",
-    "ozon": "ozon",
-    "allegro": "allegro",
-    "rakuten": "rakuten"
+    "x": { "p": "x", "match": /twitter|x\.com$/ },
+    "youtube": { "p": "youtube", "match": /youtube\.com$/ },
+    "tiktok": { "p": "tiktok", "match": /www\.tiktok\.com/ },
+    "cobalt": { "p": "cobalt", "match": /cobalt\.tools/ },
+    "aliexpress": { "p": "aliexpress", "match": /aliexpress\./ },
+    "amazon": { "p": "amazon", "match": /amazon\./ },
+    "shopee": { "p": "shopee", "match": /shopee\./ },
+    "lazada": { "p": "lazada", "match": /lazada\./ },
+    "ebay": { "p": "ebay", "match": /ebay\./ },
+    "bestbuy": { "p": "bestbuy", "match": /bestbuy\./ },
+    "banggood": { "p": "banggood", "match": /banggood\./ },
+    "wish": { "p": "wish", "match": /wish\./ },
+    "airbaltic": { "p": "airbaltic", "match": /airbaltic\./ },
+    "edureka": { "p": "edureka", "match": /edureka\./ },
+    "ranavat": { "p": "ranavat", "match": /ranavat\./ },
+    "alibaba": { "p": "alibaba", "match": /alibaba\./ },
+    "ticketmaster": { "p": "ticketmaster", "match": /ticketmaster\./ },
+    "wilson": { "p": "wilson", "match": /wilson\./ },
+    "wilsonsleather": { "p": "wilsonsleather", "match": /wilsonsleather\./ },
+    "pictarine": { "p": "pictarine", "match": /pictarine\./ },
+    "suiteness": { "p": "suiteness", "match": /suiteness\./ },
+    "trip": { "p": "trip", "match": /\.trip\./ },
+    "treatwell": { "p": "treatwell", "match": /treatwell\./ },
+    "samsung": { "p": "samsung", "match": /samsung\./ },
+    "temu": { "p": "temu", "match": /temu\./ },
+    "walmart": { "p": "walmart", "match": /walmart\./ },
+    "wildberries": { "p": "wildberries", "match": /wildberries\./ },
+    "zalando": { "p": "zalando", "match": /zalando\./ },
+    "noon": { "p": "noon", "match": /noon\./ },
+    "daraz": { "p": "daraz", "match": /daraz\./ },
+    "ozon": { "p": "ozon", "match": /ozon\./ },
+    "allegro": { "p": "allegro", "match": /allegro\./ },
+    "rakuten": { "p": "rakuten", "match": /rakuten\./ },
+    "shein": { "p": "shein", "match": /shein\./ },
+    "expedia": { "p": "expedia", "match": /expedia\./ },
+    "booking": { "p": "booking", "match": /\.booking\./ },
+    "agoda": { "p": "agoda", "match": /agoda\./ },
+    "hotels": { "p": "hotels", "match": /\.hotels\./ },
+    "tripadvisor": { "p": "tripadvisor", "match": /\.tripadvisor\./ },
+    "skyscanner": { "p": "skyscanner", "match": /skyscanner\./ },
+    "target": { "p": "target", "match": /target\./ },
+    "etsy": { "p": "etsy", "match": /etsy\./ },
+    "nike": { "p": "nike", "match": /nike\./ },
+    "adidas": { "p": "adidas", "match": /adidas\./ },
+    "meesho": { "p": "meesho", "match": /meesho\./ },
+    "abritel": { "p": "abritel", "match": /abritel\./ },
+    "bookabach": { "p": "bookabach", "match": /bookabach\./ },
+    "fewodirekt": { "p": "fewodirekt", "match": /fewo-direkt\./ },
+    "stayz": { "p": "stayz", "match": /stayz\./ },
+    "mercadolibre": { "p": "mercadolibre", "match": /mercadolibre\./ },
+    "magazineluiza": { "p": "magazineluiza", "match": /magazineluiza\./ },
+    "advertiser": { "p": "advertiser", "match": /advertiser\./ },
+    "namshi": { "p": "namshi", "match": /namshi\./ },
+    "sivvi": { "p": "sivvi", "match": /sivvi\./ },
+    "vrbo": { "p": "vrbo", "match": /vrbo\./ },
+    "wotif": { "p": "wotif", "match": /wotif\./ },
+    "wayfair": { "p": "wayfair", "match": /wayfair\./ }
   };
 
   var css_248z$4 = ".peter99032j-xyz-panel-wrapper{box-sizing:border-box;position:fixed;z-index:2147483646}.peter99032j-xyz-panel-wrapper svg.icon-svg path{fill:var(--color-modeal-header-icon)}.peter99032j-xyz-panel-wrapper svg.icon-svg:hover path{fill:var(--color-modeal-header-icon-hover)}.peter99032j-xyz-panel-wrapper>.peter99032j-xyz-panel-aside-main{background-color:#fff;border:1px solid #ebebeb;border-radius:5px;bottom:70px;box-shadow:2px 2px 5px #b6bdc5;display:none;height:400px;overflow-x:hidden;overflow-y:auto;position:absolute;right:0;width:400px}.peter99032j-xyz-panel-wrapper>.peter99032j-xyz-panel-aside-main>.panel-aside-main_____inner{display:flex;flex-direction:column;height:100%;width:100%}.peter99032j-xyz-panel-aside-main .panel-aside-main_____header{align-items:center;background-color:var(--color-modeal-header-background);border-bottom:1px solid #ebe6e6;box-sizing:border-box;display:flex;height:var(--size-height-modeal-header);justify-content:space-between;padding:0 var(--size-padding-horizontal-modeal-header)}.peter99032j-xyz-panel-aside-main .panel-aside-main_____header>.logo_____header{align-items:center;display:flex;justify-content:center}.peter99032j-xyz-panel-aside-main .panel-aside-main_____header>.logo_____header>svg{height:var(--size-height-modeal-icon);width:var(--size-height-modeal-icon)}.peter99032j-xyz-panel-aside-main .panel-aside-main_____header>.title_____header{flex:1;font-size:var(--size-font-modeal-header-title);font-weight:700;padding-left:10px}.peter99032j-xyz-panel-aside-main .panel-aside-main_____header .btns_____header{display:flex;flex-direction:row}.peter99032j-xyz-panel-aside-main .panel-aside-main_____header .btns_____header ._____close,.peter99032j-xyz-panel-aside-main .panel-aside-main_____header .btns_____header ._____setting{align-items:center;cursor:pointer;display:flex;justify-content:center;width:var(--size-height-modeal-operat-icon)}.peter99032j-xyz-panel-aside-main .panel-aside-main_____content{background-color:var(--color-modeal-content-background);flex:1;overflow:auto}.peter99032j-xyz-panel-aside-main .panel-aside-main_____item{margin:5px 0;padding:5px}.peter99032j-xyz-panel-aside-main .panel-aside-main_____item .item_____title{color:#b6b6b6;font-size:13px;font-weight:500;padding:5px 0;text-align:center}.peter99032j-xyz-panel-aside-main .panel-aside-main_____item .item_____container{display:flex;flex-flow:wrap;flex-direction:row;justify-content:flex-start}.peter99032j-xyz-panel-aside-main .histories-box-review_item{margin:5px 0;overflow:hidden;width:33.3333%}.peter99032j-xyz-panel-aside-main .histories-box-review_item>a{background-color:#fff!important;border:1px solid #ccc!important;border-radius:5px!important;box-sizing:initial!important;display:block!important;margin:0 auto!important;position:relative!important;width:110px!important}.peter99032j-xyz-panel-aside-main .histories-box-review_item>a>.review___shadow{border:2px solid red;border-radius:5px;bottom:0;display:none;left:0;position:absolute;right:0;text-align:center;top:0;z-index:99}.peter99032j-xyz-panel-aside-main .histories-box-review_item>a>.review___shadow .delete_____btn{background-color:red;border-radius:3px;color:#fff;font-size:13px;height:15px;line-height:10px;position:absolute;right:0;text-align:center;top:0;width:15px}.peter99032j-xyz-panel-aside-main .histories-box-review_item>a>.review___img{border-radius:5px 5px 0 0;height:110px;overflow:hidden;width:110px}.peter99032j-xyz-panel-aside-main .histories-box-review_item>a>.review___img>img{width:100%}.peter99032j-xyz-panel-aside-main .histories-box-review_item>a>.review___text{color:#000!important;font-size:13px!important;overflow:hidden!important;padding:5px!important;text-align:center!important;text-decoration:underline!important;text-overflow:ellipsis!important;white-space:nowrap!important}.peter99032j-xyz-panel-wrapper>.peter99032j-xyz-panel-aside-body{background-color:#fafafa;border-radius:5px;box-shadow:1px 1px 2px #b6bdc5;direction:ltr!important;display:flex;height:60px;overflow:hidden}.peter99032j-xyz-panel-wrapper>.peter99032j-xyz-panel-aside-body>div{align-items:center;display:flex;justify-content:center}.peter99032j-xyz-panel-aside-body .goods_____expand{cursor:pointer;width:20px!important}.peter99032j-xyz-panel-aside-body .goods_____expand svg{transition:transform .3s}.peter99032j-xyz-panel-aside-body .goods_____review{flex-direction:row;transition:all .5s ease-in-out;width:auto}.peter99032j-xyz-panel-aside-body .goods-review_____item{border-radius:4px;cursor:pointer;height:45px;line-height:45px;margin:0 5px;overflow:hidden;position:relative;width:45px}.peter99032j-xyz-panel-aside-body .goods-review_____item>a{display:block;height:100%;width:100%}.peter99032j-xyz-panel-aside-body .goods-review_____item>a>.review___shadow{background-color:#3d9ba433;bottom:0;display:none;left:0;position:absolute;right:0;text-align:center;top:0;z-index:99}.peter99032j-xyz-panel-aside-body .goods-review_____item>a>.review___shadow img{width:15px}.peter99032j-xyz-panel-aside-body .goods-review_____item img{width:100%}.peter99032j-xyz-panel-aside-body .history-box_____expand{cursor:pointer;flex-direction:column;margin:0 10px;text-align:center}.peter99032j-xyz-panel-aside-body .history-box_____expand svg{height:33px;width:33px}.peter99032j-xyz-panel-aside-body .history-box_____expand label{font-size:12px;font-weight:700}.peter99032j-xyz-panel-aside-body .wrapper_____drag-handle{box-shadow:0 3px 3px -2px #0003,0 3px 4px 0 #00000024,0 1px 8px 0 #0000001f;cursor:move;width:20px!important}";
@@ -270,78 +322,25 @@
     getEcommercePlatform: function() {
       let platform = null;
       const currentHost = window.location.host;
-      if (/amazon\./.test(currentHost)) {
-        platform = PlatformConst.amazon;
-      } else if (/ebay\./.test(currentHost)) {
-        platform = PlatformConst.ebay;
-      } else if (/lazada\./.test(currentHost)) {
-        platform = PlatformConst.lazada;
-      } else if (/aliexpress./.test(currentHost)) {
-        platform = PlatformConst.aliexpress;
-      } else if (/bestbuy\./.test(currentHost)) {
-        platform = PlatformConst.bestbuy;
-      } else if (/banggood\./.test(currentHost)) {
-        platform = PlatformConst.banggood;
-      } else if (/wish\./.test(currentHost)) {
-        platform = PlatformConst.wish;
-      } else if (/airbaltic\./.test(currentHost)) {
-        platform = PlatformConst.airbaltic;
-      } else if (/edureka\./.test(currentHost)) {
-        platform = PlatformConst.edureka;
-      } else if (/ranavat\./.test(currentHost)) {
-        platform = PlatformConst.ranavat;
-      } else if (/alibaba\./.test(currentHost)) {
-        platform = PlatformConst.alibaba;
-      } else if (/ticketmaster\./.test(currentHost)) {
-        platform = PlatformConst.ticketmaster;
-      } else if (/wilson\./.test(currentHost)) {
-        platform = PlatformConst.wilson;
-      } else if (/wilsonsleather\./.test(currentHost)) {
-        platform = PlatformConst.wilsonsleather;
-      } else if (/pictarine\./.test(currentHost)) {
-        platform = PlatformConst.pictarine;
-      } else if (/suiteness\./.test(currentHost)) {
-        platform = PlatformConst.suiteness;
-      } else if (/trip\./.test(currentHost)) {
-        platform = PlatformConst.trip;
-      } else if (/treatwell\./.test(currentHost)) {
-        platform = PlatformConst.treatwell;
-      } else if (/samsung\./.test(currentHost)) {
-        platform = PlatformConst.samsung;
-      } else if (/temu\./.test(currentHost)) {
-        platform = PlatformConst.temu;
-      } else if (/walmart\./.test(currentHost)) {
-        platform = PlatformConst.walmart;
-      } else if (/shopee\./.test(currentHost)) {
-        platform = PlatformConst.shopee;
-      } else if (/wildberries\./.test(currentHost)) {
-        platform = PlatformConst.wildberries;
-      } else if (/zalando\./.test(currentHost)) {
-        platform = PlatformConst.zalando;
-      } else if (/noon\./.test(currentHost)) {
-        platform = PlatformConst.noon;
-      } else if (/daraz\./.test(currentHost)) {
-        platform = PlatformConst.daraz;
-      } else if (/ozon\./.test(currentHost)) {
-        platform = PlatformConst.ozon;
-      } else if (/allegro\./.test(currentHost)) {
-        platform = PlatformConst.allegro;
-      } else if (/rakuten\./.test(currentHost)) {
-        platform = PlatformConst.rakuten;
+      for (let key in PlatformConst) {
+        if (["x", "youtube", "tiktok", "cobalt"].indexOf(key) !== -1) {
+          continue;
+        }
+        if (PlatformConst[key].match.test(currentHost)) {
+          platform = PlatformConst[key].p;
+          break;
+        }
       }
       return platform;
     },
     getOtherPlatform: function() {
       let platform = null;
       const currentHost = window.location.host;
-      if (/twitter|x\.com$/.test(currentHost)) {
-        platform = PlatformConst.x;
-      } else if (/youtube\.com$/.test(currentHost)) {
-        platform = PlatformConst.youtube;
-      } else if (/www\.tiktok\.com/.test(currentHost)) {
-        platform = PlatformConst.tiktok;
-      } else if (/cobalt\.tools/.test(currentHost)) {
-        platform = PlatformConst.cobalt;
+      for (let key in ["x", "youtube", "tiktok", "cobalt"]) {
+        if (PlatformConst[key].match.test(currentHost)) {
+          platform = PlatformConst[key].p;
+          break;
+        }
       }
       return platform;
     },
@@ -398,7 +397,11 @@
         };
         if (config.method === "POST") {
           config.headers = headers != null ? headers : { "Content-Type": "application/json" };
-          config.data = JSON.stringify(param);
+          if (JSON.stringify(config.headers).indexOf("application/json") != -1) {
+            config.data = JSON.stringify(param);
+          } else {
+            config.data = param;
+          }
         } else if (config.method === "GET") {
           config.headers = headers != null ? headers : { "Content-Type": "application/json" };
           config.data = param;
@@ -556,7 +559,6 @@
         }
         return hostname;
       } catch (error) {
-        console.error("Invalid URL:", error);
         return null;
       }
     },
@@ -566,7 +568,6 @@
         const countryCode = domainParts[domainParts.length - 1];
         return countryCode;
       } catch (error) {
-        console.log(error);
       }
       return null;
     }
@@ -777,7 +778,9 @@
         let code = item.code, msg = item.msg;
         if (code) {
           ClipboardUtil.setValue(Tools.decryptStr(code));
-          element.innerText = msg;
+          if (element) {
+            element.innerText = msg;
+          }
         }
         this.openUrl(options);
       }
@@ -793,7 +796,6 @@
           const json = JSON.parse(dataContent);
           this.customOpenUrl(element, json, operate);
         } catch (e) {
-          console.log(e);
         }
       });
     },
@@ -1543,7 +1545,6 @@
       draggable.addEventListener("mousedown", (e) => {
         e.preventDefault();
         if (window.getComputedStyle(wrapper).position !== "absolute" && window.getComputedStyle(wrapper).position !== "fixed") {
-          console.error('The wrapper element must have position set to "absolute" or "fixed".');
           return;
         }
         isDragging = true;
@@ -1816,7 +1817,7 @@
     languageStoageKey: "language-stoage-key",
     currencyStoageKey: "language-currency-key",
     baseUrl: "https://oversea.mimixiaoke.com",
-    currentPlatform: PlatformConst.aliexpress,
+    currentPlatform: PlatformConst.aliexpress.p,
     checkDomInsertRs: true,
     getLang: function() {
       const host = window.location.host;
@@ -2091,7 +2092,7 @@
   };
   const AliexpressSearch = {
     loopIsComplete: true,
-    currentPlatform: PlatformConst.aliexpress,
+    currentPlatform: PlatformConst.aliexpress.p,
     isInbusinessPage: function() {
       return /inbusiness\.aliexpress\.com\/web\/search-products/.test(ItemSearchBaseObj.visitUrl);
     },
@@ -2352,46 +2353,16 @@
               });
               ItemSearchBaseObj.cacheRequestMap = {};
               document.querySelectorAll("*[" + ItemSearchBaseObj.searchAttribute + "='true']").forEach((element) => {
+                element.removeAttribute(ItemSearchBaseObj.searchAttribute);
                 const tipElement = element.querySelector("*[name^='ali-gogo-coupon-']");
                 if (tipElement) {
                   tipElement.remove();
                 }
               });
               oldUrl = window.location.href;
+              removeTagIsComplete = true;
             }
-            removeTagIsComplete = true;
           }, 777);
-          const promises = [];
-          selectors.forEach((selector) => {
-            let dselector = selector.element;
-            if (selector.findA != "this") {
-              dselector = dselector + " a";
-            }
-            promises.push(Tools.waitForElementByInterval(dselector, document.body, true, 50, 2e4));
-          });
-          const observerElement = yield Promise.race(promises);
-          if (observerElement) {
-            const observer = new MutationObserver((mutationsList) => {
-              if (mutationsList.length == 1) {
-                const mutation = mutationsList[0];
-                console.log("mutation=====", mutation);
-                if (mutation.type === "attributes" && mutation.attributeName === "href") {
-                  if (removeTagIsComplete) {
-                    removeTagIsComplete = false;
-                    document.querySelectorAll("*[" + ItemSearchBaseObj.searchAttribute + "='true']").forEach((element) => {
-                      element.removeAttribute(ItemSearchBaseObj.searchAttribute);
-                      const tipElement = element.querySelector("*[name^='ali-gogo-coupon-']");
-                      if (tipElement) {
-                        tipElement.remove();
-                      }
-                    });
-                    removeTagIsComplete = true;
-                  }
-                }
-              }
-            });
-            observer.observe(observerElement, { attributes: true });
-          }
         }
       });
     }
@@ -2419,7 +2390,7 @@
   };
   const Ebay = {
     baseUrl: "https://oversea.mimixiaoke.com",
-    currentPlatform: PlatformConst.ebay,
+    currentPlatform: PlatformConst.ebay.p,
     getGoodsId: function(url) {
       const regex = /https?:\/\/www\.ebay\.[a-z.]+\/itm\/(\d+)/;
       const match = url.match(regex);
@@ -2590,7 +2561,7 @@
   };
   const EbaySearch = {
     loopIsComplete: true,
-    currentPlatform: PlatformConst.ebay,
+    currentPlatform: PlatformConst.ebay.p,
     isRun: function() {
       let run = false;
       if (window.location.host.indexOf("ebay.") != -1) {
@@ -2828,7 +2799,7 @@
   const Lazada = {
     baseUrl: "https://oversea.mimixiaoke.com",
     visitUrl: window.location.href,
-    currentPlatform: PlatformConst.lazada,
+    currentPlatform: PlatformConst.lazada.p,
     getMarketplace: function(url = window.location.href) {
       return Tools.getCommonMarketplace(url);
     },
@@ -2941,7 +2912,7 @@
   };
   const LazadaSearch = {
     loopIsComplete: true,
-    currentPlatform: PlatformConst.lazada,
+    currentPlatform: PlatformConst.lazada.p,
     isRun: function() {
       let run = false;
       if (window.location.host.indexOf("lazada.") != -1) {
@@ -3131,7 +3102,7 @@
   };
   const Bestbuy = {
     baseUrl: "https://oversea.mimixiaoke.com",
-    currentPlatform: PlatformConst.bestbuy,
+    currentPlatform: PlatformConst.bestbuy.p,
     isDetail: function() {
       const visitUrl = window.location.href;
       return [/www\.bestbuy\.com\/site\/.*\/\d+\.p/].map((rs) => rs.test(visitUrl)).some((rs) => rs);
@@ -3276,7 +3247,7 @@
   };
   const BestbuySearch = {
     loopIsComplete: true,
-    currentPlatform: PlatformConst.bestbuy,
+    currentPlatform: PlatformConst.bestbuy.p,
     isRun: function() {
       return /https:\/\/www\.bestbuy\.com\/site\/searchpage\.jsp/.test(window.location.href);
     },
@@ -3503,7 +3474,7 @@
   };
   const Banggood = {
     baseUrl: "https://oversea.mimixiaoke.com",
-    currentPlatform: PlatformConst.banggood,
+    currentPlatform: PlatformConst.banggood.p,
     getGoodsId: function(url) {
       if (url.indexOf("?") != -1) {
         url = url.split("?")[0];
@@ -3696,7 +3667,7 @@
   };
   const BanggoodSearch = {
     loopIsComplete: true,
-    currentPlatform: PlatformConst.banggood,
+    currentPlatform: PlatformConst.banggood.p,
     isRun: function() {
       return !Banggood.isDetail(window.location.href);
     },
@@ -3931,6 +3902,12 @@
     }
   };
 
+  const Shein = {
+    getMarketplace: function(url = window.location.href) {
+      return Tools.getCommonMarketplace(url);
+    }
+  };
+
   const PlatformModules = {
     GoodsHistroy,
     Aliexpress: {
@@ -3973,6 +3950,9 @@
     },
     Shopee: {
       Shopee
+    },
+    Shein: {
+      Shein
     }
   };
 
@@ -4015,7 +3995,8 @@
           Wish,
           Temu,
           Amazon,
-          Shopee
+          Shopee,
+          Shein
         } = PlatformModules;
         let platform = InspectUtil.getPlatform(), marketplace = "", currency = "";
         let lang = StorageUtil.getValue(StorageKeys.langue.custom, "default");
@@ -4023,44 +4004,49 @@
           lang = DefaultVaule.lang;
         }
         switch (platform) {
-          case PlatformConst.aliexpress:
+          case PlatformConst.aliexpress.p:
             marketplace = Aliexpress.Aliexpress.getMarketplace();
             currency = yield Aliexpress.Aliexpress.getCurrency();
             break;
-          case PlatformConst.ebay:
+          case PlatformConst.ebay.p:
             marketplace = Ebay.Ebay.getMarketplace();
             break;
-          case PlatformConst.lazada:
+          case PlatformConst.lazada.p:
             marketplace = Lazada.Lazada.getMarketplace();
             break;
-          case PlatformConst.bestbuy:
+          case PlatformConst.bestbuy.p:
             marketplace = Bestbuy.Bestbuy.getMarketplace();
             break;
-          case PlatformConst.banggood:
+          case PlatformConst.banggood.p:
             marketplace = Banggood.Banggood.getMarketplace();
             currency = Banggood.Banggood.getCurrency();
             break;
-          case PlatformConst.airbaltic:
+          case PlatformConst.airbaltic.p:
             marketplace = Airbaltic.Airbaltic.getMarketplace();
             break;
-          case PlatformConst.edureka:
+          case PlatformConst.edureka.p:
             marketplace = Edureka.Edureka.getMarketplace();
             break;
-          case PlatformConst.ranavat:
+          case PlatformConst.ranavat.p:
             marketplace = Ranavat.Ranavat.getMarketplace();
             break;
-          case PlatformConst.wish:
+          case PlatformConst.wish.p:
             marketplace = Wish.Wish.getMarketplace();
             break;
-          case PlatformConst.amazon:
+          case PlatformConst.amazon.p:
             marketplace = Amazon.Amazon.getMarketplace();
             break;
-          case PlatformConst.temu:
+          case PlatformConst.temu.p:
             marketplace = Temu.Temu.getMarketplace();
             break;
-          case PlatformConst.shopee:
+          case PlatformConst.shopee.p:
             marketplace = Shopee.Shopee.getMarketplace();
             break;
+          case PlatformConst.shein.p:
+            marketplace = Shein.Shein.getMarketplace();
+            break;
+          default:
+            marketplace = Tools.getCommonMarketplace();
         }
         const params = {
           platform,
@@ -4534,15 +4520,14 @@
     tryCode: function(platform, supportData, code) {
       let promise = null;
       try {
-        if (platform === PlatformConst.aliexpress) {
+        if (platform === PlatformConst.aliexpress.p) {
           promise = new AliexpressAutoDetect().start(supportData, code);
-        } else if (platform === PlatformConst.wish) {
+        } else if (platform === PlatformConst.wish.p) {
           promise = new WishAutoDetect().start(supportData, code);
-        } else if (platform === PlatformConst.ebay) {
+        } else if (platform === PlatformConst.ebay.p) {
           promise = new EbayAutoDetect().start(supportData, code);
         }
       } catch (e) {
-        console.log("auto try code,", e);
       }
       return promise;
     }
@@ -4970,7 +4955,6 @@
             infoJson = JSON.parse(info.result);
           }
         } catch (e) {
-          console.log("req exception", e);
         }
         if (!infoJson)
           return;
@@ -5011,7 +4995,10 @@
       const autoRedirect = document.querySelector(".auto-redirect");
       if (autoRedirect) {
         const dataContent = autoRedirect.getAttribute("data-content");
-        InspectUtil.customOpenUrl(dataContent);
+        if (dataContent) {
+          const json = JSON.parse(dataContent);
+          InspectUtil.customOpenUrl(null, json);
+        }
       }
     }
   };
@@ -5042,27 +5029,27 @@
     aliexpress: function() {
       AllModules.Aliexpress.Aliexpress.start();
       AllModules.Aliexpress.AliexpressSearch.start();
-      AllModules.GoodsHistroy.start(PlatformConst.aliexpress);
+      AllModules.GoodsHistroy.start(PlatformConst.aliexpress.p);
     },
     ebay: function() {
       AllModules.Ebay.Ebay.start();
       AllModules.Ebay.EbaySearch.start();
-      AllModules.GoodsHistroy.start(PlatformConst.ebay);
+      AllModules.GoodsHistroy.start(PlatformConst.ebay.p);
     },
     lazada: function() {
       AllModules.Lazada.Lazada.start();
       AllModules.Lazada.LazadaSearch.start();
-      AllModules.GoodsHistroy.start(PlatformConst.lazada);
+      AllModules.GoodsHistroy.start(PlatformConst.lazada.p);
     },
     bestbuy: function() {
       AllModules.Bestbuy.Bestbuy.start();
       AllModules.Bestbuy.BestbuySearch.start();
-      AllModules.GoodsHistroy.start(PlatformConst.bestbuy);
+      AllModules.GoodsHistroy.start(PlatformConst.bestbuy.p);
     },
     banggood: function() {
       AllModules.Banggood.Banggood.start();
       AllModules.Banggood.BanggoodSearch.start();
-      AllModules.GoodsHistroy.start(PlatformConst.banggood);
+      AllModules.GoodsHistroy.start(PlatformConst.banggood.p);
     },
     wish: function() {
     },
@@ -5078,16 +5065,13 @@
             if (typeof this[platform] === "function") {
               this[platform]();
             } else {
-              console.log("info", "Hoooo，This method was not found");
             }
           } catch (e) {
-            console.log("error", "Hoooo，catch", e);
           }
           AllModules.MidListener.start();
         }).catch((error) => {
-          console.log("########", error);
         });
-        if (platform == PlatformConst.aliexpress) {
+        if (platform == PlatformConst.aliexpress.p) {
           setInterval(() => {
             Tools.removeAnchorsBySeletor();
           }, 2500);
