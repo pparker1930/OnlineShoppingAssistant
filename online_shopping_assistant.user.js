@@ -74,7 +74,7 @@
 // @description:ug     پاپۇلار سودا سېتىش پلاتفورمالىرىدا ئاپتوماتىك كۇپون ئىزدەش ئارقىلىق، پەقەت مۇھتاج بولغان مەھسۇلاتلارغا ئەڭ ياخشى پەقەتلەرنى تاپشۇرۇشقا ياردەم بېرىدۇ، ھىچ بىر ئاشىق پۇل چىقارماي. ھازىر كۆرسىتىلىدىغان: Aliexpress، Lazada، eBay، Amazon ۋە باشقا.
 // @description:vi     Tìm kiếm tự động mã giảm giá trên các nền tảng mua sắm phổ biến để giúp bạn tìm được những ưu đãi tốt nhất cho sản phẩm bạn cần, mà không phải chi tiêu quá mức. Hiện tại hỗ trợ: Aliexpress, Lazada, eBay, Amazon và nhiều hơn nữa.
 // @namespace   Thaddeus_ecommerce_NameScope
-// @version     1.0.11
+// @version     1.0.12
 // @author      Thaddeus310
 // @icon        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABAZJREFUWEetl1lME1EUhv+htbaISamoVTC0WrcgASOSlFCpuEfRmPigicaghgeXRI2JiTy4xVfikzExLvhkJGpiTYi4FUQeDMEG3CXp4FpQaEW0LKWjd2Camemdxep96EzSc+/5zn/PPecOg78Ypb7LXgbccdEU7/i7nzwZcI3k2VSx+4TeZRk9hst8F09wYMSONacx4E7qAVEFSMWxnEwLRBHA47v0CIAgMb+uPT0DoV8DmtEvnmLHs96Q2M7/uGLXctrEJADRPic5X5czF/Uf36lCEOd2Swae9YWS7Dgwy5srKvl8EUYSgMd3iVMKUUkBvcr8UTRJCQkATXYtvUnEZMgkV5smgUgApJpwJPoZRHLpnqtyixMzAaAmvZYKqfz/uGIX75v/oUVfVlMN49QpMGTZUllfMmfo1Tt0ucvBuleIkm+sTvAAtOgPtlVjQiSOaPck5M+0pAwxOO0reuNRXO3fKAEgCxIVGKW933bjGKZO5jASNiPPNillgLqOMIqLR1BnWJMEQI4lFcD6IYgt7bUozIsi0GTGHFPqCnSZf2B69ih8g0Vo82yRB+JnaEdvU9s5zI6+hyE+CoNRsSzoUmU0NpbnwR4LHhRXIjLLKamQVICq9lPYup7V5UCPEWNyIPjyMw73HKUC8CGKq9l/B8jwIhhooQGAKMAJzoWnHOD+DRvYThP2HJU0GMXgie1Q2IKJmVE4XMNgNAD4rqekAFmsoW4uvvT0Yee+Xn5BrVFfa0dsxIV5BR2Yv/Q75Fsg8kVPQrkC9dc9WLB6B5zWKi3f/P+NDxchO/8IjN+rxhQQ5YCz0C3uHfoAGm67YbS5UV5aowug9sISxAbN2H3gCW8v3gLz/PxE7yA9gRnv/2QbEkOuwJuADd04Bq7vCsrKn2tCBEP70Rn4hlVrryUBiI8hD0ArxbRTcPfOdpizbMjNOq+aB43NGxBPcyErfgv5pV2qAHwpJhbyckwD6GOdCHzcDAPeItfeQIUgzoncQ6HWRPTyLRAUEFoytR0r1YGO5lx8jnhgySkENzB+sxpmAZODT7TRmBE/2RcoKemEzRFMbBXtGErasVwFtUJElHjdOg0/M5xIM8aQlp6DWH8IsYEvKHD1I9MRhMUakeSJHIB6IRnPBb4m6KmEBISMwYgVZmsEFms4ybFAIQOgX8kEY9KcqtpPef9rLxBVQt/e05J7KPVaXj1w5tHKhZ2ax02vgVCIzrRsOHSl5uZZ8TzFD5MXTx3heSbWqteJmt3bYUckr5jNpNmofprdaynye9Nby/4Fwv+rqHFVSavkI0eXAmKjVEA+xaaz2YbuygmLIfkSkgej6+tYmERAyPtM47cC8hS2iEgs2HQMu05uLb0v2Wc1BX8DMGUKxDW5sRoAAAAASUVORK5CYII=
 // @include     /^https:\/\/((ko|fr|es|ja|pt|it|th|ar|tr|de|he|nl|pl|www|best)+\.)?aliexpress\.(ru|us|com)\/*/
@@ -112,6 +112,8 @@
 // @include     /^https:\/\/([\w-]+\.)?booking\.[\w.-]+([/?#].*)?$/
 // @include     /^https:\/\/([\w-]+\.)?agoda\.[\w.-]+([/?#].*)?$/
 // @include     /^https:\/\/([\w-]+\.)?hotels\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?hoteis\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?hoteles\.[\w.-]+([/?#].*)?$/
 // @include     /^https:\/\/([\w-]+\.)?tripadvisor\.[\w.-]+([/?#].*)?$/
 // @include     /^https:\/\/([\w-]+\.)?skyscanner\.[\w.-]+([/?#].*)?$/
 // @include     /^https:\/\/([\w-]+\.)?target\.[\w.-]+([/?#].*)?$/
@@ -133,6 +135,9 @@
 // @include     /^https:\/\/([\w-]+\.)?sivvi\.[\w.-]+([/?#].*)?$/
 // @include     /^https:\/\/([\w-]+\.)?vrbo\.[\w.-]+([/?#].*)?$/
 // @include     /^https:\/\/([\w-]+\.)?wotif\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?ajio\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?flipkart\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?myntra\.[\w.-]+([/?#].*)?$/
 // @include     *://www.jtm.pub/mid/merge**
 // @exclude     *://www.lazada.com/*
 // @exclude     *://shopee.com/*
@@ -228,6 +233,8 @@
     "booking": { "p": "booking", "match": /\.booking\./ },
     "agoda": { "p": "agoda", "match": /agoda\./ },
     "hotels": { "p": "hotels", "match": /\.hotels\./ },
+    "hoteis": { "p": "hoteis", "match": /\.hoteis\./ },
+    "hoteles": { "p": "hoteles", "match": /\.hoteles\./ },
     "tripadvisor": { "p": "tripadvisor", "match": /\.tripadvisor\./ },
     "skyscanner": { "p": "skyscanner", "match": /skyscanner\./ },
     "target": { "p": "target", "match": /target\./ },
@@ -246,40 +253,10 @@
     "sivvi": { "p": "sivvi", "match": /sivvi\./ },
     "vrbo": { "p": "vrbo", "match": /vrbo\./ },
     "wotif": { "p": "wotif", "match": /wotif\./ },
-    "wayfair": { "p": "wayfair", "match": /wayfair\./ }
-  };
-
-  var css_248z$4 = ".peter99032j-xyz-panel-wrapper{box-sizing:border-box;position:fixed;z-index:2147483646}.peter99032j-xyz-panel-wrapper svg.icon-svg path{fill:var(--color-modeal-header-icon)}.peter99032j-xyz-panel-wrapper svg.icon-svg:hover path{fill:var(--color-modeal-header-icon-hover)}.peter99032j-xyz-panel-wrapper>.peter99032j-xyz-panel-aside-main{background-color:#fff;border:1px solid #ebebeb;border-radius:5px;bottom:70px;box-shadow:2px 2px 5px #b6bdc5;display:none;height:400px;overflow-x:hidden;overflow-y:auto;position:absolute;right:0;width:400px}.peter99032j-xyz-panel-wrapper>.peter99032j-xyz-panel-aside-main>.panel-aside-main_____inner{display:flex;flex-direction:column;height:100%;width:100%}.peter99032j-xyz-panel-aside-main .panel-aside-main_____header{align-items:center;background-color:var(--color-modeal-header-background);border-bottom:1px solid #ebe6e6;box-sizing:border-box;display:flex;height:var(--size-height-modeal-header);justify-content:space-between;padding:0 var(--size-padding-horizontal-modeal-header)}.peter99032j-xyz-panel-aside-main .panel-aside-main_____header>.logo_____header{align-items:center;display:flex;justify-content:center}.peter99032j-xyz-panel-aside-main .panel-aside-main_____header>.logo_____header>svg{height:var(--size-height-modeal-icon);width:var(--size-height-modeal-icon)}.peter99032j-xyz-panel-aside-main .panel-aside-main_____header>.title_____header{flex:1;font-size:var(--size-font-modeal-header-title);font-weight:700;padding-left:10px}.peter99032j-xyz-panel-aside-main .panel-aside-main_____header .btns_____header{display:flex;flex-direction:row}.peter99032j-xyz-panel-aside-main .panel-aside-main_____header .btns_____header ._____close,.peter99032j-xyz-panel-aside-main .panel-aside-main_____header .btns_____header ._____setting{align-items:center;cursor:pointer;display:flex;justify-content:center;width:var(--size-height-modeal-operat-icon)}.peter99032j-xyz-panel-aside-main .panel-aside-main_____content{background-color:var(--color-modeal-content-background);flex:1;overflow:auto}.peter99032j-xyz-panel-aside-main .panel-aside-main_____item{margin:5px 0;padding:5px}.peter99032j-xyz-panel-aside-main .panel-aside-main_____item .item_____title{color:#b6b6b6;font-size:13px;font-weight:500;padding:5px 0;text-align:center}.peter99032j-xyz-panel-aside-main .panel-aside-main_____item .item_____container{display:flex;flex-flow:wrap;flex-direction:row;justify-content:flex-start}.peter99032j-xyz-panel-aside-main .histories-box-review_item{margin:5px 0;overflow:hidden;width:33.3333%}.peter99032j-xyz-panel-aside-main .histories-box-review_item>a{background-color:#fff!important;border:1px solid #ccc!important;border-radius:5px!important;box-sizing:initial!important;display:block!important;margin:0 auto!important;position:relative!important;width:110px!important}.peter99032j-xyz-panel-aside-main .histories-box-review_item>a>.review___shadow{border:2px solid red;border-radius:5px;bottom:0;display:none;left:0;position:absolute;right:0;text-align:center;top:0;z-index:99}.peter99032j-xyz-panel-aside-main .histories-box-review_item>a>.review___shadow .delete_____btn{background-color:red;border-radius:3px;color:#fff;font-size:13px;height:15px;line-height:10px;position:absolute;right:0;text-align:center;top:0;width:15px}.peter99032j-xyz-panel-aside-main .histories-box-review_item>a>.review___img{border-radius:5px 5px 0 0;height:110px;overflow:hidden;width:110px}.peter99032j-xyz-panel-aside-main .histories-box-review_item>a>.review___img>img{width:100%}.peter99032j-xyz-panel-aside-main .histories-box-review_item>a>.review___text{color:#000!important;font-size:13px!important;overflow:hidden!important;padding:5px!important;text-align:center!important;text-decoration:underline!important;text-overflow:ellipsis!important;white-space:nowrap!important}.peter99032j-xyz-panel-wrapper>.peter99032j-xyz-panel-aside-body{background-color:#fafafa;border-radius:5px;box-shadow:1px 1px 2px #b6bdc5;direction:ltr!important;display:flex;height:60px;overflow:hidden}.peter99032j-xyz-panel-wrapper>.peter99032j-xyz-panel-aside-body>div{align-items:center;display:flex;justify-content:center}.peter99032j-xyz-panel-aside-body .goods_____expand{cursor:pointer;width:20px!important}.peter99032j-xyz-panel-aside-body .goods_____expand svg{transition:transform .3s}.peter99032j-xyz-panel-aside-body .goods_____review{flex-direction:row;transition:all .5s ease-in-out;width:auto}.peter99032j-xyz-panel-aside-body .goods-review_____item{border-radius:4px;cursor:pointer;height:45px;line-height:45px;margin:0 5px;overflow:hidden;position:relative;width:45px}.peter99032j-xyz-panel-aside-body .goods-review_____item>a{display:block;height:100%;width:100%}.peter99032j-xyz-panel-aside-body .goods-review_____item>a>.review___shadow{background-color:#3d9ba433;bottom:0;display:none;left:0;position:absolute;right:0;text-align:center;top:0;z-index:99}.peter99032j-xyz-panel-aside-body .goods-review_____item>a>.review___shadow img{width:15px}.peter99032j-xyz-panel-aside-body .goods-review_____item img{width:100%}.peter99032j-xyz-panel-aside-body .history-box_____expand{cursor:pointer;flex-direction:column;margin:0 10px;text-align:center}.peter99032j-xyz-panel-aside-body .history-box_____expand svg{height:33px;width:33px}.peter99032j-xyz-panel-aside-body .history-box_____expand label{font-size:12px;font-weight:700}.peter99032j-xyz-panel-aside-body .wrapper_____drag-handle{box-shadow:0 3px 3px -2px #0003,0 3px 4px 0 #00000024,0 1px 8px 0 #0000001f;cursor:move;width:20px!important}";
-
-  const CLASSNAME_ID_SUFFIX = "_" + Math.ceil(Math.random() * 1e8);
-  const StorageKeys = {
-    activatePositionTop: "inspect_activate_position_top",
-    history: {
-      goodsHistory: "goooods_history_key",
-      offset: "goooods_wrapper_key",
-      maximumRecordsKey: "goooods_max_records_key"
-    },
-    langue: {
-      custom: "custom_langue_key",
-      objects: "langue_data_objects_key"
-    }
-  };
-  const DefaultVaule = {
-    lang: ScriptConst.lang,
-    history: {
-      historyStorage: { "aliexpress": [], "amazon": [], "shein": [], "shopee": [], "lazada": [], "ebay": [], "bestbuy": [], "banggood": [], "wish": [] },
-      offsetWrapper: { right: 10, bottom: 10 },
-      records: { min: 10, max: 500, default: 100 },
-      toolbarGoodsNum: 4
-    }
-  };
-  const getRequestUrl = () => {
-    const baseUrl = "https://oversea.mimixiaoke.com";
-    return {
-      detectCoupon: { method: "POST", url: baseUrl + "/api/detect/coupon" },
-      detectInfo: { method: "POST", url: baseUrl + "/api/detect/info" },
-      getLangue: { method: "POST", url: baseUrl + "/api/load/lang" }
-    };
+    "wayfair": { "p": "wayfair", "match": /wayfair\./ },
+    "ajio": { "p": "ajio", "match": /ajio\./ },
+    "flipkart": { "p": "flipkart", "match": /flipkart\./ },
+    "myntra": { "p": "myntra", "match": /myntra\./ }
   };
 
   var __async$i = (__this, __arguments, generator) => {
@@ -621,6 +598,77 @@
       }, time);
     }
   };
+
+  const CLASSNAME_ID_SUFFIX = "_" + Math.ceil(Math.random() * 1e8);
+  const StorageKeys = {
+    activatePositionTop: "inspect_activate_position_top",
+    history: {
+      goodsHistory: "goooods_history_key",
+      offset: "goooods_wrapper_key",
+      maximumRecordsKey: "goooods_max_records_key"
+    },
+    langue: {
+      custom: "custom_langue_key",
+      objects: "langue_data_objects_key"
+    }
+  };
+  const DefaultVaule = {
+    lang: ScriptConst.lang,
+    history: {
+      historyStorage: { "aliexpress": [], "amazon": [], "shein": [], "shopee": [], "lazada": [], "ebay": [], "bestbuy": [], "banggood": [], "wish": [] },
+      offsetWrapper: { right: 10, bottom: 10 },
+      records: { min: 10, max: 500, default: 100 },
+      toolbarGoodsNum: 4
+    }
+  };
+  const getRequestUrl = () => {
+    const baseUrl = "https://oversea.mimixiaoke.com";
+    return {
+      detectCoupon: { method: "POST", url: baseUrl + "/api/detect/coupon" },
+      detectInfo: { method: "POST", url: baseUrl + "/api/detect/info" },
+      getLangue: { method: "POST", url: baseUrl + "/api/load/lang" },
+      couponQuery: { method: "GET", url: baseUrl + "/api/coupon/query" },
+      couponChange: { method: "GET", url: baseUrl + "/api/coupon/change" },
+      couponExist: { method: "GET", url: baseUrl + "/api/coupon/exist" },
+      couponExistConf: { method: "GET", url: baseUrl + "/api/load/conf" }
+    };
+  };
+
+  const RequestUtil = {
+    request: function(method, url, params) {
+      return Tools.request(method, url, params);
+    },
+    _addExtraParams: function(params) {
+      if (!params.hasOwnProperty("url")) {
+        params.url = encodeURIComponent(window.location.href);
+      }
+      if (!params.hasOwnProperty("v")) {
+        params.v = "1.0.1";
+      }
+      if (!params.hasOwnProperty("no")) {
+        params.no = "101";
+      }
+      return params;
+    },
+    _baseQuery: function(scopName, params) {
+      params = this._addExtraParams(params);
+      const { method, url } = getRequestUrl()[scopName];
+      let finalUrl = url;
+      if (method.toUpperCase() === "GET") {
+        finalUrl = finalUrl + "?" + Object.entries(params).map(([key, value]) => `${key}=${value}`).join("&");
+        params = null;
+      }
+      return this.request(method, finalUrl, params);
+    },
+    getCouponQuery: function(params) {
+      return this._baseQuery("couponQuery", params);
+    },
+    getCouponChange: function(params) {
+      return this._baseQuery("couponChange", params);
+    }
+  };
+
+  var css_248z$4 = ".peter99032j-xyz-panel-wrapper{box-sizing:border-box;position:fixed;z-index:2147483646}.peter99032j-xyz-panel-wrapper svg.icon-svg path{fill:var(--color-modeal-header-icon)}.peter99032j-xyz-panel-wrapper svg.icon-svg:hover path{fill:var(--color-modeal-header-icon-hover)}.peter99032j-xyz-panel-wrapper>.peter99032j-xyz-panel-aside-main{background-color:#fff;border:1px solid #ebebeb;border-radius:5px;bottom:70px;box-shadow:2px 2px 5px #b6bdc5;display:none;height:400px;overflow-x:hidden;overflow-y:auto;position:absolute;right:0;width:400px}.peter99032j-xyz-panel-wrapper>.peter99032j-xyz-panel-aside-main>.panel-aside-main_____inner{display:flex;flex-direction:column;height:100%;width:100%}.peter99032j-xyz-panel-aside-main .panel-aside-main_____header{align-items:center;background-color:var(--color-modeal-header-background);border-bottom:1px solid #ebe6e6;box-sizing:border-box;display:flex;height:var(--size-height-modeal-header);justify-content:space-between;padding:0 var(--size-padding-horizontal-modeal-header)}.peter99032j-xyz-panel-aside-main .panel-aside-main_____header>.logo_____header{align-items:center;display:flex;justify-content:center}.peter99032j-xyz-panel-aside-main .panel-aside-main_____header>.logo_____header>svg{height:var(--size-height-modeal-icon);width:var(--size-height-modeal-icon)}.peter99032j-xyz-panel-aside-main .panel-aside-main_____header>.title_____header{flex:1;font-size:var(--size-font-modeal-header-title);font-weight:700;padding-left:10px}.peter99032j-xyz-panel-aside-main .panel-aside-main_____header .btns_____header{display:flex;flex-direction:row}.peter99032j-xyz-panel-aside-main .panel-aside-main_____header .btns_____header ._____close,.peter99032j-xyz-panel-aside-main .panel-aside-main_____header .btns_____header ._____setting{align-items:center;cursor:pointer;display:flex;justify-content:center;width:var(--size-height-modeal-operat-icon)}.peter99032j-xyz-panel-aside-main .panel-aside-main_____content{background-color:var(--color-modeal-content-background);flex:1;overflow:auto}.peter99032j-xyz-panel-aside-main .panel-aside-main_____item{margin:5px 0;padding:5px}.peter99032j-xyz-panel-aside-main .panel-aside-main_____item .item_____title{color:#b6b6b6;font-size:13px;font-weight:500;padding:5px 0;text-align:center}.peter99032j-xyz-panel-aside-main .panel-aside-main_____item .item_____container{display:flex;flex-flow:wrap;flex-direction:row;justify-content:flex-start}.peter99032j-xyz-panel-aside-main .histories-box-review_item{margin:5px 0;overflow:hidden;width:33.3333%}.peter99032j-xyz-panel-aside-main .histories-box-review_item>a{background-color:#fff!important;border:1px solid #ccc!important;border-radius:5px!important;box-sizing:initial!important;display:block!important;margin:0 auto!important;position:relative!important;width:110px!important}.peter99032j-xyz-panel-aside-main .histories-box-review_item>a>.review___shadow{border:2px solid red;border-radius:5px;bottom:0;display:none;left:0;position:absolute;right:0;text-align:center;top:0;z-index:99}.peter99032j-xyz-panel-aside-main .histories-box-review_item>a>.review___shadow .delete_____btn{background-color:red;border-radius:3px;color:#fff;font-size:13px;height:15px;line-height:10px;position:absolute;right:0;text-align:center;top:0;width:15px}.peter99032j-xyz-panel-aside-main .histories-box-review_item>a>.review___img{border-radius:5px 5px 0 0;height:110px;overflow:hidden;width:110px}.peter99032j-xyz-panel-aside-main .histories-box-review_item>a>.review___img>img{width:100%}.peter99032j-xyz-panel-aside-main .histories-box-review_item>a>.review___text{color:#000!important;font-size:13px!important;overflow:hidden!important;padding:5px!important;text-align:center!important;text-decoration:underline!important;text-overflow:ellipsis!important;white-space:nowrap!important}.peter99032j-xyz-panel-wrapper>.peter99032j-xyz-panel-aside-body{background-color:#fafafa;border-radius:5px;box-shadow:1px 1px 2px #b6bdc5;direction:ltr!important;display:flex;height:60px;overflow:hidden}.peter99032j-xyz-panel-wrapper>.peter99032j-xyz-panel-aside-body>div{align-items:center;display:flex;justify-content:center}.peter99032j-xyz-panel-aside-body .goods_____expand{cursor:pointer;width:20px!important}.peter99032j-xyz-panel-aside-body .goods_____expand svg{transition:transform .3s}.peter99032j-xyz-panel-aside-body .goods_____review{flex-direction:row;transition:all .5s ease-in-out;width:auto}.peter99032j-xyz-panel-aside-body .goods-review_____item{border-radius:4px;cursor:pointer;height:45px;line-height:45px;margin:0 5px;overflow:hidden;position:relative;width:45px}.peter99032j-xyz-panel-aside-body .goods-review_____item>a{display:block;height:100%;width:100%}.peter99032j-xyz-panel-aside-body .goods-review_____item>a>.review___shadow{background-color:#3d9ba433;bottom:0;display:none;left:0;position:absolute;right:0;text-align:center;top:0;z-index:99}.peter99032j-xyz-panel-aside-body .goods-review_____item>a>.review___shadow img{width:15px}.peter99032j-xyz-panel-aside-body .goods-review_____item img{width:100%}.peter99032j-xyz-panel-aside-body .history-box_____expand{cursor:pointer;flex-direction:column;margin:0 10px;text-align:center}.peter99032j-xyz-panel-aside-body .history-box_____expand svg{height:33px;width:33px}.peter99032j-xyz-panel-aside-body .history-box_____expand label{font-size:12px;font-weight:700}.peter99032j-xyz-panel-aside-body .wrapper_____drag-handle{box-shadow:0 3px 3px -2px #0003,0 3px 4px 0 #00000024,0 1px 8px 0 #0000001f;cursor:move;width:20px!important}";
 
   var css_248z$3 = ":root{--color-modeal-header-background:#fff;--color-modeal-content-background:#f9f9f9;--color-modeal-header-icon:#bfbfbf;--color-modeal-header-icon-hover:#6a7a9b;--size-padding-horizontal-modeal-header:10px;--size-height-modeal-icon:50px;--size-height-modeal-operat-icon:30px;--size-height-modeal-header:55px;--size-font-modeal-header-title:18px}[data-extension-direction=rtl]{direction:rtl!important}";
 
@@ -1817,7 +1865,6 @@
   const Aliexpress = {
     languageStoageKey: "language-stoage-key",
     currencyStoageKey: "language-currency-key",
-    baseUrl: "https://oversea.mimixiaoke.com",
     currentPlatform: PlatformConst.aliexpress.p,
     checkDomInsertRs: true,
     getLang: function() {
@@ -1874,9 +1921,16 @@
         const language = this.getLang();
         const currency = yield this.getCurrency();
         const id = Tools.getParamterBySuffix(visitUrl, "html");
-        const url = this.baseUrl + "/api/coupon/query?ids=" + id + "&qu=&p=" + this.currentPlatform + "&no=101&v=1.0.1&lang=" + language + "&mul=false&currency=" + currency;
         try {
-          const data = yield Tools.request("GET", url, null);
+          const params = {
+            "ids": id,
+            "qu": "",
+            "p": this.currentPlatform,
+            "lang": language,
+            "mul": false,
+            "currency": currency
+          };
+          const data = yield RequestUtil.getCouponQuery(params);
           if (data.code == "success" && !!data.result) {
             const json = JSON.parse(data.result);
             Logger.log("info", "detail request json=", json);
@@ -1916,9 +1970,13 @@
             const id = json.id;
             const promiseResultArray = [];
             const elementPromise = Tools.mustGetElement(mount);
-            const reqUrl = this.baseUrl + "/api/coupon/change?id=" + id + "&lang=" + language + "&platform=" + this.currentPlatform + "&currency=" + currency;
-            Logger.log("info", "coupon change >>>>>>>>>>>>>", reqUrl);
-            const reqPromise = Tools.request("GET", reqUrl, null);
+            const params = {
+              "id": id,
+              "lang": language,
+              "platform": this.currentPlatform,
+              "currency": currency
+            };
+            const reqPromise = RequestUtil.getCouponChange(params);
             promiseResultArray.push(elementPromise, reqPromise);
             const allResult = yield Promise.all(promiseResultArray);
             let element = null, qrcodeData = null;
@@ -2010,8 +2068,16 @@
         const language = yield GM_getValue(this.languageStoageKey, navigator.language);
         const currency = yield GM_getValue(this.currencyStoageKey, "USD");
         const ids = Tools.getParamterBySearch(window.location.search, "objectId") || Tools.getParamterBySearch(window.location.search, "availableProductShopcartIds") || Tools.getParamterBySearch(window.location.search, "itemId");
-        const confirmUrl = this.baseUrl + "/api/coupon/query?ids=" + ids + "&qu=&p=" + this.currentPlatform + "&no=101&v=1.0.1&lang=" + language + "&mul=true&currency=" + currency;
-        const res = yield Tools.request("GET", confirmUrl, null);
+        const params = {
+          "ids": ids,
+          "qu": "",
+          "p": this.currentPlatform,
+          "lang": language,
+          "mul": true,
+          "currency": currency
+        };
+        const res = yield RequestUtil.getCouponQuery(params);
+        Logger.log("info", "trade rq=", confirmUrl);
         if (res.code == "success" && !!res.result) {
           const json = JSON.parse(res.result);
           yield this.tradeAnalyze(json, language);
@@ -2390,7 +2456,6 @@
     });
   };
   const Ebay = {
-    baseUrl: "https://oversea.mimixiaoke.com",
     currentPlatform: PlatformConst.ebay.p,
     getGoodsId: function(url) {
       const regex = /https?:\/\/www\.ebay\.[a-z.]+\/itm\/(\d+)/;
@@ -2420,9 +2485,15 @@
         if (!!varG) {
           idsG += "@" + varG;
         }
-        const url = this.baseUrl + "/api/coupon/query?ids=" + idsG + "&qu=&p=" + this.currentPlatform + "&no=101&v=1.0.1&marketplace=" + marketplace + "&mul=false";
         try {
-          const data = yield Tools.request("GET", url, null);
+          const params = {
+            "ids": idsG,
+            "qu": "",
+            "p": this.currentPlatform,
+            "marketplace": marketplace,
+            "mul": false
+          };
+          const data = RequestUtil.getCouponQuery(params);
           if (data.code == "success" && !!data.result) {
             const json = JSON.parse(data.result);
             Logger.log("info", "detail request json=", json);
@@ -2457,8 +2528,12 @@
           const id = json.id;
           const promiseResultArray = [];
           const elementPromise = Tools.mustGetElement(mount);
-          const reqUrl = this.baseUrl + "/api/coupon/change?id=" + id + "&marketplace=" + marketplace + "&platform=" + this.currentPlatform;
-          const reqPromise = Tools.request("GET", reqUrl, null);
+          const params = {
+            "id": id,
+            "marketplace": marketplace,
+            "platform": this.currentPlatform
+          };
+          const reqPromise = RequestUtil.getCouponChange(params);
           promiseResultArray.push(elementPromise, reqPromise);
           const allResult = yield Promise.all(promiseResultArray);
           let element = null, qrcodeData = null;
@@ -2798,7 +2873,6 @@
     });
   };
   const Lazada = {
-    baseUrl: "https://oversea.mimixiaoke.com",
     visitUrl: window.location.href,
     currentPlatform: PlatformConst.lazada.p,
     getMarketplace: function(url = window.location.href) {
@@ -2826,8 +2900,12 @@
           return;
         }
         element.insertAdjacentHTML("beforeend", html);
-        const reqImageUrl = this.baseUrl + "/api/coupon/change?id={id}&marketplace={marketplace}&platform={platform}".replace("{id}", id).replace("{marketplace}", marketplace).replace("{platform}", platform);
-        const qrcodeData = yield Tools.request("GET", reqImageUrl, null);
+        const params = {
+          "id": id,
+          "marketplace": marketplace,
+          "platform": platform
+        };
+        const qrcodeData = yield RequestUtil.getCouponChange(params);
         if (!!qrcodeData && qrcodeData.code === "success" && !!qrcodeData.result) {
           let mscanImg = JSON.parse(qrcodeData.result).mscanImg;
           if (!!mscanImg) {
@@ -2851,9 +2929,15 @@
         if (!ids) {
           return;
         }
-        const reqUrl = this.baseUrl + "/api/coupon/query?ids=" + ids + "&qu=&p=" + this.currentPlatform + "&no=101&v=1.0.1&marketplace=" + marketplace + "&mul=false";
         try {
-          const data = yield Tools.request("GET", reqUrl, null);
+          const params = {
+            "ids": ids,
+            "qu": "",
+            "p": this.currentPlatform,
+            "marketplace": marketplace,
+            "mul": false
+          };
+          const data = yield RequestUtil.getCouponQuery(params);
           if (!!data && data.code === "success" && !!data.result) {
             const json = JSON.parse(data.result);
             if (json && json.mscan) {
@@ -3102,7 +3186,6 @@
     });
   };
   const Bestbuy = {
-    baseUrl: "https://oversea.mimixiaoke.com",
     currentPlatform: PlatformConst.bestbuy.p,
     isDetail: function() {
       const visitUrl = window.location.href;
@@ -3122,9 +3205,15 @@
           return;
         }
         const marketplace = this.getMarketplace(visitUrl);
-        const url = this.baseUrl + "/api/coupon/query?ids=" + id + "&qu=&p=" + this.currentPlatform + "&no=101&v=1.0.1&marketplace=" + marketplace + "&mul=false";
         try {
-          const data = yield Tools.request("GET", url, null);
+          const params = {
+            "ids": id,
+            "qu": "",
+            "p": this.currentPlatform,
+            "marketplace": marketplace,
+            "mul": false
+          };
+          const data = yield RequestUtil.getCouponQuery(params);
           if (data.code == "success" && !!data.result) {
             const json = JSON.parse(data.result);
             Logger.log("info", "detail request json=", json);
@@ -3155,8 +3244,12 @@
           const id = json.id;
           const promiseResultArray = [];
           const elementPromise = Tools.mustGetElement(mount);
-          const reqUrl = this.baseUrl + "/api/coupon/change?id=" + id + "&marketplace=" + marketplace + "&platform=" + this.currentPlatform;
-          const reqPromise = Tools.request("GET", reqUrl, null);
+          const params = {
+            "id": id,
+            "marketplace": marketplace,
+            "platform": this.currentPlatform
+          };
+          const reqPromise = RequestUtil.getCouponChange(params);
           promiseResultArray.push(elementPromise, reqPromise);
           const allResult = yield Promise.all(promiseResultArray);
           let element = null, qrcodeData = null;
@@ -3474,7 +3567,6 @@
     });
   };
   const Banggood = {
-    baseUrl: "https://oversea.mimixiaoke.com",
     currentPlatform: PlatformConst.banggood.p,
     getGoodsId: function(url) {
       if (url.indexOf("?") != -1) {
@@ -3526,9 +3618,17 @@
         const marketplace = this.getMarketplace(visitUrl);
         const currency = this.getCurrency();
         const lang = this.getLang();
-        const url = this.baseUrl + "/api/coupon/query?ids=" + id + "&qu=&p=" + this.currentPlatform + "&no=101&v=1.0.1&marketplace=" + marketplace + "&mul=false&currency=" + currency + "&lang=" + lang;
         try {
-          const data = yield Tools.request("GET", url, null);
+          const params = {
+            "ids": id,
+            "qu": "",
+            "p": this.currentPlatform,
+            "marketplace": marketplace,
+            "mul": false,
+            "currency": currency,
+            "lang": lang
+          };
+          const data = yield RequestUtil.getCouponQuery(params);
           if (data.code == "success" && !!data.result) {
             const json = JSON.parse(data.result);
             Logger.log("info", "detail request json=", json);
@@ -3563,8 +3663,12 @@
           const id = json.id;
           const promiseResultArray = [];
           const elementPromise = Tools.mustGetElement(mount);
-          const reqUrl = this.baseUrl + "/api/coupon/change?id=" + id + "&marketplace=" + marketplace + "&platform=" + this.currentPlatform;
-          const reqPromise = Tools.request("GET", reqUrl, null);
+          const params = {
+            "id": id,
+            "marketplace": marketplace,
+            "platform": this.currentPlatform
+          };
+          const reqPromise = RequestUtil.getCouponChange(params);
           promiseResultArray.push(elementPromise, reqPromise);
           const allResult = yield Promise.all(promiseResultArray);
           let element = null, qrcodeData = null;
@@ -3910,7 +4014,6 @@
   };
 
   const PlatformModules = {
-    GoodsHistroy,
     Aliexpress: {
       Aliexpress,
       AliexpressSearch
@@ -3981,7 +4084,7 @@
       step((generator = generator.apply(__this, __arguments)).next());
     });
   };
-  const RequestUtil = {
+  const RequestUnionUtil = {
     getDetectCouponParams: function() {
       return __async$6(this, null, function* () {
         const {
@@ -4066,18 +4169,21 @@
     request: function(method, url, params) {
       return Tools.request(method, url, params);
     },
-    getDetectCouponResult: function() {
+    _asyncBaseQuery: function(scopName) {
       return __async$6(this, null, function* () {
         const params = yield this.getDetectCouponParams();
-        const { method, url } = getRequestUrl()["detectCoupon"];
+        const { method, url } = getRequestUrl()[scopName];
         return this.request(method, url, params);
+      });
+    },
+    getDetectCouponResult: function() {
+      return __async$6(this, null, function* () {
+        return this._asyncBaseQuery("detectCoupon");
       });
     },
     getDetectInfoResult: function() {
       return __async$6(this, null, function* () {
-        const params = yield this.getDetectCouponParams();
-        const { method, url } = getRequestUrl()["detectInfo"];
-        return this.request(method, url, params);
+        return this._asyncBaseQuery("detectInfo");
       });
     }
   };
@@ -4841,7 +4947,7 @@
         this.setCouponsHtml(modal);
       });
       generateRequest.append(generateRequestLoadding);
-      RequestUtil.getDetectCouponResult().then((reqData) => {
+      RequestUnionUtil.getDetectCouponResult().then((reqData) => {
         if (reqData.code !== "success") {
           generateRequestLoadding.remove();
           generateRequest.append(generateRequestLoaddingError);
@@ -4948,11 +5054,11 @@
       StyleUtil.addStyle(css.replace(/@logo@/g, logoBase64));
     },
     outerDIV: null,
-    start: function() {
+    start: function(platform, historyShow) {
       return __async(this, null, function* () {
         let infoJson = null;
         try {
-          const info = yield RequestUtil.getDetectInfoResult();
+          const info = yield RequestUnionUtil.getDetectInfoResult();
           Logger.log("info", "detect info=========>", info);
           if (info.code === "success") {
             infoJson = JSON.parse(info.result);
@@ -4961,11 +5067,9 @@
         }
         if (!infoJson)
           return;
-        if (!infoJson["show"]) {
-          return;
-        }
         const couponTotal = infoJson["coupon_total"];
         const modalPosition = infoJson["modal"];
+        const _historyShow = infoJson["history_show"];
         const iconJson = infoJson["icon"];
         const badgeData = iconJson["badge"];
         const dragData = iconJson["drag"];
@@ -4974,6 +5078,12 @@
         const autoOpen = cggJson["auto_open"];
         const modalTitle = cggJson["current_platform"];
         const logoBase64$1 = !!cggJson["logo"] ? cggJson["logo"] : logoBase64;
+        if (historyShow && _historyShow) {
+          GoodsHistroy.start(platform);
+        }
+        if (!infoJson["show"]) {
+          return;
+        }
         const selectedLanguage = LangueUtil.getSelectedLanguage();
         this.addStyle();
         const outerDIV = InspectUtil.generateOuterContainer(selectedLanguage.dir);
@@ -5030,30 +5140,31 @@
   const AllModules = __spreadValues(__spreadValues({}, PlatformModules), supportModules);
 
   const Init = {
+    historyShow: false,
     aliexpress: function() {
       AllModules.Aliexpress.Aliexpress.start();
       AllModules.Aliexpress.AliexpressSearch.start();
-      AllModules.GoodsHistroy.start(PlatformConst.aliexpress.p);
+      this.historyShow = true;
     },
     ebay: function() {
       AllModules.Ebay.Ebay.start();
       AllModules.Ebay.EbaySearch.start();
-      AllModules.GoodsHistroy.start(PlatformConst.ebay.p);
+      this.historyShow = true;
     },
     lazada: function() {
       AllModules.Lazada.Lazada.start();
       AllModules.Lazada.LazadaSearch.start();
-      AllModules.GoodsHistroy.start(PlatformConst.lazada.p);
+      this.historyShow = true;
     },
     bestbuy: function() {
       AllModules.Bestbuy.Bestbuy.start();
       AllModules.Bestbuy.BestbuySearch.start();
-      AllModules.GoodsHistroy.start(PlatformConst.bestbuy.p);
+      this.historyShow = true;
     },
     banggood: function() {
       AllModules.Banggood.Banggood.start();
       AllModules.Banggood.BanggoodSearch.start();
-      AllModules.GoodsHistroy.start(PlatformConst.banggood.p);
+      this.historyShow = true;
     },
     wish: function() {
     },
@@ -5064,7 +5175,6 @@
       if (platform) {
         LangueUtil.initLangueDataMap().then(() => {
           StyleUtil.init();
-          AllModules.InspectCouponsHTML.start();
           try {
             if (typeof this[platform] === "function") {
               this[platform]();
@@ -5072,6 +5182,7 @@
             }
           } catch (e) {
           }
+          AllModules.InspectCouponsHTML.start(platform, this.historyShow);
           AllModules.MidListener.start();
         }).catch((error) => {
         });
