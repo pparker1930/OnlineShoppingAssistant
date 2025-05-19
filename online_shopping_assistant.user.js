@@ -74,7 +74,7 @@
 // @description:ug     پاپۇلار سودا سېتىش پلاتفورمالىرىدا ئاپتوماتىك كۇپون ئىزدەش ئارقىلىق، پەقەت مۇھتاج بولغان مەھسۇلاتلارغا ئەڭ ياخشى پەقەتلەرنى تاپشۇرۇشقا ياردەم بېرىدۇ، ھىچ بىر ئاشىق پۇل چىقارماي. ھازىر كۆرسىتىلىدىغان: Aliexpress، Lazada، eBay، Amazon ۋە باشقا.
 // @description:vi     Tìm kiếm tự động mã giảm giá trên các nền tảng mua sắm phổ biến để giúp bạn tìm được những ưu đãi tốt nhất cho sản phẩm bạn cần, mà không phải chi tiêu quá mức. Hiện tại hỗ trợ: Aliexpress, Lazada, eBay, Amazon và nhiều hơn nữa.
 // @namespace   Thaddeus_ecommerce_NameScope
-// @version     1.0.12
+// @version     1.0.14
 // @author      Thaddeus310
 // @icon        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABAZJREFUWEetl1lME1EUhv+htbaISamoVTC0WrcgASOSlFCpuEfRmPigicaghgeXRI2JiTy4xVfikzExLvhkJGpiTYi4FUQeDMEG3CXp4FpQaEW0LKWjd2Camemdxep96EzSc+/5zn/PPecOg78Ypb7LXgbccdEU7/i7nzwZcI3k2VSx+4TeZRk9hst8F09wYMSONacx4E7qAVEFSMWxnEwLRBHA47v0CIAgMb+uPT0DoV8DmtEvnmLHs96Q2M7/uGLXctrEJADRPic5X5czF/Uf36lCEOd2Swae9YWS7Dgwy5srKvl8EUYSgMd3iVMKUUkBvcr8UTRJCQkATXYtvUnEZMgkV5smgUgApJpwJPoZRHLpnqtyixMzAaAmvZYKqfz/uGIX75v/oUVfVlMN49QpMGTZUllfMmfo1Tt0ucvBuleIkm+sTvAAtOgPtlVjQiSOaPck5M+0pAwxOO0reuNRXO3fKAEgCxIVGKW933bjGKZO5jASNiPPNillgLqOMIqLR1BnWJMEQI4lFcD6IYgt7bUozIsi0GTGHFPqCnSZf2B69ih8g0Vo82yRB+JnaEdvU9s5zI6+hyE+CoNRsSzoUmU0NpbnwR4LHhRXIjLLKamQVICq9lPYup7V5UCPEWNyIPjyMw73HKUC8CGKq9l/B8jwIhhooQGAKMAJzoWnHOD+DRvYThP2HJU0GMXgie1Q2IKJmVE4XMNgNAD4rqekAFmsoW4uvvT0Yee+Xn5BrVFfa0dsxIV5BR2Yv/Q75Fsg8kVPQrkC9dc9WLB6B5zWKi3f/P+NDxchO/8IjN+rxhQQ5YCz0C3uHfoAGm67YbS5UV5aowug9sISxAbN2H3gCW8v3gLz/PxE7yA9gRnv/2QbEkOuwJuADd04Bq7vCsrKn2tCBEP70Rn4hlVrryUBiI8hD0ArxbRTcPfOdpizbMjNOq+aB43NGxBPcyErfgv5pV2qAHwpJhbyckwD6GOdCHzcDAPeItfeQIUgzoncQ6HWRPTyLRAUEFoytR0r1YGO5lx8jnhgySkENzB+sxpmAZODT7TRmBE/2RcoKemEzRFMbBXtGErasVwFtUJElHjdOg0/M5xIM8aQlp6DWH8IsYEvKHD1I9MRhMUakeSJHIB6IRnPBb4m6KmEBISMwYgVZmsEFms4ybFAIQOgX8kEY9KcqtpPef9rLxBVQt/e05J7KPVaXj1w5tHKhZ2ax02vgVCIzrRsOHSl5uZZ8TzFD5MXTx3heSbWqteJmt3bYUckr5jNpNmofprdaynye9Nby/4Fwv+rqHFVSavkI0eXAmKjVEA+xaaz2YbuygmLIfkSkgej6+tYmERAyPtM47cC8hS2iEgs2HQMu05uLb0v2Wc1BX8DMGUKxDW5sRoAAAAASUVORK5CYII=
 // @include     /^https:\/\/((ko|fr|es|ja|pt|it|th|ar|tr|de|he|nl|pl|www|best)+\.)?aliexpress\.(ru|us|com)\/*/
@@ -138,7 +138,26 @@
 // @include     /^https:\/\/([\w-]+\.)?ajio\.[\w.-]+([/?#].*)?$/
 // @include     /^https:\/\/([\w-]+\.)?flipkart\.[\w.-]+([/?#].*)?$/
 // @include     /^https:\/\/([\w-]+\.)?myntra\.[\w.-]+([/?#].*)?$/
-// @include     *://www.jtm.pub/mid/merge**
+// @include     /^https:\/\/([\w-]+\.)?cex\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?changelly\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?kucoin\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?paxful\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?htx\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?mexc\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?coinmama\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?gate\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?bitget\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?freebitco\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?bybit\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?crypto\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?okx\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?coinbase\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?binance\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?wazirx\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?coindcx\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?zebpay\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?bitbns\.[\w.-]+([/?#].*)?$/
+// @include     *://www.jtmate.com/mid/merge**
 // @exclude     *://www.lazada.com/*
 // @exclude     *://shopee.com/*
 // @connect     tikdownloader.io
@@ -256,7 +275,27 @@
     "wayfair": { "p": "wayfair", "match": /wayfair\./ },
     "ajio": { "p": "ajio", "match": /ajio\./ },
     "flipkart": { "p": "flipkart", "match": /flipkart\./ },
-    "myntra": { "p": "myntra", "match": /myntra\./ }
+    "myntra": { "p": "myntra", "match": /myntra\./ },
+    "cex": { "p": "cex", "match": /cex\./ },
+    "changelly": { "p": "changelly", "match": /changelly\./ },
+    "kucoin": { "p": "kucoin", "match": /kucoin\./ },
+    "paxful": { "p": "paxful", "match": /paxful\./ },
+    "htx": { "p": "htx", "match": /htx\./ },
+    "mexc": { "p": "mexc", "match": /mexc\./ },
+    "coinmama": { "p": "coinmama", "match": /coinmama\./ },
+    "pythonanywhere": { "p": "pythonanywhere", "match": /pythonanywhere\./ },
+    "gate": { "p": "gate", "match": /gate\./ },
+    "bitget": { "p": "bitget", "match": /bitget\./ },
+    "freebitco": { "p": "freebitco", "match": /freebitco\./ },
+    "bybit": { "p": "bybit", "match": /bybit\./ },
+    "crypto": { "p": "crypto", "match": /crypto\./ },
+    "okx": { "p": "okx", "match": /okx\./ },
+    "coinbase": { "p": "coinbase", "match": /coinbase\./ },
+    "binance": { "p": "binance", "match": /binance\./ },
+    "wazirx": { "p": "wazirx", "match": /wazirx\./ },
+    "coindcx": { "p": "coindcx", "match": /coindcx\./ },
+    "zebpay": { "p": "zebpay", "match": /zebpay\./ },
+    "bitbns": { "p": "bitbns", "match": /bitbns\./ }
   };
 
   var __async$i = (__this, __arguments, generator) => {
@@ -1104,7 +1143,7 @@
         this.mask.appendChild(this.content);
       }
       middleBox(param) {
-        this.content.innerHTML = "";
+        this.content.replaceChildren();
         if (param.hasOwnProperty("direction")) {
           this.content.setAttribute("data-extension-direction", param.direction);
         }
@@ -1130,11 +1169,11 @@
           "border-radius": "4px 4px 0px 0px"
         });
         const span = document.createElement("span");
-        span.innerText = title;
+        span.textContent = title;
         span.setAttribute("langue-extension-text", "setting_modal_title");
         this.title.appendChild(span);
         this.closeBtn = document.createElement("span");
-        this.closeBtn.innerText = "×";
+        this.closeBtn.textContent = "×";
         this.setStyle(this.closeBtn, {
           "textDecoration": "none",
           "color": "#000",
@@ -1166,13 +1205,13 @@
           "max-height": "400px",
           "overflow": "auto"
         });
-        this.dialogContent.innerHTML = param.content;
+        this.dialogContent.insertAdjacentHTML("beforeend", param.content);
         this.content.appendChild(this.dialogContent);
         param.onContentReady(this);
       }
       updateTitle(title) {
         if (this.title) {
-          this.title.innerText = title;
+          this.title.textContent = title;
         }
       }
       close() {
@@ -1493,7 +1532,7 @@
       const realUrl = encodeURIComponent(url);
       let jumpUrl = "https://page.mimixiaoke.com/mid/redirect?url=" + realUrl;
       if (platform == "ebay" || platform == "bestbuy") {
-        jumpUrl = "https://www.jtm.pub/mid/redirect?url=" + realUrl;
+        jumpUrl = "https://www.jtmate.com/mid/redirect?url=" + realUrl;
       }
       return Tools.encryptStr(jumpUrl);
     },
@@ -2493,7 +2532,7 @@
             "marketplace": marketplace,
             "mul": false
           };
-          const data = RequestUtil.getCouponQuery(params);
+          const data = yield RequestUtil.getCouponQuery(params);
           if (data.code == "success" && !!data.result) {
             const json = JSON.parse(data.result);
             Logger.log("info", "detail request json=", json);
@@ -5103,7 +5142,7 @@
 
   const MidListener = {
     start: function() {
-      if ((window.location.host !== "www.jtm.pub" || window.location.href.indexOf("www.jtm.pub/mid/merge") == -1) && !ScriptConst.isDev) {
+      if ((window.location.host !== "www.jtmate.com" || window.location.href.indexOf("www.jtmate.com/mid/merge") == -1) && !ScriptConst.isDev) {
         return;
       }
       const autoRedirect = document.querySelector(".auto-redirect");
