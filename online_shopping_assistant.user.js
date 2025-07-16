@@ -74,9 +74,10 @@
 // @description:ug     پاپۇلار سودا سېتىش پلاتفورمالىرىدا ئاپتوماتىك كۇپون ئىزدەش ئارقىلىق، پەقەت مۇھتاج بولغان مەھسۇلاتلارغا ئەڭ ياخشى پەقەتلەرنى تاپشۇرۇشقا ياردەم بېرىدۇ، ھىچ بىر ئاشىق پۇل چىقارماي. ھازىر كۆرسىتىلىدىغان: Aliexpress، Lazada، eBay، Amazon ۋە باشقا.
 // @description:vi     Tìm kiếm tự động mã giảm giá trên các nền tảng mua sắm phổ biến để giúp bạn tìm được những ưu đãi tốt nhất cho sản phẩm bạn cần, mà không phải chi tiêu quá mức. Hiện tại hỗ trợ: Aliexpress, Lazada, eBay, Amazon và nhiều hơn nữa.
 // @namespace   Thaddeus_ecommerce_NameScope
-// @version     1.1.1
+// @version     1.1.2
 // @author      Thaddeus310
 // @icon        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABAZJREFUWEetl1lME1EUhv+htbaISamoVTC0WrcgASOSlFCpuEfRmPigicaghgeXRI2JiTy4xVfikzExLvhkJGpiTYi4FUQeDMEG3CXp4FpQaEW0LKWjd2Camemdxep96EzSc+/5zn/PPecOg78Ypb7LXgbccdEU7/i7nzwZcI3k2VSx+4TeZRk9hst8F09wYMSONacx4E7qAVEFSMWxnEwLRBHA47v0CIAgMb+uPT0DoV8DmtEvnmLHs96Q2M7/uGLXctrEJADRPic5X5czF/Uf36lCEOd2Swae9YWS7Dgwy5srKvl8EUYSgMd3iVMKUUkBvcr8UTRJCQkATXYtvUnEZMgkV5smgUgApJpwJPoZRHLpnqtyixMzAaAmvZYKqfz/uGIX75v/oUVfVlMN49QpMGTZUllfMmfo1Tt0ucvBuleIkm+sTvAAtOgPtlVjQiSOaPck5M+0pAwxOO0reuNRXO3fKAEgCxIVGKW933bjGKZO5jASNiPPNillgLqOMIqLR1BnWJMEQI4lFcD6IYgt7bUozIsi0GTGHFPqCnSZf2B69ih8g0Vo82yRB+JnaEdvU9s5zI6+hyE+CoNRsSzoUmU0NpbnwR4LHhRXIjLLKamQVICq9lPYup7V5UCPEWNyIPjyMw73HKUC8CGKq9l/B8jwIhhooQGAKMAJzoWnHOD+DRvYThP2HJU0GMXgie1Q2IKJmVE4XMNgNAD4rqekAFmsoW4uvvT0Yee+Xn5BrVFfa0dsxIV5BR2Yv/Q75Fsg8kVPQrkC9dc9WLB6B5zWKi3f/P+NDxchO/8IjN+rxhQQ5YCz0C3uHfoAGm67YbS5UV5aowug9sISxAbN2H3gCW8v3gLz/PxE7yA9gRnv/2QbEkOuwJuADd04Bq7vCsrKn2tCBEP70Rn4hlVrryUBiI8hD0ArxbRTcPfOdpizbMjNOq+aB43NGxBPcyErfgv5pV2qAHwpJhbyckwD6GOdCHzcDAPeItfeQIUgzoncQ6HWRPTyLRAUEFoytR0r1YGO5lx8jnhgySkENzB+sxpmAZODT7TRmBE/2RcoKemEzRFMbBXtGErasVwFtUJElHjdOg0/M5xIM8aQlp6DWH8IsYEvKHD1I9MRhMUakeSJHIB6IRnPBb4m6KmEBISMwYgVZmsEFms4ybFAIQOgX8kEY9KcqtpPef9rLxBVQt/e05J7KPVaXj1w5tHKhZ2ax02vgVCIzrRsOHSl5uZZ8TzFD5MXTx3heSbWqteJmt3bYUckr5jNpNmofprdaynye9Nby/4Fwv+rqHFVSavkI0eXAmKjVEA+xaaz2YbuygmLIfkSkgej6+tYmERAyPtM47cC8hS2iEgs2HQMu05uLb0v2Wc1BX8DMGUKxDW5sRoAAAAASUVORK5CYII=
+// @match       *://*/*
 // @include     /^https:\/\/([\w-]+\.)?aliexpress\.(ru|us|com)\/*/
 // @include     /^https:\/\/([\w-]+\.)?lazada\.[\w.-]+([/?#].*)?$/
 // @include     /^https:\/\/([\w-]+\.)?shopee\.[\w.-]+([/?#].*)?$/
@@ -162,7 +163,6 @@
 // @include     *://www.jtmate.com/mid/merge**
 // @exclude     *://www.lazada.com/*
 // @exclude     *://shopee.com/*
-// @connect     tikdownloader.io
 // @connect     oversea.mimixiaoke.com
 // @connect     jtmate.com
 // @license     MIT
@@ -177,6 +177,7 @@
 // @grant       GM_addStyle
 // @grant       GM_setValue
 // @grant       GM_getValue
+// @grant       GM_deleteValue
 // @grant       GM_xmlhttpRequest
 // @grant       GM_download
 // @grant       GM_setClipboard
@@ -225,7 +226,7 @@
     "cobalt": { "p": "cobalt", "match": /cobalt\.tools/ }
   };
 
-  var __async$m = (__this, __arguments, generator) => {
+  var __async$o = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -420,8 +421,8 @@
       return container.contains(element);
     },
     mustGetElement: function(handler) {
-      return __async$m(this, null, function* () {
-        const getElements = (handler2) => __async$m(this, null, function* () {
+      return __async$o(this, null, function* () {
+        const getElements = (handler2) => __async$o(this, null, function* () {
           const promiseArray = [];
           const handlers = handler2.split("@");
           for (let i = 0; i < handlers.length; i++) {
@@ -563,6 +564,9 @@
     token: "inspect_token",
     exchangeInfo: "exchange_info",
     supports: "supports_key",
+    featureControl: {
+      windowShow: "window_show"
+    },
     history: {
       goodsHistory: "goooods_history_key",
       offset: "goooods_wrapper_key",
@@ -611,6 +615,9 @@
     },
     setValue: function(key, value) {
       GM_setValue(key, value);
+    },
+    deleteValue: function(key) {
+      GM_deleteValue(key);
     }
   };
 
@@ -778,7 +785,7 @@
     }
   };
 
-  var __async$l = (__this, __arguments, generator) => {
+  var __async$n = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -848,7 +855,7 @@
       });
     },
     detail: function() {
-      return __async$l(this, null, function* () {
+      return __async$n(this, null, function* () {
         const visitUrl = window.location.href;
         const validate = [/\/item\/[^\/]*?\.html\?/, /\/item\/[^\/]*?\.html$/].map((reg) => reg.test(visitUrl)).some((rs) => rs == true);
         if (!validate)
@@ -876,7 +883,7 @@
       });
     },
     detailAnalyze: function(json, language, currency) {
-      return __async$l(this, null, function* () {
+      return __async$n(this, null, function* () {
         this.checkDomInsertRs = false;
         try {
           if (!json)
@@ -988,7 +995,7 @@
       }
     },
     trade: function() {
-      return __async$l(this, null, function* () {
+      return __async$n(this, null, function* () {
         const visitUrl = window.location.href;
         const validate = SupportData.support.trade.map((reg) => reg.test(visitUrl)).some((rs) => rs == true);
         if (!validate)
@@ -1012,7 +1019,7 @@
       });
     },
     tradeAnalyze: function(json, language) {
-      return __async$l(this, null, function* () {
+      return __async$n(this, null, function* () {
         if (!json || !json.handler || !json.css || !json.templateId) {
           return;
         }
@@ -1051,7 +1058,7 @@
       }, 3e3);
     },
     start: function() {
-      return __async$l(this, null, function* () {
+      return __async$n(this, null, function* () {
         const { support } = SupportData;
         const visitUrl = window.location.href;
         if (support.detail.test(visitUrl)) {
@@ -1063,7 +1070,7 @@
     }
   };
 
-  var __async$k = (__this, __arguments, generator) => {
+  var __async$m = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -1092,7 +1099,7 @@
       return SupportData.support.detail.test(url);
     },
     pickUpWholesale: function(selectors, language, currency) {
-      return __async$k(this, null, function* () {
+      return __async$m(this, null, function* () {
         const items = [];
         try {
           selectors.forEach((elementObj) => {
@@ -1128,7 +1135,7 @@
       });
     },
     pickUpInbusiness: function(language, currency) {
-      return __async$k(this, null, function* () {
+      return __async$m(this, null, function* () {
         const validate = this.isInbusinessPage();
         if (!validate)
           return;
@@ -1316,7 +1323,7 @@
       return run;
     },
     start: function() {
-      return __async$k(this, null, function* () {
+      return __async$m(this, null, function* () {
         if (!this.isRun()) {
           return;
         }
@@ -1328,7 +1335,7 @@
           return;
         }
         const selectors = ItemSearchBaseObj.pickupGoodsItem(SupportData.support.p, confString);
-        setInterval(() => __async$k(this, null, function* () {
+        setInterval(() => __async$m(this, null, function* () {
           if (removeTagIsComplete && this.loopIsComplete) {
             this.loopIsComplete = false;
             yield this.pickUpInbusiness(language, currency);
@@ -1361,7 +1368,7 @@
     }
   };
 
-  var __async$j = (__this, __arguments, generator) => {
+  var __async$l = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -1383,7 +1390,7 @@
   };
   const Ebay = {
     detail: function() {
-      return __async$j(this, null, function* () {
+      return __async$l(this, null, function* () {
         const visitUrl = window.location.href;
         const id = Tools.getGoodsIdByLink(visitUrl);
         const varG = Tools.getParamterBySearch(window.location.href, "var");
@@ -1414,7 +1421,7 @@
       });
     },
     detailAnalyze: function(json, marketplace) {
-      return __async$j(this, null, function* () {
+      return __async$l(this, null, function* () {
         let couponResult = null;
         let qrcodeResult = null;
         if (!!json.data && !!json.data.css && !!json.data.html && !!json.data.handler) {
@@ -1515,7 +1522,7 @@
       }
     },
     start: function() {
-      return __async$j(this, null, function* () {
+      return __async$l(this, null, function* () {
         const { support } = SupportData;
         const visitUrl = window.location.href;
         if (support.detail.test(visitUrl)) {
@@ -1525,7 +1532,7 @@
     }
   };
 
-  var __async$i = (__this, __arguments, generator) => {
+  var __async$k = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -1558,7 +1565,7 @@
       return SupportData.support.detail.test(url);
     },
     pickUpItems: function(selectors, marketplace) {
-      return __async$i(this, null, function* () {
+      return __async$k(this, null, function* () {
         const items = [];
         try {
           selectors.forEach((elementObj) => {
@@ -1604,7 +1611,7 @@
       });
     },
     search: function(array, marketplace) {
-      return __async$i(this, null, function* () {
+      return __async$k(this, null, function* () {
         const groups = ItemSearchBaseObj.calcRequestGroup(array);
         const len = groups.length;
         return new Promise((resolve, reject) => {
@@ -1741,7 +1748,7 @@
       });
     },
     start: function() {
-      return __async$i(this, null, function* () {
+      return __async$k(this, null, function* () {
         if (!this.isRun()) {
           return;
         }
@@ -1751,7 +1758,7 @@
           return;
         }
         const selectors = ItemSearchBaseObj.pickupGoodsItem(SupportData.support.p, confString);
-        setInterval(() => __async$i(this, null, function* () {
+        setInterval(() => __async$k(this, null, function* () {
           if (this.loopIsComplete) {
             this.loopIsComplete = false;
             yield this.pickUpItems(selectors, marketplace);
@@ -1762,7 +1769,7 @@
     }
   };
 
-  var __async$h = (__this, __arguments, generator) => {
+  var __async$j = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -1784,7 +1791,7 @@
   };
   const Lazada = {
     detailMyMscanAnalyze: function(result) {
-      return __async$h(this, null, function* () {
+      return __async$j(this, null, function* () {
         const { id, iden, marketplace, platform, mount, html, cmd } = result;
         if (!mount || !html) {
           return;
@@ -1825,7 +1832,7 @@
       });
     },
     detail: function() {
-      return __async$h(this, null, function* () {
+      return __async$j(this, null, function* () {
         const visitUrl = window.location.href;
         const marketplace = Tools.getCommonMarketplace(visitUrl);
         const ids = Tools.getGoodsIdByLink(visitUrl);
@@ -1866,7 +1873,7 @@
       });
     },
     start: function() {
-      return __async$h(this, null, function* () {
+      return __async$j(this, null, function* () {
         const { support } = SupportData;
         const visitUrl = window.location.href;
         if (support.detail.test(visitUrl)) {
@@ -1876,7 +1883,7 @@
     }
   };
 
-  var __async$g = (__this, __arguments, generator) => {
+  var __async$i = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -1909,7 +1916,7 @@
       return SupportData.support.detail.test(url);
     },
     pickUpItems: function(selectors, marketplace) {
-      return __async$g(this, null, function* () {
+      return __async$i(this, null, function* () {
         const items = [];
         try {
           selectors.forEach((elementObj) => {
@@ -1948,7 +1955,7 @@
       });
     },
     search: function(array, marketplace) {
-      return __async$g(this, null, function* () {
+      return __async$i(this, null, function* () {
         const groups = ItemSearchBaseObj.calcRequestGroup(array);
         const len = groups.length;
         return new Promise((resolve, reject) => {
@@ -2046,7 +2053,7 @@
       });
     },
     start: function() {
-      return __async$g(this, null, function* () {
+      return __async$i(this, null, function* () {
         if (!this.isRun()) {
           return;
         }
@@ -2056,7 +2063,7 @@
           return;
         }
         const selectors = ItemSearchBaseObj.pickupGoodsItem(SupportData.support.p, confString);
-        setInterval(() => __async$g(this, null, function* () {
+        setInterval(() => __async$i(this, null, function* () {
           if (this.loopIsComplete) {
             this.loopIsComplete = false;
             yield this.pickUpItems(selectors, marketplace);
@@ -2067,7 +2074,7 @@
     }
   };
 
-  var __async$f = (__this, __arguments, generator) => {
+  var __async$h = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -2089,7 +2096,7 @@
   };
   const Bestbuy = {
     detail: function() {
-      return __async$f(this, null, function* () {
+      return __async$h(this, null, function* () {
         const visitUrl = window.location.href;
         const id = Tools.getGoodsIdByLink(visitUrl);
         if (!id) {
@@ -2115,7 +2122,7 @@
       });
     },
     detailAnalyze: function(json, marketplace) {
-      return __async$f(this, null, function* () {
+      return __async$h(this, null, function* () {
         let couponResult = null;
         let qrcodeResult = null;
         if (!!json.data && !!json.data.css && !!json.data.html && !!json.data.handler) {
@@ -2200,7 +2207,7 @@
       }
     },
     start: function() {
-      return __async$f(this, null, function* () {
+      return __async$h(this, null, function* () {
         const { support } = SupportData;
         const visitUrl = window.location.href;
         if (support.detail.test(visitUrl)) {
@@ -2210,7 +2217,7 @@
     }
   };
 
-  var __async$e = (__this, __arguments, generator) => {
+  var __async$g = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -2233,7 +2240,7 @@
   const BestbuySearch = {
     loopIsComplete: true,
     pickUpItems: function(selectors, marketplace) {
-      return __async$e(this, null, function* () {
+      return __async$g(this, null, function* () {
         const items = [];
         try {
           selectors.forEach((elementObj) => {
@@ -2277,7 +2284,7 @@
       });
     },
     search: function(array, marketplace) {
-      return __async$e(this, null, function* () {
+      return __async$g(this, null, function* () {
         const groups = ItemSearchBaseObj.calcRequestGroup(array);
         const len = groups.length;
         return new Promise((resolve, reject) => {
@@ -2416,7 +2423,7 @@
       return /https:\/\/www\.bestbuy\.com\/site\/searchpage\.jsp/.test(window.location.href);
     },
     start: function() {
-      return __async$e(this, null, function* () {
+      return __async$g(this, null, function* () {
         if (!this.isRun()) {
           return;
         }
@@ -2426,7 +2433,7 @@
           return;
         }
         const selectors = ItemSearchBaseObj.pickupGoodsItem(SupportData.support.p, confString);
-        setInterval(() => __async$e(this, null, function* () {
+        setInterval(() => __async$g(this, null, function* () {
           if (this.loopIsComplete) {
             this.loopIsComplete = false;
             yield this.pickUpItems(selectors, marketplace);
@@ -2437,7 +2444,7 @@
     }
   };
 
-  var __async$d = (__this, __arguments, generator) => {
+  var __async$f = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -2482,7 +2489,7 @@
       return marketplace ? marketplace : "com";
     },
     detail: function() {
-      return __async$d(this, null, function* () {
+      return __async$f(this, null, function* () {
         const visitUrl = window.location.href;
         const id = Tools.getGoodsIdByLink(visitUrl);
         if (!id) {
@@ -2512,7 +2519,7 @@
       });
     },
     detailAnalyze: function(json, marketplace) {
-      return __async$d(this, null, function* () {
+      return __async$f(this, null, function* () {
         let couponResult = null;
         let qrcodeResult = null;
         if (!!json.data && !!json.data.css && !!json.data.html && !!json.data.handler) {
@@ -2613,7 +2620,7 @@
       }
     },
     start: function() {
-      return __async$d(this, null, function* () {
+      return __async$f(this, null, function* () {
         const { support } = SupportData;
         const visitUrl = window.location.href;
         if (support.detail.test(visitUrl)) {
@@ -2623,7 +2630,7 @@
     }
   };
 
-  var __async$c = (__this, __arguments, generator) => {
+  var __async$e = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -2646,7 +2653,7 @@
   const BanggoodSearch = {
     loopIsComplete: true,
     pickUpItems: function(selectors, marketplace, lang, currency) {
-      return __async$c(this, null, function* () {
+      return __async$e(this, null, function* () {
         const items = [];
         try {
           selectors.forEach((elementObj) => {
@@ -2687,7 +2694,7 @@
       });
     },
     search: function(array, marketplace, lang, currency) {
-      return __async$c(this, null, function* () {
+      return __async$e(this, null, function* () {
         const groups = ItemSearchBaseObj.calcRequestGroup(array);
         const len = groups.length;
         return new Promise((resolve, reject) => {
@@ -2815,7 +2822,7 @@
       return !support.detail.test(window.location.href);
     },
     start: function() {
-      return __async$c(this, null, function* () {
+      return __async$e(this, null, function* () {
         const { support } = SupportData;
         if (!this.isRun(support)) {
           return;
@@ -2827,7 +2834,7 @@
           return;
         }
         const selectors = ItemSearchBaseObj.pickupGoodsItem(SupportData.support.p, confString);
-        setInterval(() => __async$c(this, null, function* () {
+        setInterval(() => __async$e(this, null, function* () {
           if (this.loopIsComplete) {
             this.loopIsComplete = false;
             const currency = Banggood.getCurrency();
@@ -2862,7 +2869,7 @@
     }
   };
 
-  var css_248z$5 = ".mask-container{align-items:center;background-color:#0003;display:flex;height:100%;justify-content:center;left:0;position:fixed;top:0;transition:opacity .3s ease,visibility .3s ease;width:100%;z-index:2147483647}.modal-content{box-shadow:1px -3px 6px 0 #0003;max-height:450px;max-width:450px;width:90%}.coupon-list-widget-conent,.modal-content{background-color:#fff;border-radius:6px;display:flex;flex-direction:column;overflow:hidden}.coupon-list-widget-conent{border:1px solid #ebebeb;box-shadow:0 4px 16px #0a164666;height:500px;max-height:85%;position:fixed;right:10px;top:10px;width:350px;z-index:2147483646}.coupon-list-widget-conent .modal-header,.modal-content .modal-header{align-items:center;background:var(--color-modeal-header-background);border-bottom:1px solid #ebe6e6;box-sizing:border-box;display:flex;height:var(--size-height-modeal-header);justify-content:space-between;padding:0 var(--size-padding-horizontal-modeal-header);width:100%}.modal-header .logo>img{width:50px}.coupon-list-widget-conent .logo,.modal-header .logo{align-items:center;display:flex;justify-content:center}.coupon-list-widget-conent .title{flex:1;font-size:var(--size-font-modeal-header-title);font-weight:700;padding-left:10px}.modal-header .btns{display:flex;flex-direction:row}.modal-header .btns .close,.modal-header .btns .setting{align-items:center;cursor:pointer;display:flex;justify-content:center;width:var(--size-height-modeal-operat-icon)}.modal-header svg.icon-i87i-svg path{fill:var(--color-modeal-header-icon)!important}.modal-header svg.icon-i87i-svg:hover path{fill:var(--color-modeal-header-icon-hover)!important}.coupon-list-widget-conent .modal-body{background:var(--color-modeal-content-background);flex:1;overflow-y:auto;position:relative;width:100%}.deal-description-warpper{margin:20px auto;text-align:center}.deal-description-warpper>.title{color:#000;font-size:18px;font-weight:800;margin-bottom:5px}.deal-description-warpper>.sub-title{color:#9f9f9f;font-size:14px}.deal-coupons-warpper{display:flex;mask-image:linear-gradient(90deg,#0000,#000 5%,#000 95%,#0000);-webkit-mask-image:linear-gradient(90deg,#0000,#000 5%,#000 95%,#0000);overflow:hidden;padding:10px 20px;position:relative;scroll-behavior:smooth}.deal-coupons-warpper .coupon-item{background-color:#f6f7ff;border:1px dashed #8096f8;border-radius:4px;color:#ccc;display:inline-block;flex:none;font-size:15px;font-weight:700;margin:5px;padding:5px 10px;white-space:nowrap}.deal-coupons-warpper .coupon-item-active{color:#005cf6!important}.deal-coupons-warpper .coupon-item-lose{text-decoration:line-through!important;text-decoration-thickness:2px!important}.deal-progress-warpper{margin-top:20px}.deal-progress-warpper .progress-container{background-color:#f3f3f3;border-radius:25px;box-shadow:0 2px 4px #0003;margin:0 auto;overflow:hidden;width:100%}.deal-progress-warpper .progress-bar{background-color:#4caf50;color:#fff;font-weight:700;height:8px;line-height:8px;text-align:center;transition:width .5s ease-in-out;width:50%}.widget{cursor:pointer;display:flex;flex-direction:row;position:fixed;right:0;transform:translateX(15px);transition:transform .3s ease;z-index:2147483646}.widget:hover{transform:translateX(0)}.widget .content{border-radius:10px 0 0 10px;direction:ltr!important;display:flex;flex-direction:row}.widget .content .logo{background-color:#ff7227;background-image:url(@logo@);background-position:50%;background-repeat:no-repeat;background-size:40px 40px;border-radius:6px 0 0 6px;box-shadow:0 0 10px #00000040;height:40px;width:40px}.widget .content .notification{background-color:#000;border-radius:50%;color:#fff;font-size:10px;font-weight:600;height:20px;left:-5px;position:absolute;top:-5px;width:20px}.widget .content .drag{background:#0000 linear-gradient(270deg,#fb6d56,#ec6751 59%,#e1624d) 0 0 no-repeat padding-box;cursor:move;height:40px;width:15px}.widget .content .drag img{width:6px!important}.all-center{align-items:center;display:flex;justify-content:center}.pulse-reveal{animation:pulse-reveal 2s ease;animation-iteration-count:10}";
+  var css_248z$5 = ".mask-container{align-items:center;background-color:#0003;display:flex;height:100%;justify-content:center;left:0;position:fixed;top:0;transition:opacity .3s ease,visibility .3s ease;width:100%;z-index:2147483647}.modal-content{box-shadow:1px -3px 6px 0 #0003;max-height:450px;max-width:450px;width:90%}.coupon-list-widget-conent,.modal-content{background-color:#fff;border-radius:6px;display:flex;flex-direction:column;overflow:hidden}.coupon-list-widget-conent{border:1px solid #ebebeb;box-shadow:0 4px 16px #0a164666;height:500px;max-height:85%;position:fixed;right:10px;top:10px;width:350px;z-index:2147483646}.coupon-list-widget-conent .modal-header,.modal-content .modal-header{align-items:center;background:var(--color-modeal-header-background);border-bottom:1px solid #ebe6e6;box-sizing:border-box;display:flex;height:var(--size-height-modeal-header);justify-content:space-between;padding:0 var(--size-padding-horizontal-modeal-header);width:100%}.modal-header .logo>img{width:50px}.coupon-list-widget-conent .logo,.modal-header .logo{align-items:center;display:flex;justify-content:center}.coupon-list-widget-conent .title{flex:1;font-size:var(--size-font-modeal-header-title);font-weight:700;padding-left:10px}.modal-header .btns{display:flex;flex-direction:row;position:relative}.modal-header .btns .close,.modal-header .btns .setting{align-items:center;cursor:pointer;display:flex;justify-content:center;width:var(--size-height-modeal-operat-icon)}.modal-header svg.icon-i87i-svg path{fill:var(--color-modeal-header-icon)!important}.modal-header svg.icon-i87i-svg:hover path{fill:var(--color-modeal-header-icon-hover)!important}.setting-dropdown{background:#fff;border-radius:6px;box-shadow:0 4px 11px #0a164633;display:none;margin-top:5px;max-height:300px;overflow:auto;position:absolute;right:0;top:25px;width:180px;z-index:99999999}.setting-dropdown.active{display:block}.setting-category{border-top:1px solid #eee;padding:10px}.setting-category-title{font-size:14px;font-weight:700;margin-bottom:8px}.setting-option{border-radius:4px;cursor:pointer;font-size:12px;padding:3px 7px}.setting-option:hover{background-color:#f0f0f0}.coupon-list-widget-conent .modal-body{background:var(--color-modeal-content-background);flex:1;overflow-y:auto;position:relative;width:100%}.deal-description-warpper{margin:20px auto;text-align:center}.deal-description-warpper>.title{color:#000;font-size:18px;font-weight:800;margin-bottom:5px}.deal-description-warpper>.sub-title{color:#9f9f9f;font-size:14px}.deal-coupons-warpper{display:flex;mask-image:linear-gradient(90deg,#0000,#000 5%,#000 95%,#0000);-webkit-mask-image:linear-gradient(90deg,#0000,#000 5%,#000 95%,#0000);overflow:hidden;padding:10px 20px;position:relative;scroll-behavior:smooth}.deal-coupons-warpper .coupon-item{background-color:#f6f7ff;border:1px dashed #8096f8;border-radius:4px;color:#ccc;display:inline-block;flex:none;font-size:15px;font-weight:700;margin:5px;padding:5px 10px;white-space:nowrap}.deal-coupons-warpper .coupon-item-active{color:#005cf6!important}.deal-coupons-warpper .coupon-item-lose{text-decoration:line-through!important;text-decoration-thickness:2px!important}.deal-progress-warpper{margin-top:20px}.deal-progress-warpper .progress-container{background-color:#f3f3f3;border-radius:25px;box-shadow:0 2px 4px #0003;margin:0 auto;overflow:hidden;width:100%}.deal-progress-warpper .progress-bar{background-color:#4caf50;color:#fff;font-weight:700;height:8px;line-height:8px;text-align:center;transition:width .5s ease-in-out;width:50%}.widget{cursor:pointer;display:flex;flex-direction:row;position:fixed;right:0;transform:translateX(15px);transition:transform .3s ease;z-index:2147483646}.widget:hover{transform:translateX(0)}.widget .content{border-radius:10px 0 0 10px;direction:ltr!important;display:flex;flex-direction:row}.widget .content .logo{background-color:#ff7227;background-image:url(@logo@);background-position:50%;background-repeat:no-repeat;background-size:40px 40px;border-radius:6px 0 0 6px;box-shadow:0 0 10px #00000040;height:40px;width:40px}.widget .content .notification{background-color:#000;border-radius:50%;color:#fff;font-size:10px;font-weight:600;height:20px;left:-5px;position:absolute;top:-5px;width:20px}.widget .content .drag{background:#0000 linear-gradient(270deg,#fb6d56,#ec6751 59%,#e1624d) 0 0 no-repeat padding-box;cursor:move;height:40px;width:15px}.widget .content .drag img{width:6px!important}.all-center{align-items:center;display:flex;justify-content:center}.pulse-reveal{animation:pulse-reveal 2s ease;animation-iteration-count:10}";
 
   var css_248z$4 = ".request-state{left:50%;position:absolute;top:50%;transform:translate(-50%,-50%)}.loading{perspective:200px;position:relative;width:50px}.loading:after,.loading:before{animation:scriptJumping .5s infinite alternate;background:#0000;content:\"\";height:20px;position:absolute;width:20px}.loading:before{left:0}.loading:after{animation-delay:.15s;right:0}@keyframes scriptJumping{0%{transform:scale(1) translateY(0) rotateX(0deg)}to{background:#000;transform:scale(1.2) translateY(-25px) rotateX(45deg)}}.loading-error-image{text-align:center}.loading-error-image,.loading-error-retry{align-items:center;display:flex;justify-content:center}.loading-error-retry{border:4px solid #ccc;border-radius:50px;cursor:pointer;height:40px;margin:20px auto;width:140px}";
 
@@ -2925,7 +2932,7 @@
     }
   };
 
-  var __async$b = (__this, __arguments, generator) => {
+  var __async$d = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -3106,7 +3113,7 @@
       const decrypLink = Tools.decryptStr(link);
       let count = 0;
       let isRequesting = false;
-      const intervalId = setInterval(() => __async$b(this, null, function* () {
+      const intervalId = setInterval(() => __async$d(this, null, function* () {
         if (count >= max) {
           clearInterval(intervalId);
           return;
@@ -3144,7 +3151,7 @@
     }
   };
 
-  var __async$a = (__this, __arguments, generator) => {
+  var __async$c = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -3239,7 +3246,13 @@
       "extension.structure.auto_detect_modal_description": "Finding great deals...",
       "extension.structure.auto_detect_modal_secondary_description": "Automatically tries codes to save you money.",
       "extension.structure.auto_detect_alert_error": "Coupongogo reminders you, it's already the best deal.",
-      "extension.structure.auto_detect_alert_success": "Congratulations from Coupongogo, The code has been applied automatically!"
+      "extension.structure.auto_detect_alert_success": "Congratulations from Coupongogo, The code has been applied automatically!",
+      "extension.structure.setting_window_show_display_title": "Display Settings",
+      "extension.structure.setting_window_show_display_hide30m": "Hide for {0} minutes",
+      "extension.structure.setting_window_show_display_session": "Hide for this shopping session",
+      "extension.structure.setting_window_show_display_all": "Show all components",
+      "extension.structure.setting_window_show_general_title": "General Settings",
+      "extension.structure.setting_window_show_general_general": "Language, History, etc."
     },
     langueObjects: null,
     getLang: function(isTransform = false) {
@@ -3321,7 +3334,7 @@
       }
     },
     refreshLangue: function(force = false) {
-      return __async$a(this, null, function* () {
+      return __async$c(this, null, function* () {
         const queryDirectionElements = (selector) => {
           return CACHE_ROOT_DIVS.flatMap((div) => div ? Array.from(div.querySelectorAll(selector)) : []);
         };
@@ -3358,7 +3371,7 @@
     }
   };
 
-  var __async$9 = (__this, __arguments, generator) => {
+  var __async$b = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -3389,7 +3402,7 @@
       };
     },
     _getDetectCouponParams: function() {
-      return __async$9(this, null, function* () {
+      return __async$b(this, null, function* () {
         const { Aliexpress, Ebay, Lazada, Bestbuy, Banggood } = PlatformModules;
         let platform = SupportData.support.p, marketplace = "", currency = "";
         let lang = StorageUtil.getValue(StorageKeys.langue.custom, "default");
@@ -3449,14 +3462,14 @@
       });
     },
     getDetectCouponResult: function() {
-      return __async$9(this, null, function* () {
+      return __async$b(this, null, function* () {
         const params = yield this._getDetectCouponParams();
         const { method, url } = getRequestUrl()["detectCoupon"];
         return this.request(method, url, params);
       });
     },
     getDetectInfoResult: function() {
-      return __async$9(this, null, function* () {
+      return __async$b(this, null, function* () {
         const params = yield this._getDetectCouponParams();
         const { method, url } = getRequestUrl()["detectInfo"];
         return this.request(method, url, params);
@@ -3472,7 +3485,7 @@
       return this.request(method, url, params);
     },
     initRequestData: function() {
-      return __async$9(this, null, function* () {
+      return __async$b(this, null, function* () {
         try {
           const now = Date.now();
           let exchangeInfoLocal = StorageUtil.getValue(StorageKeys.exchangeInfo, null);
@@ -3575,7 +3588,7 @@
     },
     getActivateTop: function() {
       const innerHeight = window.innerHeight;
-      let defaultTop = parseInt(innerHeight / 3);
+      let defaultTop = parseInt(innerHeight / 5);
       if (defaultTop >= 400) {
         defaultTop = 250;
       }
@@ -3984,7 +3997,7 @@
     }
   }
 
-  var __async$8 = (__this, __arguments, generator) => {
+  var __async$a = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -4007,7 +4020,7 @@
   class AliexpressAutoDetect extends AutoDetectBase {
     start(supportData, code) {
       const { couponInput, submitButton } = this.validate(supportData);
-      return new Promise((resolve) => __async$8(this, null, function* () {
+      return new Promise((resolve) => __async$a(this, null, function* () {
         const clickResult = yield this.clickValidateButton(supportData, couponInput, submitButton, code, this.HookType.react);
         if (!clickResult) {
           resolve(clickResult);
@@ -4034,7 +4047,7 @@
     }
   }
 
-  var __async$7 = (__this, __arguments, generator) => {
+  var __async$9 = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -4057,7 +4070,7 @@
   class WishAutoDetect extends AutoDetectBase {
     start(supportData, code) {
       const { couponInput, submitButton } = this.validate(supportData);
-      return new Promise((resolve) => __async$7(this, null, function* () {
+      return new Promise((resolve) => __async$9(this, null, function* () {
         const clickResult = yield this.clickValidateButton(supportData, couponInput, submitButton, code, this.HookType.react);
         if (!clickResult) {
           resolve(clickResult);
@@ -4083,7 +4096,7 @@
     }
   }
 
-  var __async$6 = (__this, __arguments, generator) => {
+  var __async$8 = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -4106,7 +4119,7 @@
   class EbayAutoDetect extends AutoDetectBase {
     start(supportData, code) {
       const { couponInput, submitButton } = this.validate(supportData);
-      return new Promise((resolve) => __async$6(this, null, function* () {
+      return new Promise((resolve) => __async$8(this, null, function* () {
         const clickResult = yield this.clickValidateButton(supportData, couponInput, submitButton, code, this.HookType.react);
         if (!clickResult) {
           resolve(clickResult);
@@ -4136,7 +4149,7 @@
     }
   }
 
-  var __async$5 = (__this, __arguments, generator) => {
+  var __async$7 = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -4170,7 +4183,7 @@
           resolve(false);
         });
       }
-      return new Promise((resolve) => __async$5(this, null, function* () {
+      return new Promise((resolve) => __async$7(this, null, function* () {
         let result = false;
         for (let i = 0; i < expandCodeBoxSelectors.length; i++) {
           const elements = document.querySelectorAll(expandCodeBoxSelectors[i]);
@@ -4212,7 +4225,7 @@
   };
   const AutoDetectUtil = {
     validate: function(platform, supportData) {
-      return __async$5(this, null, function* () {
+      return __async$7(this, null, function* () {
         const preparedData = {
           "result": false
         };
@@ -4310,7 +4323,7 @@
     }
   };
 
-  var __async$4 = (__this, __arguments, generator) => {
+  var __async$6 = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
       var fulfilled = (value) => {
         try {
@@ -4363,7 +4376,7 @@
       });
     },
     showCouponItems: function(mask, modal, platform, coupons, supportData) {
-      return __async$4(this, null, function* () {
+      return __async$6(this, null, function* () {
         const couponsWarpper = modal.querySelector("div[class^='deal-coupons-warpper']");
         const progressBar = modal.querySelector("div[class^='progress-bar']");
         const couponElements = coupons.map((coupon) => {
@@ -4474,180 +4487,61 @@
     }
   };
 
-  const CouponListModal = {
-    _root: null,
-    _logoBase64: null,
-    _hasModal: false,
-    removeModel: function(modal) {
-      modal.remove();
-      this._hasModal = false;
+  var __async$5 = (__this, __arguments, generator) => {
+    return new Promise((resolve, reject) => {
+      var fulfilled = (value) => {
+        try {
+          step(generator.next(value));
+        } catch (e) {
+          reject(e);
+        }
+      };
+      var rejected = (value) => {
+        try {
+          step(generator.throw(value));
+        } catch (e) {
+          reject(e);
+        }
+      };
+      var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
+      step((generator = generator.apply(__this, __arguments)).next());
+    });
+  };
+  const FeatureControl = {
+    createFeatureKey: function(key) {
+      return {
+        until: `${key}_disabledUntil`
+      };
     },
-    addCloseEventListener: function(button, modal) {
-      button.addEventListener("click", (e) => {
-        this.removeModel(modal);
+    disableTemporarily: function(key, durationMs) {
+      return __async$5(this, null, function* () {
+        const until = Date.now() + durationMs;
+        StorageUtil.setValue(this.createFeatureKey(key).until, until);
       });
     },
-    addShowSettingEventListener: function(button, modal) {
-      button.addEventListener("click", (e) => {
-        this.removeModel(modal);
-        Setting.showDialog();
+    isEnabled: function(key) {
+      return __async$5(this, null, function* () {
+        const { until } = this.createFeatureKey(key);
+        const disabledUntil = StorageUtil.getValue(until, null);
+        if (disabledUntil && Date.now() < disabledUntil) {
+          return false;
+        }
+        return true;
       });
     },
-    addApplyCouponsEventListener: function(button, modal) {
-      InspectUtil.bindApplyCouponsEvent(button, (dataJson) => {
-        this.removeModel(modal);
-        const { platform, codes, check } = dataJson;
-        ProgressModal.generate(
-          this._logoBase64,
-          this._root,
-          platform,
-          codes,
-          check
-        );
-      });
-    },
-    generateRequest: function(modalBody) {
-      const requestState = ElementUtil.createElement("div", {
-        className: "request-state"
-      });
-      modalBody.append(requestState);
-      return requestState;
-    },
-    generateRequestLoadding: function() {
-      return ElementUtil.createElement("div", {
-        className: "loading"
-      });
-    },
-    generateRequestLoaddingError: function(callback) {
-      const retry = ElementUtil.createElement("div", {
-        className: "loading-error-retry",
-        text: LangueUtil.getLangueByStorageKey("couponList_modal_retry"),
-        attributes: {
-          "langue-extension-text": "couponList_modal_retry"
+    runIfEnabled: function(key, callback) {
+      return __async$5(this, null, function* () {
+        const enabled = yield this.isEnabled(key);
+        if (enabled) {
+          callback();
         }
       });
-      retry.addEventListener("click", () => {
-        callback();
-      });
-      const error = ElementUtil.createElement("div", {
-        className: "loading-error",
-        childrens: [
-          ElementUtil.createElement("div", {
-            className: "loading-error-image",
-            html: `
-            <svg t="1735570722474" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7538" width="64" height="64"><path d="M143.1552 722.0224s-2.56-1.536-7.7824-4.096l4.096-7.2704c4.608 2.56 7.2704 4.096 7.2704 4.096l-3.584 7.2704z m-22.7328-12.9024c-4.608-2.56-9.3184-6.2464-14.4384-9.3184l4.608-7.2704c5.12 3.584 9.8304 6.7584 13.9264 9.3184l-4.096 7.2704z m-28.3648-19.6608c-4.608-3.072-8.8064-6.7584-13.4144-10.8544l5.632-6.7584c4.608 3.584 8.8064 7.2704 13.4144 10.3424l-5.632 7.2704z m-26.8288-22.2208c-4.096-4.096-8.2944-7.7824-12.3904-12.3904l6.2464-5.632c4.096 4.096 7.7824 8.2944 11.8784 11.8784l-5.7344 6.144z m-23.7568-25.2928c-3.584-4.608-7.2704-9.3184-10.3424-13.9264l7.2704-4.608c3.072 4.608 6.2464 8.8064 9.8304 13.4144l-6.7584 5.12z m-19.6608-29.3888c-2.56-5.7344-5.12-10.8544-6.7584-16.4864l8.2944-2.56c1.536 5.12 3.584 10.3424 6.2464 14.9504l-7.7824 4.096z m-10.8544-33.5872c-0.512-4.096-1.024-8.2944-1.024-12.3904v-5.632l8.2944 0.512v5.12c0 3.584 0.512 7.2704 1.024 10.8544l-8.2944 1.536z m10.8544-33.0752l-8.2944-2.56c1.536-5.7344 3.584-11.3664 6.7584-16.4864l7.7824 3.584c-3.1744 5.12-5.2224 10.24-6.2464 15.4624z m815.616-19.6608h-16.9984v-8.2944h16.4864l0.512 8.2944z m17.1008-0.512v-8.2944c5.7344 0 11.3664 0 16.9984-0.512l0.512 8.2944c-5.632 0.512-11.3664 0.512-17.5104 0.512z m-51.2 0c-5.632 0-11.3664-0.512-16.9984-0.512l0.512-8.2944c5.632 0 11.3664 0.512 16.9984 0.512l-0.512 8.2944z m85.8112-1.024l-0.512-8.2944c5.632-0.512 11.3664-0.512 16.9984-1.024l0.512 8.2944c-5.12 0.512-11.3664 0.512-16.9984 1.024z m-120.32-0.512c-5.7344-0.512-11.3664-0.512-16.9984-1.024l0.512-8.2944c5.7344 0.512 11.3664 0.512 17.1008 1.024l-0.6144 8.2944z m-34.0992-2.048c-5.632-0.512-11.3664-1.024-16.9984-1.024l0.512-8.2944c5.632 0.512 11.3664 1.024 16.9984 1.024l-0.512 8.2944z m189.0304-0.512l-1.024-8.2944c5.7344-0.512 11.3664-1.536 16.4864-2.56l1.536 8.2944c-5.632 1.024-11.3664 2.048-16.9984 2.56z m-223.1296-2.048l-17.1008-1.536 1.024-8.2944 16.9984 1.536-0.9216 8.2944z m-663.8592-1.024l-5.7344-6.2464c3.584-3.584 8.8064-7.2704 14.4384-10.3424l4.608 7.2704c-5.5296 3.072-9.6256 6.144-13.312 9.3184z m629.248-2.1504l-16.9984-1.536 1.024-8.2944 16.9984 1.536-1.024 8.2944z m291.84-0.512l-2.048-8.2944c5.7344-1.536 11.3664-2.56 15.9744-4.096l2.56 8.2944c-4.608 1.536-10.3424 3.072-16.4864 4.096z m-325.9392-3.072c-5.7344-0.512-11.3664-1.536-17.1008-2.048l1.024-8.2944c5.632 0.512 11.3664 1.536 16.9984 2.048l-0.9216 8.2944z m-34.0992-4.096c-5.632-0.512-11.3664-1.536-16.9984-2.048l1.024-8.2944c5.7344 0.512 11.3664 1.536 17.1008 2.048l-1.1264 8.2944z m393.1136-4.1984l-4.096-7.7824c5.12-2.56 9.3184-5.7344 12.3904-9.3184l6.2464 5.7344c-3.1744 4.7104-7.8848 8.2944-14.5408 11.3664z m-426.7008-0.512c-5.632-1.024-11.3664-1.536-16.9984-2.56l1.024-8.2944c5.632 1.024 11.3664 1.536 16.9984 2.56l-1.024 8.2944z m-499.5072-3.072l-3.584-7.7824c5.12-2.56 10.3424-4.608 15.9744-6.7584l3.072 7.7824c-5.7344 2.6624-10.8544 4.7104-15.4624 6.7584z m465.408-2.048c-5.7344-1.024-11.3664-1.536-17.1008-2.56l1.536-8.2944c5.632 1.024 11.3664 2.048 16.9984 2.56l-1.4336 8.2944z m-34.0992-5.7344l-16.9984-3.072 1.536-8.2944 17.1008 3.072-1.6384 8.2944z m-399.872-4.608l-3.072-8.2944c5.12-2.048 10.8544-3.584 16.4864-5.12l2.56 8.2944c-5.632 1.536-10.752 3.072-15.9744 5.12z m366.2848-1.024l-16.9984-3.072 1.536-8.2944 16.9984 3.072-1.536 8.2944z m-33.5872-6.7584c-5.7344-1.024-11.3664-2.048-17.1008-3.584l1.536-8.2944c5.632 1.024 11.3664 2.048 16.4864 3.584l-0.9216 8.2944zM128.7168 478.208l-2.048-8.2944c5.12-1.536 10.8544-3.072 16.4864-4.608l2.048 8.2944c-5.632 1.536-11.264 3.072-16.4864 4.608z m875.6224-2.56v-1.024c-0.512-4.096-2.048-8.2944-5.12-12.3904l6.7584-5.12c3.584 5.12 6.2464 10.8544 6.7584 16.4864v1.536l-8.3968 0.512zM395.264 474.112c-5.7344-1.024-11.3664-2.56-16.4864-3.584l2.048-8.2944c5.632 1.024 10.8544 2.56 16.4864 3.584l-2.048 8.2944z m-233.984-4.1984l-1.536-8.2944c5.632-1.536 10.8544-2.56 16.4864-4.096l2.048 8.2944c-5.632 1.536-11.264 2.56-16.9984 4.096z m200.3968-3.584c-5.632-1.536-11.3664-2.56-16.4864-4.096l2.048-8.2944c5.632 1.536 10.8544 2.56 16.4864 4.096l-2.048 8.2944z m-166.8096-4.096l-1.536-8.2944c5.7344-1.024 11.3664-2.048 17.1008-3.584l1.536 8.2944c-6.2464 1.4336-11.4688 2.56-17.1008 3.584z m133.2224-4.1984c-5.632-1.536-11.3664-3.072-16.4864-4.096l2.048-8.2944c5.7344 1.536 10.8544 3.072 16.4864 4.096l-2.048 8.2944z m-99.6352-2.56l-1.536-8.2944 16.9984-3.072 1.536 8.2944c-6.144 1.024-11.8784 2.048-16.9984 3.072z m759.296-3.584c-4.096-2.56-8.8064-5.12-14.4384-7.7824l3.584-7.7824c5.7344 2.56 11.3664 5.7344 15.4624 8.2944l-4.608 7.2704z m-725.7088-2.56l-1.536-8.2944c5.632-1.024 11.3664-2.048 16.9984-2.56l1.024 6.2464 2.56-8.2944c4.608 1.536 9.3184 2.56 14.4384 4.096l-1.024-4.608c5.632-1.024 11.3664-1.536 16.9984-2.56l1.024 8.2944c-5.7344 1.024-10.8544 1.536-15.9744 2.56l-1.536 5.12c-5.632-1.536-10.8544-3.072-16.4864-4.608l0.512 2.048c-5.632 0.9216-11.3664 1.9456-16.9984 2.56z m0-9.8304c-5.7344-1.536-10.8544-3.584-16.4864-5.12l2.56-8.2944c5.12 1.536 10.8544 3.584 15.9744 5.12l-2.048 8.2944z m67.6864-0.512l-1.024-8.2944c5.7344-1.024 11.3664-1.536 16.9984-2.048l1.024 8.2944c-5.632 0.4096-11.3664 1.536-16.9984 2.048z m628.1216-1.024c-5.12-1.536-10.3424-3.072-15.9744-4.608l2.048-8.2944c5.632 1.536 11.3664 3.072 16.4864 5.12l-2.56 7.7824z m-594.6368-3.1744l-1.024-8.2944c5.632-0.512 11.3664-1.536 16.9984-2.048l1.024 8.2944c-5.632 0.512-11.264 1.024-16.9984 2.048z m34.0992-4.096l-1.024-8.2944c5.7344-0.512 11.3664-1.024 17.1008-2.048l1.024 8.2944c-5.7344 1.024-11.3664 1.536-17.1008 2.048z m527.9744-1.536c-5.12-1.024-10.8544-2.048-16.4864-3.072l1.536-8.2944 16.9984 3.072-2.048 8.2944z m-695.808 0c-5.632-2.048-10.8544-3.584-15.9744-5.632l3.072-7.7824c5.12 2.048 10.3424 3.584 15.9744 5.632l-3.072 7.7824z m201.9328-2.048l-1.024-8.2944 16.9984-1.536 1.024 8.2944-16.9984 1.536z m34.0992-3.1744l-1.024-8.8064 16.9984-1.536 0.512 8.2944c-5.12 1.024-10.752 1.536-16.4864 2.048z m426.1888-0.512c-5.7344-1.024-10.8544-1.536-16.9984-2.048l1.024-8.2944c5.7344 0.512 11.3664 1.536 17.1008 2.048l-1.1264 8.2944zM499.6096 420.864l-0.512-8.2944c5.7344-0.512 11.3664-1.024 16.9984-1.024l0.512 8.2944c-5.632 0.512-11.264 1.024-16.9984 1.024z m358.5024-1.536l-16.9984-1.536 0.512-8.2944 16.9984 1.536-0.512 8.2944z m-324.4032-0.512l-0.512-8.2944c5.632-0.512 11.3664-0.512 16.9984-1.024l0.512 8.2944c-5.632 0-11.264 0.512-16.9984 1.024z m-336.7936-1.536c-5.632-2.56-10.8544-4.608-15.9744-6.7584l3.072-7.7824c5.12 2.048 10.3424 4.096 15.4624 6.7584l-2.56 7.7824z m370.8928-0.512l-0.512-8.2944c5.7344-0.512 11.3664-0.512 17.1008-1.024l0.512 8.2944c-5.7344 0.512-11.3664 0.512-17.1008 1.024z m256.2048-0.512c-5.7344-0.512-11.3664-0.512-17.1008-1.024l0.512-8.2944c5.7344 0.512 11.3664 0.512 16.9984 1.024l-0.4096 8.2944zM601.9072 414.72l-0.512-8.2944c5.632 0 11.3664-0.512 16.9984-0.512l0.512 8.2944c-5.632 0.512-11.264 0.512-16.9984 0.512z m188.0064-0.6144c-5.632 0-11.3664-0.512-16.9984-0.512l0.512-8.2944c5.632 0 11.3664 0.512 16.9984 0.512l-0.512 8.2944z m-153.9072-0.512v-8.2944c5.7344 0 11.3664-0.512 17.1008-0.512v8.2944c-5.7344 0-11.3664 0.512-17.1008 0.512z m119.808-0.512c-5.632 0-11.3664 0-16.9984-0.512v-8.2944c5.7344 0 11.3664 0 16.9984 0.512v8.2944z m-85.1968-0.512v-8.2944h16.9984v8.2944h-16.9984z m51.0976 0h-17.1008v-8.2944h17.1008v8.2944z m-556.3392-9.216c-5.12-2.56-10.8544-5.12-15.4624-7.7824l4.096-7.7824c4.608 2.56 9.8304 5.12 14.9504 7.7824l-3.584 7.7824z m-30.9248-16.0768c-5.12-3.072-10.3424-6.2464-14.4384-9.3184l5.12-6.7584c4.096 3.072 8.8064 6.2464 13.9264 9.3184l-4.608 6.7584zM105.984 366.592c-4.608-4.096-8.8064-8.8064-11.8784-12.9024l6.7584-5.12c3.072 4.096 6.7584 7.7824 10.8544 11.8784l-5.7344 6.144z m-20.1728-28.8768c-1.024-3.584-1.536-6.7584-1.536-10.3424 0-3.072 0.512-5.632 1.024-8.8064l8.2944 2.048c-0.512 2.048-0.512 4.096-0.512 6.7584 0 2.56 0.512 5.12 1.024 7.7824l-8.2944 2.56zM100.864 306.176l-7.2704-4.608c3.072-5.12 6.7584-9.8304 10.3424-14.4384l6.7584 5.12c-3.6864 5.12-7.2704 9.3184-9.8304 13.9264z m768.1024-16.4864c-5.632-0.512-11.3664-0.512-16.9984-1.024l0.512-8.2944c5.632 0.512 11.3664 1.024 16.9984 1.024l-0.512 8.2944z m-34.6112-2.6624l-17.1008-1.536 1.024-8.2944 16.9984 1.536-0.9216 8.2944z m-34.0992-4.096c-5.632-0.512-11.3664-1.536-16.9984-2.048l1.024-8.2944c5.632 0.512 11.3664 1.536 16.9984 2.048l-1.024 8.2944z m-678.7072-2.56l-6.2464-6.2464c4.096-4.096 8.2944-8.2944 12.9024-11.8784l5.12 6.7584c-4.096 4.096-8.192 7.7824-11.776 11.3664z m645.12-2.048c-5.632-1.024-11.3664-1.536-16.9984-2.56l1.024-8.2944c5.632 1.024 11.3664 1.536 16.9984 2.56l-1.024 8.2944z m-34.0992-4.7104l-17.1008-2.56 1.536-8.2944 16.9984 2.56-1.4336 8.2944z m-34.0992-5.632l-16.9984-2.56 1.536-8.2944 17.1008 2.56-1.6384 8.2944z m-33.4848-5.7344l-16.9984-3.072 1.536-8.2944 16.9984 3.072-1.536 8.2944z m-517.632-2.56l-4.608-7.2704c4.608-3.072 9.8304-6.2464 14.9504-8.8064l4.096 7.7824c-5.12 2.6624-9.8304 5.2224-14.4384 8.2944z m484.0448-3.072l-17.1008-3.072 1.536-8.2944 16.9984 3.072-1.4336 8.2944z m-34.0992-6.2464l-16.9984-3.072 1.536-8.2944 17.1008 3.072-1.6384 8.2944z m-33.5872-5.632l-16.9984-2.56 1.536-8.2944 16.9984 2.56-1.536 8.2944z m-386.9696-0.512l-3.072-7.7824c5.12-2.048 10.8544-4.096 15.9744-6.2464l2.56 8.2944c-5.12 1.536-10.24 3.6864-15.4624 5.7344z m352.8704-4.7104c-5.7344-1.024-11.3664-1.536-17.1008-2.56l1.024-8.2944c5.7344 1.024 11.3664 1.536 16.9984 2.56l-0.9216 8.2944z m-33.5872-5.12c-5.632-1.024-11.3664-1.536-16.9984-2.56l1.024-8.2944c5.7344 0.512 11.3664 1.536 17.1008 2.56l-1.1264 8.2944z m-287.232-1.024l-2.048-8.2944c5.632-1.536 11.3664-3.072 16.9984-4.096l1.536 8.2944c-5.632 1.024-11.264 2.56-16.4864 4.096z m253.6448-3.584c-5.632-0.512-11.3664-1.536-16.9984-2.048l1.024-8.2944c5.632 0.512 11.3664 1.536 16.9984 2.048l-1.024 8.2944z m-220.5696-3.6864l-1.536-8.2944c5.7344-1.024 11.3664-1.536 17.1008-2.56l1.024 8.2944c-5.7344 0.512-11.4688 1.536-16.5888 2.56z m186.4704 0l-17.1008-1.536 1.024-8.2944 16.9984 1.536-0.9216 8.2944z m-34.0992-3.072c-5.632-0.512-11.3664-1.024-16.9984-1.024l0.512-8.2944c5.632 0.512 11.3664 0.512 16.9984 1.024l-0.512 8.2944z m-118.784-1.024l-0.512-8.2944c5.632-0.512 11.3664-1.024 16.9984-1.024l0.512 8.2944c-6.144 0-11.8784 0.512-16.9984 1.024z m84.6848-1.024c-5.632 0-11.3664-0.512-16.9984-0.512v-8.2944c5.7344 0 11.3664 0.512 16.9984 0.512v8.2944z m-51.0976-1.024v-8.2944h16.9984v8.2944h-16.9984z m585.728 70.7584h-8.8064l0.512-8.2944h8.2944v8.2944z m0 0" fill="#CCE1FF" p-id="7539"></path><path d="M677.376 592.384l-324.4032 1.024c-3.072 0-6.2464-2.56-6.2464-6.2464v-7.7824c0-3.072 2.56-6.2464 6.2464-6.2464l324.4032-1.024c3.072 0 6.2464 2.56 6.2464 6.2464v7.7824c-0.6144 3.6864-3.1744 6.2464-6.2464 6.2464z m0 0" fill="#E6EFFF" p-id="7540"></path><path d="M863.8464 323.2768c-38.1952-42.9056-92.4672-99.7376-144.0768-160.6656l-287.232 1.024-2.048 39.7312 36.1472 25.2928-34.0992 8.2944 34.0992 30.0032-27.3408 4.608-21.1968 53.248-19.1488-25.2928-36.1472-19.1488 23.2448-27.8528-47.104-21.1968 30.0032-21.1968-25.2928-45.9776-124.5184 0.512c-23.2448 0-41.8816 19.1488-41.8816 42.3936l1.536 389.5296c0 23.2448 19.1488 41.8816 42.3936 41.8816l602.3168-1.536c23.2448 0 41.8816-19.1488 41.8816-42.3936l-1.536-271.2576z m0 0" fill="#FFFFFF" p-id="7541"></path><path d="M220.16 640.9216c-11.8784 0-23.2448-4.608-32.0512-13.4144-8.8064-8.8064-13.4144-20.1728-13.4144-32.0512l-1.536-389.5296c0-11.8784 4.608-23.2448 12.9024-32.0512 8.8064-8.8064 20.1728-13.4144 32.0512-13.4144l126.5664-0.512 27.8528 50.0736-27.8528 19.6608 45.4656 20.6848-23.7568 27.8528 33.5872 18.1248 15.9744 21.1968 19.6608-49.5616 22.7328-3.584-33.5872-29.4912 33.0752-8.2944-32.0512-22.7328 2.048-44.9536 291.84-1.024 1.024 1.024c34.0992 40.2432 69.2224 78.5408 100.2496 112.64 15.9744 16.9984 30.5152 33.0752 43.4176 47.5136l1.024 1.024v1.024l1.024 270.6432c0 24.7808-20.1728 45.4656-44.9536 45.4656L220.16 640.9216z m121.4464-474.2144l-122.9824 0.512c-10.3424 0-20.1728 4.096-27.3408 11.3664-7.2704 7.2704-11.3664 17.1008-11.3664 27.3408l1.536 389.5296c0 10.3424 4.096 20.1728 11.3664 27.3408 7.2704 7.2704 16.9984 11.3664 27.3408 11.3664l602.3168-1.536c21.7088 0 38.7072-17.6128 38.7072-39.2192l-1.024-269.1072c-12.9024-14.4384-27.3408-30.0032-42.3936-47.0016-31.0272-33.5872-65.6384-71.7824-99.7376-111.616l-282.5216 0.512-1.536 35.1232 40.2432 28.3648-35.1232 9.3184 34.6112 30.5152-32.5632 5.12-22.7328 56.832-22.1184-29.9008-39.2192-20.6848 23.2448-27.3408-48.0256-21.7088 32.0512-22.7328-22.7328-42.3936z m0 0" fill="#A2ADC2" p-id="7542"></path><path d="M860.672 318.0544c-1.024 7.7824-7.7824 12.9024-14.9504 12.3904l-137.9328-14.4384c-7.7824-1.024-12.9024-7.7824-12.3904-14.9504l11.3664-125.0304c1.024-7.7824 7.7824-12.9024 14.9504-12.3904l138.9568 154.4192z m0 0" fill="#FFEED4" p-id="7543"></path><path d="M847.2576 333.6192h-1.536l-137.9328-13.9264c-4.608-0.512-8.2944-2.56-11.3664-6.2464-2.56-3.584-4.096-7.7824-3.584-12.3904l11.3664-125.0304c1.024-9.3184 9.3184-15.9744 18.6368-14.9504h1.024l1.024 1.024 139.4688 154.9312v1.536c-1.024 8.8064-8.8064 15.0528-17.1008 15.0528zM720.6912 167.2192c-5.12 0-9.8304 4.096-10.3424 9.3184l-11.3664 125.0304c-0.512 2.56 0.512 5.7344 2.048 7.7824s4.096 3.584 7.2704 3.584l137.9328 14.4384c2.56 0.512 5.7344-0.512 7.7824-2.048s3.072-3.584 3.584-5.7344L720.6912 167.2192z m0 0" fill="#A2ADC2" p-id="7544"></path><path d="M828.7232 864.0512h-629.76c-15.4624 0-28.3648-12.9024-28.3648-28.3648l-42.3936-271.6672c0-15.4624 12.9024-28.3648 28.3648-28.3648h720.0768c15.4624 0 28.3648 12.9024 28.3648 28.3648L857.088 835.6864c-0.512 15.4624-12.9024 28.3648-28.3648 28.3648z m0 0" fill="#FFEED4" p-id="7545"></path><path d="M828.7232 867.2256h-629.76c-17.6128 0-31.5392-13.9264-31.5392-31.5392l-42.3936-271.1552c0-18.1248 13.9264-32.0512 31.5392-32.0512h720.0768c17.5104 0 31.5392 13.9264 31.5392 31.5392L860.16 836.1984c0 16.9984-14.4384 31.0272-31.4368 31.0272zM156.672 538.624c-13.9264 0-25.2928 11.3664-25.2928 25.2928l42.3936 271.1552c0 14.4384 11.3664 25.8048 25.2928 25.8048h629.1456c13.9264 0 25.2928-11.3664 25.2928-25.2928l48.0256-272.2816c0-13.4144-11.3664-24.7808-25.2928-24.7808H156.672z m0 0" fill="#A2ADC2" p-id="7546"></path><path d="M411.3408 671.9488c0 3.584 1.536 7.7824 4.096 10.3424s6.7584 4.096 10.3424 4.096 7.7824-1.536 10.3424-4.096 4.096-6.7584 4.096-10.3424-1.536-7.7824-4.096-10.3424-6.7584-4.096-10.3424-4.096-7.7824 1.536-10.3424 4.096c-2.56 3.072-4.096 6.656-4.096 10.3424z m170.9056 0c0 3.584 1.536 7.7824 4.096 10.3424s6.7584 4.096 10.3424 4.096 7.7824-1.536 10.3424-4.096 4.096-6.7584 4.096-10.3424-1.536-7.7824-4.096-10.3424-6.7584-4.096-10.3424-4.096-7.7824 1.536-10.3424 4.096c-2.4576 3.072-4.096 6.656-4.096 10.3424z m0 0M561.152 757.6576c5.12 0 9.3184-3.072 8.2944-6.7584-4.608-18.1248-27.8528-32.0512-55.808-32.0512-27.8528 0-51.0976 13.9264-55.808 32.0512-1.024 3.584 3.072 6.7584 8.2944 6.7584 4.096 0 7.7824-2.048 8.2944-4.608 3.072-12.9024 19.6608-22.2208 39.2192-22.2208 19.6608 0 35.6352 9.8304 39.2192 22.2208 0.512 2.56 4.096 4.608 8.2944 4.608z m0 0" fill="#A2ADC2" p-id="7547"></path><path d="M33.1776 498.8928c0 71.8848 58.2656 130.1504 130.1504 130.1504 71.8848 0 130.1504-58.2656 130.1504-130.1504s-58.2656-130.1504-130.1504-130.1504c-71.8848 0-130.1504 58.2656-130.1504 130.1504z m0 0" fill="#FFFFFF" p-id="7548"></path><path d="M163.328 632.1152c-73.3184 0-133.3248-59.904-133.3248-133.3248S90.0096 365.568 163.328 365.568s133.3248 59.904 133.3248 133.3248-60.0064 133.2224-133.3248 133.2224z m0-260.3008c-69.7344 0-127.0784 56.832-127.0784 127.0784 0 69.7344 56.832 127.0784 127.0784 127.0784s127.0784-56.832 127.0784-127.0784c0-69.7344-56.832-127.0784-127.0784-127.0784z m0 0" fill="#A2ADC2" p-id="7549"></path><path d="M173.6704 572.2112c-2.56 2.56-6.2464 4.608-9.8304 4.608s-7.2704-1.536-9.8304-4.096-4.096-6.7584-4.096-10.3424 1.536-7.7824 4.096-10.3424 6.2464-4.608 9.8304-4.608 7.2704 1.536 9.8304 4.096 4.096 6.7584 4.096 10.3424-1.536 7.7824-4.096 10.3424z m5.2224-116.736l-6.2464 71.7824c0 5.7344-4.608 9.8304-9.8304 9.8304-5.12 0-9.8304-4.096-10.3424-9.8304l-9.3184-71.7824c-0.512-1.536-0.512-2.56-0.512-4.096 0-10.3424 7.7824-19.1488 18.1248-19.1488s18.6368 8.2944 18.6368 18.6368c0 2.048-0.512 3.584-0.512 4.608z m0 0M643.7888 601.1904c-2.56 0-4.608 2.048-4.608 4.096v32.5632c0 2.56 2.048 4.096 4.608 4.096s4.608-2.048 4.608-4.096v-32.5632c0-2.048-2.048-4.096-4.608-4.096z m19.0464 0c-2.56 0-4.608 2.048-4.608 4.096v32.5632c0 2.56 2.048 4.096 4.608 4.096s4.608-2.048 4.608-4.096v-32.5632c0.1024-2.048-1.9456-4.096-4.608-4.096z m21.1968 0c-2.56 0-4.608 2.048-4.608 4.096v32.5632c0 2.56 2.048 4.096 4.608 4.096s4.608-2.048 4.608-4.096v-32.5632c0.1024-2.048-2.048-4.096-4.608-4.096z m0 0" fill="#A2ADC2" p-id="7550"></path></svg>
-          `
-          }),
-          retry
-        ]
-      });
-      return error;
-    },
-    setCouponsHtml: function(root, modal) {
-      const { outerDIV, shadowRoot } = root;
-      const modalBody = modal.querySelector("div[name='modalBody']");
-      const self = this;
-      const generateRequest = this.generateRequest(modalBody);
-      const generateRequestLoadding = this.generateRequestLoadding();
-      const generateRequestLoaddingError = this.generateRequestLoaddingError(() => {
-        generateRequest.remove();
-        this.setCouponsHtml(root, modal);
-      });
-      generateRequest.append(generateRequestLoadding);
-      RequestUnionUtil.getDetectCouponResult().then((dataJson) => {
-        if (!dataJson) {
-          generateRequestLoadding.remove();
-          generateRequest.append(generateRequestLoaddingError);
-          return;
-        }
-        generateRequest.remove();
-        const { data, structure } = dataJson;
-        if (structure.hasOwnProperty("css") && structure.hasOwnProperty("html")) {
-          const { css, html } = structure;
-          InspectUtil.addStyle(this._root.shadowRoot, "coupon-list", css);
-          modalBody.innerHTML = html;
-          [".discount-base", ".cgg-store-item", ".showmore-btn", "*[name='cgg02xClickToActivate']"].flatMap((selector) => Array.from(modalBody.querySelectorAll(selector))).forEach((button) => {
-            const isActivateButton = button.matches("*[name='cgg02xClickToActivate']");
-            InspectUtil.bindCustomEvent(button, (option) => {
-              if (isActivateButton) {
-                InspectUtil.addActivateCallbackEvent(outerDIV, option);
-              }
-            });
-          });
-          const tabs = modalBody.querySelectorAll("a[data-toggle='tab']");
-          const tabPanes = modalBody.querySelectorAll(".tab-pane");
-          tabs.forEach((element) => {
-            element.addEventListener("click", function(e) {
-              e.preventDefault();
-              e.stopPropagation();
-              tabs.forEach((tab) => tab.classList.remove("active"));
-              e.target.classList.add("active");
-              tabPanes.forEach((tab) => tab.classList.remove("fade-in", "active"));
-              const toggle = modalBody.querySelector(e.target.getAttribute("data-href") || e.target.getAttribute("href"));
-              toggle.classList.add("fade-in", "active");
-            });
-          });
-          const items = modalBody.querySelectorAll(".cgg-store-item");
-          items.forEach((item) => {
-            item.addEventListener("mouseenter", (e) => {
-              e.target.querySelector("span").classList.add("underline-show");
-            });
-            item.addEventListener("mouseleave", (e) => {
-              e.target.querySelector("span").classList.remove("underline-show");
-            });
-          });
-          const activateButton = modalBody.querySelector("*[name='activateButton']");
-          self.addApplyCouponsEventListener(activateButton, modal);
-        }
-      }).catch((error) => {
-        generateRequestLoadding.remove();
-        generateRequest.append(generateRequestLoaddingError);
-      });
-    },
-    generate: function(logoBase64, root, title, modalPosition) {
-      if (this._hasModal) {
-        return;
-      }
-      const { outerDIV, shadowRoot } = root;
-      this._root = root;
-      this._logoBase64 = logoBase64;
-      const contentHtml = `
-      <div class="modal-header">
-        <div class="logo">
-          <img src="` + logoBase64 + `" />
-        </div>
-        <div class="title">` + title + `</div>
-        <div class="btns">
-          <div class="setting">` + settingSVG + `</div>
-          <div class="close">` + closeSVG + `</div>
-        </div>
-      </div>
-      <div class="modal-body" name="modalBody">
-
-      </div>
-    `;
-      let modelCss = Object.entries(modalPosition).map(([key, value]) => `${key.replace("_", "-")}:${value}`).join(";");
-      const modal = ElementUtil.createElement("div", {
-        className: "coupon-list-widget-conent",
-        html: contentHtml,
-        attributes: {
-          "style": modelCss
-        }
-      });
-      outerDIV.append(modal);
-      this._hasModal = true;
-      const close = modal.querySelector("div.close");
-      const setting = modal.querySelector("div.setting");
-      this.addCloseEventListener(close, modal);
-      this.addShowSettingEventListener(setting, modal);
-      this.setCouponsHtml(root, modal);
-      return modal;
     }
   };
 
   var css_248z = ".history-panel-wrapper{box-sizing:border-box;position:fixed;z-index:2147483646}.history-panel-wrapper svg.icon-i87i-svg path{fill:var(--color-modeal-header-icon)!important}.history-panel-wrapper svg.icon-i87i-svg:hover path{fill:var(--color-modeal-header-icon-hover)!important}.history-panel-wrapper>.history-panel-aside-main{background-color:#fff;border:1px solid #ebebeb;border-radius:5px;bottom:70px;box-shadow:2px 2px 5px #b6bdc5;height:400px;overflow-x:hidden;overflow-y:auto;position:absolute;right:0;width:400px}.history-panel-wrapper>.history-panel-aside-main>.panel-aside-main-inner{display:flex;flex-direction:column;height:100%;width:100%}.history-panel-aside-main .panel-aside-main-header{align-items:center;background-color:var(--color-modeal-header-background);border-bottom:1px solid #ebe6e6;box-sizing:border-box;display:flex;height:var(--size-height-modeal-header);justify-content:space-between;padding:0 var(--size-padding-horizontal-modeal-header)}.history-panel-aside-main .panel-aside-main-header>.logo-header{align-items:center;display:flex;justify-content:center}.history-panel-aside-main .panel-aside-main-header>.logo-header>svg{height:var(--size-height-modeal-icon)!important;width:var(--size-height-modeal-icon)!important}.history-panel-aside-main .panel-aside-main-header>.title-header{flex:1;font-size:var(--size-font-modeal-header-title);font-weight:700;padding-left:10px}.history-panel-aside-main .panel-aside-main-header .btns-header{display:flex;flex-direction:row}.history-panel-aside-main .panel-aside-main-header .btns-header .close,.history-panel-aside-main .panel-aside-main-header .btns-header .setting{align-items:center;cursor:pointer;display:flex;justify-content:center;width:var(--size-height-modeal-operat-icon)}.history-panel-aside-main .panel-aside-main-content{background-color:var(--color-modeal-content-background);flex:1;overflow:auto}.history-panel-aside-main .panel-aside-main-item{margin:5px 0;padding:5px}.history-panel-aside-main .panel-aside-main-item .item-title{color:#b6b6b6;font-size:13px;font-weight:500;padding:5px 0;text-align:center}.history-panel-aside-main .panel-aside-main-item .item-container{display:flex;flex-flow:wrap;flex-direction:row;justify-content:flex-start}.history-panel-aside-main .histories-box-review_item{margin:5px 0;overflow:hidden;width:33.3333%}.history-panel-aside-main .histories-box-review_item>a{background-color:#fff!important;border:1px solid #ccc!important;border-radius:5px!important;box-sizing:initial!important;display:block!important;margin:0 auto!important;position:relative!important;width:110px!important}.history-panel-aside-main .histories-box-review_item>a>.review-shadow{border:2px solid red;border-radius:5px;bottom:0;display:none;left:0;position:absolute;right:0;text-align:center;top:0;z-index:99}.history-panel-aside-main .histories-box-review_item>a>.review-shadow .delete-btn{background-color:red;border-radius:3px;color:#fff;font-size:13px;height:15px;line-height:10px;position:absolute;right:0;text-align:center;top:0;width:15px}.history-panel-aside-main .histories-box-review_item>a>.review-img{border-radius:5px 5px 0 0;height:110px;overflow:hidden;width:110px}.history-panel-aside-main .histories-box-review_item>a>.review-img>img{width:100%!important}.history-panel-aside-main .histories-box-review_item>a>.review-text{color:#000!important;font-size:13px!important;overflow:hidden!important;padding:5px!important;text-align:center!important;text-decoration:underline!important;text-overflow:ellipsis!important;white-space:nowrap!important}.history-panel-wrapper>.history-panel-aside-body{background-color:#fafafa;border-radius:5px;box-shadow:1px 1px 2px #b6bdc5;direction:ltr!important;display:flex;height:60px;overflow:hidden}.history-panel-wrapper>.history-panel-aside-body>div{align-items:center!important;display:flex!important;justify-content:center!important}.history-panel-aside-body .goods-expand{cursor:pointer;width:20px!important}.history-panel-aside-body .goods-expand svg{transition:transform .3s!important}.history-panel-aside-body .goods-review{flex-direction:row;transition:all .5s ease-in-out;width:auto}.history-panel-aside-body .goods-review-item{border-radius:4px;cursor:pointer;height:45px;line-height:45px;margin:0 5px;overflow:hidden;position:relative;width:45px}.history-panel-aside-body .goods-review-item>a{display:block!important;height:100%!important;width:100%!important}.history-panel-aside-body .goods-review-item>a>.review-shadow{background-color:#3d9ba433;bottom:0;display:none;left:0;position:absolute;right:0;text-align:center;top:0;z-index:99}.history-panel-aside-body .goods-review-item>a>.review-shadow img{width:15px!important}.history-panel-aside-body .goods-review-item img{width:100%!important}.history-panel-aside-body .history-box-expand{cursor:pointer;flex-direction:column;margin:0 10px;text-align:center}.history-panel-aside-body .history-box-expand svg{height:33px!important;width:33px!important}.history-panel-aside-body .history-box-expand label{font-size:12px!important;font-weight:700!important}.history-panel-aside-body .wrapper-drag-handle{box-shadow:0 3px 3px -2px #0003,0 3px 4px 0 #00000024,0 1px 8px 0 #0000001f;cursor:move;width:20px!important}";
 
-  const GoodsHistroy = {
+  const GoodsHistory = {
     root: null,
     models: {
       history: "history-model"
@@ -5007,6 +4901,20 @@
       });
       self.addDragEventListener();
     },
+    show: function() {
+      var _a;
+      const outerDIV = (_a = this.root) == null ? void 0 : _a.outerDIV;
+      if (outerDIV) {
+        outerDIV.style.display = "block";
+      }
+    },
+    hide: function() {
+      var _a;
+      const outerDIV = (_a = this.root) == null ? void 0 : _a.outerDIV;
+      if (outerDIV) {
+        outerDIV.style.display = "none";
+      }
+    },
     start: function(support) {
       try {
         if (support.record.disabled) {
@@ -5019,6 +4927,286 @@
         this.createHistoryBox(platform);
       } catch (e) {
       }
+    }
+  };
+
+  var __async$4 = (__this, __arguments, generator) => {
+    return new Promise((resolve, reject) => {
+      var fulfilled = (value) => {
+        try {
+          step(generator.next(value));
+        } catch (e) {
+          reject(e);
+        }
+      };
+      var rejected = (value) => {
+        try {
+          step(generator.throw(value));
+        } catch (e) {
+          reject(e);
+        }
+      };
+      var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
+      step((generator = generator.apply(__this, __arguments)).next());
+    });
+  };
+  const CouponListModal = {
+    _root: null,
+    _logoBase64: null,
+    _hasModal: false,
+    removeModel: function(modal) {
+      modal.remove();
+      this._hasModal = false;
+    },
+    addCloseEventListener: function(button, modal) {
+      button.addEventListener("click", (e) => {
+        this.removeModel(modal);
+      });
+    },
+    addShowSettingEventListener: function(platform, modal) {
+      return __async$4(this, null, function* () {
+        const setting = modal.querySelector(".modal-header .btns> .setting");
+        const dropdown = modal.querySelector(".modal-header #settingsDropdown");
+        const hide30m = 15;
+        const settingsData = [
+          {
+            category: LangueUtil.getLangueByStorageKey("setting_window_show_display_title"),
+            items: [
+              { id: "hide30m", label: LangueUtil.formatTemplateWithArray(
+                LangueUtil.getLangueByStorageKey("setting_window_show_display_hide30m"),
+                [hide30m]
+              ) },
+              { id: "showAll", label: LangueUtil.getLangueByStorageKey("setting_window_show_display_all") }
+            ]
+          },
+          {
+            category: LangueUtil.getLangueByStorageKey("setting_window_show_general_title"),
+            items: [
+              { id: "general", label: LangueUtil.getLangueByStorageKey("setting_window_show_general_general") }
+            ]
+          }
+        ];
+        const windowShow = yield FeatureControl.isEnabled(StorageKeys.featureControl.windowShow + "_" + platform);
+        if (windowShow) {
+          settingsData.forEach((group) => {
+            group.items = group.items.filter((item) => item.id !== "showAll");
+          });
+        } else {
+          settingsData.forEach((group) => {
+            group.items = group.items.filter((item) => item.id === "showAll");
+          });
+        }
+        const renderSettings = () => {
+          dropdown.innerHTML = "";
+          settingsData.forEach((group) => {
+            const categoryDiv = document.createElement("div");
+            categoryDiv.className = "setting-category";
+            const title = document.createElement("div");
+            title.className = "setting-category-title";
+            title.textContent = group.category;
+            categoryDiv.appendChild(title);
+            group.items.forEach((item) => {
+              const opt = document.createElement("div");
+              opt.className = "setting-option";
+              opt.textContent = item.label;
+              opt.dataset.id = item.id;
+              opt.addEventListener("click", () => {
+                if (item.id === "hide30m") {
+                  FeatureControl.disableTemporarily(StorageKeys.featureControl.windowShow + "_" + platform, hide30m * 60 * 1e3);
+                  this.hideAllComponents();
+                  this.removeModel(modal);
+                } else if (item.id === "showAll") {
+                  FeatureControl.enable(StorageKeys.featureControl.windowShow + "_" + platform);
+                  this.showAllComponents();
+                } else if (item.id === "general") {
+                  this.removeModel(modal);
+                  Setting.showDialog();
+                }
+                dropdown.classList.remove("active");
+              });
+              categoryDiv.appendChild(opt);
+            });
+            dropdown.appendChild(categoryDiv);
+          });
+        };
+        setting.addEventListener("click", () => {
+          dropdown.classList.toggle("active");
+          if (dropdown.classList.contains("active")) {
+            renderSettings();
+          }
+        });
+        modal.addEventListener("click", (e) => {
+          if (!modal.querySelector(".modal-header .btns").contains(e.target)) {
+            dropdown.classList.remove("active");
+          }
+        });
+      });
+    },
+    addApplyCouponsEventListener: function(button, modal) {
+      InspectUtil.bindApplyCouponsEvent(button, (dataJson) => {
+        this.removeModel(modal);
+        const { platform, codes, check } = dataJson;
+        ProgressModal.generate(
+          this._logoBase64,
+          this._root,
+          platform,
+          codes,
+          check
+        );
+      });
+    },
+    generateRequest: function(modalBody) {
+      const requestState = ElementUtil.createElement("div", {
+        className: "request-state"
+      });
+      modalBody.append(requestState);
+      return requestState;
+    },
+    generateRequestLoadding: function() {
+      return ElementUtil.createElement("div", {
+        className: "loading"
+      });
+    },
+    generateRequestLoaddingError: function(callback) {
+      const retry = ElementUtil.createElement("div", {
+        className: "loading-error-retry",
+        text: LangueUtil.getLangueByStorageKey("couponList_modal_retry"),
+        attributes: {
+          "langue-extension-text": "couponList_modal_retry"
+        }
+      });
+      retry.addEventListener("click", () => {
+        callback();
+      });
+      const error = ElementUtil.createElement("div", {
+        className: "loading-error",
+        childrens: [
+          ElementUtil.createElement("div", {
+            className: "loading-error-image",
+            html: `
+            <svg t="1735570722474" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7538" width="64" height="64"><path d="M143.1552 722.0224s-2.56-1.536-7.7824-4.096l4.096-7.2704c4.608 2.56 7.2704 4.096 7.2704 4.096l-3.584 7.2704z m-22.7328-12.9024c-4.608-2.56-9.3184-6.2464-14.4384-9.3184l4.608-7.2704c5.12 3.584 9.8304 6.7584 13.9264 9.3184l-4.096 7.2704z m-28.3648-19.6608c-4.608-3.072-8.8064-6.7584-13.4144-10.8544l5.632-6.7584c4.608 3.584 8.8064 7.2704 13.4144 10.3424l-5.632 7.2704z m-26.8288-22.2208c-4.096-4.096-8.2944-7.7824-12.3904-12.3904l6.2464-5.632c4.096 4.096 7.7824 8.2944 11.8784 11.8784l-5.7344 6.144z m-23.7568-25.2928c-3.584-4.608-7.2704-9.3184-10.3424-13.9264l7.2704-4.608c3.072 4.608 6.2464 8.8064 9.8304 13.4144l-6.7584 5.12z m-19.6608-29.3888c-2.56-5.7344-5.12-10.8544-6.7584-16.4864l8.2944-2.56c1.536 5.12 3.584 10.3424 6.2464 14.9504l-7.7824 4.096z m-10.8544-33.5872c-0.512-4.096-1.024-8.2944-1.024-12.3904v-5.632l8.2944 0.512v5.12c0 3.584 0.512 7.2704 1.024 10.8544l-8.2944 1.536z m10.8544-33.0752l-8.2944-2.56c1.536-5.7344 3.584-11.3664 6.7584-16.4864l7.7824 3.584c-3.1744 5.12-5.2224 10.24-6.2464 15.4624z m815.616-19.6608h-16.9984v-8.2944h16.4864l0.512 8.2944z m17.1008-0.512v-8.2944c5.7344 0 11.3664 0 16.9984-0.512l0.512 8.2944c-5.632 0.512-11.3664 0.512-17.5104 0.512z m-51.2 0c-5.632 0-11.3664-0.512-16.9984-0.512l0.512-8.2944c5.632 0 11.3664 0.512 16.9984 0.512l-0.512 8.2944z m85.8112-1.024l-0.512-8.2944c5.632-0.512 11.3664-0.512 16.9984-1.024l0.512 8.2944c-5.12 0.512-11.3664 0.512-16.9984 1.024z m-120.32-0.512c-5.7344-0.512-11.3664-0.512-16.9984-1.024l0.512-8.2944c5.7344 0.512 11.3664 0.512 17.1008 1.024l-0.6144 8.2944z m-34.0992-2.048c-5.632-0.512-11.3664-1.024-16.9984-1.024l0.512-8.2944c5.632 0.512 11.3664 1.024 16.9984 1.024l-0.512 8.2944z m189.0304-0.512l-1.024-8.2944c5.7344-0.512 11.3664-1.536 16.4864-2.56l1.536 8.2944c-5.632 1.024-11.3664 2.048-16.9984 2.56z m-223.1296-2.048l-17.1008-1.536 1.024-8.2944 16.9984 1.536-0.9216 8.2944z m-663.8592-1.024l-5.7344-6.2464c3.584-3.584 8.8064-7.2704 14.4384-10.3424l4.608 7.2704c-5.5296 3.072-9.6256 6.144-13.312 9.3184z m629.248-2.1504l-16.9984-1.536 1.024-8.2944 16.9984 1.536-1.024 8.2944z m291.84-0.512l-2.048-8.2944c5.7344-1.536 11.3664-2.56 15.9744-4.096l2.56 8.2944c-4.608 1.536-10.3424 3.072-16.4864 4.096z m-325.9392-3.072c-5.7344-0.512-11.3664-1.536-17.1008-2.048l1.024-8.2944c5.632 0.512 11.3664 1.536 16.9984 2.048l-0.9216 8.2944z m-34.0992-4.096c-5.632-0.512-11.3664-1.536-16.9984-2.048l1.024-8.2944c5.7344 0.512 11.3664 1.536 17.1008 2.048l-1.1264 8.2944z m393.1136-4.1984l-4.096-7.7824c5.12-2.56 9.3184-5.7344 12.3904-9.3184l6.2464 5.7344c-3.1744 4.7104-7.8848 8.2944-14.5408 11.3664z m-426.7008-0.512c-5.632-1.024-11.3664-1.536-16.9984-2.56l1.024-8.2944c5.632 1.024 11.3664 1.536 16.9984 2.56l-1.024 8.2944z m-499.5072-3.072l-3.584-7.7824c5.12-2.56 10.3424-4.608 15.9744-6.7584l3.072 7.7824c-5.7344 2.6624-10.8544 4.7104-15.4624 6.7584z m465.408-2.048c-5.7344-1.024-11.3664-1.536-17.1008-2.56l1.536-8.2944c5.632 1.024 11.3664 2.048 16.9984 2.56l-1.4336 8.2944z m-34.0992-5.7344l-16.9984-3.072 1.536-8.2944 17.1008 3.072-1.6384 8.2944z m-399.872-4.608l-3.072-8.2944c5.12-2.048 10.8544-3.584 16.4864-5.12l2.56 8.2944c-5.632 1.536-10.752 3.072-15.9744 5.12z m366.2848-1.024l-16.9984-3.072 1.536-8.2944 16.9984 3.072-1.536 8.2944z m-33.5872-6.7584c-5.7344-1.024-11.3664-2.048-17.1008-3.584l1.536-8.2944c5.632 1.024 11.3664 2.048 16.4864 3.584l-0.9216 8.2944zM128.7168 478.208l-2.048-8.2944c5.12-1.536 10.8544-3.072 16.4864-4.608l2.048 8.2944c-5.632 1.536-11.264 3.072-16.4864 4.608z m875.6224-2.56v-1.024c-0.512-4.096-2.048-8.2944-5.12-12.3904l6.7584-5.12c3.584 5.12 6.2464 10.8544 6.7584 16.4864v1.536l-8.3968 0.512zM395.264 474.112c-5.7344-1.024-11.3664-2.56-16.4864-3.584l2.048-8.2944c5.632 1.024 10.8544 2.56 16.4864 3.584l-2.048 8.2944z m-233.984-4.1984l-1.536-8.2944c5.632-1.536 10.8544-2.56 16.4864-4.096l2.048 8.2944c-5.632 1.536-11.264 2.56-16.9984 4.096z m200.3968-3.584c-5.632-1.536-11.3664-2.56-16.4864-4.096l2.048-8.2944c5.632 1.536 10.8544 2.56 16.4864 4.096l-2.048 8.2944z m-166.8096-4.096l-1.536-8.2944c5.7344-1.024 11.3664-2.048 17.1008-3.584l1.536 8.2944c-6.2464 1.4336-11.4688 2.56-17.1008 3.584z m133.2224-4.1984c-5.632-1.536-11.3664-3.072-16.4864-4.096l2.048-8.2944c5.7344 1.536 10.8544 3.072 16.4864 4.096l-2.048 8.2944z m-99.6352-2.56l-1.536-8.2944 16.9984-3.072 1.536 8.2944c-6.144 1.024-11.8784 2.048-16.9984 3.072z m759.296-3.584c-4.096-2.56-8.8064-5.12-14.4384-7.7824l3.584-7.7824c5.7344 2.56 11.3664 5.7344 15.4624 8.2944l-4.608 7.2704z m-725.7088-2.56l-1.536-8.2944c5.632-1.024 11.3664-2.048 16.9984-2.56l1.024 6.2464 2.56-8.2944c4.608 1.536 9.3184 2.56 14.4384 4.096l-1.024-4.608c5.632-1.024 11.3664-1.536 16.9984-2.56l1.024 8.2944c-5.7344 1.024-10.8544 1.536-15.9744 2.56l-1.536 5.12c-5.632-1.536-10.8544-3.072-16.4864-4.608l0.512 2.048c-5.632 0.9216-11.3664 1.9456-16.9984 2.56z m0-9.8304c-5.7344-1.536-10.8544-3.584-16.4864-5.12l2.56-8.2944c5.12 1.536 10.8544 3.584 15.9744 5.12l-2.048 8.2944z m67.6864-0.512l-1.024-8.2944c5.7344-1.024 11.3664-1.536 16.9984-2.048l1.024 8.2944c-5.632 0.4096-11.3664 1.536-16.9984 2.048z m628.1216-1.024c-5.12-1.536-10.3424-3.072-15.9744-4.608l2.048-8.2944c5.632 1.536 11.3664 3.072 16.4864 5.12l-2.56 7.7824z m-594.6368-3.1744l-1.024-8.2944c5.632-0.512 11.3664-1.536 16.9984-2.048l1.024 8.2944c-5.632 0.512-11.264 1.024-16.9984 2.048z m34.0992-4.096l-1.024-8.2944c5.7344-0.512 11.3664-1.024 17.1008-2.048l1.024 8.2944c-5.7344 1.024-11.3664 1.536-17.1008 2.048z m527.9744-1.536c-5.12-1.024-10.8544-2.048-16.4864-3.072l1.536-8.2944 16.9984 3.072-2.048 8.2944z m-695.808 0c-5.632-2.048-10.8544-3.584-15.9744-5.632l3.072-7.7824c5.12 2.048 10.3424 3.584 15.9744 5.632l-3.072 7.7824z m201.9328-2.048l-1.024-8.2944 16.9984-1.536 1.024 8.2944-16.9984 1.536z m34.0992-3.1744l-1.024-8.8064 16.9984-1.536 0.512 8.2944c-5.12 1.024-10.752 1.536-16.4864 2.048z m426.1888-0.512c-5.7344-1.024-10.8544-1.536-16.9984-2.048l1.024-8.2944c5.7344 0.512 11.3664 1.536 17.1008 2.048l-1.1264 8.2944zM499.6096 420.864l-0.512-8.2944c5.7344-0.512 11.3664-1.024 16.9984-1.024l0.512 8.2944c-5.632 0.512-11.264 1.024-16.9984 1.024z m358.5024-1.536l-16.9984-1.536 0.512-8.2944 16.9984 1.536-0.512 8.2944z m-324.4032-0.512l-0.512-8.2944c5.632-0.512 11.3664-0.512 16.9984-1.024l0.512 8.2944c-5.632 0-11.264 0.512-16.9984 1.024z m-336.7936-1.536c-5.632-2.56-10.8544-4.608-15.9744-6.7584l3.072-7.7824c5.12 2.048 10.3424 4.096 15.4624 6.7584l-2.56 7.7824z m370.8928-0.512l-0.512-8.2944c5.7344-0.512 11.3664-0.512 17.1008-1.024l0.512 8.2944c-5.7344 0.512-11.3664 0.512-17.1008 1.024z m256.2048-0.512c-5.7344-0.512-11.3664-0.512-17.1008-1.024l0.512-8.2944c5.7344 0.512 11.3664 0.512 16.9984 1.024l-0.4096 8.2944zM601.9072 414.72l-0.512-8.2944c5.632 0 11.3664-0.512 16.9984-0.512l0.512 8.2944c-5.632 0.512-11.264 0.512-16.9984 0.512z m188.0064-0.6144c-5.632 0-11.3664-0.512-16.9984-0.512l0.512-8.2944c5.632 0 11.3664 0.512 16.9984 0.512l-0.512 8.2944z m-153.9072-0.512v-8.2944c5.7344 0 11.3664-0.512 17.1008-0.512v8.2944c-5.7344 0-11.3664 0.512-17.1008 0.512z m119.808-0.512c-5.632 0-11.3664 0-16.9984-0.512v-8.2944c5.7344 0 11.3664 0 16.9984 0.512v8.2944z m-85.1968-0.512v-8.2944h16.9984v8.2944h-16.9984z m51.0976 0h-17.1008v-8.2944h17.1008v8.2944z m-556.3392-9.216c-5.12-2.56-10.8544-5.12-15.4624-7.7824l4.096-7.7824c4.608 2.56 9.8304 5.12 14.9504 7.7824l-3.584 7.7824z m-30.9248-16.0768c-5.12-3.072-10.3424-6.2464-14.4384-9.3184l5.12-6.7584c4.096 3.072 8.8064 6.2464 13.9264 9.3184l-4.608 6.7584zM105.984 366.592c-4.608-4.096-8.8064-8.8064-11.8784-12.9024l6.7584-5.12c3.072 4.096 6.7584 7.7824 10.8544 11.8784l-5.7344 6.144z m-20.1728-28.8768c-1.024-3.584-1.536-6.7584-1.536-10.3424 0-3.072 0.512-5.632 1.024-8.8064l8.2944 2.048c-0.512 2.048-0.512 4.096-0.512 6.7584 0 2.56 0.512 5.12 1.024 7.7824l-8.2944 2.56zM100.864 306.176l-7.2704-4.608c3.072-5.12 6.7584-9.8304 10.3424-14.4384l6.7584 5.12c-3.6864 5.12-7.2704 9.3184-9.8304 13.9264z m768.1024-16.4864c-5.632-0.512-11.3664-0.512-16.9984-1.024l0.512-8.2944c5.632 0.512 11.3664 1.024 16.9984 1.024l-0.512 8.2944z m-34.6112-2.6624l-17.1008-1.536 1.024-8.2944 16.9984 1.536-0.9216 8.2944z m-34.0992-4.096c-5.632-0.512-11.3664-1.536-16.9984-2.048l1.024-8.2944c5.632 0.512 11.3664 1.536 16.9984 2.048l-1.024 8.2944z m-678.7072-2.56l-6.2464-6.2464c4.096-4.096 8.2944-8.2944 12.9024-11.8784l5.12 6.7584c-4.096 4.096-8.192 7.7824-11.776 11.3664z m645.12-2.048c-5.632-1.024-11.3664-1.536-16.9984-2.56l1.024-8.2944c5.632 1.024 11.3664 1.536 16.9984 2.56l-1.024 8.2944z m-34.0992-4.7104l-17.1008-2.56 1.536-8.2944 16.9984 2.56-1.4336 8.2944z m-34.0992-5.632l-16.9984-2.56 1.536-8.2944 17.1008 2.56-1.6384 8.2944z m-33.4848-5.7344l-16.9984-3.072 1.536-8.2944 16.9984 3.072-1.536 8.2944z m-517.632-2.56l-4.608-7.2704c4.608-3.072 9.8304-6.2464 14.9504-8.8064l4.096 7.7824c-5.12 2.6624-9.8304 5.2224-14.4384 8.2944z m484.0448-3.072l-17.1008-3.072 1.536-8.2944 16.9984 3.072-1.4336 8.2944z m-34.0992-6.2464l-16.9984-3.072 1.536-8.2944 17.1008 3.072-1.6384 8.2944z m-33.5872-5.632l-16.9984-2.56 1.536-8.2944 16.9984 2.56-1.536 8.2944z m-386.9696-0.512l-3.072-7.7824c5.12-2.048 10.8544-4.096 15.9744-6.2464l2.56 8.2944c-5.12 1.536-10.24 3.6864-15.4624 5.7344z m352.8704-4.7104c-5.7344-1.024-11.3664-1.536-17.1008-2.56l1.024-8.2944c5.7344 1.024 11.3664 1.536 16.9984 2.56l-0.9216 8.2944z m-33.5872-5.12c-5.632-1.024-11.3664-1.536-16.9984-2.56l1.024-8.2944c5.7344 0.512 11.3664 1.536 17.1008 2.56l-1.1264 8.2944z m-287.232-1.024l-2.048-8.2944c5.632-1.536 11.3664-3.072 16.9984-4.096l1.536 8.2944c-5.632 1.024-11.264 2.56-16.4864 4.096z m253.6448-3.584c-5.632-0.512-11.3664-1.536-16.9984-2.048l1.024-8.2944c5.632 0.512 11.3664 1.536 16.9984 2.048l-1.024 8.2944z m-220.5696-3.6864l-1.536-8.2944c5.7344-1.024 11.3664-1.536 17.1008-2.56l1.024 8.2944c-5.7344 0.512-11.4688 1.536-16.5888 2.56z m186.4704 0l-17.1008-1.536 1.024-8.2944 16.9984 1.536-0.9216 8.2944z m-34.0992-3.072c-5.632-0.512-11.3664-1.024-16.9984-1.024l0.512-8.2944c5.632 0.512 11.3664 0.512 16.9984 1.024l-0.512 8.2944z m-118.784-1.024l-0.512-8.2944c5.632-0.512 11.3664-1.024 16.9984-1.024l0.512 8.2944c-6.144 0-11.8784 0.512-16.9984 1.024z m84.6848-1.024c-5.632 0-11.3664-0.512-16.9984-0.512v-8.2944c5.7344 0 11.3664 0.512 16.9984 0.512v8.2944z m-51.0976-1.024v-8.2944h16.9984v8.2944h-16.9984z m585.728 70.7584h-8.8064l0.512-8.2944h8.2944v8.2944z m0 0" fill="#CCE1FF" p-id="7539"></path><path d="M677.376 592.384l-324.4032 1.024c-3.072 0-6.2464-2.56-6.2464-6.2464v-7.7824c0-3.072 2.56-6.2464 6.2464-6.2464l324.4032-1.024c3.072 0 6.2464 2.56 6.2464 6.2464v7.7824c-0.6144 3.6864-3.1744 6.2464-6.2464 6.2464z m0 0" fill="#E6EFFF" p-id="7540"></path><path d="M863.8464 323.2768c-38.1952-42.9056-92.4672-99.7376-144.0768-160.6656l-287.232 1.024-2.048 39.7312 36.1472 25.2928-34.0992 8.2944 34.0992 30.0032-27.3408 4.608-21.1968 53.248-19.1488-25.2928-36.1472-19.1488 23.2448-27.8528-47.104-21.1968 30.0032-21.1968-25.2928-45.9776-124.5184 0.512c-23.2448 0-41.8816 19.1488-41.8816 42.3936l1.536 389.5296c0 23.2448 19.1488 41.8816 42.3936 41.8816l602.3168-1.536c23.2448 0 41.8816-19.1488 41.8816-42.3936l-1.536-271.2576z m0 0" fill="#FFFFFF" p-id="7541"></path><path d="M220.16 640.9216c-11.8784 0-23.2448-4.608-32.0512-13.4144-8.8064-8.8064-13.4144-20.1728-13.4144-32.0512l-1.536-389.5296c0-11.8784 4.608-23.2448 12.9024-32.0512 8.8064-8.8064 20.1728-13.4144 32.0512-13.4144l126.5664-0.512 27.8528 50.0736-27.8528 19.6608 45.4656 20.6848-23.7568 27.8528 33.5872 18.1248 15.9744 21.1968 19.6608-49.5616 22.7328-3.584-33.5872-29.4912 33.0752-8.2944-32.0512-22.7328 2.048-44.9536 291.84-1.024 1.024 1.024c34.0992 40.2432 69.2224 78.5408 100.2496 112.64 15.9744 16.9984 30.5152 33.0752 43.4176 47.5136l1.024 1.024v1.024l1.024 270.6432c0 24.7808-20.1728 45.4656-44.9536 45.4656L220.16 640.9216z m121.4464-474.2144l-122.9824 0.512c-10.3424 0-20.1728 4.096-27.3408 11.3664-7.2704 7.2704-11.3664 17.1008-11.3664 27.3408l1.536 389.5296c0 10.3424 4.096 20.1728 11.3664 27.3408 7.2704 7.2704 16.9984 11.3664 27.3408 11.3664l602.3168-1.536c21.7088 0 38.7072-17.6128 38.7072-39.2192l-1.024-269.1072c-12.9024-14.4384-27.3408-30.0032-42.3936-47.0016-31.0272-33.5872-65.6384-71.7824-99.7376-111.616l-282.5216 0.512-1.536 35.1232 40.2432 28.3648-35.1232 9.3184 34.6112 30.5152-32.5632 5.12-22.7328 56.832-22.1184-29.9008-39.2192-20.6848 23.2448-27.3408-48.0256-21.7088 32.0512-22.7328-22.7328-42.3936z m0 0" fill="#A2ADC2" p-id="7542"></path><path d="M860.672 318.0544c-1.024 7.7824-7.7824 12.9024-14.9504 12.3904l-137.9328-14.4384c-7.7824-1.024-12.9024-7.7824-12.3904-14.9504l11.3664-125.0304c1.024-7.7824 7.7824-12.9024 14.9504-12.3904l138.9568 154.4192z m0 0" fill="#FFEED4" p-id="7543"></path><path d="M847.2576 333.6192h-1.536l-137.9328-13.9264c-4.608-0.512-8.2944-2.56-11.3664-6.2464-2.56-3.584-4.096-7.7824-3.584-12.3904l11.3664-125.0304c1.024-9.3184 9.3184-15.9744 18.6368-14.9504h1.024l1.024 1.024 139.4688 154.9312v1.536c-1.024 8.8064-8.8064 15.0528-17.1008 15.0528zM720.6912 167.2192c-5.12 0-9.8304 4.096-10.3424 9.3184l-11.3664 125.0304c-0.512 2.56 0.512 5.7344 2.048 7.7824s4.096 3.584 7.2704 3.584l137.9328 14.4384c2.56 0.512 5.7344-0.512 7.7824-2.048s3.072-3.584 3.584-5.7344L720.6912 167.2192z m0 0" fill="#A2ADC2" p-id="7544"></path><path d="M828.7232 864.0512h-629.76c-15.4624 0-28.3648-12.9024-28.3648-28.3648l-42.3936-271.6672c0-15.4624 12.9024-28.3648 28.3648-28.3648h720.0768c15.4624 0 28.3648 12.9024 28.3648 28.3648L857.088 835.6864c-0.512 15.4624-12.9024 28.3648-28.3648 28.3648z m0 0" fill="#FFEED4" p-id="7545"></path><path d="M828.7232 867.2256h-629.76c-17.6128 0-31.5392-13.9264-31.5392-31.5392l-42.3936-271.1552c0-18.1248 13.9264-32.0512 31.5392-32.0512h720.0768c17.5104 0 31.5392 13.9264 31.5392 31.5392L860.16 836.1984c0 16.9984-14.4384 31.0272-31.4368 31.0272zM156.672 538.624c-13.9264 0-25.2928 11.3664-25.2928 25.2928l42.3936 271.1552c0 14.4384 11.3664 25.8048 25.2928 25.8048h629.1456c13.9264 0 25.2928-11.3664 25.2928-25.2928l48.0256-272.2816c0-13.4144-11.3664-24.7808-25.2928-24.7808H156.672z m0 0" fill="#A2ADC2" p-id="7546"></path><path d="M411.3408 671.9488c0 3.584 1.536 7.7824 4.096 10.3424s6.7584 4.096 10.3424 4.096 7.7824-1.536 10.3424-4.096 4.096-6.7584 4.096-10.3424-1.536-7.7824-4.096-10.3424-6.7584-4.096-10.3424-4.096-7.7824 1.536-10.3424 4.096c-2.56 3.072-4.096 6.656-4.096 10.3424z m170.9056 0c0 3.584 1.536 7.7824 4.096 10.3424s6.7584 4.096 10.3424 4.096 7.7824-1.536 10.3424-4.096 4.096-6.7584 4.096-10.3424-1.536-7.7824-4.096-10.3424-6.7584-4.096-10.3424-4.096-7.7824 1.536-10.3424 4.096c-2.4576 3.072-4.096 6.656-4.096 10.3424z m0 0M561.152 757.6576c5.12 0 9.3184-3.072 8.2944-6.7584-4.608-18.1248-27.8528-32.0512-55.808-32.0512-27.8528 0-51.0976 13.9264-55.808 32.0512-1.024 3.584 3.072 6.7584 8.2944 6.7584 4.096 0 7.7824-2.048 8.2944-4.608 3.072-12.9024 19.6608-22.2208 39.2192-22.2208 19.6608 0 35.6352 9.8304 39.2192 22.2208 0.512 2.56 4.096 4.608 8.2944 4.608z m0 0" fill="#A2ADC2" p-id="7547"></path><path d="M33.1776 498.8928c0 71.8848 58.2656 130.1504 130.1504 130.1504 71.8848 0 130.1504-58.2656 130.1504-130.1504s-58.2656-130.1504-130.1504-130.1504c-71.8848 0-130.1504 58.2656-130.1504 130.1504z m0 0" fill="#FFFFFF" p-id="7548"></path><path d="M163.328 632.1152c-73.3184 0-133.3248-59.904-133.3248-133.3248S90.0096 365.568 163.328 365.568s133.3248 59.904 133.3248 133.3248-60.0064 133.2224-133.3248 133.2224z m0-260.3008c-69.7344 0-127.0784 56.832-127.0784 127.0784 0 69.7344 56.832 127.0784 127.0784 127.0784s127.0784-56.832 127.0784-127.0784c0-69.7344-56.832-127.0784-127.0784-127.0784z m0 0" fill="#A2ADC2" p-id="7549"></path><path d="M173.6704 572.2112c-2.56 2.56-6.2464 4.608-9.8304 4.608s-7.2704-1.536-9.8304-4.096-4.096-6.7584-4.096-10.3424 1.536-7.7824 4.096-10.3424 6.2464-4.608 9.8304-4.608 7.2704 1.536 9.8304 4.096 4.096 6.7584 4.096 10.3424-1.536 7.7824-4.096 10.3424z m5.2224-116.736l-6.2464 71.7824c0 5.7344-4.608 9.8304-9.8304 9.8304-5.12 0-9.8304-4.096-10.3424-9.8304l-9.3184-71.7824c-0.512-1.536-0.512-2.56-0.512-4.096 0-10.3424 7.7824-19.1488 18.1248-19.1488s18.6368 8.2944 18.6368 18.6368c0 2.048-0.512 3.584-0.512 4.608z m0 0M643.7888 601.1904c-2.56 0-4.608 2.048-4.608 4.096v32.5632c0 2.56 2.048 4.096 4.608 4.096s4.608-2.048 4.608-4.096v-32.5632c0-2.048-2.048-4.096-4.608-4.096z m19.0464 0c-2.56 0-4.608 2.048-4.608 4.096v32.5632c0 2.56 2.048 4.096 4.608 4.096s4.608-2.048 4.608-4.096v-32.5632c0.1024-2.048-1.9456-4.096-4.608-4.096z m21.1968 0c-2.56 0-4.608 2.048-4.608 4.096v32.5632c0 2.56 2.048 4.096 4.608 4.096s4.608-2.048 4.608-4.096v-32.5632c0.1024-2.048-2.048-4.096-4.608-4.096z m0 0" fill="#A2ADC2" p-id="7550"></path></svg>
+          `
+          }),
+          retry
+        ]
+      });
+      return error;
+    },
+    setCouponsHtml: function(root, modal) {
+      const { outerDIV, shadowRoot } = root;
+      const modalBody = modal.querySelector("div[name='modalBody']");
+      const self = this;
+      const generateRequest = this.generateRequest(modalBody);
+      const generateRequestLoadding = this.generateRequestLoadding();
+      const generateRequestLoaddingError = this.generateRequestLoaddingError(() => {
+        generateRequest.remove();
+        this.setCouponsHtml(root, modal);
+      });
+      generateRequest.append(generateRequestLoadding);
+      RequestUnionUtil.getDetectCouponResult().then((dataJson) => {
+        if (!dataJson) {
+          generateRequestLoadding.remove();
+          generateRequest.append(generateRequestLoaddingError);
+          return;
+        }
+        generateRequest.remove();
+        const { data, structure } = dataJson;
+        if (structure.hasOwnProperty("css") && structure.hasOwnProperty("html")) {
+          const { css, html } = structure;
+          InspectUtil.addStyle(this._root.shadowRoot, "coupon-list", css);
+          modalBody.innerHTML = html;
+          [".discount-base", ".cgg-store-item", ".showmore-btn", "*[name='cgg02xClickToActivate']"].flatMap((selector) => Array.from(modalBody.querySelectorAll(selector))).forEach((button) => {
+            const isActivateButton = button.matches("*[name='cgg02xClickToActivate']");
+            InspectUtil.bindCustomEvent(button, (option) => {
+              if (isActivateButton) {
+                InspectUtil.addActivateCallbackEvent(outerDIV, option);
+              }
+            });
+          });
+          const tabs = modalBody.querySelectorAll("a[data-toggle='tab']");
+          const tabPanes = modalBody.querySelectorAll(".tab-pane");
+          tabs.forEach((element) => {
+            element.addEventListener("click", function(e) {
+              e.preventDefault();
+              e.stopPropagation();
+              tabs.forEach((tab) => tab.classList.remove("active"));
+              e.target.classList.add("active");
+              tabPanes.forEach((tab) => tab.classList.remove("fade-in", "active"));
+              const toggle = modalBody.querySelector(e.target.getAttribute("data-href") || e.target.getAttribute("href"));
+              toggle.classList.add("fade-in", "active");
+            });
+          });
+          const items = modalBody.querySelectorAll(".cgg-store-item");
+          items.forEach((item) => {
+            item.addEventListener("mouseenter", (e) => {
+              e.target.querySelector("span").classList.add("underline-show");
+            });
+            item.addEventListener("mouseleave", (e) => {
+              e.target.querySelector("span").classList.remove("underline-show");
+            });
+          });
+          const activateButton = modalBody.querySelector("*[name='activateButton']");
+          self.addApplyCouponsEventListener(activateButton, modal);
+        }
+      }).catch((error) => {
+        generateRequestLoadding.remove();
+        generateRequest.append(generateRequestLoaddingError);
+      });
+    },
+    showAllComponents: function() {
+      var _a;
+      const outerDIV = (_a = this._root) == null ? void 0 : _a.outerDIV;
+      if (outerDIV) {
+        outerDIV.querySelector(".widget").style.display = "block";
+      }
+      GoodsHistory.show();
+    },
+    hideAllComponents: function() {
+      var _a;
+      const outerDIV = (_a = this._root) == null ? void 0 : _a.outerDIV;
+      if (outerDIV) {
+        outerDIV.querySelector(".widget").style.display = "none";
+      }
+      GoodsHistory.hide();
+    },
+    generate: function(logoBase64, root, title, modalPosition, platform) {
+      if (this._hasModal) {
+        return;
+      }
+      const { outerDIV, shadowRoot } = root;
+      this._root = root;
+      this._logoBase64 = logoBase64;
+      const contentHtml = `
+      <div class="modal-header">
+        <div class="logo">
+          <img src="` + logoBase64 + `" />
+        </div>
+        <div class="title">` + title + `</div>
+        <div class="btns">
+          <div class="setting">` + settingSVG + `</div>
+          <div class="setting-dropdown" id="settingsDropdown"></div>
+          <div class="close">` + closeSVG + `</div>
+        </div>
+      </div>
+      <div class="modal-body" name="modalBody">
+
+      </div>
+    `;
+      let modelCss = Object.entries(modalPosition).map(([key, value]) => `${key.replace("_", "-")}:${value}`).join(";");
+      const modal = ElementUtil.createElement("div", {
+        className: "coupon-list-widget-conent",
+        html: contentHtml,
+        attributes: {
+          "style": modelCss
+        }
+      });
+      outerDIV.append(modal);
+      this._hasModal = true;
+      const close = modal.querySelector(".modal-header .btns> .close");
+      this.addCloseEventListener(close, modal);
+      this.addShowSettingEventListener(platform, modal);
+      this.setCouponsHtml(root, modal);
+      return modal;
     }
   };
 
@@ -5100,6 +5288,7 @@
         var _a;
         const support = SupportData.support;
         const platform = support.p;
+        const windowShow = yield FeatureControl.isEnabled(StorageKeys.featureControl.windowShow + "_" + platform);
         let infoJson = null;
         try {
           infoJson = yield RequestUnionUtil.getDetectInfoResult();
@@ -5122,7 +5311,10 @@
         const observerTime = (_a = cggJson["observer_time"]) != null ? _a : 20 * 1e3;
         const flyout = infoJson["flyout"];
         if (historyShow) {
-          GoodsHistroy.start(support);
+          GoodsHistory.start(support);
+          if (!windowShow) {
+            GoodsHistory.hide();
+          }
         }
         if (!infoJson["show"]) {
           return;
@@ -5139,14 +5331,18 @@
         const { outerDIV } = root;
         this.root = root;
         outerDIV.setAttribute("data-re-mark-tag", platform);
-        const { widget, logo } = Activate.generate(couponTotal, badgeData, dragData, interfaceData);
+        const { widget, logo } = Activate.generate(couponTotal, badgeData, dragData, interfaceData, platform);
         outerDIV.append(widget);
-        logo.addEventListener("click", (e) => {
-          CouponListModal.generate(logoBase64$1, root, modalTitle, modalPosition);
-        });
-        if (autoOpen) {
-          CouponListModal.generate(logoBase64$1, root, modalTitle, modalPosition);
+        if (windowShow) {
+          if (autoOpen) {
+            CouponListModal.generate(logoBase64$1, root, modalTitle, modalPosition, platform);
+          }
+        } else {
+          widget.style.display = "none";
         }
+        logo.addEventListener("click", (e) => {
+          CouponListModal.generate(logoBase64$1, root, modalTitle, modalPosition, platform);
+        });
         setTimeout(() => {
           this.showFlyOut(root, flyout, platform, logoBase64$1);
           outerDIV.setAttribute("status", "complete");
@@ -5358,7 +5554,7 @@
             const price2 = priceElement ? priceElement.innerText : "Unknown";
             const title2 = titleElement ? titleElement.innerText : "--";
             const goods = { "id": id, "url": href, "pic": imgSrc, "date": new Date().getTime(), "price": price2, "title": title2 };
-            GoodsHistroy.push(support.p, goods);
+            GoodsHistory.push(support.p, goods);
           }
         }).catch(() => {
         });
