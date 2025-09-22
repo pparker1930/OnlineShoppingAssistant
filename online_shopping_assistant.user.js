@@ -74,7 +74,7 @@
 // @description:ug     پاپۇلار سودا سېتىش پلاتفورمالىرىدا ئاپتوماتىك كۇپون ئىزدەش ئارقىلىق، پەقەت مۇھتاج بولغان مەھسۇلاتلارغا ئەڭ ياخشى پەقەتلەرنى تاپشۇرۇشقا ياردەم بېرىدۇ، ھىچ بىر ئاشىق پۇل چىقارماي. ھازىر كۆرسىتىلىدىغان: Aliexpress، Lazada، eBay، Amazon ۋە باشقا.
 // @description:vi     Tìm kiếm tự động mã giảm giá trên các nền tảng mua sắm phổ biến để giúp bạn tìm được những ưu đãi tốt nhất cho sản phẩm bạn cần, mà không phải chi tiêu quá mức. Hiện tại hỗ trợ: Aliexpress, Lazada, eBay, Amazon và nhiều hơn nữa.
 // @namespace   Thaddeus_ecommerce_NameScope
-// @version     1.1.6
+// @version     1.1.7
 // @author      Thaddeus310,PeterParker
 // @icon        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABAZJREFUWEetl1lME1EUhv+htbaISamoVTC0WrcgASOSlFCpuEfRmPigicaghgeXRI2JiTy4xVfikzExLvhkJGpiTYi4FUQeDMEG3CXp4FpQaEW0LKWjd2Camemdxep96EzSc+/5zn/PPecOg78Ypb7LXgbccdEU7/i7nzwZcI3k2VSx+4TeZRk9hst8F09wYMSONacx4E7qAVEFSMWxnEwLRBHA47v0CIAgMb+uPT0DoV8DmtEvnmLHs96Q2M7/uGLXctrEJADRPic5X5czF/Uf36lCEOd2Swae9YWS7Dgwy5srKvl8EUYSgMd3iVMKUUkBvcr8UTRJCQkATXYtvUnEZMgkV5smgUgApJpwJPoZRHLpnqtyixMzAaAmvZYKqfz/uGIX75v/oUVfVlMN49QpMGTZUllfMmfo1Tt0ucvBuleIkm+sTvAAtOgPtlVjQiSOaPck5M+0pAwxOO0reuNRXO3fKAEgCxIVGKW933bjGKZO5jASNiPPNillgLqOMIqLR1BnWJMEQI4lFcD6IYgt7bUozIsi0GTGHFPqCnSZf2B69ih8g0Vo82yRB+JnaEdvU9s5zI6+hyE+CoNRsSzoUmU0NpbnwR4LHhRXIjLLKamQVICq9lPYup7V5UCPEWNyIPjyMw73HKUC8CGKq9l/B8jwIhhooQGAKMAJzoWnHOD+DRvYThP2HJU0GMXgie1Q2IKJmVE4XMNgNAD4rqekAFmsoW4uvvT0Yee+Xn5BrVFfa0dsxIV5BR2Yv/Q75Fsg8kVPQrkC9dc9WLB6B5zWKi3f/P+NDxchO/8IjN+rxhQQ5YCz0C3uHfoAGm67YbS5UV5aowug9sISxAbN2H3gCW8v3gLz/PxE7yA9gRnv/2QbEkOuwJuADd04Bq7vCsrKn2tCBEP70Rn4hlVrryUBiI8hD0ArxbRTcPfOdpizbMjNOq+aB43NGxBPcyErfgv5pV2qAHwpJhbyckwD6GOdCHzcDAPeItfeQIUgzoncQ6HWRPTyLRAUEFoytR0r1YGO5lx8jnhgySkENzB+sxpmAZODT7TRmBE/2RcoKemEzRFMbBXtGErasVwFtUJElHjdOg0/M5xIM8aQlp6DWH8IsYEvKHD1I9MRhMUakeSJHIB6IRnPBb4m6KmEBISMwYgVZmsEFms4ybFAIQOgX8kEY9KcqtpPef9rLxBVQt/e05J7KPVaXj1w5tHKhZ2ax02vgVCIzrRsOHSl5uZZ8TzFD5MXTx3heSbWqteJmt3bYUckr5jNpNmofprdaynye9Nby/4Fwv+rqHFVSavkI0eXAmKjVEA+xaaz2YbuygmLIfkSkgej6+tYmERAyPtM47cC8hS2iEgs2HQMu05uLb0v2Wc1BX8DMGUKxDW5sRoAAAAASUVORK5CYII=
 // @match       *://*/*
@@ -816,8 +816,9 @@
     });
   };
   const Aliexpress = {
-    languageStoageKey: "language-stoage-key",
-    currencyStoageKey: "language-currency-key",
+    languageStorageKey: "aliexpress-language-key",
+    currencyStorageKey: "aliexpress-currency-key",
+    marketplaceStorageKey: "aliexpress-marketplace-key",
     checkDomInsertRs: true,
     getLang: function() {
       const host = window.location.host;
@@ -829,18 +830,37 @@
       } else if (/^aliexpress\.ru$/.test(host)) {
         lang = "ru";
       }
-      GM_setValue(this.languageStoageKey, lang);
+      GM_setValue(this.languageStorageKey, lang);
       return lang;
     },
-    getMarketplace: function() {
-      let marketplace = "";
-      const host = window.location.host;
-      if (/^(us|ko|uk|fr|de|it|ca|au|jp|ja|he|kr|ru|br|in|es|mx|pl|tr|ar|id|th|vn|sg|my|ph|be|nl|se|ch|no|dk|at|ie|fi|pt|gr|hu|cz|bg|ro|ua|il|sa|eg|ir|pk|iq|af|ly|et|gh|ke|ng|za|tz|mg|mw|zm|bw|sn|cm|ci|gh|ma|tn|mr|mu|om|kw|qa|bh|ae|lb|jo|sy|lb|il|ps|kr|cl|pe|uy|ec|ve|bo|gt|pa|hn|ni|cr|sv|gt|sl|lr|sd|er|dj|et|mw|mz|ao|tz|zm|zw|mw|na|bw|ls|mg|km)\.aliexpress\.com$/.test(host)) {
-        marketplace = host.split(".")[0];
-      } else {
-        marketplace = host.split(".").slice(-1)[0];
-      }
-      return marketplace;
+    getMarketplace: function(marketplaceHandler) {
+      return __async$p(this, null, function* () {
+        var _a, _b;
+        let countryCode = "";
+        const host = window.location.host;
+        if (/^(us|ko|uk|fr|de|it|ca|au|jp|ja|he|kr|ru|br|in|es|mx|pl|tr|ar|id|th|vn|sg|my|ph|be|nl|se|ch|no|dk|at|ie|fi|pt|gr|hu|cz|bg|ro|ua|il|sa|eg|ir|pk|iq|af|ly|et|gh|ke|ng|za|tz|mg|mw|zm|bw|sn|cm|ci|gh|ma|tn|mr|mu|om|kw|qa|bh|ae|lb|jo|sy|lb|il|ps|kr|cl|pe|uy|ec|ve|bo|gt|pa|hn|ni|cr|sv|gt|sl|lr|sd|er|dj|et|mw|mz|ao|tz|zm|zw|mw|na|bw|ls|mg|km)\.aliexpress\.com$/.test(host)) {
+          countryCode = host.split(".")[0];
+        } else {
+          countryCode = host.split(".").slice(-1)[0];
+        }
+        let marketplace = GM_getValue(this.marketplaceStorageKey, null);
+        const defaultMarketplace = { countryCode, className: "", html: "" };
+        if (marketplaceHandler) {
+          const handlerElement = yield Tools.waitForElementByInterval(marketplaceHandler);
+          if (handlerElement) {
+            marketplace = {
+              countryCode,
+              className: (_a = handlerElement.className) != null ? _a : "",
+              html: (_b = handlerElement.outerHTML) != null ? _b : ""
+            };
+            GM_setValue(this.marketplaceStorageKey, marketplace);
+          }
+        }
+        if (!marketplace || /\.ru/.test(host)) {
+          marketplace = defaultMarketplace;
+        }
+        return encodeURIComponent(JSON.stringify(marketplace));
+      });
     },
     getCurrency: function() {
       const host = window.location.host;
@@ -853,7 +873,7 @@
             let currency = element.textContent;
             if (currency) {
               currency = encodeURIComponent(currency);
-              GM_setValue(this.currencyStoageKey, currency);
+              GM_setValue(this.currencyStorageKey, currency);
               resolve(currency);
             } else {
               resolve("unknown");
@@ -864,7 +884,7 @@
         }
       });
     },
-    detail: function() {
+    detail: function(marketplaceHandler) {
       return __async$p(this, null, function* () {
         const visitUrl = window.location.href;
         const validate = [/\/item\/[^\/]*?\.html\?/, /\/item\/[^\/]*?\.html$/].map((reg) => reg.test(visitUrl)).some((rs) => rs == true);
@@ -872,6 +892,7 @@
           return;
         const language = this.getLang();
         const currency = yield this.getCurrency();
+        const marketplace = yield this.getMarketplace(marketplaceHandler);
         const id = Tools.getGoodsIdByLink(visitUrl);
         try {
           const params = {
@@ -880,19 +901,20 @@
             "p": SupportData.support.p,
             "lang": language,
             "mul": false,
-            "currency": currency
+            "currency": currency,
+            "marketplace": marketplace
           };
           const data = yield RequestUtil.getCouponQuery(params);
           if (data.code == "success" && !!data.result) {
             const json = JSON.parse(data.result);
             Logger.log("info", "detail request json=", json);
-            yield this.detailAnalyze(json, language, currency);
+            yield this.detailAnalyze(json, language, currency, marketplace);
           }
         } catch (e) {
         }
       });
     },
-    detailAnalyze: function(json, language, currency) {
+    detailAnalyze: function(json, language, currency, marketplace) {
       return __async$p(this, null, function* () {
         this.checkDomInsertRs = false;
         try {
@@ -922,7 +944,8 @@
               "id": id,
               "lang": language,
               "platform": SupportData.support.p,
-              "currency": currency
+              "currency": currency,
+              "marketplace": marketplace
             };
             const reqPromise = RequestUtil.getCouponChange(params);
             promiseResultArray.push(elementPromise, reqPromise);
@@ -1012,8 +1035,9 @@
         const validate = SupportData.support.trade.map((reg) => reg.test(visitUrl)).some((rs) => rs == true);
         if (!validate)
           return;
-        const language = yield GM_getValue(this.languageStoageKey, navigator.language);
-        const currency = yield GM_getValue(this.currencyStoageKey, "USD");
+        const language = yield GM_getValue(this.languageStorageKey, navigator.language);
+        const currency = yield GM_getValue(this.currencyStorageKey, "USD");
+        const marketplace = yield this.getMarketplace();
         const ids = Tools.getParamterBySearch(window.location.search, "objectId") || Tools.getParamterBySearch(window.location.search, "availableProductShopcartIds") || Tools.getParamterBySearch(window.location.search, "itemId");
         const params = {
           "ids": ids,
@@ -1021,7 +1045,8 @@
           "p": SupportData.support.p,
           "lang": language,
           "mul": true,
-          "currency": currency
+          "currency": currency,
+          "marketplace": marketplace
         };
         const res = yield RequestUtil.getCouponQuery(params);
         if (res.code == "success" && !!res.result) {
@@ -1074,7 +1099,7 @@
         const { support } = SupportData;
         const visitUrl = window.location.href;
         if (support.detail.test(visitUrl)) {
-          this.detail();
+          this.detail(support.marketplace);
         }
         this.trade();
         this.removeAnchor();
@@ -1110,7 +1135,7 @@
     isItemLink: function(url) {
       return SupportData.support.detail.test(url);
     },
-    pickUpWholesale: function(selectors, language, currency) {
+    pickUpWholesale: function(selectors, language, currency, marketplace) {
       return __async$o(this, null, function* () {
         const items = [];
         try {
@@ -1140,13 +1165,13 @@
             }
           });
           if (items.length > 0) {
-            yield this.search(items, language, currency);
+            yield this.search(items, language, currency, marketplace);
           }
         } catch (e) {
         }
       });
     },
-    pickUpInbusiness: function(language, currency) {
+    pickUpInbusiness: function(language, currency, marketplace) {
       return __async$o(this, null, function* () {
         const validate = this.isInbusinessPage();
         if (!validate)
@@ -1173,13 +1198,13 @@
                 }
               });
             }
-            yield this.search(array, language, currency);
+            yield this.search(array, language, currency, marketplace);
           }
         } catch (e) {
         }
       });
     },
-    search: function(array, language, currency) {
+    search: function(array, language, currency, marketplace) {
       const groups = ItemSearchBaseObj.calcRequestGroup(array);
       const len = groups.length;
       return new Promise((resolve, reject) => {
@@ -1189,14 +1214,14 @@
         }
         const promises = [];
         for (let i = 0; i < groups.length; i++) {
-          promises.push(this.createItemHtml(groups[i], language, currency));
+          promises.push(this.createItemHtml(groups[i], language, currency, marketplace));
         }
         Promise.all(promises).then((data) => {
           resolve("complete");
         });
       });
     },
-    createItemHtml: function(group, language, currency) {
+    createItemHtml: function(group, language, currency, marketplace) {
       return new Promise((resolve, reject) => {
         try {
           if (Array.isArray(group) && group.length === 0) {
@@ -1215,7 +1240,7 @@
             reqId = reqId.slice(0, -1);
           }
           Logger.log("info", "request start >>>>>>>>>>>>>", group);
-          const searchUrl = ItemSearchBaseObj.baseUrl + "/api/coupon/exist?platform=" + platform + "&ids=" + reqId + "&lang=" + language + "&no=101&v=1.0.1&currency=" + currency;
+          const searchUrl = ItemSearchBaseObj.baseUrl + "/api/coupon/exist?platform=" + platform + "&ids=" + reqId + "&lang=" + language + "&no=101&v=1.0.1&currency=" + currency + "&marketplace=" + marketplace;
           Logger.log("info", "request searchUrl >>>>>>>>>>>>>:", searchUrl);
           ItemSearchBaseObj.requestAndSaveSate("GET", searchUrl, null).then((data) => {
             Logger.log("info", "request finish >>>>>>>>>>>>>");
@@ -1336,12 +1361,14 @@
     },
     start: function() {
       return __async$o(this, null, function* () {
+        const { support } = SupportData;
         if (!this.isRun()) {
           return;
         }
         let removeTagIsComplete = true;
         const language = Aliexpress.getLang();
         const currency = yield Aliexpress.getCurrency();
+        const marketplace = yield Aliexpress.getMarketplace(support.marketplace);
         const confString = yield ItemSearchBaseObj.requestConf();
         if (!confString) {
           return;
@@ -1350,8 +1377,8 @@
         setInterval(() => __async$o(this, null, function* () {
           if (removeTagIsComplete && this.loopIsComplete) {
             this.loopIsComplete = false;
-            yield this.pickUpInbusiness(language, currency);
-            yield this.pickUpWholesale(selectors, language, currency);
+            yield this.pickUpInbusiness(language, currency, marketplace);
+            yield this.pickUpWholesale(selectors, language, currency, marketplace);
             this.loopIsComplete = true;
           }
         }), 1700);
@@ -3586,22 +3613,24 @@
     _getDetectCouponParams: function() {
       return __async$c(this, null, function* () {
         const { Aliexpress, Ebay, Lazada, Bestbuy, Banggood } = PlatformModules;
-        let platform = SupportData.support.p, marketplace = "", currency = "";
+        let platform = SupportData.support.p, marketplace = "", currency = "", countryCode = "";
         let lang = StorageUtil.getValue(StorageKeys.langue.custom, "default");
         if (lang === "default") {
           lang = DefaultValue.lang;
         }
         switch (platform) {
           case SupportData.supports.aliexpress.p:
-            marketplace = Aliexpress.Aliexpress.getMarketplace();
+            marketplace = yield Aliexpress.Aliexpress.getMarketplace();
             currency = yield Aliexpress.Aliexpress.getCurrency();
             break;
           case SupportData.supports.banggood.p:
-            marketplace = Banggood.Banggood.getMarketplace();
+            countryCode = Banggood.Banggood.getMarketplace();
             currency = Banggood.Banggood.getCurrency();
+            marketplace = encodeURIComponent(JSON.stringify({ "countryCode": countryCode, "className": "", "html": "" }));
             break;
           default:
-            marketplace = Tools.getCommonMarketplace();
+            countryCode = Tools.getCommonMarketplace();
+            marketplace = encodeURIComponent(JSON.stringify({ "countryCode": countryCode, "className": "", "html": "" }));
         }
         let params = {
           platform,
