@@ -74,7 +74,7 @@
 // @description:ug     پاپۇلار سودا سېتىش پلاتفورمالىرىدا ئاپتوماتىك كۇپون ئىزدەش ئارقىلىق، پەقەت مۇھتاج بولغان مەھسۇلاتلارغا ئەڭ ياخشى پەقەتلەرنى تاپشۇرۇشقا ياردەم بېرىدۇ، ھىچ بىر ئاشىق پۇل چىقارماي. ھازىر كۆرسىتىلىدىغان: Aliexpress، Lazada، eBay، Amazon ۋە باشقا.
 // @description:vi     Tìm kiếm tự động mã giảm giá trên các nền tảng mua sắm phổ biến để giúp bạn tìm được những ưu đãi tốt nhất cho sản phẩm bạn cần, mà không phải chi tiêu quá mức. Hiện tại hỗ trợ: Aliexpress, Lazada, eBay, Amazon và nhiều hơn nữa.
 // @namespace   Thaddeus_ecommerce_NameScope
-// @version     1.1.8
+// @version     1.1.9
 // @author      Thaddeus310,PeterParker
 // @icon        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABAZJREFUWEetl1lME1EUhv+htbaISamoVTC0WrcgASOSlFCpuEfRmPigicaghgeXRI2JiTy4xVfikzExLvhkJGpiTYi4FUQeDMEG3CXp4FpQaEW0LKWjd2Camemdxep96EzSc+/5zn/PPecOg78Ypb7LXgbccdEU7/i7nzwZcI3k2VSx+4TeZRk9hst8F09wYMSONacx4E7qAVEFSMWxnEwLRBHA47v0CIAgMb+uPT0DoV8DmtEvnmLHs96Q2M7/uGLXctrEJADRPic5X5czF/Uf36lCEOd2Swae9YWS7Dgwy5srKvl8EUYSgMd3iVMKUUkBvcr8UTRJCQkATXYtvUnEZMgkV5smgUgApJpwJPoZRHLpnqtyixMzAaAmvZYKqfz/uGIX75v/oUVfVlMN49QpMGTZUllfMmfo1Tt0ucvBuleIkm+sTvAAtOgPtlVjQiSOaPck5M+0pAwxOO0reuNRXO3fKAEgCxIVGKW933bjGKZO5jASNiPPNillgLqOMIqLR1BnWJMEQI4lFcD6IYgt7bUozIsi0GTGHFPqCnSZf2B69ih8g0Vo82yRB+JnaEdvU9s5zI6+hyE+CoNRsSzoUmU0NpbnwR4LHhRXIjLLKamQVICq9lPYup7V5UCPEWNyIPjyMw73HKUC8CGKq9l/B8jwIhhooQGAKMAJzoWnHOD+DRvYThP2HJU0GMXgie1Q2IKJmVE4XMNgNAD4rqekAFmsoW4uvvT0Yee+Xn5BrVFfa0dsxIV5BR2Yv/Q75Fsg8kVPQrkC9dc9WLB6B5zWKi3f/P+NDxchO/8IjN+rxhQQ5YCz0C3uHfoAGm67YbS5UV5aowug9sISxAbN2H3gCW8v3gLz/PxE7yA9gRnv/2QbEkOuwJuADd04Bq7vCsrKn2tCBEP70Rn4hlVrryUBiI8hD0ArxbRTcPfOdpizbMjNOq+aB43NGxBPcyErfgv5pV2qAHwpJhbyckwD6GOdCHzcDAPeItfeQIUgzoncQ6HWRPTyLRAUEFoytR0r1YGO5lx8jnhgySkENzB+sxpmAZODT7TRmBE/2RcoKemEzRFMbBXtGErasVwFtUJElHjdOg0/M5xIM8aQlp6DWH8IsYEvKHD1I9MRhMUakeSJHIB6IRnPBb4m6KmEBISMwYgVZmsEFms4ybFAIQOgX8kEY9KcqtpPef9rLxBVQt/e05J7KPVaXj1w5tHKhZ2ax02vgVCIzrRsOHSl5uZZ8TzFD5MXTx3heSbWqteJmt3bYUckr5jNpNmofprdaynye9Nby/4Fwv+rqHFVSavkI0eXAmKjVEA+xaaz2YbuygmLIfkSkgej6+tYmERAyPtM47cC8hS2iEgs2HQMu05uLb0v2Wc1BX8DMGUKxDW5sRoAAAAASUVORK5CYII=
 // @match       *://*/*
@@ -158,6 +158,7 @@
 // @include     /^https:\/\/([\w-]+\.)?coindcx\.[\w.-]+([/?#].*)?$/
 // @include     /^https:\/\/([\w-]+\.)?zebpay\.[\w.-]+([/?#].*)?$/
 // @include     /^https:\/\/([\w-]+\.)?bitbns\.[\w.-]+([/?#].*)?$/
+// @include     /^https:\/\/([\w-]+\.)?kraken\.[\w.-]+([/?#].*)?$/
 // @include     /^https?:\/\/(www\.)?google\.[a-z]{2,3}(\.[a-z]{2})?\/search\?/
 // @include     /^https?:\/\/(?:www|cn)?\.?bing\.com\/search\?.*/
 // @include     *://www.jtmate.com/mid/merge**
@@ -170,7 +171,7 @@
 // @antifeature referral-link
 // @noframes
 // @downloadURL https://static.staticj.top/script/update/github_only_ecommerce.user.js
-// @updateURL   https://static.staticj.top/script/update/github_only_ecommerce.user.js
+// @updateURL   https://static.staticj.top/script/update/github_only_ecommerce.meta.js
 // @grant       GM_registerMenuCommand
 // @grant       GM_openInTab
 // @grant       GM.openInTab
@@ -740,7 +741,8 @@
             selectorElementList.push({
               "element": elements[j]["element"],
               "findA": elements[j]["findA"],
-              "page": elements[j]["page"]
+              "page": elements[j]["page"],
+              "price": elements[j]["price"]
             });
           }
         }
@@ -757,6 +759,9 @@
       return searchElement;
     },
     getGoodsPriceByElement: function(element, tag) {
+      if (!element || !tag) {
+        return "";
+      }
       const goodsPrice = element.querySelector(tag);
       let price = goodsPrice == null ? "" : goodsPrice.innerText;
       if (price) {
@@ -845,8 +850,8 @@
         }
         let marketplace = GM_getValue(this.marketplaceStorageKey, null);
         const defaultMarketplace = { countryCode, className: "", html: "" };
-        if (marketplaceHandler) {
-          const handlerElement = yield Tools.waitForElementByInterval(marketplaceHandler);
+        if (marketplaceHandler && !/\.ru/.test(host)) {
+          const handlerElement = yield Tools.waitForElementByInterval(marketplaceHandler, document.body, true, 50, 2 * 1e3);
           if (handlerElement) {
             marketplace = {
               countryCode,
@@ -856,7 +861,7 @@
             GM_setValue(this.marketplaceStorageKey, marketplace);
           }
         }
-        if (!marketplace || /\.ru/.test(host)) {
+        if (!marketplace) {
           marketplace = defaultMarketplace;
         }
         return encodeURIComponent(JSON.stringify(marketplace));
@@ -1617,11 +1622,10 @@
               elements.forEach((element) => {
                 if (element && ItemSearchBaseObj.isElementDisplayed(element) && !element.getAttribute(ItemSearchBaseObj.searchAttribute)) {
                   const goodsLink = ItemSearchBaseObj.getGoodsLinkByElement(element, findA);
-                  const priceQuery = [
-                    "*[class*='detail'] >*[class*='price']",
-                    "*[class*='merch-price'] >span"
-                  ].join(",");
+                  const priceQuery = elementObj.price;
+                  Logger.log("info", "search price elements======>", element, priceQuery);
                   const price = ItemSearchBaseObj.getGoodsPriceByElement(element, priceQuery);
+                  Logger.log("info", "search price======>", price);
                   let id = null, varG = null;
                   if (this.isItemLink(goodsLink)) {
                     const goodsLinkHref = goodsLink.getAttribute("href");
@@ -2294,12 +2298,12 @@
               elements.forEach((element) => {
                 if (element && ItemSearchBaseObj.isElementDisplayed(element) && !element.getAttribute(ItemSearchBaseObj.searchAttribute)) {
                   const goodsLink = ItemSearchBaseObj.getGoodsLinkByElement(element, findA);
-                  const priceQuery = [
-                    "div.pricing"
-                  ].join(",");
+                  const priceQuery = elementObj.price;
+                  Logger.log("info", "search price elements======>", element, priceQuery);
                   const price = ItemSearchBaseObj.getGoodsPrice(
                     ItemSearchBaseObj.getGoodsPriceByElement(element, priceQuery)
                   );
+                  Logger.log("info", "search price======>", price);
                   let id = null;
                   if (this.isItemLink(goodsLink)) {
                     id = Tools.getGoodsIdByLink(goodsLink.getAttribute("href"));
@@ -2709,8 +2713,10 @@
               elements.forEach((element) => {
                 if (element && ItemSearchBaseObj.isElementDisplayed(element) && !element.getAttribute(ItemSearchBaseObj.searchAttribute)) {
                   const goodsLink = ItemSearchBaseObj.getGoodsLinkByElement(element, findA);
-                  const priceQuery = ["span.price"].join(",");
+                  const priceQuery = elementObj.price;
+                  Logger.log("info", "search price elements======>", element, priceQuery);
                   const price = ItemSearchBaseObj.getGoodsPriceByElement(element, priceQuery);
+                  Logger.log("info", "search price======>", price);
                   let id = null;
                   if (SupportData.support.detail.test(goodsLink)) {
                     const goodsLinkHref = goodsLink.getAttribute("href");
