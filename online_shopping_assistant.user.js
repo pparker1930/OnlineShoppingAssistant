@@ -5959,551 +5959,113 @@
   const SupportsHelper = {
     defaultSupportsString: `
     {
-        "jtmMid":{
-            "p":"jtmMid",
-            "match": "www\\\\.jtmate\\\\.com\\\\/mid",
-            "record":{
-                "disabled":true
-            },
-            "disabled":false
-        },
-        "aliexpress": {
-            "p": "aliexpress",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?aliexpress\\\\.[a-z]{2,}(\\\\.[a-z]{2,})*(\\\\/.*)?",
-            "detail": "\\\\/item\\\\/[^.\\\\/]+\\\\.html",
-            "trade": ["\\\\/trade\\\\/confirm\\\\.html", "\\\\/checkout\\\\?"],
-            "record":{
-                "elements":{
-                    "title":"h1[data-pl='product-title'], h1[class*='HazeProductDescription_HazeProductDescription__smallText_']",
-                    "price":"span.product-price-value, div[class*='currentPriceText'], div[class*='HazeProductPrice_SnowPrice__container']>div",
-                    "cover":"div[class*='slider--img'] >img, div[class*='__previewItem__'] picture[class*='Picture__container']>source"
-                },
-                "disabled":false
-            },
-            "disabled":false
-        },
-        "lazada":{
-            "p": "lazada",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?lazada\\\\.[\\\\w.-]+([/?#].*)?$",
-            "detail": "\\\\/products\\\\/.*-i\\\\d+.*\\\\.html",
-            "trade":[],
-            "record":{
-                "elements":{
-    				"title":"h1[class*='pdp-mod-product-badge-title']",
-                    "price":"div[class*='product-current-price-container'],div[class*='product-price-content-salePrice'],.pdp-product-price",
-                    "cover":"div[class*='gallery-preview-panel'] >img:last-child, .gallery-preview-panel__content >img:last-child"
-                },
-                "disabled":false
-            },
-            "disabled":false
-        },
-        "banggood":{
-            "p": "banggood",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?banggood\\\\.[\\\\w.-]+([/?#].*)?$",
-            "detail":"\\\\/.*-p-\\\\d+\\\\.html",
-            "trade":[],
-            "record":{
-                "elements":{
-                    "title":".product-title-text",
-                    "price":".newbie-price",
-                    "cover":"a.p-img >img"
-                },
-                "disabled":false
-            },
-            "disabled":false
-        },
-        "ebay": {
-            "p": "ebay",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?ebay\\\\.[\\\\w.-]+([/?#].*)?$",
-            "detail":"\\\\/itm\\\\/\\\\d+",
-            "trade":[],
-            "record":{
-                "elements":{
-                    "title":".x-item-title__mainTitle",
-                    "price":".x-price-primary >span",
-                    "cover":".ux-image-grid-item >img, .ux-image-carousel-item >img"
-                },
-                "disabled":false
-            },
-            "disabled":false
-        },
-        "bestbuy": {
-            "p": "bestbuy",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?bestbuy\\\\.[\\\\w.-]+([/?#].*)?$",
-            "detail":"\\\\/site\\\\/.*\\\\/\\\\d+\\\\.p",
-            "trade":[],
-            "record":{
-                "elements":{
-                    "title":".sm:text-title-sm",
-                    "price":"*[class*='_price_']",
-                    "cover":"*[class*='displayingImage'] img"
-                },
-                "disabled":true
-            },
-            "disabled":false
-        },
-        "shopee": {
-            "p": "shopee",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?shopee\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record":{
-                "disabled":true
-            },
-            "disabled":false
-        },
-        "wish": {
-            "p": "wish",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?wish\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record":{
-                "disabled":true
-            },
-            "disabled":false
-        },
-        "amazon": {
-            "p": "amazon",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?amazon\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record":{
-                "disabled":true
-            },
-            "disabled":false
-        },
-        "abritel": {
-            "p": "abritel",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?abritel\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "adidas": {
-            "p": "adidas",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?adidas\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "advertiser": {
-            "p": "advertiser",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?advertiser\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "agoda": {
-            "p": "agoda",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?agoda\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "bookabach": {
-            "p": "bookabach",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?bookabach\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "booking": {
-            "p": "booking",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?booking\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "etsy": {
-            "p": "etsy",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?etsy\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "fewodirekt": {
-            "p": "fewodirekt",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?fewo-direkt\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "hotels": {
-            "p": "hotels",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?hotels\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "hoteis": {
-            "p": "hoteis",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?hoteis\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "hoteles": {
-            "p": "hoteles",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?hoteles\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "magazineluiza": {
-            "p": "magazineluiza",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?magazineluiza\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "meesho": {
-            "p": "meesho",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?meesho\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "mercadolibre": {
-            "p": "mercadolibre",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?mercadolibre\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "namshi": {
-            "p": "namshi",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?namshi\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "nike": {
-            "p": "nike",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?nike\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "sivvi": {
-            "p": "sivvi",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?sivvi\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "skyscanner": {
-            "p": "skyscanner",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?skyscanner\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "stayz": {
-            "p": "stayz",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?stayz\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "target": {
-            "p": "target",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?target\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "tripadvisor": {
-            "p": "tripadvisor",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?tripadvisor\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "vrbo": {
-            "p": "vrbo",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?vrbo\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "wayfair": {
-            "p": "wayfair",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?wayfair\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "wotif": {
-            "p": "wotif",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?wotif\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "airbaltic": {
-            "p": "airbaltic",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?airbaltic\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "alibaba": {
-            "p": "alibaba",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?alibaba\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "allegro": {
-            "p": "allegro",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?allegro\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "daraz": {
-            "p": "daraz",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?daraz\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "edureka": {
-            "p": "edureka",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?edureka\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "expedia": {
-            "p": "expedia",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?expedia\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "noon": {
-            "p": "noon",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?noon\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "ozon": {
-            "p": "ozon",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?ozon\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "pictarine": {
-            "p": "pictarine",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?pictarine\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "rakuten": {
-            "p": "rakuten",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?rakuten\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "ranavat": {
-            "p": "ranavat",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?ranavat\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "samsung": {
-            "p": "samsung",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?samsung\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "shein": {
-            "p": "shein",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?shein\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "suiteness": {
-            "p": "suiteness",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?suiteness\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "temu": {
-            "p": "temu",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?temu\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "ticketmaster": {
-            "p": "ticketmaster",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?ticketmaster\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "treatwell": {
-            "p": "treatwell",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?treatwell\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "trip": {
-            "p": "trip",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?trip\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "walmart": {
-            "p": "walmart",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?walmart\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "wildberries": {
-            "p": "wildberries",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?wildberries\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "wilson": {
-            "p": "wilson",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?wilson\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "wilsonsleather": {
-            "p": "wilsonsleather",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?wilsonsleather\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "zalando": {
-            "p": "zalando",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?zalando\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "ajio": {
-            "p": "ajio",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?ajio\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "flipkart": {
-            "p": "flipkart",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?flipkart\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "myntra": {
-            "p": "myntra",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?myntra\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "cex": {
-            "p": "cex",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?cex\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "changelly": {
-            "p": "changelly",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?changelly\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "kucoin": {
-            "p": "kucoin",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?kucoin\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "paxful": {
-            "p": "paxful",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?paxful\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "htx": {
-            "p": "htx",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?htx\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "mexc": {
-            "p": "mexc",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?mexc\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "bybit": {
-            "p": "bybit",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?bybit\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "gate": {
-            "p": "gate",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?gate\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "coinmama": {
-            "p": "coinmama",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?coinmama\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "gate": {
-            "p": "gate",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?gate\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "bitget": {
-            "p": "bitget",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?bitget\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "freebitco": {
-            "p": "freebitco",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?freebitco\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "bybit": {
-            "p": "bybit",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?bybit\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "crypto": {
-            "p": "crypto",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?crypto\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "okx": {
-            "p": "okx",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?okx\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "coinbase": {
-            "p": "coinbase",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?coinbase\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "binance": {
-            "p": "binance",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?binance\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "wazirx": {
-            "p": "wazirx",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?wazirx\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "coindcx": {
-            "p": "coindcx",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?coindcx\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "zebpay": {
-            "p": "zebpay",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?zebpay\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-        "bitbns": {
-            "p": "bitbns",
-            "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?bitbns\\\\.[\\\\w.-]+([/?#].*)?$",
-            "record": { "disabled": true },
-            "disabled": false
-        },
-    	"google":{
-    		"p": "google",
-    		"match": "^https?:\\\\/\\\\/(www\\\\.)?google\\\\.[a-z]{2,3}(\\\\.[a-z]{2})?\\\\/search\\\\?",
-    		"record": { "disabled": true },
-    		"disabled": false
-    	},
-    	"bing":{
-    		"p": "bing",
-    		"match": "^https?:\\\\/\\\\/(?:www|cn)?\\\\.?bing\\\\.com\\\\/search\\\\?.*",
-    		"record": { "disabled": true },
-    		"disabled": false
-    	}
+      "jtmMid":{
+          "p":"jtmMid",
+          "match": "www\\\\.jtmate\\\\.com\\\\/mid",
+          "record":{
+              "disabled":true
+          },
+          "disabled":false
+      },
+      "aliexpress": {
+          "p": "aliexpress",
+          "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?aliexpress\\\\.[a-z]{2,}(\\\\.[a-z]{2,})*(\\\\/.*)?",
+          "detail": "\\\\/item\\\\/[^.\\\\/]+\\\\.html",
+          "trade": ["\\\\/trade\\\\/confirm\\\\.html", "\\\\/checkout\\\\?"],
+          "record":{
+              "elements":{
+                  "title":"h1[data-pl='product-title'], h1[class*='HazeProductDescription_HazeProductDescription__smallText_']",
+                  "price":"span.product-price-value, div[class*='currentPriceText'], div[class*='HazeProductPrice_SnowPrice__container']>div",
+                  "cover":"div[class*='slider--img'] >img, div[class*='__previewItem__'] picture[class*='Picture__container']>source"
+              },
+              "disabled":false
+          },
+          "disabled":false
+      },
+      "lazada":{
+          "p": "lazada",
+          "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?lazada\\\\.[\\\\w.-]+([/?#].*)?$",
+          "detail": "\\\\/products\\\\/.*-i\\\\d+.*\\\\.html",
+          "trade":[],
+          "record":{
+              "elements":{
+          "title":"h1[class*='pdp-mod-product-badge-title']",
+                  "price":"div[class*='product-current-price-container'],div[class*='product-price-content-salePrice'],.pdp-product-price",
+                  "cover":"div[class*='gallery-preview-panel'] >img:last-child, .gallery-preview-panel__content >img:last-child"
+              },
+              "disabled":false
+          },
+          "disabled":false
+      },
+      "banggood":{
+          "p": "banggood",
+          "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?banggood\\\\.[\\\\w.-]+([/?#].*)?$",
+          "detail":"\\\\/.*-p-\\\\d+\\\\.html",
+          "trade":[],
+          "record":{
+              "elements":{
+                  "title":".product-title-text",
+                  "price":".newbie-price",
+                  "cover":"a.p-img >img"
+              },
+              "disabled":false
+          },
+          "disabled":false
+      },
+      "ebay": {
+          "p": "ebay",
+          "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?ebay\\\\.[\\\\w.-]+([/?#].*)?$",
+          "detail":"\\\\/itm\\\\/\\\\d+",
+          "trade":[],
+          "record":{
+              "elements":{
+                  "title":".x-item-title__mainTitle",
+                  "price":".x-price-primary >span",
+                  "cover":".ux-image-grid-item >img, .ux-image-carousel-item >img"
+              },
+              "disabled":false
+          },
+          "disabled":false
+      },
+      "bestbuy": {
+          "p": "bestbuy",
+          "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?bestbuy\\\\.[\\\\w.-]+([/?#].*)?$",
+          "detail":"\\\\/site\\\\/.*\\\\/\\\\d+\\\\.p",
+          "trade":[],
+          "record":{
+              "elements":{
+                  "title":".sm:text-title-sm",
+                  "price":"*[class*='_price_']",
+                  "cover":"*[class*='displayingImage'] img"
+              },
+              "disabled":true
+          },
+          "disabled":false
+      },
+      "shopee": {
+          "p": "shopee",
+          "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?shopee\\\\.[\\\\w.-]+([/?#].*)?$",
+          "record":{
+              "disabled":true
+          },
+          "disabled":false
+      },
+      "wish": {
+          "p": "wish",
+          "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?wish\\\\.[\\\\w.-]+([/?#].*)?$",
+          "record":{
+              "disabled":true
+          },
+          "disabled":false
+      },
+      "amazon": {
+          "p": "amazon",
+          "match": "^https:\\\\/\\\\/([\\\\w-]+\\\\.)?amazon\\\\.[\\\\w.-]+([/?#].*)?$",
+          "record":{
+              "disabled":true
+          },
+          "disabled":false
+      }
     }
   `,
     getSupportsByServer: function() {
