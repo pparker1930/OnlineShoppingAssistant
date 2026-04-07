@@ -74,7 +74,7 @@
 // @description:ug     پاپۇلار سودا سېتىش پلاتفورمالىرىدا ئاپتوماتىك كۇپون ئىزدەش ئارقىلىق، پەقەت مۇھتاج بولغان مەھسۇلاتلارغا ئەڭ ياخشى پەقەتلەرنى تاپشۇرۇشقا ياردەم بېرىدۇ، ھىچ بىر ئاشىق پۇل چىقارماي. ھازىر كۆرسىتىلىدىغان: Aliexpress، Lazada، eBay، Amazon ۋە باشقا.
 // @description:vi     Tìm kiếm tự động mã giảm giá trên các nền tảng mua sắm phổ biến để giúp bạn tìm được những ưu đãi tốt nhất cho sản phẩm bạn cần, mà không phải chi tiêu quá mức. Hiện tại hỗ trợ: Aliexpress, Lazada, eBay, Amazon và nhiều hơn nữa.
 // @namespace   Thaddeus_ecommerce_NameScope
-// @version     1.1.10
+// @version     1.1.12
 // @author      Thaddeus310,PeterParker
 // @icon        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABAZJREFUWEetl1lME1EUhv+htbaISamoVTC0WrcgASOSlFCpuEfRmPigicaghgeXRI2JiTy4xVfikzExLvhkJGpiTYi4FUQeDMEG3CXp4FpQaEW0LKWjd2Camemdxep96EzSc+/5zn/PPecOg78Ypb7LXgbccdEU7/i7nzwZcI3k2VSx+4TeZRk9hst8F09wYMSONacx4E7qAVEFSMWxnEwLRBHA47v0CIAgMb+uPT0DoV8DmtEvnmLHs96Q2M7/uGLXctrEJADRPic5X5czF/Uf36lCEOd2Swae9YWS7Dgwy5srKvl8EUYSgMd3iVMKUUkBvcr8UTRJCQkATXYtvUnEZMgkV5smgUgApJpwJPoZRHLpnqtyixMzAaAmvZYKqfz/uGIX75v/oUVfVlMN49QpMGTZUllfMmfo1Tt0ucvBuleIkm+sTvAAtOgPtlVjQiSOaPck5M+0pAwxOO0reuNRXO3fKAEgCxIVGKW933bjGKZO5jASNiPPNillgLqOMIqLR1BnWJMEQI4lFcD6IYgt7bUozIsi0GTGHFPqCnSZf2B69ih8g0Vo82yRB+JnaEdvU9s5zI6+hyE+CoNRsSzoUmU0NpbnwR4LHhRXIjLLKamQVICq9lPYup7V5UCPEWNyIPjyMw73HKUC8CGKq9l/B8jwIhhooQGAKMAJzoWnHOD+DRvYThP2HJU0GMXgie1Q2IKJmVE4XMNgNAD4rqekAFmsoW4uvvT0Yee+Xn5BrVFfa0dsxIV5BR2Yv/Q75Fsg8kVPQrkC9dc9WLB6B5zWKi3f/P+NDxchO/8IjN+rxhQQ5YCz0C3uHfoAGm67YbS5UV5aowug9sISxAbN2H3gCW8v3gLz/PxE7yA9gRnv/2QbEkOuwJuADd04Bq7vCsrKn2tCBEP70Rn4hlVrryUBiI8hD0ArxbRTcPfOdpizbMjNOq+aB43NGxBPcyErfgv5pV2qAHwpJhbyckwD6GOdCHzcDAPeItfeQIUgzoncQ6HWRPTyLRAUEFoytR0r1YGO5lx8jnhgySkENzB+sxpmAZODT7TRmBE/2RcoKemEzRFMbBXtGErasVwFtUJElHjdOg0/M5xIM8aQlp6DWH8IsYEvKHD1I9MRhMUakeSJHIB6IRnPBb4m6KmEBISMwYgVZmsEFms4ybFAIQOgX8kEY9KcqtpPef9rLxBVQt/e05J7KPVaXj1w5tHKhZ2ax02vgVCIzrRsOHSl5uZZ8TzFD5MXTx3heSbWqteJmt3bYUckr5jNpNmofprdaynye9Nby/4Fwv+rqHFVSavkI0eXAmKjVEA+xaaz2YbuygmLIfkSkgej6+tYmERAyPtM47cC8hS2iEgs2HQMu05uLb0v2Wc1BX8DMGUKxDW5sRoAAAAASUVORK5CYII=
 // @match       *://*/*
@@ -139,28 +139,6 @@
 // @include     /^https:\/\/([\w-]+\.)?ajio\.[\w.-]+([/?#].*)?$/
 // @include     /^https:\/\/([\w-]+\.)?flipkart\.[\w.-]+([/?#].*)?$/
 // @include     /^https:\/\/([\w-]+\.)?myntra\.[\w.-]+([/?#].*)?$/
-// @include     /^https:\/\/([\w-]+\.)?cex\.[\w.-]+([/?#].*)?$/
-// @include     /^https:\/\/([\w-]+\.)?changelly\.[\w.-]+([/?#].*)?$/
-// @include     /^https:\/\/([\w-]+\.)?kucoin\.[\w.-]+([/?#].*)?$/
-// @include     /^https:\/\/([\w-]+\.)?paxful\.[\w.-]+([/?#].*)?$/
-// @include     /^https:\/\/([\w-]+\.)?htx\.[\w.-]+([/?#].*)?$/
-// @include     /^https:\/\/([\w-]+\.)?mexc\.[\w.-]+([/?#].*)?$/
-// @include     /^https:\/\/([\w-]+\.)?coinmama\.[\w.-]+([/?#].*)?$/
-// @include     /^https:\/\/([\w-]+\.)?gate\.[\w.-]+([/?#].*)?$/
-// @include     /^https:\/\/([\w-]+\.)?bitget\.[\w.-]+([/?#].*)?$/
-// @include     /^https:\/\/([\w-]+\.)?freebitco\.[\w.-]+([/?#].*)?$/
-// @include     /^https:\/\/([\w-]+\.)?bybit\.[\w.-]+([/?#].*)?$/
-// @include     /^https:\/\/([\w-]+\.)?crypto\.[\w.-]+([/?#].*)?$/
-// @include     /^https:\/\/([\w-]+\.)?okx\.[\w.-]+([/?#].*)?$/
-// @include     /^https:\/\/([\w-]+\.)?coinbase\.[\w.-]+([/?#].*)?$/
-// @include     /^https:\/\/([\w-]+\.)?binance\.[\w.-]+([/?#].*)?$/
-// @include     /^https:\/\/([\w-]+\.)?wazirx\.[\w.-]+([/?#].*)?$/
-// @include     /^https:\/\/([\w-]+\.)?coindcx\.[\w.-]+([/?#].*)?$/
-// @include     /^https:\/\/([\w-]+\.)?zebpay\.[\w.-]+([/?#].*)?$/
-// @include     /^https:\/\/([\w-]+\.)?bitbns\.[\w.-]+([/?#].*)?$/
-// @include     /^https:\/\/([\w-]+\.)?kraken\.[\w.-]+([/?#].*)?$/
-// @include     /^https?:\/\/(www\.)?google\.[a-z]{2,3}(\.[a-z]{2})?\/search\?/
-// @include     /^https?:\/\/(?:www|cn)?\.?bing\.com\/search\?.*/
 // @include     *://www.jtmate.com/mid/merge**
 // @exclude     *://www.lazada.com/*
 // @exclude     *://shopee.com/*
@@ -188,7 +166,7 @@
 
   
   /*!
-  * Copyright (c) 2024 - 2025, Thaddeus310,PeterParker. All rights reserved.
+  * Copyright (c) 2024 - 2026, Thaddeus310,PeterParker. All rights reserved.
   *
   * Permission is hereby granted, free of charge, to any person obtaining a copy
   * of this software and associated documentation files (the "Software"), to deal
@@ -212,7 +190,13 @@
 
 
   const ScriptConst = {
-    "lang": (navigator.language || navigator.userLanguage || "").slice(0, 2).toLowerCase() || "en",
+    "lang": (() => {
+      const navLang = navigator.language || navigator.userLanguage || "en";
+      if (navLang.startsWith("zh")) {
+        return navLang === "zh-CN" || navLang === "zh-TW" ? navLang : "zh-CN";
+      }
+      return navLang.slice(0, 2).toLowerCase() || "en";
+    })(),
     "isDev": false,
     "isDebug": false,
     "version": "1.0.1",
@@ -223,6 +207,7 @@
   const PlatformConst = {
     "x": { "p": "x", "match": /twitter|x\.com$/ },
     "youtube": { "p": "youtube", "match": /youtube\.com$/ },
+    "google": { "p": "google", "match": /google\.com$/ },
     "tiktok": { "p": "tiktok", "match": /www\.tiktok\.com/ },
     "cobalt": { "p": "cobalt", "match": /cobalt\.tools/ }
   };
@@ -433,47 +418,28 @@
     },
     mustGetElement: function(handler) {
       return __async$q(this, null, function* () {
-        const getElements = (handler2) => __async$q(this, null, function* () {
-          const promiseArray = [];
-          const handlers = handler2.split("@");
-          for (let i = 0; i < handlers.length; i++) {
-            const eleName = handlers[i];
-            if (!eleName) {
-              continue;
-            }
-            if (eleName == "body") {
-              promiseArray.push(
-                new Promise((resolve, reject) => {
-                  resolve(document.body);
-                })
-              );
-            } else if (eleName == "html") {
-              promiseArray.push(
-                new Promise((resolve, reject) => {
-                  resolve(document.html);
-                })
-              );
-            } else {
-              promiseArray.push(this.waitForElementByInterval(eleName, document.body, true, 10, 1500));
-            }
-          }
-          let element2 = yield Promise.race(promiseArray);
-          return element2;
+        const getElements = (h) => __async$q(this, null, function* () {
+          const names = h.split("@").filter((s) => s.length);
+          const promises = names.map((eleName) => {
+            if (eleName === "body")
+              return Promise.resolve(document.body);
+            if (eleName === "html")
+              return Promise.resolve(document.documentElement);
+            return this.waitForElementByInterval(eleName, document.body, true, 10, 1500);
+          });
+          return promises.length ? Promise.race(promises) : null;
         });
         let element = yield getElements(handler);
-        return new Promise((resolve, reject) => {
-          if (element) {
-            resolve(element);
-            return;
-          }
-          const waitInterval = setInterval(() => {
-            element = getElements(handler);
-            if (element) {
+        if (element)
+          return element;
+        return new Promise((resolve) => {
+          const waitInterval = setInterval(() => __async$q(this, null, function* () {
+            const el = yield getElements(handler);
+            if (el) {
               clearInterval(waitInterval);
-              resolve(element);
-              return;
+              resolve(el);
             }
-          }, 2e3);
+          }), 2e3);
         });
       });
     },
@@ -3435,26 +3401,27 @@
   const LangueUtil = {
     updateDelay: 15 * 60 * 1e3,
     _locations: {
-      "en": { languageDefault: "Default" },
-      "es": { languageDefault: "Predeterminado" },
-      "ar": { languageDefault: "افتراضي" },
-      "fr": { languageDefault: "Par défaut" },
-      "pt": { languageDefault: "Padrão" },
-      "ru": { languageDefault: "По умолчанию" },
-      "ja": { languageDefault: "デフォルト" },
-      "de": { languageDefault: "Standard" },
-      "ko": { languageDefault: "기본" },
-      "it": { languageDefault: "Predefinito" },
-      "id": { languageDefault: "Default" },
-      "tr": { languageDefault: "Varsayılan" },
-      "pl": { languageDefault: "Domyślnie" },
-      "uk": { languageDefault: "Типово" },
-      "nl": { languageDefault: "Standaard" },
-      "vi": { languageDefault: "Mặc định" },
-      "ms": { languageDefault: "Lalai" },
-      "th": { languageDefault: "ค่าเริ่มต้น" },
-      "mx": { languageDefault: "Predeterminado" },
-      "cl": { languageDefault: "Predeterminado" }
+      "en": { "languageDefault": "Follow Browser" },
+      "es": { "languageDefault": "Seguir el navegador" },
+      "ar": { "languageDefault": "اتباع المتصفح" },
+      "fr": { "languageDefault": "Suivre le navigateur" },
+      "pt": { "languageDefault": "Seguir o navegador" },
+      "ru": { "languageDefault": "Следовать браузеру" },
+      "ja": { "languageDefault": "ブラウザに従う" },
+      "de": { "languageDefault": "Dem Browser folgen" },
+      "ko": { "languageDefault": "브라우저 따르기" },
+      "it": { "languageDefault": "Segui il browser" },
+      "id": { "languageDefault": "Ikuti browser" },
+      "tr": { "languageDefault": "Tarayıcıyı takip et" },
+      "pl": { "languageDefault": "Podążaj za przeglądarką" },
+      "uk": { "languageDefault": "Слідувати браузеру" },
+      "nl": { "languageDefault": "Volg browser" },
+      "vi": { "languageDefault": "Theo trình duyệt" },
+      "ms": { "languageDefault": "Ikut pelayar" },
+      "th": { "languageDefault": "ตามเบราว์เซอร์" },
+      "mx": { "languageDefault": "Seguir el navegador" },
+      "zh-CN": { "languageDefault": "跟随浏览器" },
+      "zh-TW": { "languageDefault": "跟隨瀏覽器" }
     },
     getLanguages: function() {
       var _a, _b, _c;
@@ -3478,7 +3445,9 @@
         { code: "ms", name: "Bahasa Melayu", dir: "ltr" },
         { code: "th", name: "ไทย", dir: "ltr" },
         { code: "mx", name: "Mexican Spanish", dir: "ltr" },
-        { code: "cl", name: "Chilean Spanish", dir: "ltr" }
+        { code: "cl", name: "Chilean Spanish", dir: "ltr" },
+        { code: "zh-CN", name: "中文（简体）", dir: "ltr" },
+        { code: "zh-TW", name: "中文（繁體）", dir: "ltr" }
       ];
       const language = (_a = languages.find((lang) => lang.code === DefaultValue.lang)) != null ? _a : languages[0];
       const defaultLanguage = Object.assign({}, language);
@@ -3553,6 +3522,7 @@
         if (now - langueObjects.time >= this.updateDelay || now === langueObjects.time || langueObjects.lang != lang || force) {
           try {
             const requestsBase = getRequestUrl()["getLangue"];
+            Logger.log("info", "lang=======>", requestsBase.method, requestsBase.url, { "lang": lang });
             Tools.request(requestsBase.method, requestsBase.url, { "lang": lang }, { "Content-Type": "application/json;charset=UTF-8" }, 5 * 1e3).then((serverLangueJson) => {
               if (serverLangueJson.code === "success") {
                 const serverLangueObjects = JSON.parse(serverLangueJson.result);
@@ -4869,7 +4839,7 @@
     }
   };
 
-  var css_248z = ".history-panel-wrapper{box-sizing:border-box;position:fixed;z-index:2147483646}.history-panel-wrapper svg.icon-i87i-svg path{fill:var(--color-modeal-header-icon)!important}.history-panel-wrapper svg.icon-i87i-svg:hover path{fill:var(--color-modeal-header-icon-hover)!important}.history-panel-wrapper>.history-panel-aside-main{background-color:#fff;border:1px solid #ebebeb;border-radius:5px;bottom:70px;box-shadow:2px 2px 5px #b6bdc5;height:400px;overflow-x:hidden;overflow-y:auto;position:absolute;right:0;width:400px}.history-panel-wrapper>.history-panel-aside-main>.panel-aside-main-inner{display:flex;flex-direction:column;height:100%;width:100%}.history-panel-aside-main .panel-aside-main-header{align-items:center;background-color:var(--color-modeal-header-background);border-bottom:1px solid #ebe6e6;box-sizing:border-box;display:flex;height:var(--size-height-modeal-header);justify-content:space-between;padding:0 var(--size-padding-horizontal-modeal-header)}.history-panel-aside-main .panel-aside-main-header>.logo-header{align-items:center;display:flex;justify-content:center}.history-panel-aside-main .panel-aside-main-header>.logo-header>svg{height:var(--size-height-modeal-icon)!important;width:var(--size-height-modeal-icon)!important}.history-panel-aside-main .panel-aside-main-header>.title-header{flex:1;font-size:var(--size-font-modeal-header-title);font-weight:700;padding-left:10px}.history-panel-aside-main .panel-aside-main-header .btns-header{display:flex;flex-direction:row}.history-panel-aside-main .panel-aside-main-header .btns-header .close,.history-panel-aside-main .panel-aside-main-header .btns-header .setting{align-items:center;cursor:pointer;display:flex;justify-content:center;width:var(--size-height-modeal-operat-icon)}.history-panel-aside-main .panel-aside-main-content{background-color:var(--color-modeal-content-background);flex:1;overflow:auto}.history-panel-aside-main .panel-aside-main-item{margin:5px 0;padding:5px}.history-panel-aside-main .panel-aside-main-item .item-title{color:#b6b6b6;font-size:13px;font-weight:500;padding:5px 0;text-align:center}.history-panel-aside-main .panel-aside-main-item .item-container{display:flex;flex-flow:wrap;flex-direction:row;justify-content:flex-start}.history-panel-aside-main .histories-box-review_item{margin:5px 0;overflow:hidden;width:33.3333%}.history-panel-aside-main .histories-box-review_item>a{background-color:#fff!important;border:1px solid #ccc!important;border-radius:5px!important;box-sizing:initial!important;display:block!important;margin:0 auto!important;position:relative!important;width:110px!important}.history-panel-aside-main .histories-box-review_item>a>.review-shadow{border:2px solid red;border-radius:5px;bottom:0;display:none;left:0;position:absolute;right:0;text-align:center;top:0;z-index:99}.history-panel-aside-main .histories-box-review_item>a>.review-shadow .delete-btn{background-color:red;border-radius:3px;color:#fff;font-size:13px;height:15px;line-height:10px;position:absolute;right:0;text-align:center;top:0;width:15px}.history-panel-aside-main .histories-box-review_item>a>.review-img{border-radius:5px 5px 0 0;height:110px;overflow:hidden;width:110px}.history-panel-aside-main .histories-box-review_item>a>.review-img>img{width:100%!important}.history-panel-aside-main .histories-box-review_item>a>.review-text{color:#000!important;font-size:13px!important;overflow:hidden!important;padding:5px!important;text-align:center!important;text-decoration:underline!important;text-overflow:ellipsis!important;white-space:nowrap!important}.history-panel-wrapper>.history-panel-aside-body{background-color:#fafafa;border-radius:5px;box-shadow:1px 1px 2px #b6bdc5;direction:ltr!important;display:flex;height:60px;overflow:hidden}.history-panel-wrapper>.history-panel-aside-body>div{align-items:center!important;display:flex!important;justify-content:center!important}.history-panel-aside-body .goods-expand{cursor:pointer;width:20px!important}.history-panel-aside-body .goods-expand svg{transition:transform .3s!important}.history-panel-aside-body .goods-review{flex-direction:row;transition:all .5s ease-in-out;width:auto}.history-panel-aside-body .goods-review-item{border-radius:4px;cursor:pointer;height:45px;line-height:45px;margin:0 5px;overflow:hidden;position:relative;width:45px}.history-panel-aside-body .goods-review-item>a{display:block!important;height:100%!important;width:100%!important}.history-panel-aside-body .goods-review-item>a>.review-shadow{background-color:#3d9ba433;bottom:0;display:none;left:0;position:absolute;right:0;text-align:center;top:0;z-index:99}.history-panel-aside-body .goods-review-item>a>.review-shadow img{width:15px!important}.history-panel-aside-body .goods-review-item img{width:100%!important}.history-panel-aside-body .history-box-expand{cursor:pointer;flex-direction:column;margin:0 10px;text-align:center}.history-panel-aside-body .history-box-expand svg{height:33px!important;width:33px!important}.history-panel-aside-body .history-box-expand label{font-size:12px!important;font-weight:700!important}.history-panel-aside-body .wrapper-drag-handle{box-shadow:0 3px 3px -2px #0003,0 3px 4px 0 #00000024,0 1px 8px 0 #0000001f;cursor:move;width:20px!important}";
+  var css_248z = ".history-panel-wrapper{box-sizing:border-box;position:fixed;z-index:2147483646}.history-panel-wrapper svg.icon-i87i-svg path{fill:var(--color-modeal-header-icon)!important}.history-panel-wrapper svg.icon-i87i-svg:hover path{fill:var(--color-modeal-header-icon-hover)!important}.history-panel-wrapper>.history-panel-aside-main{background-color:#fff;border:1px solid #ebebeb;border-radius:5px;bottom:70px;box-shadow:2px 2px 5px #b6bdc5;height:400px;overflow-x:hidden;overflow-y:auto;position:absolute;right:0;width:400px}.history-panel-wrapper>.history-panel-aside-main>.panel-aside-main-inner{display:flex;flex-direction:column;height:100%;width:100%}.history-panel-aside-main .panel-aside-main-header{align-items:center;background-color:var(--color-modeal-header-background);border-bottom:1px solid #ebe6e6;box-sizing:border-box;display:flex;height:var(--size-height-modeal-header);justify-content:space-between;padding:0 var(--size-padding-horizontal-modeal-header)}.history-panel-aside-main .panel-aside-main-header>.logo-header{align-items:center;display:flex;justify-content:center}.history-panel-aside-main .panel-aside-main-header>.logo-header>svg{height:var(--size-height-modeal-icon)!important;width:var(--size-height-modeal-icon)!important}.history-panel-aside-main .panel-aside-main-header>.title-header{flex:1;font-size:var(--size-font-modeal-header-title);font-weight:700;padding-left:10px}.history-panel-aside-main .panel-aside-main-header .btns-header{display:flex;flex-direction:row}.history-panel-aside-main .panel-aside-main-header .btns-header .close,.history-panel-aside-main .panel-aside-main-header .btns-header .setting{align-items:center;cursor:pointer;display:flex;justify-content:center;width:var(--size-height-modeal-operat-icon)}.history-panel-aside-main .panel-aside-main-content{background-color:var(--color-modeal-content-background);flex:1;overflow-x:hidden;overflow-y:auto}.history-panel-aside-main .panel-aside-main-content::-webkit-scrollbar{width:2px}.history-panel-aside-main .panel-aside-main-content::-webkit-scrollbar-track{background:#0000}.history-panel-aside-main .panel-aside-main-content::-webkit-scrollbar-thumb{background-color:#969696;border-radius:2px}.history-panel-aside-main .panel-aside-main-item{margin:5px 0;padding:5px}.history-panel-aside-main .panel-aside-main-item .item-title{color:#b6b6b6;font-size:13px;font-weight:500;padding:5px 0;text-align:center}.history-panel-aside-main .panel-aside-main-item .item-container{display:flex;flex-flow:wrap;flex-direction:row;justify-content:flex-start}.history-panel-aside-main .histories-box-review_item{margin:5px 0;overflow:hidden;width:33.3333%}.history-panel-aside-main .histories-box-review_item>a{background-color:#fff!important;border:1px solid #ccc!important;border-radius:5px!important;box-sizing:initial!important;display:block!important;margin:0 auto!important;position:relative!important;width:110px!important}.history-panel-aside-main .histories-box-review_item>a>.review-shadow{border:2px solid red;border-radius:5px;bottom:0;display:none;left:0;position:absolute;right:0;text-align:center;top:0;z-index:99}.history-panel-aside-main .histories-box-review_item>a>.review-shadow .delete-btn{background-color:red;border-radius:3px;color:#fff;font-size:13px;height:15px;line-height:10px;position:absolute;right:0;text-align:center;top:0;width:15px}.history-panel-aside-main .histories-box-review_item>a>.review-img{border-radius:5px 5px 0 0;height:110px;overflow:hidden;width:110px}.history-panel-aside-main .histories-box-review_item>a>.review-img>img{width:100%!important}.history-panel-aside-main .histories-box-review_item>a>.review-text{color:#000!important;font-size:13px!important;overflow:hidden!important;padding:5px!important;text-align:center!important;text-decoration:underline!important;text-overflow:ellipsis!important;white-space:nowrap!important}.history-panel-wrapper>.history-panel-aside-body{background-color:#fafafa;border-radius:5px;box-shadow:1px 1px 2px #b6bdc5;direction:ltr!important;display:flex;height:60px;overflow:hidden}.history-panel-wrapper>.history-panel-aside-body>div{align-items:center!important;display:flex!important;justify-content:center!important}.history-panel-aside-body .goods-expand{cursor:pointer;width:20px!important}.history-panel-aside-body .goods-expand svg{transition:transform .3s!important}.history-panel-aside-body .goods-review{flex-direction:row;transition:all .5s ease-in-out;width:auto}.history-panel-aside-body .goods-review-item{border-radius:4px;cursor:pointer;height:45px;line-height:45px;margin:0 5px;overflow:hidden;position:relative;width:45px}.history-panel-aside-body .goods-review-item>a{display:block!important;height:100%!important;width:100%!important}.history-panel-aside-body .goods-review-item>a>.review-shadow{background-color:#3d9ba433;bottom:0;display:none;left:0;position:absolute;right:0;text-align:center;top:0;z-index:99}.history-panel-aside-body .goods-review-item>a>.review-shadow img{width:15px!important}.history-panel-aside-body .goods-review-item img{width:100%!important}.history-panel-aside-body .history-box-expand{cursor:pointer;flex-direction:column;margin:0 10px;text-align:center}.history-panel-aside-body .history-box-expand svg{height:33px!important;width:33px!important}.history-panel-aside-body .history-box-expand label{font-size:12px!important;font-weight:700!important}.history-panel-aside-body .wrapper-drag-handle{box-shadow:0 3px 3px -2px #0003,0 3px 4px 0 #00000024,0 1px 8px 0 #0000001f;cursor:move;width:20px!important}";
 
   const GoodsHistory = {
     root: null,
@@ -5888,13 +5858,13 @@
       const id = Tools.getGoodsIdByLink(href);
       if (title && price && cover) {
         Promise.all([
-          Tools.waitForElementByInterval(price, document.body, false),
-          Tools.waitForElementByInterval(cover, document.body, true)
+          Tools.waitForElementByInterval(cover, document.body, true),
+          Tools.waitForElementByInterval(price, document.body, false, 10, 5e3)
         ]).then((elements) => {
-          const priceElement = elements[0];
-          const coverElement = elements[1];
+          const coverElement = elements[0];
+          const priceElement = elements[1];
           const titleElement = document.querySelector(title);
-          if (coverElement && priceElement) {
+          if (coverElement) {
             var imgSrc = "";
             if (coverElement.tagName == "IMG") {
               imgSrc = coverElement.getAttribute("data-src") || coverElement.getAttribute("data-url") || coverElement.getAttribute("src");
